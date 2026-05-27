@@ -18,6 +18,7 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <style>
+    /* RESET & GLOBAL */
     *{
       margin:0;
       padding:0;
@@ -49,7 +50,7 @@
       background:rgba(255,255,255,0.95);
       backdrop-filter:blur(10px);
       box-shadow:0 2px 15px rgba(0,0,0,0.08);
-      padding:8px 0;
+      padding:10px 0;
       transition:padding 0.3s;
     }
 
@@ -61,6 +62,7 @@
       justify-content:space-between;
       align-items:center;
       padding:5px 0;
+      position: relative; /* Penting untuk hamburger menu */
     }
 
     .logo{
@@ -88,6 +90,12 @@
       margin:0;
     }
 
+    /* MENU (DESKTOP) */
+    .menu{
+      display: flex;
+      align-items: center;
+    }
+
     .menu a{
       margin-left:20px;
       text-decoration:none;
@@ -104,6 +112,26 @@
       background:rgba(25,135,84,0.1);
     }
 
+    /* HAMBURGER BUTTON (Hidden by default on Desktop) */
+    .hamburger{
+      display:none;
+      flex-direction:column;
+      gap:5px;
+      background:none;
+      border:none;
+      cursor:pointer;
+      padding:8px;
+      z-index:1001;
+    }
+
+    .hamburger span{
+      width:25px;
+      height:3px;
+      background:#0d5c2f;
+      border-radius:3px;
+      transition:0.3s;
+    }
+
     /* HERO */
     .hero{
       position:relative;
@@ -113,7 +141,7 @@
       display:flex;
       align-items:center;
       color:white;
-      padding-top:70px;
+      padding-top:80px;
       padding-bottom:40px;
     }
 
@@ -187,20 +215,17 @@
       font-size:15px;
       transition:0.3s;
       box-shadow:0 8px 20px rgba(0,0,0,0.2);
-      min-height:48px;
+      min-height:48px; /* Touch friendly */
       display:flex;
       align-items:center;
       justify-content:center;
+      margin: 0 auto; /* Center button on mobile */
     }
 
     .btn:hover{
       background:#14652b;
       transform:translateY(-3px);
       box-shadow:0 12px 28px rgba(0,0,0,0.25);
-    }
-
-    .btn:active{
-      transform:translateY(0);
     }
 
     /* FLOATING WA */
@@ -221,7 +246,6 @@
       text-decoration:none;
       box-shadow:0 8px 25px rgba(37,211,102,0.4);
       animation:pulse 2s infinite;
-      min-height:48px;
     }
 
     /* SECTION */
@@ -505,184 +529,146 @@
       50%{ transform:scale(1.08); }
     }
 
-    /* ===== MOBILE OPTIMIZATION ===== */
+    /* ===== MOBILE OPTIMIZATION (HP) ===== */
     
-    /* Tablet */
     @media(max-width: 992px){
       section{ padding:70px 6%; }
       .hero-content h1{ font-size:48px; }
       .about{ gap:40px; }
     }
 
-    /* Mobile - HP Utama */
     @media(max-width: 768px){
       body{ font-size:15px; }
       
-      /* Navbar Mobile */
-      nav{ padding:6px 0; }
-      .nav-container{ width:95%; }
-      .logo{ gap:8px; }
-      .logo img{ width:42px; }
-      .logo h2{ font-size:14px; }
-      .logo p{ display:none; }
-      .menu{ display:none; }
+      /* --- NAVBAR MOBILE --- */
+      .hamburger{ display: flex; } /* Tampilkan tombol hamburger */
+      
+      .menu{
+        position: fixed;
+        top: 75px; /* Posisi di bawah navbar */
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transform: translateY(-150%); /* Sembunyi ke atas */
+        transition: transform 0.4s ease;
+        z-index: 998;
+        gap: 5px;
+        border-radius: 0 0 20px 20px;
+      }
+      
+      .menu.active{
+        transform: translateY(0); /* Muncul ke bawah */
+      }
+      
+      .menu a{
+        margin: 0;
+        padding: 15px 20px;
+        font-size: 16px;
+        border-bottom: 1px solid #f0f0f0;
+        display: block;
+        text-align: center;
+        width: 100%;
+      }
+      
+      .menu a:last-child{ border-bottom: none; }
+      
+      /* Animasi Hamburger jadi X */
+      .hamburger.active span:nth-child(1){
+        transform: rotate(45deg) translate(5px, 6px);
+      }
+      .hamburger.active span:nth-child(2){
+        opacity: 0;
+      }
+      .hamburger.active span:nth-child(3){
+        transform: rotate(-45deg) translate(5px, -6px);
+      }
 
-      /* Hero Mobile */
+      /* --- HERO MOBILE --- */
       .hero{ 
         min-height:100vh; 
-        padding-top:65px; 
-        padding-bottom:30px;
+        padding-top:90px; /* Ruang lebih untuk navbar */
       }
       .hero-content{ 
-        text-align:center; 
-        max-width:95%; 
-        padding:15px 0;
+        max-width: 95%; 
       }
       .hero-content h1{ 
-        font-size:clamp(26px, 7vw, 42px);
-        margin-bottom:18px;
+        font-size: 30px;
+        margin-bottom: 15px;
       }
       .hero-content p{ 
-        font-size:clamp(13px, 4vw, 16px);
-        margin-bottom:25px;
+        font-size: 14px;
+        margin-bottom: 25px;
       }
       .btn{ 
-        padding:13px 28px; 
-        font-size:14px; 
-        width:100%; 
-        max-width:250px; 
-        margin:0 auto;
+        width: 100%; 
+        max-width: 250px; 
       }
 
-      /* About Mobile */
+      /* --- ABOUT MOBILE --- */
       .about{ 
         grid-template-columns:1fr; 
-        gap:35px;
-        text-align:center;
+        gap: 35px;
+        text-align: center;
       }
       .about img{ 
-        max-width:320px; 
-        padding:20px; 
-        animation:none;
+        max-width: 320px; 
+        padding: 15px; 
+        animation: none; /* Matikan animasi float di HP */
       }
-      .about-text h3{ 
-        font-size:26px; 
-        text-align:center;
-      }
-      .about-text p{ 
-        text-align:justify;
-        font-size:14px;
-      }
-      .about-text .btn{ 
-        margin:15px auto 0;
-        display:inline-flex;
-      }
+      .about-text h3{ text-align: center; font-size: 26px; }
+      .about-text p{ text-align: justify; font-size: 14px; }
 
-      /* Stats Mobile */
-      .stats{ padding:50px 6%; }
-      .stats-grid{ gap:20px; }
-      .stat-box h2{ font-size:clamp(32px, 7vw, 45px); }
-      .stat-box p{ font-size:13px; }
+      /* --- STATS MOBILE --- */
+      .stats{ padding: 50px 5%; }
+      .stats-grid{ gap: 20px; }
+      .stat-box h2{ font-size: 32px; }
 
-      /* Services Mobile */
-      .service-grid{ gap:22px; }
-      .card{ padding:30px 24px; }
-      .icon{ 
-        font-size:40px; 
-        width:65px; 
-        height:65px;
-        margin:0 auto 15px;
-      }
-      .card h3{ font-size:18px; }
-      .card p{ font-size:14px; }
+      /* --- SERVICES MOBILE --- */
+      .service-grid{ gap: 22px; }
+      .card{ padding: 30px 24px; }
+      .icon{ width: 60px; height: 60px; font-size: 35px; margin-bottom: 15px; }
+      .card h3{ font-size: 18px; }
 
-      /* Gallery Mobile */
+      /* --- GALLERY MOBILE --- */
       .gallery-grid{ 
-        grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-        gap:15px;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+        gap: 15px;
       }
-      .gallery-grid img{ 
-        height:180px; 
-        border-radius:18px;
-      }
+      .gallery-grid img{ height: 150px; border-radius: 15px; }
 
-      /* Vision Mobile */
+      /* --- VISION MOBILE --- */
       .vision-grid{ 
-        grid-template-columns:1fr; 
-        gap:35px;
-        text-align:center;
+        grid-template-columns: 1fr; 
+        gap: 35px;
+        text-align: center;
       }
       .vision-box{ 
-        padding:32px 25px; 
-        border-radius:25px;
-        text-align:left;
+        padding: 30px 25px; 
+        text-align: left;
       }
-      .vision-box h3{ 
-        font-size:24px; 
-        text-align:center;
-      }
-      .vision-box p, .vision-box li{ font-size:14px; }
-      .vision-box ul{ padding-left:20px; }
-      .vision-image img{ 
-        max-width:300px; 
-        padding:15px;
-      }
+      .vision-box h3{ text-align: center; font-size: 24px; }
+      .vision-box p, .vision-box li{ font-size: 14px; }
+      .vision-image img{ max-width: 280px; }
 
-      /* Contact Mobile */
-      .contact-box{ gap:20px; }
-      .contact-card{ padding:30px 24px; }
-      .contact-card .icon{ 
-        font-size:34px; 
-        width:60px; 
-        height:60px;
-        margin:0 auto 12px;
-      }
-      .contact-card h3{ font-size:17px; }
-      .contact-card p{ font-size:13px; }
-
-      /* Floating WA Mobile */
-      .wa{ 
-        width:52px; 
-        height:52px; 
-        font-size:24px;
-        bottom:15px; 
-        right:15px;
-      }
-
-      /* Footer Mobile */
-      footer{ 
-        padding:25px 15px; 
-        font-size:13px;
-      }
+      /* --- CONTACT MOBILE --- */
+      .contact-box{ gap: 20px; }
+      .contact-card{ padding: 30px 20px; }
+      .contact-card .icon{ width: 55px; height: 55px; font-size: 30px; }
+      .contact-card h3{ font-size: 17px; }
+      
+      /* --- FOOTER MOBILE --- */
+      footer{ font-size: 13px; padding: 25px 15px; }
     }
 
     /* Small Mobile */
     @media(max-width: 480px){
-      section{ padding:55px 5%; }
-      .hero-content h1{ font-size:24px; }
-      .hero-content p{ font-size:13px; }
-      .section-title h2{ font-size:22px; }
-      .stat-box h2{ font-size:30px; }
-      .gallery-grid img{ height:150px; }
-      .card{ padding:25px 20px; }
-      .vision-box{ padding:28px 20px; }
-    }
-
-    /* Performance: Kurangi animasi di HP */
-    @media(max-width: 768px){
-      .slide{ transition:opacity 1s ease; }
-      .card:hover{ transform:none; }
-      .gallery-grid img:hover{ transform:none; }
-      .contact-card:hover{ transform:none; }
-    }
-
-    /* Dark mode support (opsional) */
-    @media(prefers-color-scheme: dark){
-      body{ background:#1a1a1a; color:#eee; }
-      nav{ background:rgba(26,26,26,0.95); }
-      .menu a{ color:#eee; }
-      .card, .contact-card{ background:#2a2a2a; }
-      .card p, .contact-card p{ color:#ccc; }
+      section{ padding: 55px 5%; }
+      .hero-content h1{ font-size: 24px; }
+      .stat-box h2{ font-size: 28px; }
+      .card{ padding: 25px 20px; }
     }
   </style>
 </head>
@@ -698,18 +684,28 @@
   <nav>
     <div class="nav-container">
       <div class="logo">
+        <!-- Pastikan nama file logo sesuai persis -->
         <img src="RAJ-LOGO-BERSIH.png" alt="Logo CV Rezeki Amanah Jaya">
         <div>
           <h2>CV REZEKI AMANAH JAYA</h2>
           <p>Supplier & Waste Solution Partner</p>
         </div>
       </div>
-      <div class="menu">
-        <a href="#about">Tentang</a>
-        <a href="#services">Layanan</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#vision">Visi Misi</a>
-        <a href="#contact">Kontak</a>
+      
+      <!-- TOMBOL HAMBURGER (Muncul di HP) -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <!-- MENU LINKS -->
+      <div class="menu" id="menu">
+        <a href="#about" class="menu-link">Tentang</a>
+        <a href="#services" class="menu-link">Layanan</a>
+        <a href="#gallery" class="menu-link">Gallery</a>
+        <a href="#vision" class="menu-link">Visi Misi</a>
+        <a href="#contact" class="menu-link">Kontak</a>
       </div>
     </div>
   </nav>
@@ -873,18 +869,16 @@
     <p>© 2026 CV Rezeki Amanah Jaya Group — All Rights Reserved</p>
   </footer>
 
-  <!-- AOS -->
+  <!-- SCRIPTS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    // Init AOS dengan deteksi mobile
-    const isMobile = window.innerWidth <= 768;
+    // Init AOS
     AOS.init({
-      duration: isMobile ? 600 : 1000,
-      once: true,
-      disable: isMobile && navigator.connection?.saveData // Matikan animasi jika hemat data
+      duration: 800,
+      once: true
     });
 
-    // Slideshow
+    // Slideshow Logic
     const slides = document.querySelectorAll('.slide');
     let index = 0;
     
@@ -894,22 +888,13 @@
       slides[index].classList.add('active');
     }
     
-    // Pause slideshow jika tab tidak aktif (hemat baterai)
-    let slideshowInterval;
-    function startSlideshow(){
-      slideshowInterval = setInterval(showSlide, 4000);
-    }
-    function pauseSlideshow(){
-      clearInterval(slideshowInterval);
-    }
+    let slideshowInterval = setInterval(showSlide, 4000);
     
     document.addEventListener('visibilitychange', () => {
-      document.hidden ? pauseSlideshow() : startSlideshow();
+      document.hidden ? clearInterval(slideshowInterval) : slideshowInterval = setInterval(showSlide, 4000);
     });
-    
-    startSlideshow();
 
-    // Smooth scroll untuk anchor links
+    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e){
         e.preventDefault();
@@ -918,6 +903,33 @@
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
+    });
+
+    // === HAMBURGER MENU LOGIC ===
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    const menuLinks = document.querySelectorAll('.menu-link');
+
+    // Toggle Menu
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      menu.classList.toggle('active');
+    });
+
+    // Close menu when link clicked
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        menu.classList.remove('active');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !hamburger.contains(e.target) && menu.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        menu.classList.remove('active');
+      }
     });
   </script>
 </body>
