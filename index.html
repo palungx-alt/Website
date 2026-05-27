@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CV Rezeki Amanah Jaya Group</title>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- ICON -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- AOS ANIMATION -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#f7faf7;
+      overflow-x:hidden;
+      color:#222;
+    }
+
+    /* SCROLLBAR */
+
+    ::-webkit-scrollbar{
+      width:10px;
+    }
+
+    ::-webkit-scrollbar-thumb{
+      background:#198754;
+      border-radius:20px;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      z-index:999;
+      background:rgba(255,255,255,0.93);
+      backdrop-filter:blur(10px);
+      box-shadow:0 2px 15px rgba(0,0,0,0.08);
+    }
+
+    .nav-container{
+      width:90%;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 0;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo img{
+      width:60px;
+    }
+
+    .logo h2{
+      font-size:18px;
+      color:#0d5c2f;
+      line-height:1.2;
+    }
+
+    .logo p{
+      font-size:12px;
+      color:#777;
+    }
+
+    .menu a{
+      margin-left:30px;
+      text-decoration:none;
+      color:#222;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    .menu a:hover{
+      color:#198754;
+    }
+
+    /* HERO */
+
+    .hero{
+      position:relative;
+      height:100vh;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      color:white;
+    }
+
+    .slideshow{
+      position:absolute;
+      width:100%;
+      height:100%;
+      top:0;
+      left:0;
+    }
+
+    .slide{
+      position:absolute;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      opacity:0;
+      transition:opacity 1.5s ease-in-out, transform 8s ease;
+      transform:scale(1);
+    }
+
+    .slide.active{
+      opacity:1;
+      transform:scale(1.08);
+    }
+
+    .overlay{
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:linear-gradient(
+      rgba(0,0,0,0.65),
+      rgba(0,0,0,0.55));
+      z-index:1;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:10;
+      width:90%;
+      margin:auto;
+      max-width:700px;
+    }
+
+    .hero-content h1{
+      font-size:75px;
+      line-height:1.1;
+      margin-bottom:25px;
+      font-weight:800;
+      animation:fadeUp 1s ease;
+    }
+
+    .hero-content p{
+      font-size:18px;
+      line-height:1.9;
+      margin-bottom:35px;
+      color:#f0f0f0;
+      animation:fadeUp 1.3s ease;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 35px;
+      background:#1f8a3c;
+      color:white;
+      text-decoration:none;
+      border-radius:50px;
+      font-weight:600;
+      transition:0.4s;
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .btn:hover{
+      background:#14652b;
+      transform:translateY(-5px);
+    }
+
+    /* FLOATING WA */
+
+    .wa{
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      width:65px;
+      height:65px;
+      background:#25D366;
+      color:white;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:30px;
+      z-index:999;
+      text-decoration:none;
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
+      animation:pulse 2s infinite;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:100px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:42px;
+      color:#0d5c2f;
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:#666;
+      max-width:700px;
+      margin:auto;
+    }
+
+    /* ABOUT */
+
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:30px;
+      background:white;
+      padding:30px;
+      box-shadow:0 15px 35px rgba(0,0,0,0.15);
+      animation:float 4s ease-in-out infinite;
+    }
+
+    .about-text h3{
+      font-size:38px;
+      color:#0d5c2f;
+      margin-bottom:25px;
+    }
+
+    .about-text p{
+      line-height:1.9;
+      margin-bottom:20px;
+      color:#555;
+    }
+
+    /* STATS */
+
+    .stats{
+      background:#0d5c2f;
+      color:white;
+    }
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:30px;
+      text-align:center;
+    }
+
+    .stat-box h2{
+      font-size:55px;
+      margin-bottom:10px;
+    }
+
+    .stat-box p{
+      color:#d9ffe2;
+    }
+
+    /* SERVICES */
+
+    .services{
+      background:#eef7f0;
+    }
+
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:white;
+      padding:40px 30px;
+      border-radius:25px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.08);
+      transition:0.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 15px 35px rgba(0,0,0,0.12);
+    }
+
+    .icon{
+      font-size:50px;
+      margin-bottom:20px;
+      color:#198754;
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#0d5c2f;
+    }
+
+    .card p{
+      color:#666;
+      line-height:1.8;
+    }
+
+    /* GALLERY */
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .gallery-grid img{
+      width:100%;
+      height:280px;
+      object-fit:cover;
+      border-radius:25px;
+      transition:0.5s;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .gallery-grid img:hover{
+      transform:scale(1.05);
+    }
+
+    /* VISION */
+
+    .vision-section{
+      background:
+      linear-gradient(to right,#0d5c2f,#1f8a3c);
+      color:white;
+    }
+
+    .vision-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .vision-box{
+      background:rgba(255,255,255,0.08);
+      padding:50px;
+      border-radius:35px;
+      backdrop-filter:blur(10px);
+    }
+
+    .vision-box h3{
+      font-size:35px;
+      margin-bottom:25px;
+    }
+
+    .vision-box p,
+    .vision-box li{
+      line-height:1.9;
+      color:#f0f0f0;
+    }
+
+    .vision-box ul{
+      padding-left:20px;
+    }
+
+    .vision-image img{
+      width:100%;
+      border-radius:30px;
+      background:white;
+      padding:20px;
+      box-shadow:0 15px 35px rgba(0,0,0,0.25);
+    }
+
+    /* CONTACT */
+
+    .contact-box{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+      margin-top:50px;
+    }
+
+    .contact-card{
+      background:white;
+      padding:40px;
+      border-radius:25px;
+      text-align:center;
+      box-shadow:0 5px 20px rgba(0,0,0,0.08);
+      transition:0.4s;
+    }
+
+    .contact-card:hover{
+      transform:translateY(-8px);
+    }
+
+    footer{
+      background:#082814;
+      color:white;
+      text-align:center;
+      padding:35px;
+    }
+
+    /* ANIMATION */
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(50px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-12px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+    @keyframes pulse{
+      0%{
+        transform:scale(1);
+      }
+
+      50%{
+        transform:scale(1.1);
+      }
+
+      100%{
+        transform:scale(1);
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      .hero-content h1{
+        font-size:48px;
+      }
+
+      .about,
+      .vision-grid{
+        grid-template-columns:1fr;
+      }
+
+      .menu{
+        display:none;
+      }
+
+      .vision-box{
+        padding:35px;
+      }
+
+      section{
+        padding:80px 7%;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- WHATSAPP -->
+
+  <a href="https://wa.me/6281234567890" class="wa">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="nav-container">
+
+      <div class="logo">
+
+        <img src="./RAJ-LOGO-BERSIH.png">
+
+        <div>
+          <h2>CV REZEKI AMANAH JAYA</h2>
+          <p>Supplier & Waste Solution Partner</p>
+        </div>
+
+      </div>
+
+      <div class="menu">
+        <a href="#about">Tentang</a>
+        <a href="#services">Layanan</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#vision">Visi Misi</a>
+        <a href="#contact">Kontak</a>
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="slideshow">
+
+      <img class="slide active"
+      src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1600&auto=format&fit=crop">
+
+      <img class="slide"
+      src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop">
+
+      <img class="slide"
+      src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1600&auto=format&fit=crop">
+
+      <img class="slide"
+      src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600&auto=format&fit=crop">
+
+      <img class="slide"
+      src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop">
+
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+      <h1>
+        Sustainable <br>
+        Business Solution
+      </h1>
+
+      <p>
+        CV Rezeki Amanah Jaya Group hadir sebagai partner terpercaya
+        dalam bidang Food Production, Waste Management,
+        Logistics, dan Social Impact dengan solusi profesional,
+        amanah, dan berkelanjutan.
+      </p>
+
+      <a href="#services" class="btn">
+        Lihat Layanan
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="section-title" data-aos="fade-up">
+
+      <h2>Tentang Perusahaan</h2>
+
+      <p>
+        Solusi bisnis terintegrasi untuk pangan,
+        lingkungan, logistik, dan pemberdayaan masyarakat.
+      </p>
+
+    </div>
+
+    <div class="about">
+
+      <div class="about-text" data-aos="fade-right">
+
+        <h3>Company Overview</h3>
+
+        <p>
+          CV Rezeki Amanah Jaya Group merupakan perusahaan
+          yang bergerak di bidang Food Production,
+          Waste Management, Logistics,
+          dan Social Impact.
+        </p>
+
+        <p>
+          Berbasis di Tangerang dan berkembang ke Jabodetabek
+          serta Jawa Tengah dengan fokus pada kualitas,
+          keberlanjutan, dan profesionalisme.
+        </p>
+
+        <a href="#" class="btn">
+          Pelajari Selengkapnya
+        </a>
+
+      </div>
+
+      <div data-aos="fade-left">
+        <img src="./RAJ-LOGO-BERSIH.png">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STATS -->
+
+  <section class="stats">
+
+    <div class="stats-grid">
+
+      <div class="stat-box" data-aos="zoom-in">
+        <h2>4+</h2>
+        <p>Divisi Bisnis</p>
+      </div>
+
+      <div class="stat-box" data-aos="zoom-in">
+        <h2>2026</h2>
+        <p>Tahun Berdiri</p>
+      </div>
+
+      <div class="stat-box" data-aos="zoom-in">
+        <h2>100%</h2>
+        <p>Professional Service</p>
+      </div>
+
+      <div class="stat-box" data-aos="zoom-in">
+        <h2>24/7</h2>
+        <p>Support Service</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section class="services" id="services">
+
+    <div class="section-title" data-aos="fade-up">
+
+      <h2>Divisi Layanan</h2>
+
+      <p>
+        Solusi lengkap untuk kebutuhan perusahaan modern.
+      </p>
+
+    </div>
+
+    <div class="service-grid">
+
+      <div class="card" data-aos="fade-up">
+
+        <div class="icon">
+          <i class="fas fa-utensils"></i>
+        </div>
+
+        <h3>Food & Culinary</h3>
+
+        <p>
+          Produksi makanan olahan, frozen food,
+          catering, dan distribusi F&B.
+        </p>
+
+      </div>
+
+      <div class="card" data-aos="fade-up">
+
+        <div class="icon">
+          <i class="fas fa-recycle"></i>
+        </div>
+
+        <h3>Waste Management</h3>
+
+        <p>
+          Pengelolaan limbah, minyak jelantah,
+          dan solusi lingkungan berkelanjutan.
+        </p>
+
+      </div>
+
+      <div class="card" data-aos="fade-up">
+
+        <div class="icon">
+          <i class="fas fa-truck"></i>
+        </div>
+
+        <h3>Logistics</h3>
+
+        <p>
+          Gudang, distribusi terjadwal,
+          dan sistem logistik efisien.
+        </p>
+
+      </div>
+
+      <div class="card" data-aos="fade-up">
+
+        <div class="icon">
+          <i class="fas fa-handshake"></i>
+        </div>
+
+        <h3>Social Impact</h3>
+
+        <p>
+          Pemberdayaan masyarakat,
+          UMKM, dan program sosial.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- GALLERY -->
+
+  <section id="gallery">
+
+    <div class="section-title" data-aos="fade-up">
+
+      <h2>Company Gallery</h2>
+
+      <p>
+        Aktivitas dan layanan profesional CV Rezeki Amanah Jaya Group.
+      </p>
+
+    </div>
+
+    <div class="gallery-grid">
+
+      <img data-aos="zoom-in"
+      src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop">
+
+      <img data-aos="zoom-in"
+      src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1200&auto=format&fit=crop">
+
+      <img data-aos="zoom-in"
+      src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop">
+
+      <img data-aos="zoom-in"
+      src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1200&auto=format&fit=crop">
+
+      <img data-aos="zoom-in"
+      src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop">
+
+      <img data-aos="zoom-in"
+      src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop">
+
+    </div>
+
+  </section>
+
+  <!-- VISI MISI -->
+
+  <section class="vision-section" id="vision">
+
+    <div class="section-title">
+
+      <h2 style="color:white;">Visi & Misi</h2>
+
+      <p style="color:#d7f5dd;">
+        Membangun solusi bisnis yang amanah,
+        profesional, dan berkelanjutan.
+      </p>
+
+    </div>
+
+    <div class="vision-grid">
+
+      <div class="vision-box" data-aos="fade-right">
+
+        <h3>Visi</h3>
+
+        <p>
+          Menjadi mitra solusi terintegrasi terdepan
+          yang menghubungkan keberlanjutan pangan,
+          tanggung jawab lingkungan,
+          dan pemberdayaan masyarakat di Indonesia.
+        </p>
+
+        <br><br>
+
+        <h3>Misi</h3>
+
+        <ul>
+          <li>Menyediakan produk dan jasa berkualitas tinggi.</li>
+          <li>Mengelola limbah secara bertanggung jawab.</li>
+          <li>Membangun sistem logistik efisien.</li>
+          <li>Menciptakan dampak sosial positif.</li>
+        </ul>
+
+      </div>
+
+      <div class="vision-image" data-aos="fade-left">
+
+        <img src="./RAJ-LOGO-BERSIH.png">
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="section-title">
+
+      <h2>Kontak Kami</h2>
+
+      <p>
+        Siap menjadi partner bisnis terpercaya perusahaan Anda.
+      </p>
+
+    </div>
+
+    <div class="contact-box">
+
+      <div class="contact-card" data-aos="fade-up">
+
+        <div class="icon">
+          <i class="fas fa-location-dot"></i>
+        </div>
+
+        <h3>Alamat</h3>
+
+        <p>
+          Flamingo Fla 06 No.19,
+          Sukamantri, Pasarkemis,
+          Tangerang
+        </p>
+
+      </div>
+
+      <div class="contact-card" data-aos="fade-up">
+
+        <div class="icon">
+          <i class="fas fa-phone"></i>
+        </div>
+
+        <h3>Telepon</h3>
+
+        <p>+62 812-9658-0968</p>
+
+      </div>
+
+      <div class="contact-card" data-aos="fade-up">
+
+        <div class="icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+
+        <h3>Email</h3>
+
+        <p>rezekiamanahjaya@gmail.com</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      © 2026 CV Rezeki Amanah Jaya Group
+      — All Rights Reserved
+    </p>
+
+  </footer>
+
+  <!-- AOS -->
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+
+    AOS.init({
+      duration:1000,
+      once:true
+    });
+
+    // SLIDESHOW
+
+    const slides = document.querySelectorAll('.slide');
+
+    let index = 0;
+
+    function showSlide(){
+
+      slides.forEach((slide)=>{
+        slide.classList.remove('active');
+      });
+
+      index++;
+
+      if(index >= slides.length){
+        index = 0;
+      }
+
+      slides[index].classList.add('active');
+
+    }
+
+    setInterval(showSlide, 4000);
+
+  </script>
+
+</body>
+</html>
