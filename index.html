@@ -1,156 +1,152 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="description" content="CV Rezeki Amanah Jaya Group - Partner terpercaya Food Production, Waste Management, Logistics, dan Social Impact">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>CV Rezeki Amanah Jaya Group</title>
 
-  <!-- GOOGLE FONT -->
+  <!-- FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- ICON -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
-  <!-- AOS ANIMATION -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
-    /* RESET & GLOBAL */
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
       scroll-behavior:smooth;
-      -webkit-tap-highlight-color: transparent;
     }
 
     body{
       font-family:'Poppins',sans-serif;
       background:#f7faf7;
-      overflow-x:hidden;
       color:#222;
-      font-size:16px;
-      line-height:1.6;
+      overflow-x:hidden;
     }
 
-    /* SCROLLBAR */
-    ::-webkit-scrollbar{ width:8px; }
-    ::-webkit-scrollbar-thumb{ background:#198754; border-radius:20px; }
-
     /* NAVBAR */
+
     nav{
       position:fixed;
-      width:100%;
       top:0;
-      left:0;
+      width:100%;
       z-index:999;
       background:rgba(255,255,255,0.95);
       backdrop-filter:blur(10px);
       box-shadow:0 2px 15px rgba(0,0,0,0.08);
-      padding:10px 0;
-      transition:padding 0.3s;
     }
 
     .nav-container{
-      width:92%;
-      max-width:1200px;
+      width:90%;
       margin:auto;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:5px 0;
-      position: relative; /* Penting untuk hamburger menu */
+      padding:15px 0;
     }
 
     .logo{
       display:flex;
       align-items:center;
-      gap:10px;
+      gap:12px;
     }
 
     .logo img{
-      width:50px;
-      height:auto;
-      object-fit:contain;
+      width:60px;
     }
 
     .logo h2{
-      font-size:16px;
+      font-size:18px;
       color:#0d5c2f;
       line-height:1.2;
-      font-weight:600;
     }
 
     .logo p{
-      font-size:11px;
-      color:#777;
-      margin:0;
+      font-size:12px;
+      color:#666;
     }
 
-    /* MENU (DESKTOP) */
     .menu{
-      display: flex;
-      align-items: center;
+      display:flex;
+      align-items:center;
     }
 
     .menu a{
-      margin-left:20px;
+      margin-left:25px;
       text-decoration:none;
       color:#222;
       font-weight:500;
-      font-size:14px;
       transition:0.3s;
-      padding:8px 12px;
-      border-radius:8px;
     }
 
     .menu a:hover{
       color:#198754;
-      background:rgba(25,135,84,0.1);
     }
 
-    /* HAMBURGER BUTTON (Hidden by default on Desktop) */
-    .hamburger{
-      display:none;
-      flex-direction:column;
-      gap:5px;
+    /* DROPDOWN */
+
+    .dropdown{
+      position:relative;
+    }
+
+    .dropbtn{
       background:none;
       border:none;
+      margin-left:25px;
       cursor:pointer;
-      padding:8px;
-      z-index:1001;
+      font-family:'Poppins',sans-serif;
+      font-size:15px;
+      font-weight:500;
+      color:#222;
     }
 
-    .hamburger span{
-      width:25px;
-      height:3px;
-      background:#0d5c2f;
-      border-radius:3px;
-      transition:0.3s;
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      background:white;
+      min-width:260px;
+      top:40px;
+      border-radius:15px;
+      overflow:hidden;
+      box-shadow:0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    .dropdown-content a{
+      display:block;
+      padding:14px 18px;
+      margin:0;
+    }
+
+    .dropdown-content a:hover{
+      background:#eef7f0;
+    }
+
+    .dropdown:hover .dropdown-content{
+      display:block;
     }
 
     /* HERO */
+
     .hero{
       position:relative;
-      min-height:100vh;
-      height:auto;
+      height:100vh;
       overflow:hidden;
       display:flex;
       align-items:center;
       color:white;
-      padding-top:80px;
-      padding-bottom:40px;
     }
 
     .slideshow{
       position:absolute;
       width:100%;
       height:100%;
-      top:0;
-      left:0;
     }
 
     .slide{
@@ -159,120 +155,84 @@
       height:100%;
       object-fit:cover;
       opacity:0;
-      transition:opacity 1.5s ease-in-out, transform 8s ease;
-      transform:scale(1);
+      transition:opacity 1.5s ease;
     }
 
     .slide.active{
       opacity:1;
-      transform:scale(1.05);
     }
 
     .overlay{
       position:absolute;
       width:100%;
       height:100%;
-      background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6));
-      z-index:1;
+      background:rgba(0,0,0,0.6);
     }
 
     .hero-content{
       position:relative;
-      z-index:10;
+      z-index:2;
       width:90%;
-      max-width:650px;
       margin:auto;
-      text-align:center;
-      padding:20px 0;
+      max-width:750px;
     }
 
     .hero-content h1{
-      font-size:clamp(28px, 8vw, 60px);
-      line-height:1.15;
-      margin-bottom:20px;
+      font-size:75px;
+      line-height:1.1;
+      margin-bottom:25px;
       font-weight:800;
-      animation:fadeUp 1s ease;
-      text-shadow:2px 2px 4px rgba(0,0,0,0.3);
     }
 
     .hero-content p{
-      font-size:clamp(14px, 4vw, 18px);
-      line-height:1.7;
-      margin-bottom:30px;
-      color:#f0f0f0;
-      animation:fadeUp 1.3s ease;
-      text-shadow:1px 1px 3px rgba(0,0,0,0.3);
+      font-size:18px;
+      line-height:1.9;
+      margin-bottom:35px;
+      color:#f1f1f1;
     }
 
     .btn{
       display:inline-block;
-      padding:14px 32px;
-      background:#1f8a3c;
+      background:#198754;
       color:white;
-      text-decoration:none;
+      padding:15px 35px;
       border-radius:50px;
+      text-decoration:none;
       font-weight:600;
-      font-size:15px;
       transition:0.3s;
-      box-shadow:0 8px 20px rgba(0,0,0,0.2);
-      min-height:48px; /* Touch friendly */
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin: 0 auto; /* Center button on mobile */
     }
 
     .btn:hover{
-      background:#14652b;
-      transform:translateY(-3px);
-      box-shadow:0 12px 28px rgba(0,0,0,0.25);
-    }
-
-    /* FLOATING WA */
-    .wa{
-      position:fixed;
-      bottom:20px;
-      right:20px;
-      width:58px;
-      height:58px;
-      background:#25D366;
-      color:white;
-      border-radius:50%;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      font-size:28px;
-      z-index:999;
-      text-decoration:none;
-      box-shadow:0 8px 25px rgba(37,211,102,0.4);
-      animation:pulse 2s infinite;
+      background:#0d5c2f;
+      transform:translateY(-5px);
     }
 
     /* SECTION */
+
     section{
-      padding:80px 8%;
+      padding:100px 10%;
     }
 
     .section-title{
       text-align:center;
-      margin-bottom:50px;
+      margin-bottom:60px;
     }
 
     .section-title h2{
-      font-size:clamp(24px, 6vw, 42px);
+      font-size:42px;
       color:#0d5c2f;
-      margin-bottom:12px;
-      font-weight:700;
+      margin-bottom:15px;
     }
 
     .section-title p{
-      color:#666;
-      max-width:650px;
+      max-width:700px;
       margin:auto;
-      font-size:15px;
+      color:#666;
+      line-height:1.8;
     }
 
     /* ABOUT */
+
     .about{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -282,655 +242,527 @@
 
     .about img{
       width:100%;
-      max-width:450px;
-      border-radius:25px;
-      background:white;
-      padding:25px;
-      box-shadow:0 15px 35px rgba(0,0,0,0.12);
-      animation:float 4s ease-in-out infinite;
-      display:block;
-      margin:0 auto;
+      border-radius:30px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
     }
 
     .about-text h3{
-      font-size:clamp(22px, 5vw, 38px);
+      font-size:38px;
       color:#0d5c2f;
       margin-bottom:20px;
-      font-weight:700;
     }
 
     .about-text p{
-      line-height:1.8;
+      line-height:1.9;
       margin-bottom:18px;
       color:#555;
-      font-size:15px;
-    }
-
-    /* STATS */
-    .stats{
-      background:#0d5c2f;
-      color:white;
-      padding:60px 8%;
-    }
-
-    .stats-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-      gap:25px;
-      text-align:center;
-    }
-
-    .stat-box h2{
-      font-size:clamp(36px, 8vw, 55px);
-      margin-bottom:8px;
-      font-weight:800;
-      line-height:1;
-    }
-
-    .stat-box p{
-      color:#d9ffe2;
-      font-size:14px;
-      font-weight:500;
     }
 
     /* SERVICES */
+
     .services{
       background:#eef7f0;
     }
 
     .service-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:25px;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
     }
 
     .card{
       background:white;
-      padding:35px 28px;
-      border-radius:22px;
+      padding:40px 30px;
+      border-radius:25px;
       box-shadow:0 5px 20px rgba(0,0,0,0.08);
-      transition:0.3s;
+      transition:0.4s;
     }
 
     .card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 15px 35px rgba(0,0,0,0.12);
+      transform:translateY(-10px);
     }
 
     .icon{
-      font-size:45px;
-      margin-bottom:18px;
+      font-size:50px;
       color:#198754;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      width:70px;
-      height:70px;
-      margin-left:auto;
-      margin-right:auto;
-      background:rgba(25,135,84,0.1);
-      border-radius:50%;
+      margin-bottom:20px;
     }
 
     .card h3{
-      margin-bottom:12px;
+      margin-bottom:15px;
       color:#0d5c2f;
-      font-size:20px;
-      text-align:center;
-      font-weight:600;
     }
 
     .card p{
+      line-height:1.8;
       color:#666;
-      line-height:1.7;
-      font-size:14px;
-      text-align:center;
     }
 
     /* GALLERY */
+
     .gallery-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:20px;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
     }
 
     .gallery-grid img{
       width:100%;
-      height:220px;
+      height:260px;
       object-fit:cover;
-      border-radius:20px;
+      border-radius:25px;
       transition:0.4s;
-      box-shadow:0 8px 20px rgba(0,0,0,0.08);
-      cursor:pointer;
     }
 
     .gallery-grid img:hover{
-      transform:scale(1.03);
-      box-shadow:0 12px 30px rgba(0,0,0,0.15);
-    }
-
-    /* VISION */
-    .vision-section{
-      background:linear-gradient(135deg,#0d5c2f,#1f8a3c);
-      color:white;
-    }
-
-    .vision-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:45px;
-      align-items:center;
-    }
-
-    .vision-box{
-      background:rgba(255,255,255,0.1);
-      padding:40px 35px;
-      border-radius:30px;
-      backdrop-filter:blur(10px);
-      border:1px solid rgba(255,255,255,0.15);
-    }
-
-    .vision-box h3{
-      font-size:28px;
-      margin-bottom:20px;
-      font-weight:700;
-    }
-
-    .vision-box p,
-    .vision-box li{
-      line-height:1.8;
-      color:#f0f0f0;
-      font-size:15px;
-    }
-
-    .vision-box ul{
-      padding-left:22px;
-      margin-top:10px;
-    }
-
-    .vision-box li{
-      margin-bottom:8px;
-    }
-
-    .vision-image img{
-      width:100%;
-      max-width:400px;
-      border-radius:25px;
-      background:white;
-      padding:18px;
-      box-shadow:0 15px 35px rgba(0,0,0,0.25);
-      display:block;
-      margin:0 auto;
+      transform:scale(1.04);
     }
 
     /* CONTACT */
-    .contact-box{
+
+    .contact-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:25px;
-      margin-top:40px;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
     }
 
     .contact-card{
       background:white;
-      padding:35px 28px;
-      border-radius:22px;
+      padding:40px;
+      border-radius:25px;
       text-align:center;
       box-shadow:0 5px 20px rgba(0,0,0,0.08);
-      transition:0.3s;
     }
 
-    .contact-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 12px 28px rgba(0,0,0,0.12);
-    }
-
-    .contact-card .icon{
-      font-size:38px;
-      margin-bottom:15px;
-      width:65px;
-      height:65px;
-    }
-
-    .contact-card h3{
-      font-size:18px;
-      margin-bottom:10px;
-      color:#0d5c2f;
-    }
-
-    .contact-card p{
-      color:#555;
-      font-size:14px;
-      line-height:1.6;
-    }
-
-    /* FOOTER */
     footer{
       background:#082814;
       color:white;
       text-align:center;
-      padding:30px 20px;
-      font-size:14px;
+      padding:35px;
     }
 
-    /* ANIMATION */
-    @keyframes fadeUp{
-      from{ opacity:0; transform:translateY(40px); }
-      to{ opacity:1; transform:translateY(0); }
+    /* WA BUTTON */
+
+    .wa{
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      width:65px;
+      height:65px;
+      background:#25D366;
+      color:white;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-decoration:none;
+      font-size:30px;
+      z-index:999;
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
     }
 
-    @keyframes float{
-      0%,100%{ transform:translateY(0px); }
-      50%{ transform:translateY(-10px); }
-    }
+    /* RESPONSIVE */
 
-    @keyframes pulse{
-      0%,100%{ transform:scale(1); }
-      50%{ transform:scale(1.08); }
-    }
+    @media(max-width:900px){
 
-    /* ===== MOBILE OPTIMIZATION (HP) ===== */
-    
-    @media(max-width: 992px){
-      section{ padding:70px 6%; }
-      .hero-content h1{ font-size:48px; }
-      .about{ gap:40px; }
-    }
+      .hero-content h1{
+        font-size:48px;
+      }
 
-    @media(max-width: 768px){
-      body{ font-size:15px; }
-      
-      /* --- NAVBAR MOBILE --- */
-      .hamburger{ display: flex; } /* Tampilkan tombol hamburger */
-      
+      .about{
+        grid-template-columns:1fr;
+      }
+
       .menu{
-        position: fixed;
-        top: 75px; /* Posisi di bawah navbar */
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        padding: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        transform: translateY(-150%); /* Sembunyi ke atas */
-        transition: transform 0.4s ease;
-        z-index: 998;
-        gap: 5px;
-        border-radius: 0 0 20px 20px;
-      }
-      
-      .menu.active{
-        transform: translateY(0); /* Muncul ke bawah */
-      }
-      
-      .menu a{
-        margin: 0;
-        padding: 15px 20px;
-        font-size: 16px;
-        border-bottom: 1px solid #f0f0f0;
-        display: block;
-        text-align: center;
-        width: 100%;
-      }
-      
-      .menu a:last-child{ border-bottom: none; }
-      
-      /* Animasi Hamburger jadi X */
-      .hamburger.active span:nth-child(1){
-        transform: rotate(45deg) translate(5px, 6px);
-      }
-      .hamburger.active span:nth-child(2){
-        opacity: 0;
-      }
-      .hamburger.active span:nth-child(3){
-        transform: rotate(-45deg) translate(5px, -6px);
+        display:none;
       }
 
-      /* --- HERO MOBILE --- */
-      .hero{ 
-        min-height:100vh; 
-        padding-top:90px; /* Ruang lebih untuk navbar */
-      }
-      .hero-content{ 
-        max-width: 95%; 
-      }
-      .hero-content h1{ 
-        font-size: 30px;
-        margin-bottom: 15px;
-      }
-      .hero-content p{ 
-        font-size: 14px;
-        margin-bottom: 25px;
-      }
-      .btn{ 
-        width: 100%; 
-        max-width: 250px; 
+      section{
+        padding:80px 7%;
       }
 
-      /* --- ABOUT MOBILE --- */
-      .about{ 
-        grid-template-columns:1fr; 
-        gap: 35px;
-        text-align: center;
-      }
-      .about img{ 
-        max-width: 320px; 
-        padding: 15px; 
-        animation: none; /* Matikan animasi float di HP */
-      }
-      .about-text h3{ text-align: center; font-size: 26px; }
-      .about-text p{ text-align: justify; font-size: 14px; }
-
-      /* --- STATS MOBILE --- */
-      .stats{ padding: 50px 5%; }
-      .stats-grid{ gap: 20px; }
-      .stat-box h2{ font-size: 32px; }
-
-      /* --- SERVICES MOBILE --- */
-      .service-grid{ gap: 22px; }
-      .card{ padding: 30px 24px; }
-      .icon{ width: 60px; height: 60px; font-size: 35px; margin-bottom: 15px; }
-      .card h3{ font-size: 18px; }
-
-      /* --- GALLERY MOBILE --- */
-      .gallery-grid{ 
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
-        gap: 15px;
-      }
-      .gallery-grid img{ height: 150px; border-radius: 15px; }
-
-      /* --- VISION MOBILE --- */
-      .vision-grid{ 
-        grid-template-columns: 1fr; 
-        gap: 35px;
-        text-align: center;
-      }
-      .vision-box{ 
-        padding: 30px 25px; 
-        text-align: left;
-      }
-      .vision-box h3{ text-align: center; font-size: 24px; }
-      .vision-box p, .vision-box li{ font-size: 14px; }
-      .vision-image img{ max-width: 280px; }
-
-      /* --- CONTACT MOBILE --- */
-      .contact-box{ gap: 20px; }
-      .contact-card{ padding: 30px 20px; }
-      .contact-card .icon{ width: 55px; height: 55px; font-size: 30px; }
-      .contact-card h3{ font-size: 17px; }
-      
-      /* --- FOOTER MOBILE --- */
-      footer{ font-size: 13px; padding: 25px 15px; }
     }
 
-    /* Small Mobile */
-    @media(max-width: 480px){
-      section{ padding: 55px 5%; }
-      .hero-content h1{ font-size: 24px; }
-      .stat-box h2{ font-size: 28px; }
-      .card{ padding: 25px 20px; }
-    }
   </style>
+
 </head>
 
 <body>
 
-  <!-- WHATSAPP FLOATING -->
-  <a href="https://wa.me/6281296580968" class="wa" target="_blank" aria-label="Chat WhatsApp">
+  <!-- WA -->
+
+  <a href="https://wa.me/6281234567890" class="wa">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <!-- NAVBAR -->
+
   <nav>
+
     <div class="nav-container">
+
       <div class="logo">
-        <!-- Pastikan nama file logo sesuai persis -->
-        <img src="RAJ-LOGO-BERSIH.png" alt="Logo CV Rezeki Amanah Jaya">
+
+        <img src="./RAJ-LOGO-BERSIH.png" alt="Logo">
+
         <div>
           <h2>CV REZEKI AMANAH JAYA</h2>
           <p>Supplier & Waste Solution Partner</p>
         </div>
+
       </div>
-      
-      <!-- TOMBOL HAMBURGER (Muncul di HP) -->
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <!-- MENU LINKS -->
-      <div class="menu" id="menu">
-        <a href="#about" class="menu-link">Tentang</a>
-        <a href="#services" class="menu-link">Layanan</a>
-        <a href="#gallery" class="menu-link">Gallery</a>
-        <a href="#vision" class="menu-link">Visi Misi</a>
-        <a href="#contact" class="menu-link">Kontak</a>
+
+      <div class="menu">
+
+        <a href="#about">Tentang</a>
+
+        <a href="#services">Layanan</a>
+
+        <!-- DROPDOWN -->
+
+        <div class="dropdown">
+
+          <button class="dropbtn">
+            Artikel ▼
+          </button>
+
+          <div class="dropdown-content">
+
+            <a href="jelantah.html">
+              Minyak Jelantah
+            </a>
+
+            <a href="biodisel.html">
+              Biodisel
+            </a>
+
+            <a href="daur-ulang.html">
+              Daur Ulang
+            </a>
+
+            <a href="sustainability.html">
+              Sustainability
+            </a>
+
+            <a href="csr-perusahaan.html">
+              CSR Perusahaan
+            </a>
+
+            <a href="logistik-ramah-lingkungan.html">
+              Logistik Ramah Lingkungan
+            </a>
+
+          </div>
+
+        </div>
+
+        <a href="#gallery">Gallery</a>
+
+        <a href="#contact">Kontak</a>
+
       </div>
+
     </div>
+
   </nav>
 
   <!-- HERO -->
+
   <section class="hero">
+
     <div class="slideshow">
-      <img class="slide active" src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1600&auto=format&fit=crop" alt="Sustainable Business">
-      <img class="slide" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop" alt="Food Production">
-      <img class="slide" src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1600&auto=format&fit=crop" alt="Waste Management">
-      <img class="slide" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600&auto=format&fit=crop" alt="Logistics">
-      <img class="slide" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop" alt="Social Impact">
+
+      <img class="slide active"
+      src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1600&auto=format&fit=crop">
+
+      <img class="slide"
+      src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop">
+
+      <img class="slide"
+      src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1600&auto=format&fit=crop">
+
+      <img class="slide"
+      src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop">
+
     </div>
+
     <div class="overlay"></div>
+
     <div class="hero-content">
-      <h1>Sustainable <br>Business Solution</h1>
-      <p>CV Rezeki Amanah Jaya Group hadir sebagai partner terpercaya dalam bidang Food Production, Waste Management, Logistics, dan Social Impact dengan solusi profesional, amanah, dan berkelanjutan.</p>
-      <a href="#services" class="btn">Lihat Layanan</a>
+
+      <h1>
+        Sustainable <br>
+        Business Solution
+      </h1>
+
+      <p>
+        CV Rezeki Amanah Jaya Group hadir sebagai partner terpercaya
+        dalam bidang Waste Management, Food Supplier,
+        Logistics, dan Sustainability.
+      </p>
+
+      <a href="#services" class="btn">
+        Jelajahi Layanan
+      </a>
+
     </div>
+
   </section>
 
   <!-- ABOUT -->
-  <section id="about">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Tentang Perusahaan</h2>
-      <p>Solusi bisnis terintegrasi untuk pangan, lingkungan, logistik, dan pemberdayaan masyarakat.</p>
-    </div>
-    <div class="about">
-      <div class="about-text" data-aos="fade-right">
-        <h3>Company Overview</h3>
-        <p>CV Rezeki Amanah Jaya Group merupakan perusahaan yang bergerak di bidang Food Production, Waste Management, Logistics, dan Social Impact.</p>
-        <p>Berbasis di Tangerang dan berkembang ke Jabodetabek serta Jawa Tengah dengan fokus pada kualitas, keberlanjutan, dan profesionalisme.</p>
-        <a href="#services" class="btn">Pelajari Selengkapnya</a>
-      </div>
-      <div data-aos="fade-left">
-        <img src="RAJ-LOGO-BERSIH.png" alt="Tentang Perusahaan">
-      </div>
-    </div>
-  </section>
 
-  <!-- STATS -->
-  <section class="stats">
-    <div class="stats-grid">
-      <div class="stat-box" data-aos="zoom-in">
-        <h2>4+</h2>
-        <p>Divisi Bisnis</p>
-      </div>
-      <div class="stat-box" data-aos="zoom-in">
-        <h2>2026</h2>
-        <p>Tahun Berdiri</p>
-      </div>
-      <div class="stat-box" data-aos="zoom-in">
-        <h2>100%</h2>
-        <p>Professional Service</p>
-      </div>
-      <div class="stat-box" data-aos="zoom-in">
-        <h2>24/7</h2>
-        <p>Support Service</p>
-      </div>
+  <section id="about">
+
+    <div class="section-title">
+
+      <h2>Tentang Perusahaan</h2>
+
+      <p>
+        Solusi bisnis modern untuk pengelolaan limbah,
+        energi hijau, dan logistik berkelanjutan.
+      </p>
+
     </div>
+
+    <div class="about">
+
+      <div>
+
+        <img
+        src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop">
+
+      </div>
+
+      <div class="about-text">
+
+        <h3>Company Overview</h3>
+
+        <p>
+          CV Rezeki Amanah Jaya Group merupakan perusahaan
+          yang bergerak dalam bidang pengelolaan minyak jelantah,
+          distribusi, supplier, dan solusi sustainability.
+        </p>
+
+        <p>
+          Kami mendukung energi hijau melalui pengumpulan
+          limbah minyak jelantah yang disalurkan
+          ke pabrik biodiesel.
+        </p>
+
+        <a href="#contact" class="btn">
+          Hubungi Kami
+        </a>
+
+      </div>
+
+    </div>
+
   </section>
 
   <!-- SERVICES -->
+
   <section class="services" id="services">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Divisi Layanan</h2>
-      <p>Solusi lengkap untuk kebutuhan perusahaan modern.</p>
+
+    <div class="section-title">
+
+      <h2>Layanan Kami</h2>
+
+      <p>
+        Divisi bisnis profesional dan berkelanjutan.
+      </p>
+
     </div>
+
     <div class="service-grid">
-      <div class="card" data-aos="fade-up">
-        <div class="icon"><i class="fas fa-utensils"></i></div>
-        <h3>Food & Culinary</h3>
-        <p>Produksi makanan olahan, frozen food, catering, dan distribusi F&B.</p>
-      </div>
-      <div class="card" data-aos="fade-up">
-        <div class="icon"><i class="fas fa-recycle"></i></div>
+
+      <div class="card">
+
+        <div class="icon">
+          <i class="fas fa-recycle"></i>
+        </div>
+
         <h3>Waste Management</h3>
-        <p>Pengelolaan limbah, minyak jelantah, dan solusi lingkungan berkelanjutan.</p>
+
+        <p>
+          Pengelolaan limbah dan minyak jelantah profesional.
+        </p>
+
       </div>
-      <div class="card" data-aos="fade-up">
-        <div class="icon"><i class="fas fa-truck"></i></div>
-        <h3>Logistics</h3>
-        <p>Gudang, distribusi terjadwal, dan sistem logistik efisien.</p>
+
+      <div class="card">
+
+        <div class="icon">
+          <i class="fas fa-oil-can"></i>
+        </div>
+
+        <h3>Biodiesel Solution</h3>
+
+        <p>
+          Penyaluran minyak jelantah ke pabrik biodiesel.
+        </p>
+
       </div>
-      <div class="card" data-aos="fade-up">
-        <div class="icon"><i class="fas fa-handshake"></i></div>
-        <h3>Social Impact</h3>
-        <p>Pemberdayaan masyarakat, UMKM, dan program sosial.</p>
+
+      <div class="card">
+
+        <div class="icon">
+          <i class="fas fa-truck"></i>
+        </div>
+
+        <h3>Green Logistics</h3>
+
+        <p>
+          Distribusi dan logistik ramah lingkungan.
+        </p>
+
       </div>
+
+      <div class="card">
+
+        <div class="icon">
+          <i class="fas fa-leaf"></i>
+        </div>
+
+        <h3>Sustainability</h3>
+
+        <p>
+          Solusi bisnis hijau dan sustainability perusahaan.
+        </p>
+
+      </div>
+
     </div>
+
   </section>
 
   <!-- GALLERY -->
-  <section id="gallery">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Company Gallery</h2>
-      <p>Aktivitas dan layanan profesional CV Rezeki Amanah Jaya Group.</p>
-    </div>
-    <div class="gallery-grid">
-      <img data-aos="zoom-in" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop" alt="Gallery 1">
-      <img data-aos="zoom-in" src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1200&auto=format&fit=crop" alt="Gallery 2">
-      <img data-aos="zoom-in" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop" alt="Gallery 3">
-      <img data-aos="zoom-in" src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1200&auto=format&fit=crop" alt="Gallery 4">
-      <img data-aos="zoom-in" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop" alt="Gallery 5">
-      <img data-aos="zoom-in" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop" alt="Gallery 6">
-    </div>
-  </section>
 
-  <!-- VISI MISI -->
-  <section class="vision-section" id="vision">
+  <section id="gallery">
+
     <div class="section-title">
-      <h2 style="color:white;">Visi & Misi</h2>
-      <p style="color:#d7f5dd;">Membangun solusi bisnis yang amanah, profesional, dan berkelanjutan.</p>
+
+      <h2>Gallery Perusahaan</h2>
+
+      <p>
+        Aktivitas dan layanan profesional perusahaan.
+      </p>
+
     </div>
-    <div class="vision-grid">
-      <div class="vision-box" data-aos="fade-right">
-        <h3>Visi</h3>
-        <p>Menjadi mitra solusi terintegrasi terdepan yang menghubungkan keberlanjutan pangan, tanggung jawab lingkungan, dan pemberdayaan masyarakat di Indonesia.</p>
-        <br>
-        <h3>Misi</h3>
-        <ul>
-          <li>Menyediakan produk dan jasa berkualitas tinggi.</li>
-          <li>Mengelola limbah secara bertanggung jawab.</li>
-          <li>Membangun sistem logistik efisien.</li>
-          <li>Menciptakan dampak sosial positif.</li>
-        </ul>
-      </div>
-      <div class="vision-image" data-aos="fade-left">
-        <img src="RAJ-LOGO-BERSIH.png" alt="Visi Misi">
-      </div>
+
+    <div class="gallery-grid">
+
+      <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop">
+
+      <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1200&auto=format&fit=crop">
+
+      <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1200&auto=format&fit=crop">
+
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop">
+
     </div>
+
   </section>
 
   <!-- CONTACT -->
+
   <section id="contact">
+
     <div class="section-title">
+
       <h2>Kontak Kami</h2>
-      <p>Siap menjadi partner bisnis terpercaya perusahaan Anda.</p>
+
+      <p>
+        Siap menjadi partner bisnis terpercaya Anda.
+      </p>
+
     </div>
-    <div class="contact-box">
-      <div class="contact-card" data-aos="fade-up">
-        <div class="icon"><i class="fas fa-location-dot"></i></div>
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+
+        <div class="icon">
+          <i class="fas fa-location-dot"></i>
+        </div>
+
         <h3>Alamat</h3>
-        <p>Flamingo Fla 06 No.19, Sukamantri, Pasarkemis, Tangerang</p>
+
+        <p>
+          Tangerang, Indonesia
+        </p>
+
       </div>
-      <div class="contact-card" data-aos="fade-up">
-        <div class="icon"><i class="fas fa-phone"></i></div>
+
+      <div class="contact-card">
+
+        <div class="icon">
+          <i class="fas fa-phone"></i>
+        </div>
+
         <h3>Telepon</h3>
-        <p><a href="tel:+6281296580968" style="color:#555;text-decoration:none;">+62 812-9658-0968</a></p>
+
+        <p>
+          +62 812-3456-7890
+        </p>
+
       </div>
-      <div class="contact-card" data-aos="fade-up">
-        <div class="icon"><i class="fas fa-envelope"></i></div>
+
+      <div class="contact-card">
+
+        <div class="icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+
         <h3>Email</h3>
-        <p><a href="mailto:rezekiamanahjaya@gmail.com" style="color:#555;text-decoration:none;">rezekiamanahjaya@gmail.com</a></p>
+
+        <p>
+          info@rajgroup.co.id
+        </p>
+
       </div>
+
     </div>
+
   </section>
 
   <!-- FOOTER -->
+
   <footer>
-    <p>© 2026 CV Rezeki Amanah Jaya Group — All Rights Reserved</p>
+
+    <p>
+      © 2026 CV Rezeki Amanah Jaya Group
+      - All Rights Reserved
+    </p>
+
   </footer>
 
-  <!-- SCRIPTS -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- SCRIPT -->
+
   <script>
-    // Init AOS
-    AOS.init({
-      duration: 800,
-      once: true
-    });
 
-    // Slideshow Logic
     const slides = document.querySelectorAll('.slide');
+
     let index = 0;
-    
+
     function showSlide(){
-      slides.forEach(slide => slide.classList.remove('active'));
-      index = (index + 1) % slides.length;
-      slides[index].classList.add('active');
-    }
-    
-    let slideshowInterval = setInterval(showSlide, 4000);
-    
-    document.addEventListener('visibilitychange', () => {
-      document.hidden ? clearInterval(slideshowInterval) : slideshowInterval = setInterval(showSlide, 4000);
-    });
 
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e){
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target){
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+      slides.forEach((slide)=>{
+        slide.classList.remove('active');
       });
-    });
 
-    // === HAMBURGER MENU LOGIC ===
-    const hamburger = document.getElementById('hamburger');
-    const menu = document.getElementById('menu');
-    const menuLinks = document.querySelectorAll('.menu-link');
+      index++;
 
-    // Toggle Menu
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      menu.classList.toggle('active');
-    });
-
-    // Close menu when link clicked
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        menu.classList.remove('active');
-      });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!menu.contains(e.target) && !hamburger.contains(e.target) && menu.classList.contains('active')) {
-        hamburger.classList.remove('active');
-        menu.classList.remove('active');
+      if(index >= slides.length){
+        index = 0;
       }
-    });
+
+      slides[index].classList.add('active');
+
+    }
+
+    setInterval(showSlide,4000);
+
   </script>
+
 </body>
 </html>
