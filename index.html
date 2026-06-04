@@ -1,11 +1,28 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="description" content="CV Rezeki Amanah Jaya Group - Partner terpercaya Food Production, Waste Management, Logistics, dan Social Impact">
+  <meta name="description" content="CV Rezeki Amanah Jaya Group adalah partner terpercaya Food Production, Waste Management, Pengepul Minyak Jelantah, Logistics, dan Rekan Bank Sampah di Tangerang, Jabodetabek, dan Jawa Tengah. Solusi berkelanjutan dan profesional.">
+  <meta name="keywords" content="pengepul minyak jelantah, rezeki amanah jaya, rekan bank sampah, pengelolaan limbah tangerang, jual minyak jelantah, waste management, cv rezeki amanah jaya group, bank sampah terdekat, solusi limbah berkelanjutan">
+  <meta name="author" content="CV Rezeki Amanah Jaya Group">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rezekiamanahjaya.com/">
 
-  <title>CV Rezeki Amanah Jaya Group</title>
+  <!-- Open Graph -->
+  <meta property="og:title" content="CV Rezeki Amanah Jaya Group - Pengepul Minyak Jelantah & Rekan Bank Sampah Terpercaya">
+  <meta property="og:description" content="Partner terpercaya Food Production, Waste Management, Pengepul Minyak Jelantah, Logistics, dan Rekan Bank Sampah di Tangerang, Jabodetabek, dan Jawa Tengah.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="CV Rezeki Amanah Jaya Group">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CV Rezeki Amanah Jaya Group - Pengepul Minyak Jelantah & Rekan Bank Sampah">
+  <meta name="twitter:description" content="Partner terpercaya Food Production, Waste Management, Pengepul Minyak Jelantah, Logistics, dan Rekan Bank Sampah.">
+
+  <title>CV Rezeki Amanah Jaya Group - Pengepul Minyak Jelantah & Rekan Bank Sampah Terpercaya</title>
 
   <!-- GOOGLE FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +33,30 @@
 
   <!-- AOS ANIMATION -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- JSON-LD Structured Data for Local SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "CV Rezeki Amanah Jaya Group",
+    "description": "Pengepul minyak jelantah, rekan bank sampah, dan solusi waste management terpercaya di Tangerang dan Jabodetabek.",
+    "url": "https://rezekiamanahjaya.com",
+    "telephone": "+6281296580968",
+    "email": "rezekiamanahjaya@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Flamingo Fla 06 No.19, Sukamantri, Pasarkemis",
+      "addressLocality": "Tangerang",
+      "addressRegion": "Banten",
+      "postalCode": "15560",
+      "addressCountry": "ID"
+    },
+    "areaServed": ["Tangerang", "Jabodetabek", "Jawa Tengah"],
+    "serviceType": ["Pengepul Minyak Jelantah", "Rekan Bank Sampah", "Waste Management", "Food Production", "Logistics"],
+    "foundingDate": "2026"
+  }
+  </script>
 
   <style>
     /* RESET & GLOBAL */
@@ -62,7 +103,7 @@
       justify-content:space-between;
       align-items:center;
       padding:5px 0;
-      position: relative; /* Penting untuk hamburger menu */
+      position: relative;
     }
 
     .logo{
@@ -96,7 +137,7 @@
       align-items: center;
     }
 
-    .menu a{
+    .menu > a, .menu .dropdown-toggle{
       margin-left:20px;
       text-decoration:none;
       color:#222;
@@ -105,11 +146,84 @@
       transition:0.3s;
       padding:8px 12px;
       border-radius:8px;
+      display: flex;
+      align-items: center;
     }
 
-    .menu a:hover{
+    .menu > a:hover, .menu .dropdown-toggle:hover{
       color:#198754;
       background:rgba(25,135,84,0.1);
+    }
+
+    /* DROPDOWN */
+    .dropdown{
+      position: relative;
+      margin-left: 20px;
+    }
+
+    .dropdown-menu{
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      min-width: 180px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: 0.3s ease;
+      z-index: 1000;
+      padding: 8px 0;
+    }
+
+    .dropdown:hover .dropdown-menu{
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-item{
+      display: block;
+      padding: 10px 20px;
+      color: #222;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .dropdown-item:hover{
+      background: rgba(25,135,84,0.1);
+      color: #198754;
+    }
+
+    /* LANGUAGE TOGGLE */
+    .lang-toggle{
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #777;
+    }
+
+    .lang-btn{
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #777;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .lang-btn.active{
+      color: #198754;
+      background: rgba(25,135,84,0.1);
     }
 
     /* HAMBURGER BUTTON (Hidden by default on Desktop) */
@@ -215,11 +329,11 @@
       font-size:15px;
       transition:0.3s;
       box-shadow:0 8px 20px rgba(0,0,0,0.2);
-      min-height:48px; /* Touch friendly */
+      min-height:48px;
       display:flex;
       align-items:center;
       justify-content:center;
-      margin: 0 auto; /* Center button on mobile */
+      margin: 0 auto;
     }
 
     .btn:hover{
@@ -387,26 +501,63 @@
       text-align:center;
     }
 
-    /* GALLERY */
-    .gallery-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:20px;
+    /* GALLERY INFINITE SLIDER */
+    .gallery-slider{
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      padding: 20px 0;
     }
 
-    .gallery-grid img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-      border-radius:20px;
-      transition:0.4s;
-      box-shadow:0 8px 20px rgba(0,0,0,0.08);
-      cursor:pointer;
+    .gallery-slider::before,
+    .gallery-slider::after{
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
     }
 
-    .gallery-grid img:hover{
-      transform:scale(1.03);
-      box-shadow:0 12px 30px rgba(0,0,0,0.15);
+    .gallery-slider::before{
+      left: 0;
+      background: linear-gradient(to right, #f7faf7, transparent);
+    }
+
+    .gallery-slider::after{
+      right: 0;
+      background: linear-gradient(to left, #f7faf7, transparent);
+    }
+
+    .gallery-track{
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      animation: scrollGallery 40s linear infinite;
+    }
+
+    .gallery-track:hover{
+      animation-play-state: paused;
+    }
+
+    .gallery-track img{
+      width: 300px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-track img:hover{
+      transform: scale(1.05);
+    }
+
+    @keyframes scrollGallery {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     /* VISION */
@@ -541,29 +692,31 @@
       body{ font-size:15px; }
       
       /* --- NAVBAR MOBILE --- */
-      .hamburger{ display: flex; } /* Tampilkan tombol hamburger */
+      .hamburger{ display: flex; }
       
       .menu{
         position: fixed;
-        top: 75px; /* Posisi di bawah navbar */
+        top: 75px;
         left: 0;
         right: 0;
         background: white;
         flex-direction: column;
         padding: 20px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        transform: translateY(-150%); /* Sembunyi ke atas */
+        transform: translateY(-150%);
         transition: transform 0.4s ease;
         z-index: 998;
         gap: 5px;
         border-radius: 0 0 20px 20px;
+        max-height: 80vh;
+        overflow-y: auto;
       }
       
       .menu.active{
-        transform: translateY(0); /* Muncul ke bawah */
+        transform: translateY(0);
       }
       
-      .menu a{
+      .menu > a, .menu .dropdown-toggle{
         margin: 0;
         padding: 15px 20px;
         font-size: 16px;
@@ -571,9 +724,40 @@
         display: block;
         text-align: center;
         width: 100%;
+        justify-content: center;
       }
       
-      .menu a:last-child{ border-bottom: none; }
+      .menu > a:last-child{ border-bottom: none; }
+
+      /* Mobile Dropdown */
+      .dropdown{
+        margin-left: 0;
+        width: 100%;
+      }
+      
+      .dropdown-menu{
+        position: static;
+        box-shadow: none;
+        background: #f9f9f9;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        min-width: 100%;
+        border-radius: 0;
+        padding: 0;
+      }
+
+      .dropdown.active .dropdown-menu{
+        display: block;
+      }
+
+      .dropdown-item{
+        padding: 12px 30px;
+        text-align: center;
+        font-size: 15px;
+        border-bottom: 1px solid #eee;
+      }
       
       /* Animasi Hamburger jadi X */
       .hamburger.active span:nth-child(1){
@@ -586,10 +770,19 @@
         transform: rotate(-45deg) translate(5px, -6px);
       }
 
+      /* Lang Toggle Mobile */
+      .lang-toggle{
+        margin-left: 0;
+        margin-top: 15px;
+        justify-content: center;
+        padding-top: 15px;
+        border-top: 1px solid #f0f0f0;
+      }
+
       /* --- HERO MOBILE --- */
       .hero{ 
         min-height:100vh; 
-        padding-top:90px; /* Ruang lebih untuk navbar */
+        padding-top:90px;
       }
       .hero-content{ 
         max-width: 95%; 
@@ -616,7 +809,7 @@
       .about img{ 
         max-width: 320px; 
         padding: 15px; 
-        animation: none; /* Matikan animasi float di HP */
+        animation: none;
       }
       .about-text h3{ text-align: center; font-size: 26px; }
       .about-text p{ text-align: justify; font-size: 14px; }
@@ -633,11 +826,11 @@
       .card h3{ font-size: 18px; }
 
       /* --- GALLERY MOBILE --- */
-      .gallery-grid{ 
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
-        gap: 15px;
+      .gallery-track img{ 
+        width: 240px; 
+        height: 180px; 
       }
-      .gallery-grid img{ height: 150px; border-radius: 15px; }
+      .gallery-slider::before, .gallery-slider::after{ width: 40px; }
 
       /* --- VISION MOBILE --- */
       .vision-grid{ 
@@ -684,29 +877,41 @@
   <nav>
     <div class="nav-container">
       <div class="logo">
-        <!-- Pastikan nama file logo sesuai persis -->
-        <img src="RAJ-LOGO-BERSIH.png" alt="Logo CV Rezeki Amanah Jaya">
+        <img src="RAJ-LOGO-BERSIH.png" alt="Logo CV Rezeki Amanah Jaya - Pengepul Minyak Jelantah & Rekan Bank Sampah">
         <div>
           <h2>CV REZEKI AMANAH JAYA</h2>
           <p>Supplier & Waste Solution Partner</p>
         </div>
       </div>
       
-      <!-- TOMBOL HAMBURGER (Muncul di HP) -->
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
       
-      <!-- MENU LINKS -->
       <div class="menu" id="menu">
-        <a href="#about" class="menu-link">Tentang</a>
-        <a href="#services" class="menu-link">Layanan</a>
-        <a href="#gallery" class="menu-link">Gallery</a>
-        <a href="#vision" class="menu-link">Visi Misi</a>
-        <a href="#contact" class="menu-link">Kontak</a>
-        <a href="jelantah.html">Minyak Jelantah</a>
+        <a href="#about" class="menu-link" data-i18n="nav_about">Tentang</a>
+        <a href="#services" class="menu-link" data-i18n="nav_services">Layanan</a>
+        
+        <div class="dropdown" id="artikelDropdown">
+          <a href="artikel.html" class="menu-link dropdown-toggle" data-i18n="nav_articles">Artikel <i class="fas fa-chevron-down" style="font-size:10px; margin-left:4px;"></i></a>
+          <div class="dropdown-menu">
+            <a href="kegiatan.html" class="dropdown-item" data-i18n="nav_activities">Kegiatan</a>
+            <a href="csr.html" class="dropdown-item" data-i18n="nav_csr">CSR</a>
+            <a href="jelantah.html" class="dropdown-item" data-i18n="nav_jelantah">Minyak Jelantah</a>
+          </div>
+        </div>
+
+        <a href="#gallery" class="menu-link" data-i18n="nav_gallery">Gallery</a>
+        <a href="#vision" class="menu-link" data-i18n="nav_vision">Visi Misi</a>
+        <a href="#contact" class="menu-link" data-i18n="nav_contact">Kontak</a>
+        
+        <div class="lang-toggle">
+          <button onclick="setLanguage('id')" class="lang-btn active" id="btn-id">ID</button>
+          <span>|</span>
+          <button onclick="setLanguage('en')" class="lang-btn" id="btn-en">EN</button>
+        </div>
       </div>
     </div>
   </nav>
@@ -714,35 +919,35 @@
   <!-- HERO -->
   <section class="hero">
     <div class="slideshow">
-      <img class="slide active" src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1600&auto=format&fit=crop" alt="Sustainable Business">
-      <img class="slide" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop" alt="Food Production">
-      <img class="slide" src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1600&auto=format&fit=crop" alt="Waste Management">
-      <img class="slide" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600&auto=format&fit=crop" alt="Logistics">
-      <img class="slide" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop" alt="Social Impact">
+      <img class="slide active" src="https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/1b64717a4-54b9-4e65-8c05-c5c04f7c27e2.png" alt="Pengepul Minyak Jelantah Terpercaya - CV Rezeki Amanah Jaya">
+      <img class="slide" src="https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/192e0aae7-316a-4629-a3e4-585b47b77bea.png" alt="Food Production CV Rezeki Amanah Jaya">
+      <img class="slide" src="https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/10dac2700-bff6-4df9-bce6-84e39a9026d3.png" alt="Rekan Bank Sampah - CV Rezeki Amanah Jaya">
+      <img class="slide" src="https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/182dfb02e-230d-4343-a589-d6ddb1abcf0a.png" alt="Logistics & Distribution CV Rezeki Amanah Jaya">
+      <img class="slide" src="https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/15c88ba25-3a16-4fbc-9c13-e16270f76890.png" alt="Social Impact & Community Empowerment">
     </div>
     <div class="overlay"></div>
     <div class="hero-content">
-      <h1>Sustainable <br>Business Solution</h1>
-      <p>CV Rezeki Amanah Jaya Group hadir sebagai partner terpercaya dalam bidang Food Production, Waste Management, Logistics, dan Social Impact dengan solusi profesional, amanah, dan berkelanjutan.</p>
-      <a href="#services" class="btn">Lihat Layanan</a>
+      <h1 data-i18n="hero_title">Sustainable <br>Business Solution</h1>
+      <p data-i18n="hero_desc">CV Rezeki Amanah Jaya Group hadir sebagai partner terpercaya dalam bidang Food Production, Waste Management, Pengepul Minyak Jelantah, Rekan Bank Sampah, Logistics, dan Social Impact dengan solusi profesional, amanah, dan berkelanjutan.</p>
+      <a href="#services" class="btn" data-i18n="hero_btn">Lihat Layanan</a>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about">
     <div class="section-title" data-aos="fade-up">
-      <h2>Tentang Perusahaan</h2>
-      <p>Solusi bisnis terintegrasi untuk pangan, lingkungan, logistik, dan pemberdayaan masyarakat.</p>
+      <h2 data-i18n="about_title">Tentang Perusahaan</h2>
+      <p data-i18n="about_subtitle">Solusi bisnis terintegrasi untuk pangan, lingkungan, logistik, dan pemberdayaan masyarakat.</p>
     </div>
     <div class="about">
       <div class="about-text" data-aos="fade-right">
-        <h3>Company Overview</h3>
-        <p>CV Rezeki Amanah Jaya Group merupakan perusahaan yang bergerak di bidang Food Production, Waste Management, Logistics, dan Social Impact.</p>
-        <p>Berbasis di Tangerang dan berkembang ke Jabodetabek serta Jawa Tengah dengan fokus pada kualitas, keberlanjutan, dan profesionalisme.</p>
-        <a href="#services" class="btn">Pelajari Selengkapnya</a>
+        <h3 data-i18n="about_h3">Company Overview</h3>
+        <p data-i18n="about_p1">CV Rezeki Amanah Jaya Group merupakan perusahaan yang bergerak di bidang Food Production, Waste Management, Pengepul Minyak Jelantah, Rekan Bank Sampah, Logistics, dan Social Impact.</p>
+        <p data-i18n="about_p2">Berbasis di Tangerang dan berkembang ke Jabodetabek serta Jawa Tengah dengan fokus pada kualitas, keberlanjutan, dan profesionalisme sebagai pengepul minyak jelantah dan rekan bank sampah terpercaya.</p>
+        <a href="#services" class="btn" data-i18n="about_btn">Pelajari Selengkapnya</a>
       </div>
       <div data-aos="fade-left">
-        <img src="RAJ-LOGO-BERSIH.png" alt="Tentang Perusahaan">
+        <img src="RAJ-LOGO-BERSIH.png" alt="Tentang CV Rezeki Amanah Jaya Group">
       </div>
     </div>
   </section>
@@ -752,19 +957,19 @@
     <div class="stats-grid">
       <div class="stat-box" data-aos="zoom-in">
         <h2>4+</h2>
-        <p>Divisi Bisnis</p>
+        <p data-i18n="stats_divisions">Divisi Bisnis</p>
       </div>
       <div class="stat-box" data-aos="zoom-in">
         <h2>2026</h2>
-        <p>Tahun Berdiri</p>
+        <p data-i18n="stats_year">Tahun Berdiri</p>
       </div>
       <div class="stat-box" data-aos="zoom-in">
         <h2>100%</h2>
-        <p>Professional Service</p>
+        <p data-i18n="stats_professional">Professional Service</p>
       </div>
       <div class="stat-box" data-aos="zoom-in">
         <h2>24/7</h2>
-        <p>Support Service</p>
+        <p data-i18n="stats_support">Support Service</p>
       </div>
     </div>
   </section>
@@ -772,70 +977,71 @@
   <!-- SERVICES -->
   <section class="services" id="services">
     <div class="section-title" data-aos="fade-up">
-      <h2>Divisi Layanan</h2>
-      <p>Solusi lengkap untuk kebutuhan perusahaan modern.</p>
+      <h2 data-i18n="services_title">Divisi Layanan</h2>
+      <p data-i18n="services_subtitle">Solusi lengkap untuk kebutuhan perusahaan modern.</p>
     </div>
     <div class="service-grid">
       <div class="card" data-aos="fade-up">
         <div class="icon"><i class="fas fa-utensils"></i></div>
-        <h3>Food & Culinary</h3>
-        <p>Produksi makanan olahan, frozen food, catering, dan distribusi F&B.</p>
+        <h3 data-i18n="service_food_title">Food & Culinary</h3>
+        <p data-i18n="service_food_desc">Produksi makanan olahan, frozen food, catering, dan distribusi F&B.</p>
       </div>
       <div class="card" data-aos="fade-up">
         <div class="icon"><i class="fas fa-recycle"></i></div>
-        <h3>Waste Management</h3>
-        <p>Pengelolaan limbah, minyak jelantah, dan solusi lingkungan berkelanjutan.</p>
+        <h3 data-i18n="service_waste_title">Waste Management</h3>
+        <p data-i18n="service_waste_desc">Pengepul minyak jelantah, pengelolaan limbah, dan solusi lingkungan berkelanjutan sebagai rekan bank sampah terpercaya.</p>
       </div>
       <div class="card" data-aos="fade-up">
         <div class="icon"><i class="fas fa-truck"></i></div>
-        <h3>Logistics</h3>
-        <p>Gudang, distribusi terjadwal, dan sistem logistik efisien.</p>
+        <h3 data-i18n="service_logistics_title">Logistics</h3>
+        <p data-i18n="service_logistics_desc">Gudang, distribusi terjadwal, dan sistem logistik efisien.</p>
       </div>
       <div class="card" data-aos="fade-up">
         <div class="icon"><i class="fas fa-handshake"></i></div>
-        <h3>Social Impact</h3>
-        <p>Pemberdayaan masyarakat, UMKM, dan program sosial.</p>
+        <h3 data-i18n="service_social_title">Social Impact</h3>
+        <p data-i18n="service_social_desc">Pemberdayaan masyarakat, UMKM, dan program sosial.</p>
       </div>
     </div>
   </section>
 
-  <!-- GALLERY -->
+  <!-- GALLERY (INFINITE LOOP SLIDER) -->
   <section id="gallery">
     <div class="section-title" data-aos="fade-up">
-      <h2>Company Gallery</h2>
-      <p>Aktivitas dan layanan profesional CV Rezeki Amanah Jaya Group.</p>
+      <h2 data-i18n="gallery_title">Company Gallery</h2>
+      <p data-i18n="gallery_subtitle">Aktivitas dan layanan profesional CV Rezeki Amanah Jaya Group sebagai pengepul minyak jelantah dan rekan bank sampah.</p>
     </div>
-    <div class="gallery-grid">
-      <img data-aos="zoom-in" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop" alt="Gallery 1">
-      <img data-aos="zoom-in" src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1200&auto=format&fit=crop" alt="Gallery 2">
-      <img data-aos="zoom-in" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop" alt="Gallery 3">
-      <img data-aos="zoom-in" src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1200&auto=format&fit=crop" alt="Gallery 4">
-      <img data-aos="zoom-in" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop" alt="Gallery 5">
-      <img data-aos="zoom-in" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop" alt="Gallery 6">
+    
+    <div class="gallery-slider" data-aos="fade-up">
+      <div class="gallery-track" id="galleryTrack">
+        <!-- Gambar akan di-generate secara otomatis oleh JavaScript di bawah -->
+      </div>
     </div>
-  </section>
+    
+    <p style="text-align:center; margin-top:25px; font-size:13px; color:#888;" data-i18n="gallery_note">
+      <i class="fas fa-info-circle"></i> 
+  </section> 
 
   <!-- VISI MISI -->
   <section class="vision-section" id="vision">
     <div class="section-title">
-      <h2 style="color:white;">Visi & Misi</h2>
-      <p style="color:#d7f5dd;">Membangun solusi bisnis yang amanah, profesional, dan berkelanjutan.</p>
+      <h2 style="color:white;" data-i18n="vision_title">Visi & Misi</h2>
+      <p style="color:#d7f5dd;" data-i18n="vision_subtitle">Membangun solusi bisnis yang amanah, profesional, dan berkelanjutan sebagai pengepul minyak jelantah dan rekan bank sampah terpercaya.</p>
     </div>
     <div class="vision-grid">
       <div class="vision-box" data-aos="fade-right">
-        <h3>Visi</h3>
-        <p>Menjadi mitra solusi terintegrasi terdepan yang menghubungkan keberlanjutan pangan, tanggung jawab lingkungan, dan pemberdayaan masyarakat di Indonesia.</p>
+        <h3 data-i18n="vision_h3_1">Visi</h3>
+        <p data-i18n="vision_p1">Menjadi mitra solusi terintegrasi terdepan yang menghubungkan keberlanjutan pangan, tanggung jawab lingkungan, dan pemberdayaan masyarakat di Indonesia sebagai pengepul minyak jelantah dan rekan bank sampah profesional.</p>
         <br>
-        <h3>Misi</h3>
+        <h3 data-i18n="vision_h3_2">Misi</h3>
         <ul>
-          <li>Menyediakan produk dan jasa berkualitas tinggi.</li>
-          <li>Mengelola limbah secara bertanggung jawab.</li>
-          <li>Membangun sistem logistik efisien.</li>
-          <li>Menciptakan dampak sosial positif.</li>
+          <li data-i18n="vision_li1">Menyediakan produk dan jasa berkualitas tinggi.</li>
+          <li data-i18n="vision_li2">Mengelola limbah dan minyak jelantah secara bertanggung jawab.</li>
+          <li data-i18n="vision_li3">Membangun sistem logistik efisien.</li>
+          <li data-i18n="vision_li4">Menciptakan dampak sosial positif melalui program bank sampah.</li>
         </ul>
       </div>
       <div class="vision-image" data-aos="fade-left">
-        <img src="RAJ-LOGO-BERSIH.png" alt="Visi Misi">
+        <img src="RAJ-LOGO-BERSIH.png" alt="Visi Misi CV Rezeki Amanah Jaya Group">
       </div>
     </div>
   </section>
@@ -843,23 +1049,23 @@
   <!-- CONTACT -->
   <section id="contact">
     <div class="section-title">
-      <h2>Kontak Kami</h2>
-      <p>Siap menjadi partner bisnis terpercaya perusahaan Anda.</p>
+      <h2 data-i18n="contact_title">Kontak Kami</h2>
+      <p data-i18n="contact_subtitle">Siap menjadi partner bisnis terpercaya perusahaan Anda sebagai pengepul minyak jelantah dan rekan bank sampah.</p>
     </div>
     <div class="contact-box">
       <div class="contact-card" data-aos="fade-up">
         <div class="icon"><i class="fas fa-location-dot"></i></div>
-        <h3>Alamat</h3>
-        <p>Flamingo Fla 06 No.19, Sukamantri, Pasarkemis, Tangerang</p>
+        <h3 data-i18n="contact_address_title">Alamat</h3>
+        <p data-i18n="contact_address_desc">Flamingo Fla 06 No.19, Sukamantri, Pasarkemis, Tangerang</p>
       </div>
       <div class="contact-card" data-aos="fade-up">
         <div class="icon"><i class="fas fa-phone"></i></div>
-        <h3>Telepon</h3>
+        <h3 data-i18n="contact_phone_title">Telepon</h3>
         <p><a href="tel:+6281296580968" style="color:#555;text-decoration:none;">+62 812-9658-0968</a></p>
       </div>
       <div class="contact-card" data-aos="fade-up">
         <div class="icon"><i class="fas fa-envelope"></i></div>
-        <h3>Email</h3>
+        <h3 data-i18n="contact_email_title">Email</h3>
         <p><a href="mailto:rezekiamanahjaya@gmail.com" style="color:#555;text-decoration:none;">rezekiamanahjaya@gmail.com</a></p>
       </div>
     </div>
@@ -867,7 +1073,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 CV Rezeki Amanah Jaya Group — All Rights Reserved</p>
+    <p data-i18n="footer_text">© 2026 CV Rezeki Amanah Jaya Group — Pengepul Minyak Jelantah & Rekan Bank Sampah Terpercaya — All Rights Reserved</p>
   </footer>
 
   <!-- SCRIPTS -->
@@ -879,7 +1085,177 @@
       once: true
     });
 
-    // Slideshow Logic
+    // ==========================================
+    // KONFIGURASI GALERI (TAMBAHKAN FOTO DI SINI)
+    // ==========================================
+    // Cukup tambahkan path/nama file foto Anda ke dalam array di bawah ini.
+    // Contoh: "gallery/foto-kegiatan-1.jpg", "images/foto-baru.png", dll.
+    const galleryImages = [
+      "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/1b64717a4-54b9-4e65-8c05-c5c04f7c27e2.png",
+      "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/10dac2700-bff6-4df9-bce6-84e39a9026d3.png",
+      "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/1b157a60f-6e40-47d9-844b-cc3174ad1cc3.png",
+      "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/192e0aae7-316a-4629-a3e4-585b47b77bea.png",
+      "gallery/Palung.png",
+"gallery/sidik.png",
+"gallery/adit.png",
+      "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/15c88ba25-3a16-4fbc-9c13-e16270f76890.png"
+      // 
+    ];
+
+    const galleryTrack = document.getElementById('galleryTrack');
+
+    // Fungsi untuk membuat elemen gambar
+    function populateGallery() {
+      galleryImages.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = "Gallery Image CV Rezeki Amanah Jaya";
+        img.loading = "lazy";
+        galleryTrack.appendChild(img);
+      });
+    }
+
+    // Populate pertama kali
+    populateGallery();
+    // Duplicate konten agar animasi infinite loop berjalan mulus tanpa jeda
+    populateGallery();
+
+    // ==========================================
+    // TRANSLATION DICTIONARY
+    // ==========================================
+    const translations = {
+      id: {
+        nav_about: "Tentang",
+        nav_services: "Layanan",
+        nav_articles: "Artikel",
+        nav_activities: "Kegiatan",
+        nav_csr: "CSR",
+        nav_jelantah: "Minyak Jelantah",
+        nav_gallery: "Gallery",
+        nav_vision: "Visi Misi",
+        nav_contact: "Kontak",
+        hero_title: "Solusi Bisnis <br>Berkelanjutan",
+        hero_desc: "CV Rezeki Amanah Jaya Group hadir sebagai partner terpercaya dalam bidang Food Production, Waste Management, Pengepul Minyak Jelantah, Rekan Bank Sampah, Logistics, dan Social Impact dengan solusi profesional, amanah, dan berkelanjutan.",
+        hero_btn: "Lihat Layanan",
+        about_title: "Tentang Perusahaan",
+        about_subtitle: "Solusi bisnis terintegrasi untuk pangan, lingkungan, logistik, dan pemberdayaan masyarakat.",
+        about_h3: "Company Overview",
+        about_p1: "CV Rezeki Amanah Jaya Group merupakan perusahaan yang bergerak di bidang Food Production, Waste Management, Pengepul Minyak Jelantah, Rekan Bank Sampah, Logistics, dan Social Impact.",
+        about_p2: "Berbasis di Tangerang dan berkembang ke Jabodetabek serta Jawa Tengah dengan fokus pada kualitas, keberlanjutan, dan profesionalisme sebagai pengepul minyak jelantah dan rekan bank sampah terpercaya.",
+        about_btn: "Pelajari Selengkapnya",
+        stats_divisions: "Divisi Bisnis",
+        stats_year: "Tahun Berdiri",
+        stats_professional: "Professional Service",
+        stats_support: "Support Service",
+        services_title: "Divisi Layanan",
+        services_subtitle: "Solusi lengkap untuk kebutuhan perusahaan modern.",
+        service_food_title: "Food & Culinary",
+        service_food_desc: "Produksi makanan olahan, frozen food, catering, dan distribusi F&B.",
+        service_waste_title: "Waste Management",
+        service_waste_desc: "Pengepul minyak jelantah, pengelolaan limbah, dan solusi lingkungan berkelanjutan sebagai rekan bank sampah terpercaya.",
+        service_logistics_title: "Logistics",
+        service_logistics_desc: "Gudang, distribusi terjadwal, dan sistem logistik efisien.",
+        service_social_title: "Social Impact",
+        service_social_desc: "Pemberdayaan masyarakat, UMKM, dan program sosial.",
+        gallery_title: "Company Gallery",
+        gallery_subtitle: "Aktivitas dan layanan profesional CV Rezeki Amanah Jaya Group sebagai pengepul minyak jelantah dan rekan bank sampah.",
+        gallery_note: "GALLERY",
+        vision_title: "Visi & Misi",
+        vision_subtitle: "Membangun solusi bisnis yang amanah, profesional, dan berkelanjutan sebagai pengepul minyak jelantah dan rekan bank sampah terpercaya.",
+        vision_h3_1: "Visi",
+        vision_p1: "Menjadi mitra solusi terintegrasi terdepan yang menghubungkan keberlanjutan pangan, tanggung jawab lingkungan, dan pemberdayaan masyarakat di Indonesia sebagai pengepul minyak jelantah dan rekan bank sampah profesional.",
+        vision_h3_2: "Misi",
+        vision_li1: "Menyediakan produk dan jasa berkualitas tinggi.",
+        vision_li2: "Mengelola limbah dan minyak jelantah secara bertanggung jawab.",
+        vision_li3: "Membangun sistem logistik efisien.",
+        vision_li4: "Menciptakan dampak sosial positif melalui program bank sampah.",
+        contact_title: "Kontak Kami",
+        contact_subtitle: "Siap menjadi partner bisnis terpercaya perusahaan Anda sebagai pengepul minyak jelantah dan rekan bank sampah.",
+        contact_address_title: "Alamat",
+        contact_address_desc: "Flamingo Fla 06 No.19, Sukamantri, Pasarkemis, Tangerang",
+        contact_phone_title: "Telepon",
+        contact_email_title: "Email",
+        footer_text: "© 2026 CV Rezeki Amanah Jaya Group — Pengepul Minyak Jelantah & Rekan Bank Sampah Terpercaya — All Rights Reserved"
+      },
+      en: {
+        nav_about: "About",
+        nav_services: "Services",
+        nav_articles: "Articles",
+        nav_activities: "Activities",
+        nav_csr: "CSR",
+        nav_jelantah: "Used Cooking Oil",
+        nav_gallery: "Gallery",
+        nav_vision: "Vision & Mission",
+        nav_contact: "Contact",
+        hero_title: "Sustainable <br>Business Solution",
+        hero_desc: "CV Rezeki Amanah Jaya Group is a trusted partner in Food Production, Waste Management, Used Cooking Oil Collector, Waste Bank Partner, Logistics, and Social Impact with professional, trustworthy, and sustainable solutions.",
+        hero_btn: "View Services",
+        about_title: "About Company",
+        about_subtitle: "Integrated business solutions for food, environment, logistics, and community empowerment.",
+        about_h3: "Company Overview",
+        about_p1: "CV Rezeki Amanah Jaya Group is a company engaged in Food Production, Waste Management, Used Cooking Oil Collection, Waste Bank Partnership, Logistics, and Social Impact.",
+        about_p2: "Based in Tangerang and expanding to Jabodetabek and Central Java with a focus on quality, sustainability, and professionalism as a trusted used cooking oil collector and waste bank partner.",
+        about_btn: "Learn More",
+        stats_divisions: "Business Divisions",
+        stats_year: "Year Established",
+        stats_professional: "Professional Service",
+        stats_support: "Support Service",
+        services_title: "Service Divisions",
+        services_subtitle: "Complete solutions for modern corporate needs.",
+        service_food_title: "Food & Culinary",
+        service_food_desc: "Processed food production, frozen food, catering, and F&B distribution.",
+        service_waste_title: "Waste Management",
+        service_waste_desc: "Used cooking oil collection, waste management, and sustainable environmental solutions as a trusted waste bank partner.",
+        service_logistics_title: "Logistics",
+        service_logistics_desc: "Warehousing, scheduled distribution, and efficient logistics systems.",
+        service_social_title: "Social Impact",
+        service_social_desc: "Community empowerment, MSMEs, and social programs.",
+        gallery_title: "Company Gallery",
+        gallery_subtitle: "Professional activities and services of CV Rezeki Amanah Jaya Group as a trusted used cooking oil collector and waste bank partner.",
+        gallery_note: "To add photos, simply add the filename (e.g., 'gallery/photo1.jpg') to the galleryImages list in the script section at the bottom of this page.",
+        vision_title: "Vision & Mission",
+        vision_subtitle: "Building trustworthy, professional, and sustainable business solutions as a trusted used cooking oil collector and waste bank partner.",
+        vision_h3_1: "Vision",
+        vision_p1: "To be the leading integrated solution partner connecting food sustainability, environmental responsibility, and community empowerment in Indonesia as a professional used cooking oil collector and waste bank partner.",
+        vision_h3_2: "Mission",
+        vision_li1: "Provide high-quality products and services.",
+        vision_li2: "Manage waste and used cooking oil responsibly.",
+        vision_li3: "Build efficient logistics systems.",
+        vision_li4: "Create positive social impact through waste bank programs.",
+        contact_title: "Contact Us",
+        contact_subtitle: "Ready to be your company's trusted business partner as a used cooking oil collector and waste bank partner.",
+        contact_address_title: "Address",
+        contact_address_desc: "Flamingo Fla 06 No.19, Sukamantri, Pasarkemis, Tangerang",
+        contact_phone_title: "Phone",
+        contact_email_title: "Email",
+        footer_text: "© 2026 CV Rezeki Amanah Jaya Group — Trusted Used Cooking Oil Collector & Waste Bank Partner — All Rights Reserved"
+      }
+    };
+
+    // Language Switcher Logic
+    function setLanguage(lang) {
+      localStorage.setItem('preferredLanguage', lang);
+      document.documentElement.lang = lang;
+      
+      document.getElementById('btn-id').classList.toggle('active', lang === 'id');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          if (key === 'hero_title' || key === 'nav_articles' || key === 'gallery_note') {
+             element.innerHTML = translations[lang][key];
+          } else {
+             element.textContent = translations[lang][key];
+          }
+        }
+      });
+    }
+
+    const savedLang = localStorage.getItem('preferredLanguage') || 'id';
+    setLanguage(savedLang);
+
+    // Slideshow Logic (Hero)
     const slides = document.querySelectorAll('.slide');
     let index = 0;
     
@@ -898,30 +1274,53 @@
     // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e){
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target){
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if(this.getAttribute('href').startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if(target){
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         }
       });
     });
 
-    // === HAMBURGER MENU LOGIC ===
+    // === HAMBURGER & DROPDOWN MENU LOGIC ===
     const hamburger = document.getElementById('hamburger');
     const menu = document.getElementById('menu');
-    const menuLinks = document.querySelectorAll('.menu-link');
+    const menuLinks = document.querySelectorAll('.menu-link:not(.dropdown-toggle)');
+    const dropdownItems = document.querySelectorAll('.dropdown-item');
+    const artikelDropdown = document.getElementById('artikelDropdown');
+    const dropdownToggle = artikelDropdown.querySelector('.dropdown-toggle');
 
-    // Toggle Menu
+    // Toggle Main Menu
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       menu.classList.toggle('active');
     });
 
-    // Close menu when link clicked
+    // Toggle Mobile Dropdown
+    dropdownToggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        artikelDropdown.classList.toggle('active');
+      }
+    });
+
+    // Close menu when regular link clicked
     menuLinks.forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         menu.classList.remove('active');
+        artikelDropdown.classList.remove('active');
+      });
+    });
+
+    // Close menu when dropdown item clicked
+    dropdownItems.forEach(item => {
+      item.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        menu.classList.remove('active');
+        artikelDropdown.classList.remove('active');
       });
     });
 
@@ -930,8 +1329,10 @@
       if (!menu.contains(e.target) && !hamburger.contains(e.target) && menu.classList.contains('active')) {
         hamburger.classList.remove('active');
         menu.classList.remove('active');
+        artikelDropdown.classList.remove('active');
       }
     });
   </script>
 </body>
 </html>
+```
