@@ -1,0 +1,654 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Halaman Program CSR (Corporate Social Responsibility) CV Rezeki Amanah Jaya Group sedang dalam pemeliharaan.">
+  <meta name="robots" content="noindex, follow">
+
+  <title>CSR - CV Rezeki Amanah Jaya Group</title>
+
+  <!-- FONT -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/poppins@5.0.8/index.css">
+
+  <!-- ICON -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- AOS ANIMATION -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    /* RESET & GLOBAL */
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#f7faf7;
+      overflow-x:hidden;
+      color:#222;
+      font-size:16px;
+      line-height:1.6;
+    }
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar{ width:8px; }
+    ::-webkit-scrollbar-thumb{ background:#198754; border-radius:20px; }
+
+    /* NAVBAR */
+    nav{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      z-index:999;
+      background:rgba(255,255,255,0.95);
+      backdrop-filter:blur(10px);
+      box-shadow:0 2px 15px rgba(0,0,0,0.08);
+      padding:10px 0;
+      transition:padding 0.3s;
+    }
+
+    .nav-container{
+      width:92%;
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:5px 0;
+      position: relative;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .logo img{
+      width:50px;
+      height:auto;
+      object-fit:contain;
+    }
+
+    .logo h2{
+      font-size:16px;
+      color:#0d5c2f;
+      line-height:1.2;
+      font-weight:600;
+    }
+
+    .logo p{
+      font-size:11px;
+      color:#777;
+      margin:0;
+    }
+
+    /* MENU (DESKTOP) */
+    .menu{
+      display: flex;
+      align-items: center;
+    }
+
+    .menu > a, .menu .dropdown-toggle{
+      margin-left:20px;
+      text-decoration:none;
+      color:#222;
+      font-weight:500;
+      font-size:14px;
+      transition:0.3s;
+      padding:8px 12px;
+      border-radius:8px;
+      display: flex;
+      align-items: center;
+    }
+
+    .menu > a:hover, .menu .dropdown-toggle:hover, .menu > a.active, .dropdown-item.active{
+      color:#198754;
+      background:rgba(25,135,84,0.1);
+    }
+
+    /* DROPDOWN */
+    .dropdown{
+      position: relative;
+      margin-left: 20px;
+    }
+
+    .dropdown-menu{
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      min-width: 180px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: 0.3s ease;
+      z-index: 1000;
+      padding: 8px 0;
+    }
+
+    .dropdown:hover .dropdown-menu{
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-item{
+      display: block;
+      padding: 10px 20px;
+      color: #222;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .dropdown-item:hover{
+      background: rgba(25,135,84,0.1);
+      color: #198754;
+    }
+
+    /* LANGUAGE TOGGLE */
+    .lang-toggle{
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #777;
+    }
+
+    .lang-btn{
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #777;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .lang-btn.active{
+      color: #198754;
+      background: rgba(25,135,84,0.1);
+    }
+
+    /* HAMBURGER BUTTON */
+    .hamburger{
+      display:none;
+      flex-direction:column;
+      gap:5px;
+      background:none;
+      border:none;
+      cursor:pointer;
+      padding:8px;
+      z-index:1001;
+    }
+
+    .hamburger span{
+      width:25px;
+      height:3px;
+      background:#0d5c2f;
+      border-radius:3px;
+      transition:0.3s;
+    }
+
+    /* PAGE HERO */
+    .page-hero{
+      position:relative;
+      min-height:45vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:white;
+      padding-top:80px;
+      background:linear-gradient(135deg, #0d5c2f, #1f8a3c);
+      overflow:hidden;
+    }
+
+    .page-hero::before{
+      content:'';
+      position:absolute;
+      top:0; left:0; right:0; bottom:0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity:0.3;
+    }
+
+    .page-hero-content{
+      position:relative;
+      z-index:2;
+      padding:20px;
+      max-width:800px;
+    }
+
+    .page-hero h1{
+      font-size:clamp(32px, 6vw, 52px);
+      font-weight:800;
+      margin-bottom:15px;
+      line-height:1.2;
+      text-shadow:2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .page-hero p{
+      font-size:clamp(14px, 3.5vw, 18px);
+      color:#d9ffe2;
+      max-width:600px;
+      margin:0 auto;
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb{
+      max-width:1200px;
+      margin:0 auto;
+      padding:20px 8%;
+      font-size:14px;
+      color:#666;
+    }
+
+    .breadcrumb a{
+      color:#198754;
+      text-decoration:none;
+    }
+
+    .breadcrumb a:hover{
+      text-decoration:underline;
+    }
+
+    /* MAINTENANCE SECTION */
+    .maintenance-section{
+      padding:80px 8% 120px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      min-height:60vh;
+    }
+
+    .maintenance-icon{
+      width:120px;
+      height:120px;
+      background:rgba(25,135,84,0.1);
+      color:#198754;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:50px;
+      margin-bottom:30px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .maintenance-section h2{
+      font-size:clamp(28px, 5vw, 42px);
+      color:#0d5c2f;
+      margin-bottom:15px;
+      font-weight:700;
+    }
+
+    .maintenance-section p{
+      color:#666;
+      font-size:16px;
+      max-width:600px;
+      margin:0 auto 35px;
+      line-height:1.7;
+    }
+
+    .btn-home{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:14px 32px;
+      background:#1f8a3c;
+      color:white;
+      text-decoration:none;
+      border-radius:50px;
+      font-weight:600;
+      font-size:15px;
+      transition:0.3s;
+      box-shadow:0 8px 20px rgba(31,138,60,0.3);
+    }
+
+    .btn-home:hover{
+      background:#14652b;
+      transform:translateY(-3px);
+      box-shadow:0 12px 28px rgba(31,138,60,0.4);
+    }
+
+    /* FLOATING WA */
+    .wa{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      width:58px;
+      height:58px;
+      background:#25D366;
+      color:white;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:28px;
+      z-index:999;
+      text-decoration:none;
+      box-shadow:0 8px 25px rgba(37,211,102,0.4);
+      animation:pulse 2s infinite;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#082814;
+      color:white;
+      text-align:center;
+      padding:30px 20px;
+      font-size:14px;
+    }
+
+    /* ANIMATION */
+    @keyframes pulse{
+      0%,100%{ transform:scale(1); }
+      50%{ transform:scale(1.08); }
+    }
+
+    @keyframes float{
+      0%,100%{ transform:translateY(0px); }
+      50%{ transform:translateY(-15px); }
+    }
+
+    /* ===== MOBILE OPTIMIZATION ===== */
+    @media(max-width: 768px){
+      body{ font-size:15px; }
+      
+      .hamburger{ display: flex; }
+      
+      .menu{
+        position: fixed;
+        top: 75px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transform: translateY(-150%);
+        transition: transform 0.4s ease;
+        z-index: 998;
+        gap: 5px;
+        border-radius: 0 0 20px 20px;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+      
+      .menu.active{
+        transform: translateY(0);
+      }
+      
+      .menu > a, .menu .dropdown-toggle{
+        margin: 0;
+        padding: 15px 20px;
+        font-size: 16px;
+        border-bottom: 1px solid #f0f0f0;
+        display: block;
+        text-align: center;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .dropdown{
+        margin-left: 0;
+        width: 100%;
+      }
+      
+      .dropdown-menu{
+        position: static;
+        box-shadow: none;
+        background: #f9f9f9;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        min-width: 100%;
+        border-radius: 0;
+        padding: 0;
+      }
+
+      .dropdown.active .dropdown-menu{
+        display: block;
+      }
+
+      .dropdown-item{
+        padding: 12px 30px;
+        text-align: center;
+        font-size: 15px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .hamburger.active span:nth-child(1){ transform: rotate(45deg) translate(5px, 6px); }
+      .hamburger.active span:nth-child(2){ opacity: 0; }
+      .hamburger.active span:nth-child(3){ transform: rotate(-45deg) translate(5px, -6px); }
+
+      .lang-toggle{
+        margin-left: 0;
+        margin-top: 15px;
+        justify-content: center;
+        padding-top: 15px;
+        border-top: 1px solid #f0f0f0;
+      }
+
+      .page-hero{ min-height:38vh; }
+      .maintenance-section{ padding:60px 5% 80px; min-height:50vh; }
+      .maintenance-icon{ width:90px; height:90px; font-size:38px; margin-bottom:25px; }
+      footer{ font-size:13px; padding:25px 15px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- WHATSAPP FLOATING -->
+  <a href="https://wa.me/6281296580968" class="wa" target="_blank" aria-label="Chat WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:10px;">
+          <img src="RAJ-LOGO-BERSIH.png" alt="Logo CV Rezeki Amanah Jaya">
+          <div>
+            <h2>CV REZEKI AMANAH JAYA</h2>
+            <p>Supplier & Waste Solution Partner</p>
+          </div>
+        </a>
+      </div>
+      
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <div class="menu" id="menu">
+        <a href="index.html#about" class="menu-link" data-i18n="nav_about">Tentang</a>
+        <a href="index.html#services" class="menu-link" data-i18n="nav_services">Layanan</a>
+        
+        <div class="dropdown" id="artikelDropdown">
+          <a href="artikel.html" class="menu-link dropdown-toggle active" data-i18n="nav_articles">Artikel <i class="fas fa-chevron-down" style="font-size:10px; margin-left:4px;"></i></a>
+          <div class="dropdown-menu">
+            <a href="kegiatan.html" class="dropdown-item" data-i18n="nav_activities">Kegiatan</a>
+            <a href="csr.html" class="dropdown-item active" data-i18n="nav_csr">CSR</a>
+            <a href="jelantah.html" class="dropdown-item" data-i18n="nav_jelantah">Minyak Jelantah</a>
+          </div>
+        </div>
+
+        <a href="index.html#gallery" class="menu-link" data-i18n="nav_gallery">Gallery</a>
+        <a href="index.html#vision" class="menu-link" data-i18n="nav_vision">Visi Misi</a>
+        <a href="index.html#contact" class="menu-link" data-i18n="nav_contact">Kontak</a>
+        
+        <div class="lang-toggle">
+          <button onclick="setLanguage('id')" class="lang-btn active" id="btn-id">ID</button>
+          <span>|</span>
+          <button onclick="setLanguage('en')" class="lang-btn" id="btn-en">EN</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-content" data-aos="fade-up">
+      <h1 data-i18n="page_title">Program CSR</h1>
+      <p data-i18n="page_subtitle">Informasi seputar program Corporate Social Responsibility (CSR) dan pemberdayaan masyarakat oleh CV Rezeki Amanah Jaya Group.</p>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb" data-aos="fade-right">
+    <a href="index.html" data-i18n="bc_home">Beranda</a> / <a href="artikel.html" data-i18n="bc_articles">Artikel</a> / <span data-i18n="bc_current">CSR</span>
+  </div>
+
+  <!-- MAINTENANCE SECTION -->
+  <section class="maintenance-section" data-aos="zoom-in">
+    <div class="maintenance-icon">
+      <i class="fas fa-screwdriver-wrench"></i>
+    </div>
+    <h2 data-i18n="maint_title">Sedang Dalam Perbaikan</h2>
+    <p data-i18n="maint_desc">Halaman Program CSR sedang dalam proses pengembangan dan pemeliharaan. Kami akan segera memperbarui informasi terbaru seputar kegiatan sosial dan pemberdayaan masyarakat kami. Silakan kembali lagi nanti.</p>
+    <a href="index.html" class="btn-home">
+      <i class="fas fa-arrow-left"></i> <span data-i18n="maint_btn">Kembali ke Beranda</span>
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p data-i18n="footer_text">© 2026 CV Rezeki Amanah Jaya Group — Pengepul Minyak Jelantah & Rekan Bank Sampah Terpercaya — All Rights Reserved</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Init AOS
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+
+    // Translation Dictionary
+    const translations = {
+      id: {
+        nav_about: "Tentang",
+        nav_services: "Layanan",
+        nav_articles: "Artikel",
+        nav_activities: "Kegiatan",
+        nav_csr: "CSR",
+        nav_jelantah: "Minyak Jelantah",
+        nav_gallery: "Gallery",
+        nav_vision: "Visi Misi",
+        nav_contact: "Kontak",
+        page_title: "Program CSR",
+        page_subtitle: "Informasi seputar program Corporate Social Responsibility (CSR) dan pemberdayaan masyarakat oleh CV Rezeki Amanah Jaya Group.",
+        bc_home: "Beranda",
+        bc_articles: "Artikel",
+        bc_current: "CSR",
+        maint_title: "Sedang Dalam Perbaikan",
+        maint_desc: "Halaman Program CSR sedang dalam proses pengembangan dan pemeliharaan. Kami akan segera memperbarui informasi terbaru seputar kegiatan sosial dan pemberdayaan masyarakat kami. Silakan kembali lagi nanti.",
+        maint_btn: "Kembali ke Beranda",
+        footer_text: "© 2026 CV Rezeki Amanah Jaya Group — Pengepul Minyak Jelantah & Rekan Bank Sampah Terpercaya — All Rights Reserved"
+      },
+      en: {
+        nav_about: "About",
+        nav_services: "Services",
+        nav_articles: "Articles",
+        nav_activities: "Activities",
+        nav_csr: "CSR",
+        nav_jelantah: "Used Cooking Oil",
+        nav_gallery: "Gallery",
+        nav_vision: "Vision & Mission",
+        nav_contact: "Contact",
+        page_title: "CSR Programs",
+        page_subtitle: "Information regarding Corporate Social Responsibility (CSR) programs and community empowerment by CV Rezeki Amanah Jaya Group.",
+        bc_home: "Home",
+        bc_articles: "Articles",
+        bc_current: "CSR",
+        maint_title: "Under Maintenance",
+        maint_desc: "The CSR Programs page is currently under development and maintenance. We will soon update the latest information regarding our social and community empowerment activities. Please check back later.",
+        maint_btn: "Back to Home",
+        footer_text: "© 2026 CV Rezeki Amanah Jaya Group — Trusted Used Cooking Oil Collector & Waste Bank Partner — All Rights Reserved"
+      }
+    };
+
+    // Language Switcher Logic
+    function setLanguage(lang) {
+      localStorage.setItem('preferredLanguage', lang);
+      document.documentElement.lang = lang;
+      
+      document.getElementById('btn-id').classList.toggle('active', lang === 'id');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          if (key === 'page_title' || key === 'nav_articles' || key === 'maint_btn') {
+            element.innerHTML = translations[lang][key];
+          } else {
+            element.textContent = translations[lang][key];
+          }
+        }
+      });
+    }
+
+    const savedLang = localStorage.getItem('preferredLanguage') || 'id';
+    setLanguage(savedLang);
+
+    // === HAMBURGER & DROPDOWN MENU LOGIC ===
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    const artikelDropdown = document.getElementById('artikelDropdown');
+    const dropdownToggle = artikelDropdown.querySelector('.dropdown-toggle');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      menu.classList.toggle('active');
+    });
+
+    dropdownToggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        artikelDropdown.classList.toggle('active');
+      }
+    });
+
+    document.querySelectorAll('.menu-link:not(.dropdown-toggle), .dropdown-item').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        menu.classList.remove('active');
+        artikelDropdown.classList.remove('active');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !hamburger.contains(e.target) && menu.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        menu.classList.remove('active');
+        artikelDropdown.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
+```
