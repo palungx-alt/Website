@@ -198,6 +198,15 @@
       color: #198754;
     }
 
+    .dropdown-item.sirat-link{
+      color: #198754;
+      font-weight: 700;
+    }
+
+    .dropdown-item.sirat-link:hover{
+      background: rgba(25,135,84,0.15);
+    }
+
     /* LANGUAGE TOGGLE */
     .lang-toggle{
       display: flex;
@@ -319,7 +328,10 @@
     }
 
     .btn{
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
       padding:14px 32px;
       background:#1f8a3c;
       color:white;
@@ -330,9 +342,6 @@
       transition:0.3s;
       box-shadow:0 8px 20px rgba(0,0,0,0.2);
       min-height:48px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
       margin: 0 auto;
     }
 
@@ -507,6 +516,11 @@
       overflow: hidden;
       position: relative;
       padding: 20px 0;
+      cursor: grab;
+    }
+
+    .gallery-slider:active {
+      cursor: grabbing;
     }
 
     .gallery-slider::before,
@@ -537,7 +551,10 @@
       animation: scrollGallery 40s linear infinite;
     }
 
-    .gallery-track:hover{
+    /* Berhenti saat di-hover atau di-klik (active) */
+    .gallery-slider:hover .gallery-track,
+    .gallery-track:hover,
+    .gallery-slider:active .gallery-track {
       animation-play-state: paused;
     }
 
@@ -549,6 +566,8 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       flex-shrink: 0;
       transition: transform 0.3s ease;
+      pointer-events: none; /* Mencegah drag image default browser */
+      user-select: none;
     }
 
     .gallery-track img:hover{
@@ -892,7 +911,15 @@
       
       <div class="menu" id="menu">
         <a href="#about" class="menu-link" data-i18n="nav_about">Tentang</a>
-        <a href="#services" class="menu-link" data-i18n="nav_services">Layanan</a>
+        
+        <!-- Layanan Dropdown -->
+        <div class="dropdown" id="layananDropdown">
+          <a href="#services" class="menu-link dropdown-toggle" data-i18n="nav_services">Layanan <i class="fas fa-chevron-down" style="font-size:10px; margin-left:4px;"></i></a>
+          <div class="dropdown-menu">
+            <a href="#services" class="dropdown-item" data-i18n="nav_services_div">Divisi Layanan</a>
+            <a href="https://sirat.rezekiamanahjaya.com" target="_blank" class="dropdown-item sirat-link" data-i18n="nav_sirat">SIRAT</a>
+          </div>
+        </div>
         
         <div class="dropdown" id="artikelDropdown">
           <a href="artikel.html" class="menu-link dropdown-toggle" data-i18n="nav_articles">Artikel <i class="fas fa-chevron-down" style="font-size:10px; margin-left:4px;"></i></a>
@@ -1011,14 +1038,20 @@
       <p data-i18n="gallery_subtitle">Aktivitas dan layanan profesional CV Rezeki Amanah Jaya Group sebagai pengepul minyak jelantah dan rekan bank sampah.</p>
     </div>
     
-    <div class="gallery-slider" data-aos="fade-up">
+    <div class="gallery-slider" data-aos="fade-up" id="gallerySlider">
       <div class="gallery-track" id="galleryTrack">
         <!-- Gambar akan di-generate secara otomatis oleh JavaScript di bawah -->
       </div>
     </div>
     
-    <p style="text-align:center; margin-top:25px; font-size:13px; color:#888;" data-i18n="gallery_note">
-      <i class="fas fa-info-circle"></i> 
+    <div style="text-align:center; margin-top:35px;">
+      <a href="galeri.html" class="btn" data-i18n="gallery_view_all">
+        <i class="fas fa-images"></i> <span data-i18n="gallery_view_all_text">Lihat Semua Foto</span>
+      </a>
+    </div>
+    <p style="text-align:center; margin-top:15px; font-size:13px; color:#888;" data-i18n="gallery_note">
+      <i class="fas fa-info-circle"></i> <span data-i18n="gallery_note_text">Untuk menambah foto, cukup tambahkan nama file ke dalam daftar <code>galleryImages</code> di bagian script bawah halaman ini.</span>
+    </p>
   </section> 
 
   <!-- VISI MISI -->
@@ -1088,8 +1121,6 @@
     // ==========================================
     // KONFIGURASI GALERI (TAMBAHKAN FOTO DI SINI)
     // ==========================================
-    // Cukup tambahkan path/nama file foto Anda ke dalam array di bawah ini.
-    // Contoh: "gallery/foto-kegiatan-1.jpg", "images/foto-baru.png", dll.
     const galleryImages = [
       "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/1b64717a4-54b9-4e65-8c05-c5c04f7c27e2.png",
       "gallery/Palung.png",
@@ -1104,7 +1135,6 @@
       "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/1b157a60f-6e40-47d9-844b-cc3174ad1cc3.png",
       "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/192e0aae7-316a-4629-a3e4-585b47b77bea.png",
       "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/15c88ba25-3a16-4fbc-9c13-e16270f76890.png"
-      // 
     ];
 
     const galleryTrack = document.getElementById('galleryTrack');
@@ -1116,6 +1146,7 @@
         img.src = src;
         img.alt = "Gallery Image CV Rezeki Amanah Jaya";
         img.loading = "lazy";
+        img.draggable = false; // Mencegah drag default browser agar custom scroll smooth
         galleryTrack.appendChild(img);
       });
     }
@@ -1132,6 +1163,8 @@
       id: {
         nav_about: "Tentang",
         nav_services: "Layanan",
+        nav_services_div: "Divisi Layanan",
+        nav_sirat: "SIRAT",
         nav_articles: "Artikel",
         nav_activities: "Kegiatan",
         nav_csr: "CSR",
@@ -1164,7 +1197,10 @@
         service_social_desc: "Pemberdayaan masyarakat, UMKM, dan program sosial.",
         gallery_title: "Company Gallery",
         gallery_subtitle: "Aktivitas dan layanan profesional CV Rezeki Amanah Jaya Group sebagai pengepul minyak jelantah dan rekan bank sampah.",
+        gallery_view_all: "Lihat Semua Foto",
+        gallery_view_all_text: "Lihat Semua Foto",
         gallery_note: "GALLERY",
+        gallery_note_text: "Untuk menambah foto, cukup tambahkan nama file ke dalam daftar galleryImages di bagian script bawah halaman ini.",
         vision_title: "Visi & Misi",
         vision_subtitle: "Membangun solusi bisnis yang amanah, profesional, dan berkelanjutan sebagai pengepul minyak jelantah dan rekan bank sampah terpercaya.",
         vision_h3_1: "Visi",
@@ -1185,6 +1221,8 @@
       en: {
         nav_about: "About",
         nav_services: "Services",
+        nav_services_div: "Service Divisions",
+        nav_sirat: "SIRAT",
         nav_articles: "Articles",
         nav_activities: "Activities",
         nav_csr: "CSR",
@@ -1217,6 +1255,10 @@
         service_social_desc: "Community empowerment, MSMEs, and social programs.",
         gallery_title: "Company Gallery",
         gallery_subtitle: "Professional activities and services of CV Rezeki Amanah Jaya Group as a trusted used cooking oil collector and waste bank partner.",
+        gallery_view_all: "View All Photos",
+        gallery_view_all_text: "View All Photos",
+        gallery_note: "GALLERY",
+        gallery_note_text: "To add photos, simply add the filename to the galleryImages list in the script section at the bottom of this page.",
         vision_title: "Vision & Mission",
         vision_subtitle: "Building trustworthy, professional, and sustainable business solutions as a trusted used cooking oil collector and waste bank partner.",
         vision_h3_1: "Vision",
@@ -1247,7 +1289,7 @@
       document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations[lang][key]) {
-          if (key === 'hero_title' || key === 'nav_articles' || key === 'gallery_note') {
+          if (key === 'hero_title' || key === 'nav_articles' || key === 'gallery_view_all' || key === 'gallery_note') {
              element.innerHTML = translations[lang][key];
           } else {
              element.textContent = translations[lang][key];
@@ -1293,8 +1335,12 @@
     const menu = document.getElementById('menu');
     const menuLinks = document.querySelectorAll('.menu-link:not(.dropdown-toggle)');
     const dropdownItems = document.querySelectorAll('.dropdown-item');
+    
+    const layananDropdown = document.getElementById('layananDropdown');
+    const layananToggle = layananDropdown.querySelector('.dropdown-toggle');
+    
     const artikelDropdown = document.getElementById('artikelDropdown');
-    const dropdownToggle = artikelDropdown.querySelector('.dropdown-toggle');
+    const artikelToggle = artikelDropdown.querySelector('.dropdown-toggle');
 
     // Toggle Main Menu
     hamburger.addEventListener('click', () => {
@@ -1302,19 +1348,22 @@
       menu.classList.toggle('active');
     });
 
-    // Toggle Mobile Dropdown
-    dropdownToggle.addEventListener('click', (e) => {
+    // Toggle Mobile Dropdowns
+    function toggleMobileDropdown(dropdownEl) {
       if (window.innerWidth <= 768) {
-        e.preventDefault();
-        artikelDropdown.classList.toggle('active');
+        dropdownEl.classList.toggle('active');
       }
-    });
+    }
+
+    layananToggle.addEventListener('click', (e) => toggleMobileDropdown(layananDropdown));
+    artikelToggle.addEventListener('click', (e) => toggleMobileDropdown(artikelDropdown));
 
     // Close menu when regular link clicked
     menuLinks.forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         menu.classList.remove('active');
+        layananDropdown.classList.remove('active');
         artikelDropdown.classList.remove('active');
       });
     });
@@ -1324,6 +1373,7 @@
       item.addEventListener('click', () => {
         hamburger.classList.remove('active');
         menu.classList.remove('active');
+        layananDropdown.classList.remove('active');
         artikelDropdown.classList.remove('active');
       });
     });
@@ -1333,6 +1383,7 @@
       if (!menu.contains(e.target) && !hamburger.contains(e.target) && menu.classList.contains('active')) {
         hamburger.classList.remove('active');
         menu.classList.remove('active');
+        layananDropdown.classList.remove('active');
         artikelDropdown.classList.remove('active');
       }
     });
