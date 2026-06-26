@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -198,12 +197,12 @@
       color: #198754;
     }
 
-    .dropdown-item.sirat-link{
+    .dropdown-item.highlight-link{
       color: #198754;
       font-weight: 700;
     }
 
-    .dropdown-item.sirat-link:hover{
+    .dropdown-item.highlight-link:hover{
       background: rgba(25,135,84,0.15);
     }
 
@@ -551,7 +550,7 @@
       animation: scrollGallery 40s linear infinite;
     }
 
-    /* Berhenti saat di-hover atau di-klik (active) */
+    /* Berhenti saat di-hover */
     .gallery-slider:hover .gallery-track,
     .gallery-track:hover,
     .gallery-slider:active .gallery-track {
@@ -566,7 +565,7 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       flex-shrink: 0;
       transition: transform 0.3s ease;
-      pointer-events: none; /* Mencegah drag image default browser */
+      pointer-events: none;
       user-select: none;
     }
 
@@ -917,7 +916,8 @@
           <a href="#services" class="menu-link dropdown-toggle" data-i18n="nav_services">Layanan <i class="fas fa-chevron-down" style="font-size:10px; margin-left:4px;"></i></a>
           <div class="dropdown-menu">
             <a href="#services" class="dropdown-item" data-i18n="nav_services_div">Divisi Layanan</a>
-            <a href="https://sirat.rezekiamanahjaya.com" target="_blank" class="dropdown-item sirat-link" data-i18n="nav_sirat">SIRAT</a>
+            <a href="https://sirat.rezekiamanahjaya.com" target="_blank" class="dropdown-item highlight-link" data-i18n="nav_sirat">SIRAT</a>
+            <a href="https://ram.rezekiamanahjaya.com" target="_blank" class="dropdown-item highlight-link" data-i18n="nav_ram">RAM</a>
           </div>
         </div>
         
@@ -1139,21 +1139,18 @@
 
     const galleryTrack = document.getElementById('galleryTrack');
 
-    // Fungsi untuk membuat elemen gambar
     function populateGallery() {
       galleryImages.forEach(src => {
         const img = document.createElement('img');
         img.src = src;
         img.alt = "Gallery Image CV Rezeki Amanah Jaya";
         img.loading = "lazy";
-        img.draggable = false; // Mencegah drag default browser agar custom scroll smooth
+        img.draggable = false;
         galleryTrack.appendChild(img);
       });
     }
 
-    // Populate pertama kali
     populateGallery();
-    // Duplicate konten agar animasi infinite loop berjalan mulus tanpa jeda
     populateGallery();
 
     // ==========================================
@@ -1165,6 +1162,7 @@
         nav_services: "Layanan",
         nav_services_div: "Divisi Layanan",
         nav_sirat: "SIRAT",
+        nav_ram: "RAM",
         nav_articles: "Artikel",
         nav_activities: "Kegiatan",
         nav_csr: "CSR",
@@ -1223,6 +1221,7 @@
         nav_services: "Services",
         nav_services_div: "Service Divisions",
         nav_sirat: "SIRAT",
+        nav_ram: "RAM",
         nav_articles: "Articles",
         nav_activities: "Activities",
         nav_csr: "CSR",
@@ -1278,7 +1277,6 @@
       }
     };
 
-    // Language Switcher Logic
     function setLanguage(lang) {
       localStorage.setItem('preferredLanguage', lang);
       document.documentElement.lang = lang;
@@ -1342,13 +1340,11 @@
     const artikelDropdown = document.getElementById('artikelDropdown');
     const artikelToggle = artikelDropdown.querySelector('.dropdown-toggle');
 
-    // Toggle Main Menu
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       menu.classList.toggle('active');
     });
 
-    // Toggle Mobile Dropdowns
     function toggleMobileDropdown(dropdownEl) {
       if (window.innerWidth <= 768) {
         dropdownEl.classList.toggle('active');
@@ -1358,7 +1354,6 @@
     layananToggle.addEventListener('click', (e) => toggleMobileDropdown(layananDropdown));
     artikelToggle.addEventListener('click', (e) => toggleMobileDropdown(artikelDropdown));
 
-    // Close menu when regular link clicked
     menuLinks.forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
@@ -1368,7 +1363,6 @@
       });
     });
 
-    // Close menu when dropdown item clicked
     dropdownItems.forEach(item => {
       item.addEventListener('click', () => {
         hamburger.classList.remove('active');
@@ -1378,7 +1372,6 @@
       });
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
       if (!menu.contains(e.target) && !hamburger.contains(e.target) && menu.classList.contains('active')) {
         hamburger.classList.remove('active');
@@ -1390,4 +1383,4 @@
   </script>
 </body>
 </html>
-```
+
