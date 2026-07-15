@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Logistics CV Rezeki Amanah Jaya - Gudang modern, distribusi terjadwal, dan sistem logistik efisien untuk mendukung operasional bisnis Anda di Jabodetabek dan Jawa Tengah.">
+  <meta name="keywords" content="logistics, gudang, distribusi, warehouse, pengiriman, CV Rezeki Amanah Jaya, logistik terpercaya">
+  <meta name="author" content="CV Rezeki Amanah Jaya Group">
+  <link rel="canonical" href="https://rezekiamanahjaya.com/logistics.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Logistics - CV Rezeki Amanah Jaya Group">
+  <meta property="og:description" content="Solusi logistik terintegrasi dengan gudang modern, distribusi terjadwal, dan sistem efisien untuk bisnis Anda.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+
+  <title>Logistics - CV Rezeki Amanah Jaya Group</title>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- ICON -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- AOS ANIMATION -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#f7faf7;
+      overflow-x:hidden;
+      color:#222;
+      font-size:16px;
+      line-height:1.6;
+    }
+
+    ::-webkit-scrollbar{ width:8px; }
+    ::-webkit-scrollbar-thumb{ background:#198754; border-radius:20px; }
+
+    /* NAVBAR */
+    nav{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      z-index:999;
+      background:rgba(255,255,255,0.95);
+      backdrop-filter:blur(10px);
+      box-shadow:0 2px 15px rgba(0,0,0,0.08);
+      padding:10px 0;
+      transition:padding 0.3s;
+    }
+
+    .nav-container{
+      width:92%;
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:5px 0;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .logo img{ width:50px; height:auto; object-fit:contain; }
+
+    .logo h2{
+      font-size:16px;
+      color:#0d5c2f;
+      line-height:1.2;
+      font-weight:600;
+    }
+
+    .logo p{ font-size:11px; color:#777; margin:0; }
+
+    .menu{ display: flex; align-items: center; }
+
+    .menu > a, .menu .dropdown-toggle{
+      margin-left:20px;
+      text-decoration:none;
+      color:#222;
+      font-weight:500;
+      font-size:14px;
+      transition:0.3s;
+      padding:8px 12px;
+      border-radius:8px;
+      display: flex;
+      align-items: center;
+    }
+
+    .menu > a:hover, .menu .dropdown-toggle:hover{
+      color:#198754;
+      background:rgba(25,135,84,0.1);
+    }
+
+    .dropdown{ position: relative; margin-left: 20px; }
+
+    .dropdown-menu{
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      min-width: 200px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: 0.3s ease;
+      z-index: 1000;
+      padding: 8px 0;
+    }
+
+    .dropdown:hover .dropdown-menu{
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-item{
+      display: block;
+      padding: 10px 20px;
+      color: #222;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .dropdown-item:hover{
+      background: rgba(25,135,84,0.1);
+      color: #198754;
+    }
+
+    .dropdown-divider{ height: 1px; background: #eee; margin: 6px 0; }
+
+    .dropdown-label{
+      padding: 8px 20px 4px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hamburger{
+      display:none;
+      flex-direction:column;
+      gap:5px;
+      background:none;
+      border:none;
+      cursor:pointer;
+      padding:8px;
+      z-index:1001;
+    }
+
+    .hamburger span{
+      width:25px;
+      height:3px;
+      background:#0d5c2f;
+      border-radius:3px;
+      transition:0.3s;
+    }
+
+    /* PAGE HEADER */
+    .page-header{
+      background:linear-gradient(135deg,#0d5c2f 0%,#1f8a3c 50%,#2ea94d 100%);
+      color:white;
+      padding:140px 8% 80px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .page-header::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08) 0%, transparent 50%);
+    }
+
+    .page-header .badge{
+      display:inline-block;
+      background:rgba(255,255,255,0.2);
+      padding:8px 20px;
+      border-radius:50px;
+      font-size:13px;
+      font-weight:600;
+      margin-bottom:20px;
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.3);
+      position:relative;
+      z-index:1;
+    }
+
+    .page-header h1{
+      font-size:clamp(32px, 6vw, 56px);
+      margin-bottom:15px;
+      font-weight:800;
+      position:relative;
+      z-index:1;
+      line-height:1.2;
+    }
+
+    .page-header h1 span{
+      color:#ffd700;
+      display:block;
+      font-style:italic;
+    }
+
+    .page-header p{
+      font-size:clamp(14px, 3vw, 18px);
+      max-width:750px;
+      margin:auto;
+      color:#f0f9f2;
+      position:relative;
+      z-index:1;
+      line-height:1.7;
+    }
+
+    .header-features{
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      margin-top:35px;
+      flex-wrap:wrap;
+      position:relative;
+      z-index:1;
+    }
+
+    .header-feature{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-size:14px;
+      font-weight:500;
+    }
+
+    .header-feature i{
+      color:#ffd700;
+      font-size:18px;
+    }
+
+    /* SECTION */
+    section{ padding:80px 8%; }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h2{
+      font-size:clamp(24px, 6vw, 42px);
+      color:#0d5c2f;
+      margin-bottom:12px;
+      font-weight:700;
+    }
+
+    .section-title p{
+      color:#666;
+      max-width:650px;
+      margin:auto;
+      font-size:15px;
+    }
+
+    /* ABOUT SECTION */
+    .about-section{ background:#fff; }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .about-content h3{
+      font-size:clamp(22px, 4vw, 32px);
+      color:#0d5c2f;
+      margin-bottom:20px;
+      font-weight:700;
+      line-height:1.3;
+    }
+
+    .about-content h3 span{ color:#198754; }
+
+    .about-content p{
+      color:#555;
+      line-height:1.8;
+      margin-bottom:18px;
+      font-size:15px;
+    }
+
+    .about-highlights{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:15px;
+      margin-top:25px;
+    }
+
+    .highlight-item{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:12px 15px;
+      background:#f7faf7;
+      border-radius:12px;
+      border-left:3px solid #198754;
+    }
+
+    .highlight-item i{
+      color:#198754;
+      font-size:22px;
+    }
+
+    .highlight-item span{
+      font-size:14px;
+      font-weight:600;
+      color:#0d5c2f;
+    }
+
+    .about-image{
+      position:relative;
+    }
+
+    .about-image img{
+      width:100%;
+      border-radius:20px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.15);
+      aspect-ratio:4/3;
+      object-fit:cover;
+    }
+
+    .about-badge{
+      position:absolute;
+      bottom:-20px;
+      right:-20px;
+      background:linear-gradient(135deg,#198754,#0d5c2f);
+      color:white;
+      padding:20px 25px;
+      border-radius:15px;
+      box-shadow:0 10px 25px rgba(25,135,84,0.4);
+      text-align:center;
+    }
+
+    .about-badge i{
+      font-size:32px;
+      color:#ffd700;
+      margin-bottom:8px;
+    }
+
+    .about-badge h4{
+      font-size:16px;
+      font-weight:700;
+      margin-bottom:3px;
+    }
+
+    .about-badge p{
+      font-size:12px;
+      opacity:0.9;
+      margin:0;
+    }
+
+    /* SERVICES SECTION */
+    .services-section{
+      background:linear-gradient(135deg,#f7faf7,#eef7f0);
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .service-card{
+      background:white;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 8px 25px rgba(0,0,0,0.08);
+      transition:0.4s;
+      position:relative;
+    }
+
+    .service-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 20px 40px rgba(13,92,47,0.15);
+    }
+
+    .service-image{
+      position:relative;
+      height:220px;
+      background:linear-gradient(135deg,#198754,#0d5c2f);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+
+    .service-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:0.4s;
+    }
+
+    .service-card:hover .service-image img{
+      transform:scale(1.1);
+    }
+
+    .service-icon{
+      position:absolute;
+      font-size:80px;
+      color:rgba(255,255,255,0.9);
+      transition:0.4s;
+    }
+
+    .service-card:hover .service-icon{
+      transform:scale(1.15) rotate(-5deg);
+    }
+
+    .service-tag{
+      position:absolute;
+      top:15px;
+      right:15px;
+      background:#ffd700;
+      color:#0d5c2f;
+      padding:5px 12px;
+      border-radius:20px;
+      font-size:11px;
+      font-weight:700;
+      text-transform:uppercase;
+      z-index:2;
+    }
+
+    .service-content{
+      padding:30px;
+    }
+
+    .service-content h3{
+      font-size:22px;
+      color:#0d5c2f;
+      margin-bottom:12px;
+      font-weight:700;
+    }
+
+    .service-content p{
+      color:#666;
+      font-size:14px;
+      line-height:1.7;
+      margin-bottom:18px;
+    }
+
+    .service-features{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .service-feature{
+      display:inline-flex;
+      align-items:center;
+      gap:5px;
+      padding:6px 12px;
+      background:#f7faf7;
+      border-radius:20px;
+      font-size:12px;
+      color:#0d5c2f;
+      font-weight:500;
+    }
+
+    .service-feature i{
+      color:#198754;
+      font-size:10px;
+    }
+
+    /* ADVANTAGES */
+    .advantages-section{ background:#fff; }
+
+    .advantages-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:25px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .advantage-card{
+      text-align:center;
+      padding:35px 25px;
+      background:linear-gradient(135deg,#f7faf7,#eef7f0);
+      border-radius:20px;
+      transition:0.3s;
+      border:2px solid transparent;
+    }
+
+    .advantage-card:hover{
+      transform:translateY(-8px);
+      border-color:#198754;
+      box-shadow:0 15px 35px rgba(13,92,47,0.12);
+    }
+
+    .advantage-icon{
+      width:80px;
+      height:80px;
+      background:linear-gradient(135deg,#198754,#0d5c2f);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:0 auto 20px;
+      box-shadow:0 10px 20px rgba(25,135,84,0.3);
+    }
+
+    .advantage-icon i{
+      font-size:36px;
+      color:white;
+    }
+
+    .advantage-card h3{
+      font-size:18px;
+      color:#0d5c2f;
+      margin-bottom:10px;
+      font-weight:700;
+    }
+
+    .advantage-card p{
+      color:#666;
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    /* PROCESS SECTION */
+    .process-section{
+      background:linear-gradient(135deg,#0d5c2f,#1f8a3c);
+      color:white;
+    }
+
+    .process-section .section-title h2{ color:white; }
+    .process-section .section-title p{ color:#d9ffe2; }
+
+    .process-steps{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:25px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .process-step{
+      text-align:center;
+      padding:30px 20px;
+      background:rgba(255,255,255,0.08);
+      border-radius:20px;
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.15);
+      transition:0.3s;
+      position:relative;
+    }
+
+    .process-step:hover{
+      background:rgba(255,255,255,0.15);
+      transform:translateY(-5px);
+    }
+
+    .step-number{
+      width:50px;
+      height:50px;
+      background:#ffd700;
+      color:#0d5c2f;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:20px;
+      font-weight:800;
+      margin:0 auto 15px;
+      box-shadow:0 5px 15px rgba(255,215,0,0.3);
+    }
+
+    .process-step i{
+      font-size:40px;
+      color:#ffd700;
+      margin-bottom:15px;
+      display:block;
+    }
+
+    .process-step h3{
+      font-size:17px;
+      margin-bottom:10px;
+      font-weight:700;
+    }
+
+    .process-step p{
+      font-size:13px;
+      line-height:1.7;
+      color:#e8f5e9;
+    }
+
+    /* GALLERY */
+    .gallery-section{ background:#fff; }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:20px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .gallery-item{
+      position:relative;
+      border-radius:15px;
+      overflow:hidden;
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
+      aspect-ratio:4/3;
+      cursor:pointer;
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:0.4s;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.1);
+    }
+
+    .gallery-overlay{
+      position:absolute;
+      bottom:0;
+      left:0;
+      right:0;
+      background:linear-gradient(to top,rgba(13,92,47,0.95),transparent);
+      padding:30px 20px 20px;
+      color:white;
+      transform:translateY(100%);
+      transition:transform 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay{
+      transform:translateY(0);
+    }
+
+    .gallery-overlay h4{
+      font-size:17px;
+      font-weight:600;
+      margin-bottom:5px;
+    }
+
+    .gallery-overlay p{
+      font-size:13px;
+      opacity:0.9;
+    }
+
+    /* STATS */
+    .stats{
+      background:#0d5c2f;
+      color:white;
+      padding:60px 8%;
+    }
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:25px;
+      text-align:center;
+      max-width:1000px;
+      margin:auto;
+    }
+
+    .stat-box h2{
+      font-size:clamp(36px, 8vw, 55px);
+      margin-bottom:8px;
+      font-weight:800;
+      line-height:1;
+      color:#ffd700;
+    }
+
+    .stat-box p{
+      color:#d9ffe2;
+      font-size:14px;
+      font-weight:500;
+    }
+
+    /* CTA */
+    .cta-section{
+      background:linear-gradient(135deg,#0d5c2f,#1f8a3c);
+      color:white;
+      text-align:center;
+      padding:80px 8%;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .cta-section::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(255,215,0,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(255,215,0,0.1) 0%, transparent 50%);
+    }
+
+    .cta-section h2{
+      font-size:clamp(26px, 5vw, 40px);
+      margin-bottom:20px;
+      font-weight:700;
+      position:relative;
+      z-index:1;
+    }
+
+    .cta-section p{
+      font-size:16px;
+      max-width:650px;
+      margin:auto 30px;
+      color:#f0f9f2;
+      position:relative;
+      z-index:1;
+      line-height:1.7;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding:16px 40px;
+      background:#ffd700;
+      color:#0d5c2f;
+      text-decoration:none;
+      border-radius:50px;
+      font-weight:700;
+      font-size:16px;
+      transition:0.3s;
+      box-shadow:0 8px 20px rgba(255,215,0,0.3);
+      margin-top:30px;
+      position:relative;
+      z-index:1;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 12px 28px rgba(255,215,0,0.4);
+      background:#ffdf33;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#082814;
+      color:white;
+      text-align:center;
+      padding:30px 20px;
+      font-size:14px;
+    }
+
+    /* FLOATING WA */
+    .wa{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      width:58px;
+      height:58px;
+      background:#25D366;
+      color:white;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:28px;
+      z-index:999;
+      text-decoration:none;
+      box-shadow:0 8px 25px rgba(37,211,102,0.4);
+      animation:pulse 2s infinite;
+    }
+
+    @keyframes pulse{
+      0%,100%{ transform:scale(1); }
+      50%{ transform:scale(1.08); }
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 992px){
+      .about-grid{ grid-template-columns:1fr; }
+      .about-badge{ right:20px; bottom:-15px; }
+      .about-highlights{ grid-template-columns:1fr 1fr; }
+    }
+
+    @media(max-width: 768px){
+      body{ font-size:15px; }
+      
+      .hamburger{ display: flex; }
+      
+      .menu{
+        position: fixed;
+        top: 75px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transform: translateY(-150%);
+        transition: transform 0.4s ease;
+        z-index: 998;
+        gap: 5px;
+        border-radius: 0 0 20px 20px;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+      
+      .menu.active{ transform: translateY(0); }
+      
+      .menu > a, .menu .dropdown-toggle{
+        margin: 0;
+        padding: 15px 20px;
+        font-size: 16px;
+        border-bottom: 1px solid #f0f0f0;
+        display: block;
+        text-align: center;
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .menu > a:last-child{ border-bottom: none; }
+
+      .dropdown{ margin-left: 0; width: 100%; }
+      
+      .dropdown-menu{
+        position: static;
+        box-shadow: none;
+        background: #f9f9f9;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        min-width: 100%;
+        border-radius: 0;
+        padding: 0;
+      }
+
+      .dropdown.active .dropdown-menu{ display: block; }
+
+      .dropdown-item{
+        padding: 12px 30px;
+        text-align: center;
+        font-size: 15px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .dropdown-label{ text-align: center; padding: 10px 20px 4px; }
+
+      .hamburger.active span:nth-child(1){ transform: rotate(45deg) translate(5px, 6px); }
+      .hamburger.active span:nth-child(2){ opacity: 0; }
+      .hamburger.active span:nth-child(3){ transform: rotate(-45deg) translate(5px, -6px); }
+
+      section{ padding:60px 6%; }
+      .page-header{ padding:120px 6% 60px; }
+      .header-features{ gap:15px; }
+      .about-highlights{ grid-template-columns:1fr; }
+      .about-badge{ position:relative; right:auto; bottom:auto; margin-top:20px; display:inline-block; }
+      .gallery-grid{ grid-template-columns:1fr; }
+    }
+
+    @media(max-width: 480px){
+      section{ padding:50px 5%; }
+      .process-steps{ grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- WHATSAPP FLOATING -->
+  <a href="https://wa.me/6281296580968" class="wa" target="_blank" aria-label="Chat WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="RAJ-LOGO-BERSIH.png" alt="Logo CV Rezeki Amanah Jaya">
+        <div>
+          <h2>CV REZEKI AMANAH JAYA</h2>
+          <p>Supplier & Waste Solution Partner</p>
+        </div>
+      </div>
+      
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <div class="menu" id="menu">
+        <a href="index.html">Beranda</a>
+        <a href="index.html#about">Tentang</a>
+        
+        <div class="dropdown" id="layananDropdown">
+          <a href="#" class="dropdown-toggle">Layanan <i class="fas fa-chevron-down" style="font-size:10px; margin-left:4px;"></i></a>
+          <div class="dropdown-menu">
+            <div class="dropdown-label">Layanan Utama</div>
+            <a href="jelantah.html" class="dropdown-item">Minyak Jelantah</a>
+            <a href="waste-management.html" class="dropdown-item">Waste Management</a>
+            <a href="food.html" class="dropdown-item">Food & Culinary</a>
+            <a href="logistics.html" class="dropdown-item">Logistics</a>
+            <a href="social-impact.html" class="dropdown-item">Social Impact</a>
+            
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-label">Sistem Internal</div>
+            <a href="https://sirat.rezekiamanahjaya.com" target="_blank" class="dropdown-item">SIRAT</a>
+            <a href="https://ram.rezekiamanahjaya.com" target="_blank" class="dropdown-item">RAM</a>
+            <a href="https://chiraj.rezekiamanahjaya.com" target="_blank" class="dropdown-item">ChiRAT</a>
+          </div>
+        </div>
+        
+        <a href="index.html#gallery">Gallery</a>
+        <a href="index.html#vision">Visi Misi</a>
+        <a href="index.html#contact">Kontak</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="badge"><i class="fas fa-truck-fast"></i> Efficient Logistics Solutions</div>
+    <h1>Logistics <span>Gudang, Distribusi & Sistem Logistik Efisien</span></h1>
+    <p>Solusi logistik terintegrasi dengan fasilitas gudang modern, distribusi terjadwal, dan sistem manajemen yang efisien untuk mendukung operasional bisnis Anda di Jabodetabek dan Jawa Tengah.</p>
+    
+    <div class="header-features">
+      <div class="header-feature"><i class="fas fa-warehouse"></i> Gudang Modern</div>
+      <div class="header-feature"><i class="fas fa-clock"></i> On-Time Delivery</div>
+      <div class="header-feature"><i class="fas fa-route"></i> Wide Coverage</div>
+      <div class="header-feature"><i class="fas fa-shield-halved"></i> Safe & Secure</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section">
+    <div class="about-grid">
+      <div class="about-content" data-aos="fade-right">
+        <h3>Solusi Logistik <span>Terpercaya & Efisien</span></h3>
+        <p>Divisi Logistics CV Rezeki Amanah Jaya Group menyediakan layanan gudang, distribusi, dan manajemen logistik yang profesional untuk mendukung kelancaran operasional bisnis Anda. Kami memahami bahwa logistik yang efisien adalah kunci kesuksesan bisnis.</p>
+        <p>Dengan fasilitas gudang berstandar internasional, armada modern, dan sistem tracking real-time, kami siap menjadi partner logistik terpercaya untuk bisnis Anda — dari skala UMKM hingga korporasi besar.</p>
+        
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Real-Time Tracking</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Armada Modern</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Competitive Price</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Wide Network</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-image" data-aos="fade-left">
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop" alt="Logistics CV Rezeki Amanah Jaya">
+        <div class="about-badge">
+          <i class="fas fa-award"></i>
+          <h4>Trusted Partner</h4>
+          <p>Professional Service</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Layanan Logistik Kami</h2>
+      <p>Solusi logistik komprehensif untuk memenuhi setiap kebutuhan distribusi bisnis Anda</p>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&h=450&fit=crop" alt="Warehouse Management" loading="lazy">
+          <div class="service-tag">Core Service</div>
+        </div>
+        <div class="service-content">
+          <h3>Warehouse Management</h3>
+          <p>Fasilitas gudang modern dengan sistem penyimpanan terorganisir, security 24/7, dan inventory management yang akurat untuk keamanan produk Anda.</p>
+          <div class="service-features">
+            <span class="service-feature"><i class="fas fa-circle"></i> 24/7 Security</span>
+            <span class="service-feature"><i class="fas fa-circle"></i> Climate Control</span>
+            <span class="service-feature"><i class="fas fa-circle"></i> Inventory System</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1601584115197-09884e9839f5?w=600&h=450&fit=crop" alt="Scheduled Distribution" loading="lazy">
+          <div class="service-tag">Popular</div>
+        </div>
+        <div class="service-content">
+          <h3>Scheduled Distribution</h3>
+          <p>Layanan distribusi terjadwal dengan rute optimal, armada terlengkap, dan tim profesional untuk memastikan pengiriman tepat waktu ke seluruh area.</p>
+          <div class="service-features">
+            <span class="service-feature"><i class="fas fa-circle"></i> Route Optimization</span>
+            <span class="service-feature"><i class="fas fa-circle"></i> On-Time Delivery</span>
+            <span class="service-feature"><i class="fas fa-circle"></i> Full Fleet</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=600&h=450&fit=crop" alt="Logistics System" loading="lazy">
+          <div class="service-tag">Technology</div>
+        </div>
+        <div class="service-content">
+          <h3>Logistics Management System</h3>
+          <p>Sistem manajemen logistik terintegrasi dengan tracking real-time, reporting otomatis, dan dashboard monitoring untuk efisiensi maksimal.</p>
+          <div class="service-features">
+            <span class="service-feature"><i class="fas fa-circle"></i> Real-Time Tracking</span>
+            <span class="service-feature"><i class="fas fa-circle"></i> Auto Reporting</span>
+            <span class="service-feature"><i class="fas fa-circle"></i> Digital Dashboard</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVANTAGES -->
+  <section class="advantages-section">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Mengapa Memilih Layanan Kami?</h2>
+      <p>Keunggulan yang menjadikan kami partner logistik terpercaya untuk bisnis Anda</p>
+    </div>
+    
+    <div class="advantages-grid">
+      <div class="advantage-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="advantage-icon">
+          <i class="fas fa-warehouse"></i>
+        </div>
+        <h3>Fasilitas Modern</h3>
+        <p>Gudang berstandar internasional dengan sistem keamanan canggih dan fasilitas penyimpanan yang optimal untuk berbagai jenis produk.</p>
+      </div>
+      
+      <div class="advantage-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="advantage-icon">
+          <i class="fas fa-truck-moving"></i>
+        </div>
+        <h3>Armada Lengkap</h3>
+        <p>Fleet kendaraan yang terawat dengan berbagai kapasitas — dari motor, pickup, hingga truk besar untuk memenuhi semua kebutuhan pengiriman.</p>
+      </div>
+      
+      <div class="advantage-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="advantage-icon">
+          <i class="fas fa-map-location-dot"></i>
+        </div>
+        <h3>Jangkauan Luas</h3>
+        <p>Cakupan area Jabodetabek dan Jawa Tengah dengan jaringan distribusi yang luas dan rute yang sudah teroptimasi.</p>
+      </div>
+      
+      <div class="advantage-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="advantage-icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <h3>Teknologi Canggih</h3>
+        <p>Sistem tracking real-time, GPS monitoring, dan digital reporting untuk transparansi dan kontrol penuh atas pengiriman Anda.</p>
+      </div>
+      
+      <div class="advantage-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="advantage-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3>Tim Profesional</h3>
+        <p>Driver dan staff berpengalaman dengan training berkala untuk memastikan pelayanan terbaik dan penanganan produk yang aman.</p>
+      </div>
+      
+      <div class="advantage-card" data-aos="fade-up" data-aos-delay="600">
+        <div class="advantage-icon">
+          <i class="fas fa-hand-holding-dollar"></i>
+        </div>
+        <h3>Harga Kompetitif</h3>
+        <p>Penawaran harga yang kompetitif dengan berbagai paket fleksibel sesuai volume dan frekuensi pengiriman bisnis Anda.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process-section">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Proses Logistik Kami</h2>
+      <p>Sistem kerja terstandarisasi dengan 6 tahap untuk memastikan efisiensi dan keamanan pengiriman</p>
+    </div>
+    
+    <div class="process-steps">
+      <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+        <div class="step-number">1</div>
+        <i class="fas fa-clipboard-list"></i>
+        <h3>Order Entry</h3>
+        <p>Penerimaan order melalui sistem dengan konfirmasi cepat dan penjadwalan yang fleksibel</p>
+      </div>
+      
+      <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+        <div class="step-number">2</div>
+        <i class="fas fa-boxes-stacked"></i>
+        <h3>Picking & Packing</h3>
+        <p>Pengambilan dan pengemasan produk dengan standar keamanan dan akurasi tinggi</p>
+      </div>
+      
+      <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+        <div class="step-number">3</div>
+        <i class="fas fa-route"></i>
+        <h3>Route Planning</h3>
+        <p>Perencanaan rute optimal menggunakan sistem untuk efisiensi waktu dan biaya</p>
+      </div>
+      
+      <div class="process-step" data-aos="fade-up" data-aos-delay="400">
+        <div class="step-number">4</div>
+        <i class="fas fa-truck"></i>
+        <h3>Dispatch</h3>
+        <p>Penugasan armada dan driver yang sesuai dengan jenis pengiriman dan lokasi</p>
+      </div>
+      
+      <div class="process-step" data-aos="fade-up" data-aos-delay="500">
+        <div class="step-number">5</div>
+        <i class="fas fa-satellite-dish"></i>
+        <h3>Real-Time Monitoring</h3>
+        <p>Pemantauan pengiriman secara real-time dengan GPS tracking dan update status</p>
+      </div>
+      
+      <div class="process-step" data-aos="fade-up" data-aos-delay="600">
+        <div class="step-number">6</div>
+        <i class="fas fa-circle-check"></i>
+        <h3>Delivery & POD</h3>
+        <p>Pengiriman sampai tujuan dengan proof of delivery (POD) digital dan laporan otomatis</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-section">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Galeri Fasilitas & Armada</h2>
+      <p>Dokumentasi fasilitas gudang, armada, dan operasional logistics CV Rezeki Amanah Jaya</p>
+    </div>
+    
+    <div class="gallery-grid">
+      <!-- 1. WAREHOUSE -->
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+        <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&h=450&fit=crop" 
+             alt="Modern Warehouse" 
+             loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=450&fit=crop'">
+        <div class="gallery-overlay">
+          <h4>Modern Warehouse</h4>
+          <p>Fasilitas gudang berstandar internasional</p>
+        </div>
+      </div>
+      
+      <!-- 2. DELIVERY TRUCK -->
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+        <img src="https://images.unsplash.com/photo-1601584115197-09884e9839f5?w=600&h=450&fit=crop" 
+             alt="Delivery Fleet" 
+             loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=600&h=450&fit=crop'">
+        <div class="gallery-overlay">
+          <h4>Delivery Fleet</h4>
+          <p>Armada pengiriman modern dan terawat</p>
+        </div>
+      </div>
+      
+      <!-- 3. LOADING PROCESS -->
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=450&fit=crop" 
+             alt="Loading Process" 
+             loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=600&h=450&fit=crop'">
+        <div class="gallery-overlay">
+          <h4>Loading Process</h4>
+          <p>Proses loading yang profesional</p>
+        </div>
+      </div>
+      
+      <!-- 4. INVENTORY -->
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+        <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&h=450&fit=crop" 
+             alt="Inventory Management" 
+             loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=450&fit=crop'">
+        <div class="gallery-overlay">
+          <h4>Inventory Management</h4>
+          <p>Sistem pengelolaan inventori yang akurat</p>
+        </div>
+      </div>
+      
+      <!-- 5. DISTRIBUTION -->
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+        <img src="https://images.unsplash.com/photo-1519003722824-194d445e41e7?w=600&h=450&fit=crop" 
+             alt="Distribution Center" 
+             loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1601584115197-09884e9839f5?w=600&h=450&fit=crop'">
+        <div class="gallery-overlay">
+          <h4>Distribution Center</h4>
+          <p>Pusat distribusi strategis</p>
+        </div>
+      </div>
+      
+      <!-- 6. TRACKING SYSTEM -->
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=450&fit=crop" 
+             alt="Tracking System" 
+             loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=450&fit=crop'">
+        <div class="gallery-overlay">
+          <h4>Tracking System</h4>
+          <p>Sistem monitoring real-time</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="stat-box" data-aos="zoom-in">
+        <h2>5000+</h2>
+        <p>m² Warehouse Space</p>
+      </div>
+      <div class="stat-box" data-aos="zoom-in">
+        <h2>50+</h2>
+        <p>Armada Aktif</p>
+      </div>
+      <div class="stat-box" data-aos="zoom-in">
+        <h2>10000+</h2>
+        <p>Pengiriman/Bulan</p>
+      </div>
+      <div class="stat-box" data-aos="zoom-in">
+        <h2>98%</h2>
+        <p>On-Time Delivery</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Siap Menjadi Partner Logistik Bisnis Anda?</h2>
+    <p>Konsultasikan kebutuhan logistik dan distribusi bisnis Anda bersama tim profesional kami. Dapatkan penawaran khusus untuk partnership jangka panjang dengan layanan terbaik.</p>
+    <a href="https://wa.me/6281296580968" class="btn" target="_blank">
+      <i class="fab fa-whatsapp"></i> Hubungi Kami Sekarang
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 CV Rezeki Amanah Jaya Group — Logistics Division — All Rights Reserved</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      menu.classList.toggle('active');
+    });
+
+    dropdowns.forEach(dropdown => {
+      const toggle = dropdown.querySelector('.dropdown-toggle');
+      toggle.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          dropdown.classList.toggle('active');
+        }
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !hamburger.contains(e.target) && menu.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        menu.classList.remove('active');
+        dropdowns.forEach(d => d.classList.remove('active'));
+      }
+    });
+  </script>
+</body>
+</html>
