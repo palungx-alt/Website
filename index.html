@@ -13,7 +13,7 @@
   <meta name="theme-color" content="#0d5c2f">
   <link rel="canonical" href="https://rezekiamanahjaya.com/">
 
-  <!-- === OPEN GRAPH (DIPERBAIKI UNTUK MEDIA SOSIAL) === -->
+  <!-- === OPEN GRAPH === -->
   <meta property="og:title" content="Jasa Pengepul Minyak Jelantah & Waste Management Terpercaya">
   <meta property="og:description" content="Solusi pengelolaan limbah terpadu & pengepulan minyak jelantah dengan harga terbaik. Melayani Tangerang, Jabodetabek, dan Jawa Tengah.">
   <meta property="og:type" content="website">
@@ -30,7 +30,7 @@
   <!-- AOS ANIMATION -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <!-- === OPTIMASI JSON-LD SCHEMA (DIPERKAYA DENGAN LAYANAN SPESIFIK) === -->
+  <!-- === OPTIMASI JSON-LD SCHEMA === -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -184,7 +184,7 @@
       font-size:clamp(26px, 7vw, 56px); line-height:1.15; margin-bottom:18px;
       font-weight:800; animation:fadeUp 1s ease; text-shadow:2px 2px 4px rgba(0,0,0,0.3);
     }
-    .text-highlight { color: #4ade80; } /* Warna highlight untuk kata kunci di H1 */
+    .text-highlight { color: #4ade80; }
     .hero-content p{
       font-size:clamp(14px, 3.5vw, 18px); line-height:1.7; margin-bottom:28px;
       color:#f0f0f0; animation:fadeUp 1.3s ease; text-shadow:1px 1px 3px rgba(0,0,0,0.3);
@@ -280,6 +280,71 @@
     .partner-card h3{ font-size:16px; color:#0d5c2f; margin-bottom:8px; font-weight:700; line-height:1.3; }
     .partner-card p{ font-size:13px; color:#666; line-height:1.5; }
 
+    /* TESTIMONIALS SECTION */
+    .testimonials-section { background: #f7faf7; }
+    .testimonial-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 25px; 
+      max-width: 1200px; 
+      margin: auto; 
+    }
+    .testimonial-card { 
+      background: white; 
+      padding: 30px; 
+      border-radius: 20px; 
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08); 
+      transition: 0.3s; 
+      position: relative; 
+      border-top: 4px solid #198754;
+    }
+    .testimonial-card:hover { 
+      transform: translateY(-5px); 
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12); 
+    }
+    .testimonial-card .quote-icon { 
+      font-size: 32px; 
+      color: #198754; 
+      opacity: 0.2; 
+      margin-bottom: 15px; 
+      display: block;
+    }
+    .testimonial-card p { 
+      font-style: italic; 
+      color: #555; 
+      line-height: 1.7; 
+      font-size: 14px; 
+      margin-bottom: 25px; 
+    }
+    .testimonial-author { 
+      display: flex; 
+      align-items: center; 
+      gap: 12px; 
+    }
+    .author-avatar { 
+      width: 38px; 
+      height: 38px; 
+      background: #eef7f0; 
+      border-radius: 50%; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      color: #198754; 
+      font-weight: 700; 
+      font-size: 15px; 
+      flex-shrink: 0;
+    }
+    .author-info h4 { 
+      font-size: 15px; 
+      color: #0d5c2f; 
+      margin: 0; 
+      font-weight: 600; 
+    }
+    .author-info span { 
+      font-size: 12px; 
+      color: #777; 
+    }
+
     /* VISION */
     .vision-section{ background:linear-gradient(135deg,#0d5c2f,#1f8a3c); color:white; }
     .vision-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
@@ -368,6 +433,9 @@
       .partner-logo{ width:65px; height:65px; padding:8px; }
       .partner-logo i{ font-size:28px; }
       .partner-card h3{ font-size:14px; } .partner-card p{ font-size:12px; }
+
+      .testimonial-grid{ grid-template-columns: 1fr; gap: 20px; }
+      .testimonial-card{ padding: 25px 20px; }
       
       .gallery-track img{ width: 220px; height: 160px; }
       .gallery-slider::before, .gallery-slider::after{ width: 40px; }
@@ -459,6 +527,7 @@
 
         <a href="#gallery" class="menu-link" data-i18n="nav_gallery">Gallery</a>
         <a href="#partners" class="menu-link" data-i18n="nav_partners">Partners</a>
+        <a href="#testimonials" class="menu-link" data-i18n="nav_testimonials">Testimoni</a>
         <a href="#vision" class="menu-link" data-i18n="nav_vision">Visi Misi</a>
         <a href="#contact" class="menu-link" data-i18n="nav_contact">Kontak</a>
         
@@ -474,7 +543,6 @@
   <!-- HERO -->
   <section class="hero">
     <div class="slideshow">
-      <!-- ALT TEXT DIPERBAIKI UNTUK SEO GAMBAR -->
       <img class="slide active" src="https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/1b64717a4-54b9-4e65-8c05-c5c04f7c27e2.png" alt="Penjemputan minyak jelantah restoran di Tangerang oleh CV Rezeki Amanah Jaya">
       <img class="slide" src="https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/192e0aae7-316a-4629-a3e4-585b47b77bea.png" alt="Proses pengelolaan limbah organik dan waste management terpadu">
       <img class="slide" src="https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/10dac2700-bff6-4df9-bce6-84e39a9026d3.png" alt="Kerjasama rekan bank sampah dan pengelolaan limbah daur ulang">
@@ -483,10 +551,8 @@
     </div>
     <div class="overlay"></div>
     <div class="hero-content">
-      <!-- H1 DIPERBAIKI AGAR SEO-FRIENDLY (Menyasar Keyword Utama) -->
       <h1 data-i18n="hero_title">Solusi <span class="text-highlight">Waste Management</span> & <br>Pengepul Minyak Jelantah Terpercaya</h1>
       <p data-i18n="hero_desc">Mitra resmi restoran, hotel, dan industri di Tangerang, Jabodetabek, & Jateng. Kami mengubah limbah menjadi berkah dengan proses yang ramah lingkungan, terjadwal, dan transparan.</p>
-      <!-- LINK WA DENGAN PESAN OTOMATIS UNTUK PELACAKAN KONVERSI -->
       <a href="https://wa.me/6281296580968?text=Halo%20CV%20Rezeki%20Amanah%20Jaya,%20saya%20ingin%20bertanya%20tentang%20jasa%20pengepul%20minyak%20jelantah%20dan%20waste%20management" class="btn" data-i18n="hero_btn">
         <i class="fab fa-whatsapp"></i> Konsultasi Gratis
       </a>
@@ -698,6 +764,108 @@
     </div>
   </section>
 
+  <!-- TESTIMONIALS (7 REVIEW FOKUS WASTE & JELANTAH) -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="section-title" data-aos="fade-up">
+      <h2 data-i18n="testi_title">Apa Kata Mereka</h2>
+      <p data-i18n="testi_subtitle">Kepuasan mitra adalah prioritas utama kami dalam memberikan layanan terbaik.</p>
+    </div>
+    
+    <div class="testimonial-grid">
+      <!-- Testimoni 1: Minyak Jelantah -->
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p data-i18n="testi_1_text">"Pelayanan pengambilan minyak jelantahnya sangat rapi, timbangannya transparan, dan jadwalnya selalu tepat waktu. Dapur jadi lebih bersih dan bebas bau!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">B</div>
+          <div class="author-info">
+            <h4 data-i18n="testi_1_name">Budi S.</h4>
+            <span data-i18n="testi_1_role">Pemilik Restoran</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimoni 2: Waste Management -->
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p data-i18n="testi_2_text">"Sistem pengelolaan limbah terpadunya sangat membantu operasional kami. Pemilahan sampah jadi lebih terarah dan lingkungan kerja jauh lebih higienis."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">S</div>
+          <div class="author-info">
+            <h4 data-i18n="testi_2_name">Siti A.</h4>
+            <span data-i18n="testi_2_role">Manajer Operasional Kafe</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimoni 3: Minyak Jelantah -->
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p data-i18n="testi_3_text">"Harganya kompetitif dan penjemputannya tidak pernah telat. Tim penjemputnya juga sangat ramah dan profesional saat mengambil jerigen di area dapur."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">A</div>
+          <div class="author-info">
+            <h4 data-i18n="testi_3_name">Andi P.</h4>
+            <span data-i18n="testi_3_role">Pengusaha Kuliner</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimoni 4: Waste Management -->
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="400">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p data-i18n="testi_4_text">"Solusi waste management dari tim ini benar-benar komprehensif. Panduan pemilahan sampah organik dan anorganik yang diberikan sangat jelas dan mudah diterapkan."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">R</div>
+          <div class="author-info">
+            <h4 data-i18n="testi_4_name">Rian D.</h4>
+            <span data-i18n="testi_4_role">Facility Manager Hotel</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimoni 5: Minyak Jelantah -->
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="500">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p data-i18n="testi_5_text">"Sangat terbantu dengan layanan pengepulan minyak jelantah ini. Minyak bekas di tempat usaha kami sekarang tidak lagi menumpuk dan mencemari saluran air."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">D</div>
+          <div class="author-info">
+            <h4 data-i18n="testi_5_name">Dewi K.</h4>
+            <span data-i18n="testi_5_role">Owner Kedai Kopi</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimoni 6: Waste Management -->
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="600">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p data-i18n="testi_6_text">"Pengolahan limbah organiknya menggunakan Maggot BSF sangat inovatif. Sampah dapur kami jadi lebih bermanfaat dan tidak berakhir sia-sia di TPA."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">H</div>
+          <div class="author-info">
+            <h4 data-i18n="testi_6_name">Hendra W.</h4>
+            <span data-i18n="testi_6_role">Supervisor Dapur Sentral</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimoni 7: Waste Management -->
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="700">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p data-i18n="testi_7_text">"Kerjasama yang sangat memuaskan. Timnya responsif, penjemputan limbah terjadwal dengan baik, dan laporannya sangat transparan setiap bulan."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">M</div>
+          <div class="author-info">
+            <h4 data-i18n="testi_7_name">Maya S.</h4>
+            <span data-i18n="testi_7_role">Kepala Urusan Rumah Tangga</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- VISION MISI -->
   <section class="vision-section" id="vision">
     <div class="section-title">
@@ -782,7 +950,6 @@
 
     const galleryTrack = document.getElementById('galleryTrack');
 
-    // === OPTIMASI GALERI: ALT TEXT SPESIFIK & WIDTH/HEIGHT UNTUK CORE WEB VITALS ===
     function populateGallery() {
       const altTexts = [
         "Penjemputan minyak jelantah restoran di Tangerang",
@@ -800,14 +967,14 @@
         img.alt = altTexts[index % altTexts.length] + " - CV Rezeki Amanah Jaya";
         img.loading = "lazy";
         img.draggable = false;
-        img.width = "260"; // Mencegah Cumulative Layout Shift (CLS)
-        img.height = "190"; // Mencegah Cumulative Layout Shift (CLS)
+        img.width = "260";
+        img.height = "190";
         galleryTrack.appendChild(img);
       });
     }
 
     populateGallery();
-    populateGallery(); // Duplikasi untuk infinite scroll effect
+    populateGallery();
 
     const translations = {
       id: {
@@ -821,6 +988,7 @@
         nav_logistics: "Logistics",
         nav_social: "Social Impact",
         nav_partners: "Partners",
+        nav_testimonials: "Testimoni",
         nav_articles: "Artikel",
         nav_activities: "Kegiatan",
         nav_csr: "CSR",
@@ -862,6 +1030,29 @@
         gallery_subtitle: "Aktivitas dan layanan profesional CV Rezeki Amanah Jaya Group.",
         gallery_view_all: '<i class="fas fa-images"></i> Lihat Semua Foto',
         gallery_view_all_text: "Lihat Semua Foto",
+        testi_title: "Apa Kata Mereka",
+        testi_subtitle: "Kepuasan mitra adalah prioritas utama kami dalam memberikan layanan terbaik.",
+        testi_1_text: "\"Pelayanan pengambilan minyak jelantahnya sangat rapi, timbangannya transparan, dan jadwalnya selalu tepat waktu. Dapur jadi lebih bersih dan bebas bau!\"",
+        testi_1_name: "Budi S.",
+        testi_1_role: "Pemilik Restoran",
+        testi_2_text: "\"Sistem pengelolaan limbah terpadunya sangat membantu operasional kami. Pemilahan sampah jadi lebih terarah dan lingkungan kerja jauh lebih higienis.\"",
+        testi_2_name: "Siti A.",
+        testi_2_role: "Manajer Operasional Kafe",
+        testi_3_text: "\"Harganya kompetitif dan penjemputannya tidak pernah telat. Tim penjemputnya juga sangat ramah dan profesional saat mengambil jerigen di area dapur.\"",
+        testi_3_name: "Andi P.",
+        testi_3_role: "Pengusaha Kuliner",
+        testi_4_text: "\"Solusi waste management dari tim ini benar-benar komprehensif. Panduan pemilahan sampah organik dan anorganik yang diberikan sangat jelas dan mudah diterapkan.\"",
+        testi_4_name: "Rian D.",
+        testi_4_role: "Facility Manager Hotel",
+        testi_5_text: "\"Sangat terbantu dengan layanan pengepulan minyak jelantah ini. Minyak bekas di tempat usaha kami sekarang tidak lagi menumpuk dan mencemari saluran air.\"",
+        testi_5_name: "Dewi K.",
+        testi_5_role: "Owner Kedai Kopi",
+        testi_6_text: "\"Pengolahan limbah organiknya menggunakan Maggot BSF sangat inovatif. Sampah dapur kami jadi lebih bermanfaat dan tidak berakhir sia-sia di TPA.\"",
+        testi_6_name: "Hendra W.",
+        testi_6_role: "Supervisor Dapur Sentral",
+        testi_7_text: "\"Kerjasama yang sangat memuaskan. Timnya responsif, penjemputan limbah terjadwal dengan baik, dan laporannya sangat transparan setiap bulan.\"",
+        testi_7_name: "Maya S.",
+        testi_7_role: "Kepala Urusan Rumah Tangga",
         vision_title: "Visi & Misi",
         vision_subtitle: "Membangun solusi bisnis yang amanah, profesional, dan berkelanjutan.",
         vision_h3_1: "Visi",
@@ -890,6 +1081,7 @@
         nav_logistics: "Logistics",
         nav_social: "Social Impact",
         nav_partners: "Partners",
+        nav_testimonials: "Testimonials",
         nav_articles: "Articles",
         nav_activities: "Activities",
         nav_csr: "CSR",
@@ -931,6 +1123,29 @@
         gallery_subtitle: "Professional activities and services of CV Rezeki Amanah Jaya Group.",
         gallery_view_all: '<i class="fas fa-images"></i> View All Photos',
         gallery_view_all_text: "View All Photos",
+        testi_title: "What They Say",
+        testi_subtitle: "Partner satisfaction is our top priority in providing the best service.",
+        testi_1_text: "\"The used cooking oil pickup service is very neat, the weighing is transparent, and the schedule is always on time. The kitchen is cleaner and odor-free!\"",
+        testi_1_name: "Budi S.",
+        testi_1_role: "Restaurant Owner",
+        testi_2_text: "\"The integrated waste management system greatly helps our operations. Waste sorting is more directed and the work environment is much more hygienic.\"",
+        testi_2_name: "Siti A.",
+        testi_2_role: "Cafe Operations Manager",
+        testi_3_text: "\"Competitive prices and pickups are never late. The pickup team is also very friendly and professional when collecting jerry cans in the kitchen area.\"",
+        testi_3_name: "Andi P.",
+        testi_3_role: "Culinary Entrepreneur",
+        testi_4_text: "\"The waste management solution from this team is truly comprehensive. The organic and inorganic waste sorting guidelines provided are very clear and easy to implement.\"",
+        testi_4_name: "Rian D.",
+        testi_4_role: "Hotel Facility Manager",
+        testi_5_text: "\"Very helped by this used cooking oil collection service. Used oil at our business no longer piles up and pollutes the waterways.\"",
+        testi_5_name: "Dewi K.",
+        testi_5_role: "Coffee Shop Owner",
+        testi_6_text: "\"The organic waste processing using Maggot BSF is very innovative. Our kitchen waste becomes more useful and doesn't end up in landfills in vain.\"",
+        testi_6_name: "Hendra W.",
+        testi_6_role: "Central Kitchen Supervisor",
+        testi_7_text: "\"Very satisfying cooperation. The team is responsive, waste pickup is well scheduled, and the monthly reports are very transparent.\"",
+        testi_7_name: "Maya S.",
+        testi_7_role: "Head of Household Affairs",
         vision_title: "Vision & Mission",
         vision_subtitle: "Building trustworthy, professional, and sustainable business solutions.",
         vision_h3_1: "Vision",
