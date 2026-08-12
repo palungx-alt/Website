@@ -26,7 +26,7 @@
   <!-- AOS ANIMATION -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <!-- FALLBACK FOTO REZA (dipasang di head agar siap sebelum gambar load) -->
+  <!-- FALLBACK FOTO REZA -->
   <script>
     function fallbackPhoto(img){
       var alts = ['gallery/reza.jpeg','gallery/reza.jpg','gallery/Reza.png','gallery/reza.PNG'];
@@ -156,13 +156,18 @@
     .demo-url{ flex:1; background:rgba(255,255,255,0.12); border-radius:8px; padding:6px 12px; font-size:12px; color:#d9ffe2; display:flex; align-items:center; gap:8px; white-space:nowrap; overflow:hidden; }
     .demo-full{ color:white; width:32px; height:32px; display:flex; align-items:center; justify-content:center; border-radius:8px; background:rgba(255,255,255,0.12); text-decoration:none; transition:0.3s; flex-shrink:0; }
     .demo-full:hover{ background:#198754; transform:translateY(-2px); }
-    .demo-frame-body{ position:relative; height:500px; background:#f0f4f1; }
+    .demo-frame-body{ position:relative; height:500px; background:#f0f4f1; overflow:hidden; }
     .demo-frame-body iframe{ width:100%; height:100%; border:none; background:white; }
-    .demo-frame-loading{ position:absolute; inset:0; display:flex; flex-direction:column; gap:12px; align-items:center; justify-content:center; color:#0d5c2f; z-index:2; background:#f0f4f1; }
-    .demo-frame-loading .spinner{ width:40px; height:40px; border:4px solid #e0efe4; border-top-color:#198754; border-radius:50%; animation:spin 1s linear infinite; }
-    .demo-frame-loading p{ font-size:13px; font-weight:500; }
     .demo-hint{ margin-top:14px; font-size:12px; color:#888; text-align:center; }
     .demo-highlight .demo-frame{ box-shadow:0 0 0 5px rgba(25,135,84,0.45), 0 25px 60px rgba(13,92,47,0.35); }
+
+    /* DEMO PLACEHOLDER (pola click-to-load dari proposal interaktif) */
+    .demo-placeholder{ position:absolute; inset:0; z-index:2; background:linear-gradient(135deg,#eef7f0,#f7faf7); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; text-align:center; padding:24px; }
+    .demo-ph-icon{ font-size:52px; color:#198754; }
+    .demo-ph-title{ font-weight:700; color:#0d5c2f; font-size:18px; }
+    .demo-ph-desc{ font-size:13px; color:#666; max-width:340px; }
+    .demo-placeholder .spinner{ width:44px; height:44px; border:4px solid #e0efe4; border-top-color:#198754; border-radius:50%; animation:spin 1s linear infinite; }
+    .demo-placeholder .btn-launch{ flex:0 0 auto; min-width:0; }
 
     /* LAUNCH DEMO AREA */
     .ecotrack-launch{ margin-top:35px; padding-top:30px; border-top:2px dashed #d9efe4; }
@@ -554,7 +559,7 @@
     </div>
   </section>
 
-  <!-- ECO TRACK + DEMO LIVE DI POSISI GAMBAR -->
+  <!-- ECO TRACK + DEMO (POLA CLICK-TO-LOAD) -->
   <section class="ecotrack-section">
     <div class="section-title" data-aos="fade-up">
       <h2>Sistem Eco Track</h2>
@@ -611,7 +616,7 @@
         </div>
       </div>
 
-      <!-- DEMO LIVE (menggantikan gambar yang rusak) -->
+      <!-- DEMO FRAME -->
       <div class="ecotrack-image" data-aos="fade-left" id="demoFrame">
         <div class="demo-frame">
           <div class="demo-frame-bar">
@@ -622,11 +627,17 @@
             </a>
           </div>
           <div class="demo-frame-body">
-            <div class="demo-frame-loading" id="demoFrameLoading">
-              <div class="spinner"></div>
-              <p>Memuat demo Eco Track...</p>
+            <!-- Placeholder: iframe hanya dimuat saat tombol ditekan (smooth, tidak putih) -->
+            <div class="demo-placeholder" id="demoPlaceholder">
+              <i class="fas fa-desktop demo-ph-icon"></i>
+              <p class="demo-ph-title">Eco Track Dashboard</p>
+              <p class="demo-ph-desc">Demo interaktif dimuat saat tombol ditekan — halaman tetap cepat dan smooth.</p>
+              <button class="btn-launch btn-primary-launch" onclick="loadEcoTrackDemo()">
+                <i class="fas fa-play"></i>
+                <span>Tampilkan Dashboard Live</span>
+              </button>
             </div>
-            <iframe id="ecoTrackIframe" src="https://hood.rezekiamanahjaya.com" title="Demo Eco Track" loading="lazy"></iframe>
+            <iframe id="ecoTrackIframe" src="" style="display:none;" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" title="Demo Eco Track"></iframe>
           </div>
         </div>
         <p class="demo-hint"><i class="fas fa-hand-pointer"></i> Demo interaktif — scroll di dalam frame untuk menjelajah sistem</p>
@@ -1018,8 +1029,9 @@
       });
     });
 
-    // ================= ECO TRACK DEMO =================
+    // ================= ECO TRACK DEMO (pola click-to-load dari proposal interaktif) =================
     const DASHBOARD_URL = 'https://hood.rezekiamanahjaya.com';
+    let demoLoadStarted = false;
 
     function openFullDashboard() {
       window.open(DASHBOARD_URL, '_blank', 'noopener,noreferrer');
@@ -1031,15 +1043,49 @@
         el.scrollIntoView({ behavior: 'smooth', block: 'center' });
         el.classList.add('demo-highlight');
         setTimeout(() => el.classList.remove('demo-highlight'), 2500);
+        setTimeout(() => loadEcoTrackDemo(), 600);
       }
     }
 
-    // Loading state demo frame
-    const ecoIframe = document.getElementById('ecoTrackIframe');
-    const demoFrameLoading = document.getElementById('demoFrameLoading');
-    if (ecoIframe && demoFrameLoading) {
-      ecoIframe.addEventListener('load', () => { demoFrameLoading.style.display = 'none'; });
-      setTimeout(() => { demoFrameLoading.style.display = 'none'; }, 6000);
+    function loadEcoTrackDemo() {
+      if (demoLoadStarted) return;
+      demoLoadStarted = true;
+
+      const iframe = document.getElementById('ecoTrackIframe');
+      const placeholder = document.getElementById('demoPlaceholder');
+
+      // State 1: loading
+      placeholder.innerHTML = '<div class="spinner"></div><p class="demo-ph-desc">Menghubungkan ke dashboard Eco Track...</p>';
+
+      const showErrorState = (icon, title, desc) => {
+        placeholder.innerHTML =
+          '<i class="fas ' + icon + ' demo-ph-icon" style="color:#F59E0B;"></i>' +
+          '<p class="demo-ph-title">' + title + '</p>' +
+          '<p class="demo-ph-desc">' + desc + '</p>' +
+          '<a href="' + DASHBOARD_URL + '" target="_blank" rel="noopener noreferrer" class="btn-launch btn-primary-launch">' +
+          '<i class="fas fa-external-link-alt"></i><span>Buka di Tab Baru</span></a>';
+      };
+
+      // State 2: sukses — placeholder hilang, iframe tampil
+      iframe.onload = function () {
+        placeholder.style.display = 'none';
+        iframe.style.display = 'block';
+      };
+
+      // State 3: error
+      iframe.onerror = function () {
+        demoLoadStarted = false;
+        showErrorState('fa-exclamation-triangle', 'Dashboard tidak dapat dimuat', 'Mungkin memerlukan login atau terdapat pembatasan iframe.');
+      };
+
+      // State 4: timeout 10 detik
+      setTimeout(() => {
+        if (iframe.style.display === 'none') {
+          showErrorState('fa-clock', 'Memuat lebih lama dari biasanya', 'Koneksi mungkin dibatasi. Silakan buka dashboard di tab baru.');
+        }
+      }, 10000);
+
+      iframe.src = DASHBOARD_URL;
     }
 
     // ================= PDF VIEWER LOGIC =================
