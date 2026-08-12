@@ -256,6 +256,11 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.08); flex-shrink: 0; transition: transform 0.3s ease;
       pointer-events: none; user-select: none;
     }
+    /* === BARU: styling untuk item VIDEO di slider === */
+    .gallery-track video{
+      width: 260px; height: 190px; object-fit: cover; border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08); flex-shrink: 0; background: #000;
+    }
     @keyframes scrollGallery { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
     /* PARTNERS SECTION */
@@ -432,12 +437,13 @@
       .partner-card{ padding:25px 18px; }
       .partner-logo{ width:65px; height:65px; padding:8px; }
       .partner-logo i{ font-size:28px; }
-      .partner-card h3{ font-size:14px; } .partner-card p{ font-size:12px; }
+      .partner-card h3{ font-size:14px; }
+      .partner-card p{ font-size:12px; }
 
       .testimonial-grid{ grid-template-columns: 1fr; gap: 20px; }
       .testimonial-card{ padding: 25px 20px; }
       
-      .gallery-track img{ width: 220px; height: 160px; }
+      .gallery-track img, .gallery-track video{ width: 220px; height: 160px; }
       .gallery-slider::before, .gallery-slider::after{ width: 40px; }
       
       .vision-grid{ grid-template-columns: 1fr; gap: 30px; text-align: center; }
@@ -462,7 +468,8 @@
       .partner-card{ padding:20px 12px; }
       .partner-logo{ width:55px; height:55px; padding:6px; margin-bottom:12px; }
       .partner-logo i{ font-size:24px; }
-      .partner-card h3{ font-size:13px; } .partner-card p{ font-size:11px; }
+      .partner-card h3{ font-size:13px; }
+      .partner-card p{ font-size:11px; }
     }
     @media(max-width: 360px){
       .hero-content h1{ font-size: 20px; } .hero-content p{ font-size: 12px; }
@@ -932,16 +939,23 @@
 
     AOS.init({ duration: 800, once: true });
 
+    /* === GALLERY: item existing TIDAK dihapus, hanya DITAMBAH file baru + video === */
     const galleryImages = [
       "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/1b64717a4-54b9-4e65-8c05-c5c04f7c27e2.png",
       "gallery/Palung.png",
       "gallery/sidik.png",
       "gallery/adit.png",
+      "gallery/reza.png",
       "gallery/Event.jpeg",
       "gallery/JemputMijel.jpeg",
       "gallery/Leles.jpeg",
       "gallery/Pusani.jpeg",
       "gallery/Jerigen.jpeg",
+      "gallery/Breifing.jpeg",
+      "gallery/Breifing-TPS.jpeg",
+      "gallery/Breifing-TPS2.jpeg",
+      "gallery/Pertemuan-Workshop.jpeg",
+      "gallery/Comming-soon.mp4",
       "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/10dac2700-bff6-4df9-bce6-84e39a9026d3.png",
       "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/1b157a60f-6e40-47d9-844b-cc3174ad1cc3.png",
       "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/192e0aae7-316a-4629-a3e4-585b47b77bea.png",
@@ -958,18 +972,40 @@
         "Armada logistik pengangkutan limbah terjadwal",
         "Dokumentasi kegiatan CSR pengelolaan limbah",
         "Proses daur ulang minyak jelantah menjadi biodiesel",
-        "Kerjasama rekan bank sampah dan pengelolaan limbah daur ulang"
+        "Kerjasama rekan bank sampah dan pengelolaan limbah daur ulang",
+        "Briefing tim operasional TPS 3R",
+        "Pertemuan dan workshop bersama mitra"
       ];
       
       galleryImages.forEach((src, index) => {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = altTexts[index % altTexts.length] + " - CV Rezeki Amanah Jaya";
-        img.loading = "lazy";
-        img.draggable = false;
-        img.width = "260";
-        img.height = "190";
-        galleryTrack.appendChild(img);
+        if (src.toLowerCase().endsWith('.mp4')) {
+          // === ITEM VIDEO (bisa diputar) ===
+          const video = document.createElement('video');
+          video.src = src;
+          video.controls = true;
+          video.muted = true;
+          video.loop = true;
+          video.playsInline = true;
+          video.preload = 'metadata';
+          video.width = 260;
+          video.height = 190;
+          video.setAttribute('aria-label', 'Video kegiatan CV Rezeki Amanah Jaya');
+          // Slider otomatis berhenti saat video diputar
+          video.addEventListener('play',  () => { galleryTrack.style.animationPlayState = 'paused'; });
+          video.addEventListener('pause', () => { galleryTrack.style.animationPlayState = ''; });
+          video.addEventListener('ended', () => { galleryTrack.style.animationPlayState = ''; });
+          galleryTrack.appendChild(video);
+        } else {
+          // === ITEM FOTO (existing) ===
+          const img = document.createElement('img');
+          img.src = src;
+          img.alt = altTexts[index % altTexts.length] + " - CV Rezeki Amanah Jaya";
+          img.loading = "lazy";
+          img.draggable = false;
+          img.width = "260";
+          img.height = "190";
+          galleryTrack.appendChild(img);
+        }
       });
     }
 
