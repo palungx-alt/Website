@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="description" content="Waste Management CV Rezeki Amanah Jaya - Solusi pengelolaan limbah profesional dengan sistem pemilahan, pengambilan terjadwal, dan pengolahan organik menggunakan Maggot BSF.">
-  <meta name="keywords" content="waste management, pengelolaan limbah, maggot BSF, pemilahan sampah, pengambilan limbah, CV Rezeki Amanah Jaya">
+  <meta name="description" content="CV Rezeki Amanah Jaya - Mitra Pengelolaan Sampah Berkelanjutan sesuai UU No. 18/2008 & Perda Kab. Tangerang No. 1/2023. Layanan TPS 3R, Eco Track, Biokonversi Maggot BSF, dan pemberdayaan masyarakat.">
+  <meta name="keywords" content="waste management, pengelolaan sampah, TPS 3R, maggot BSF, ekonomi sirkular, Kabupaten Tangerang, CV Rezeki Amanah Jaya">
   <meta name="author" content="CV Rezeki Amanah Jaya Group">
   <link rel="canonical" href="https://rezekiamanahjaya.com/waste-management.html">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Waste Management - CV Rezeki Amanah Jaya Group">
-  <meta property="og:description" content="Solusi pengelolaan limbah profesional dengan sistem pemilahan, pengambilan terjadwal, dan pengolahan organik menggunakan Maggot BSF.">
+  <meta property="og:description" content="Mitra pengelolaan sampah berkelanjutan sesuai Perda Kab. Tangerang No. 1/2023. TPS 3R, Eco Track, Biokonversi Maggot, dan pemberdayaan masyarakat.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="id_ID">
 
@@ -65,6 +65,25 @@
     .section-title h2{ font-size:clamp(24px, 6vw, 42px); color:#0d5c2f; margin-bottom:12px; font-weight:700; }
     .section-title p{ color:#666; max-width:650px; margin:auto; font-size:15px; }
 
+    /* ABOUT SECTION */
+    .about-section{ background:#fff; }
+    .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; max-width:1200px; margin:auto; }
+    .about-content h3{ font-size:28px; color:#0d5c2f; margin-bottom:20px; font-weight:700; }
+    .about-content p{ color:#555; line-height:1.8; margin-bottom:20px; font-size:15px; }
+    .about-badges{ display:flex; flex-wrap:wrap; gap:12px; margin-top:25px; }
+    .about-badge{ background:#eef7f0; color:#0d5c2f; padding:8px 16px; border-radius:20px; font-size:13px; font-weight:500; display:flex; align-items:center; gap:6px; }
+    .about-image{ position:relative; }
+    .about-image img{ width:100%; border-radius:20px; box-shadow:0 20px 40px rgba(0,0,0,0.15); object-fit:cover; aspect-ratio:4/3; }
+
+    /* VISION MISSION */
+    .vm-section{ background:linear-gradient(135deg,#f7faf7,#eef7f0); }
+    .vm-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; max-width:1100px; margin:auto; }
+    .vm-card{ background:white; padding:40px 30px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.08); }
+    .vm-card h3{ font-size:22px; color:#0d5c2f; margin-bottom:20px; font-weight:700; display:flex; align-items:center; gap:10px; }
+    .vm-card ul{ list-style:none; padding:0; }
+    .vm-card ul li{ padding:10px 0; padding-left:30px; position:relative; color:#555; font-size:14px; line-height:1.7; }
+    .vm-card ul li::before{ content:'\f00c'; font-family:'Font Awesome 6 Free'; font-weight:900; position:absolute; left:0; top:12px; color:#198754; font-size:12px; }
+
     /* PROCESS FLOW */
     .process-section{ background:#fff; }
     .process-container{ max-width:1200px; margin:auto; }
@@ -75,6 +94,126 @@
     .process-card i{ font-size:48px; color:#198754; margin-bottom:20px; display:block; }
     .process-card h3{ font-size:22px; color:#0d5c2f; margin-bottom:15px; font-weight:600; }
     .process-card p{ color:#555; line-height:1.8; font-size:14px; }
+
+    /* LEGAL SECTION */
+    .legal-section{ background:#fff; }
+    .legal-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; max-width:1100px; margin:auto; }
+    .legal-card{ background:linear-gradient(135deg,#f7faf7,#eef7f0); padding:35px 30px; border-radius:20px; border-left:4px solid #198754; }
+    .legal-card h4{ font-size:18px; color:#0d5c2f; margin-bottom:15px; font-weight:700; display:flex; align-items:center; gap:8px; }
+    .legal-card ul{ list-style:none; padding:0; }
+    .legal-card ul li{ padding:8px 0; padding-left:25px; position:relative; color:#555; font-size:13px; line-height:1.6; }
+    .legal-card ul li::before{ content:'\f058'; font-family:'Font Awesome 6 Free'; font-weight:900; position:absolute; left:0; top:10px; color:#198754; font-size:11px; }
+
+    /* TEAM SECTION */
+    .team-section{ background:linear-gradient(135deg,#f7faf7,#eef7f0); }
+    .team-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; max-width:1100px; margin:auto; }
+    .team-card{ background:white; padding:35px 25px; border-radius:20px; text-align:center; box-shadow:0 10px 25px rgba(0,0,0,0.08); transition:0.3s; }
+    .team-card:hover{ transform:translateY(-8px); box-shadow:0 15px 35px rgba(13,92,47,0.15); }
+    .team-photo{ width:110px; height:110px; border-radius:50%; object-fit:cover; object-position:top; margin:0 auto 20px; display:block; border:4px solid #eef7f0; box-shadow:0 8px 20px rgba(13,92,47,0.2); }
+    .team-card h4{ font-size:18px; color:#0d5c2f; margin-bottom:5px; font-weight:700; }
+    .team-card p{ color:#666; font-size:13px; font-weight:500; }
+    .team-card .role{ color:#198754; font-size:12px; margin-top:8px; display:block; }
+
+    /* ECO TRACK SECTION */
+    .ecotrack-section{ background:#fff; }
+    .ecotrack-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; max-width:1200px; margin:auto; }
+    .ecotrack-content h3{ font-size:28px; color:#0d5c2f; margin-bottom:20px; font-weight:700; }
+    .ecotrack-content p{ color:#555; line-height:1.8; margin-bottom:20px; font-size:15px; }
+    .ecotrack-features{ margin-top:25px; }
+    .ecotrack-feature{ display:flex; align-items:flex-start; gap:15px; margin-bottom:20px; }
+    .ecotrack-feature i{ font-size:24px; color:#198754; margin-top:3px; }
+    .ecotrack-feature h4{ font-size:16px; color:#0d5c2f; margin-bottom:5px; font-weight:600; }
+    .ecotrack-feature p{ font-size:14px; color:#666; margin:0; }
+    .ecotrack-image{ position:relative; }
+    .ecotrack-image img{ width:100%; border-radius:20px; box-shadow:0 20px 40px rgba(0,0,0,0.15); object-fit:cover; aspect-ratio:4/3; }
+
+    /* LAUNCH DEMO AREA */
+    .ecotrack-launch{ margin-top:35px; padding-top:30px; border-top:2px dashed #d9efe4; }
+    .live-badge{ display:inline-flex; align-items:center; gap:8px; background:#e8f8ee; color:#0d5c2f; border:1px solid #bfe6cd; padding:6px 14px; border-radius:20px; font-size:12px; font-weight:600; margin-bottom:15px; text-transform:uppercase; letter-spacing:0.5px; }
+    .live-dot{ width:8px; height:8px; background:#28a745; border-radius:50%; animation:blink 1.5s infinite; box-shadow:0 0 8px rgba(40,167,69,0.7); }
+    @keyframes blink{ 0%,100%{ opacity:1; } 50%{ opacity:0.35; } }
+    .ecotrack-launch h4{ font-size:20px; color:#0d5c2f; margin-bottom:8px; font-weight:700; }
+    .ecotrack-launch > p{ font-size:14px; color:#666; margin-bottom:25px; line-height:1.7; }
+
+    /* DUAL CTA BUTTONS */
+    .launch-cta-group{ display:flex; flex-wrap:wrap; gap:12px; margin-bottom:15px; }
+    .btn-launch{ display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:15px 28px; border-radius:12px; font-weight:600; font-size:15px; text-decoration:none; transition:all 0.35s ease; cursor:pointer; border:none; position:relative; overflow:hidden; }
+    .btn-launch i{ font-size:15px; }
+    .btn-primary-launch{ background:linear-gradient(135deg,#198754,#0d5c2f); color:white; box-shadow:0 10px 25px rgba(13,92,47,0.35); flex:1; min-width:200px; }
+    .btn-primary-launch::before{ content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent); transition:left 0.6s ease; }
+    .btn-primary-launch:hover::before{ left:100%; }
+    .btn-primary-launch:hover{ transform:translateY(-3px); box-shadow:0 15px 35px rgba(13,92,47,0.45); color:white; }
+    .btn-primary-launch .rocket{ animation:rocket 1.6s ease-in-out infinite; }
+    @keyframes rocket{ 0%,100%{ transform:translate(0,0) rotate(0deg); } 50%{ transform:translate(2px,-3px) rotate(-8deg); } }
+    .btn-secondary-launch{ background:white; color:#0d5c2f; border:2px solid #0d5c2f; flex:1; min-width:200px; }
+    .btn-secondary-launch:hover{ background:#0d5c2f; color:white; transform:translateY(-3px); box-shadow:0 10px 25px rgba(13,92,47,0.25); }
+    .btn-secondary-launch:hover .preview-icon{ transform:scale(1.15); }
+    .preview-icon{ transition:transform 0.3s ease; }
+    .launch-footnote{ font-size:12px; color:#888; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+
+    /* LAUNCH BANNER (full-width) */
+    .launch-banner-section{ background:linear-gradient(135deg,#0d5c2f,#1f8a3c); padding:70px 8%; position:relative; overflow:hidden; }
+    .launch-banner-section::before{ content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/></svg>'); background-size:100px 100px; }
+    .orb{ position:absolute; border-radius:50%; background:rgba(255,255,255,0.08); animation:float 8s ease-in-out infinite; }
+    .orb-1{ width:220px; height:220px; top:-70px; left:-70px; }
+    .orb-2{ width:150px; height:150px; bottom:-50px; right:8%; animation-delay:2s; }
+    .orb-3{ width:90px; height:90px; top:20%; right:25%; animation-delay:4s; background:rgba(255,255,255,0.05); }
+    @keyframes float{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-20px); } }
+    .launch-banner-container{ max-width:1200px; margin:auto; background:rgba(255,255,255,0.98); border-radius:24px; padding:45px; display:flex; justify-content:space-between; align-items:center; gap:40px; box-shadow:0 25px 60px rgba(0,0,0,0.25); position:relative; z-index:1; }
+    .launch-banner-content{ display:flex; gap:25px; align-items:flex-start; flex:1; }
+    .launch-banner-icon{ width:70px; height:70px; background:linear-gradient(135deg,#198754,#0d5c2f); border-radius:20px; display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 10px 25px rgba(13,92,47,0.3); }
+    .launch-banner-icon i{ font-size:30px; color:white; }
+    .launch-banner-content h3{ font-size:22px; color:#0d5c2f; margin-bottom:8px; font-weight:700; }
+    .launch-banner-content p{ color:#666; font-size:14px; line-height:1.7; margin:0; }
+    .launch-chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top:15px; }
+    .launch-chip{ background:#eef7f0; color:#0d5c2f; padding:6px 14px; border-radius:15px; font-size:12px; font-weight:600; display:inline-flex; align-items:center; gap:6px; }
+    .launch-banner-cta{ display:flex; flex-direction:column; gap:10px; flex-shrink:0; align-items:stretch; min-width:240px; }
+    .launch-banner-cta .btn-launch{ width:100%; justify-content:center; }
+
+    /* DEMO MODAL */
+    .demo-modal-overlay{ position:fixed; inset:0; background:rgba(8,40,20,0.85); backdrop-filter:blur(8px); z-index:9999; display:none; align-items:center; justify-content:center; padding:20px; opacity:0; transition:opacity 0.3s ease; }
+    .demo-modal-overlay.active{ display:flex; opacity:1; }
+    .demo-modal{ background:white; width:100%; max-width:1400px; height:90vh; max-height:900px; border-radius:20px; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 40px 80px rgba(0,0,0,0.5); transform:scale(0.95); transition:transform 0.3s ease; }
+    .demo-modal-overlay.active .demo-modal{ transform:scale(1); }
+    .demo-modal-header{ background:linear-gradient(135deg,#0d5c2f,#198754); color:white; padding:18px 25px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-shrink:0; }
+    .demo-modal-title{ display:flex; align-items:center; gap:12px; }
+    .demo-modal-title .modal-icon{ width:40px; height:40px; background:rgba(255,255,255,0.15); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; }
+    .demo-modal-title h4{ font-size:16px; font-weight:700; margin-bottom:2px; }
+    .demo-modal-title p{ font-size:12px; opacity:0.85; margin:0; }
+    .demo-modal-title .live-badge{ margin:0; font-size:10px; padding:3px 10px; margin-left:8px; }
+    .demo-modal-actions{ display:flex; gap:10px; align-items:center; }
+    .modal-action-btn{ background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.25); color:white; width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.3s; text-decoration:none; font-size:15px; }
+    .modal-action-btn:hover{ background:rgba(255,255,255,0.25); transform:translateY(-2px); }
+    .modal-action-btn.expand-btn{ width:auto; padding:0 16px; gap:8px; font-size:13px; font-weight:600; }
+    .modal-close-btn{ background:rgba(220,53,69,0.2); border-color:rgba(220,53,69,0.4); }
+    .modal-close-btn:hover{ background:#dc3545; border-color:#dc3545; }
+    .demo-modal-body{ flex:1; position:relative; background:#f0f0f0; overflow:hidden; }
+    .demo-modal-body iframe{ width:100%; height:100%; border:none; background:white; }
+    .demo-loading{ position:absolute; inset:0; background:white; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; z-index:5; }
+    .demo-loading .spinner-lg{ width:60px; height:60px; border:5px solid #e0efe4; border-top-color:#198754; border-radius:50%; animation:spin 1s linear infinite; }
+    .demo-loading h4{ color:#0d5c2f; font-size:18px; font-weight:600; }
+    .demo-loading p{ color:#666; font-size:14px; }
+    .demo-modal-footer{ background:#f8f9fa; padding:12px 25px; border-top:1px solid #e0efe4; display:flex; justify-content:space-between; align-items:center; gap:15px; font-size:12px; color:#666; flex-shrink:0; }
+    .demo-modal-footer .secure-info{ display:flex; align-items:center; gap:8px; }
+    .demo-modal-footer .secure-info i{ color:#198754; }
+
+    /* PARTNERSHIP SECTION */
+    .partnership-section{ background:linear-gradient(135deg,#f7faf7,#eef7f0); }
+    .partnership-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; max-width:1100px; margin:auto; }
+    .partnership-card{ background:white; padding:35px 30px; border-radius:20px; box-shadow:0 10px 25px rgba(0,0,0,0.06); }
+    .partnership-card h3{ font-size:20px; color:#0d5c2f; margin-bottom:20px; font-weight:700; display:flex; align-items:center; gap:10px; }
+    .partnership-card ul{ list-style:none; padding:0; }
+    .partnership-card ul li{ padding:10px 0; padding-left:28px; position:relative; color:#555; font-size:14px; line-height:1.7; }
+    .partnership-card ul li::before{ content:'\f058'; font-family:'Font Awesome 6 Free'; font-weight:900; position:absolute; left:0; top:12px; color:#198754; font-size:13px; }
+
+    /* COMMITMENT SECTION */
+    .commitment-section{ background:#fff; }
+    .commitment-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px; max-width:1200px; margin:auto; }
+    .commitment-item{ background:linear-gradient(135deg,#f7faf7,#eef7f0); padding:30px 25px; border-radius:15px; text-align:center; border:2px solid transparent; transition:0.3s; }
+    .commitment-item:hover{ border-color:#198754; transform:translateY(-5px); }
+    .commitment-item i{ font-size:36px; color:#198754; margin-bottom:15px; }
+    .commitment-item h4{ font-size:16px; color:#0d5c2f; margin-bottom:10px; font-weight:600; }
+    .commitment-item p{ font-size:13px; color:#666; line-height:1.6; }
 
     /* MAGGOT SECTION */
     .maggot-section{ background:linear-gradient(135deg,#f7faf7,#eef7f0); }
@@ -92,175 +231,32 @@
     .maggot-badge h4{ font-size:24px; font-weight:700; margin-bottom:5px; }
     .maggot-badge p{ font-size:13px; opacity:0.9; }
 
-    /* ================= PDF VIEWER SECTION (BARU) ================= */
-    .pdf-section {
-      background: #f7faf7;
-      padding: 80px 8%;
-    }
-    .pdf-wrapper {
-      max-width: 1000px;
-      margin: 0 auto;
-      background: #ffffff;
-      border-radius: 20px;
-      box-shadow: 0 15px 40px rgba(13, 92, 47, 0.1);
-      overflow: hidden;
-      border: 1px solid #e0efe4;
-    }
-    .pdf-header-bar {
-      background: #0d5c2f;
-      color: white;
-      padding: 15px 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-    .pdf-title {
-      font-size: 16px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .pdf-controls {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .pdf-btn {
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      color: white;
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 16px;
-    }
-    .pdf-btn:hover:not(:disabled) {
-      background: #198754;
-      border-color: #198754;
-      transform: translateY(-2px);
-    }
-    .pdf-btn:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
-    }
-    .pdf-btn-download {
-      width: auto;
-      padding: 0 20px;
-      gap: 8px;
-      background: #ffffff;
-      color: #0d5c2f;
-      border: none;
-      font-weight: 600;
-      font-size: 14px;
-    }
-    .pdf-btn-download:hover {
-      background: #eef7f0;
-      color: #0d5c2f;
-    }
-    .page-indicator {
-      background: rgba(0,0,0,0.2);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: 500;
-      min-width: 100px;
-      text-align: center;
-    }
-    .pdf-screen {
-      position: relative;
-      width: 100%;
-      min-height: 600px;
-      background: #eef2f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      touch-action: pan-y; /* Allow vertical scroll, handle horizontal swipe in JS */
-    }
-    #pdfCanvas {
-      max-width: 100%;
-      height: auto;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      background: white;
-    }
-    .pdf-loading {
-      position: absolute;
-      text-align: center;
-      color: #0d5c2f;
-      z-index: 10;
-    }
-    .pdf-loading .spinner {
-      width: 40px;
-      height: 40px;
-      border: 4px solid #e0efe4;
-      border-top-color: #198754;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 0 auto 15px;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    
-    .pdf-error {
-      position: absolute;
-      text-align: center;
-      color: #dc3545;
-      padding: 20px;
-      max-width: 80%;
-    }
-    .pdf-error i { font-size: 48px; margin-bottom: 15px; color: #dc3545; }
-    .pdf-error p { font-size: 14px; color: #666; margin-top: 10px; }
-    .pdf-error code { background: #f8f9fa; padding: 4px 8px; border-radius: 4px; font-size: 13px; }
-
-    .swipe-hint {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(13, 92, 47, 0.9);
-      color: white;
-      padding: 8px 20px;
-      border-radius: 20px;
-      font-size: 13px;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      pointer-events: none;
-      white-space: nowrap;
-    }
-    .swipe-hint.show { opacity: 1; }
-
-    .pdf-footer-bar {
-      padding: 15px 25px;
-      background: #ffffff;
-      border-top: 1px solid #e0efe4;
-    }
-    .progress-bar-container {
-      width: 100%;
-      height: 6px;
-      background: #e0efe4;
-      border-radius: 3px;
-      overflow: hidden;
-    }
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #198754, #0d5c2f);
-      border-radius: 3px;
-      transition: width 0.3s ease;
-      width: 0%;
-    }
-    .pdf-caption {
-      color: #666;
-      font-size: 12px;
-      text-align: center;
-      margin-top: 10px;
-    }
+    /* PDF VIEWER SECTION */
+    .pdf-section{ background:#f7faf7; padding:80px 8%; }
+    .pdf-wrapper{ max-width:1000px; margin:0 auto; background:#ffffff; border-radius:20px; box-shadow:0 15px 40px rgba(13,92,47,0.1); overflow:hidden; border:1px solid #e0efe4; }
+    .pdf-header-bar{ background:#0d5c2f; color:white; padding:15px 25px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px; }
+    .pdf-title{ font-size:16px; font-weight:600; display:flex; align-items:center; gap:10px; }
+    .pdf-controls{ display:flex; align-items:center; gap:10px; }
+    .pdf-btn{ background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); color:white; width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.3s ease; font-size:16px; }
+    .pdf-btn:hover:not(:disabled){ background:#198754; border-color:#198754; transform:translateY(-2px); }
+    .pdf-btn:disabled{ opacity:0.4; cursor:not-allowed; }
+    .pdf-btn-download{ width:auto; padding:0 20px; gap:8px; background:#ffffff; color:#0d5c2f; border:none; font-weight:600; font-size:14px; }
+    .pdf-btn-download:hover{ background:#eef7f0; color:#0d5c2f; }
+    .page-indicator{ background:rgba(0,0,0,0.2); padding:8px 16px; border-radius:20px; font-size:14px; font-weight:500; min-width:100px; text-align:center; }
+    .pdf-screen{ position:relative; width:100%; min-height:600px; background:#eef2f0; display:flex; align-items:center; justify-content:center; overflow:hidden; touch-action:pan-y; }
+    #pdfCanvas{ max-width:100%; height:auto; box-shadow:0 5px 20px rgba(0,0,0,0.1); background:white; }
+    .pdf-loading{ position:absolute; text-align:center; color:#0d5c2f; z-index:10; }
+    .pdf-loading .spinner{ width:40px; height:40px; border:4px solid #e0efe4; border-top-color:#198754; border-radius:50%; animation:spin 1s linear infinite; margin:0 auto 15px; }
+    @keyframes spin{ to{ transform:rotate(360deg); } }
+    .pdf-error{ position:absolute; text-align:center; color:#dc3545; padding:20px; max-width:80%; }
+    .pdf-error i{ font-size:48px; margin-bottom:15px; color:#dc3545; }
+    .pdf-error p{ font-size:14px; color:#666; margin-top:10px; }
+    .swipe-hint{ position:absolute; bottom:20px; left:50%; transform:translateX(-50%); background:rgba(13,92,47,0.9); color:white; padding:8px 20px; border-radius:20px; font-size:13px; opacity:0; transition:opacity 0.5s ease; pointer-events:none; white-space:nowrap; }
+    .swipe-hint.show{ opacity:1; }
+    .pdf-footer-bar{ padding:15px 25px; background:#ffffff; border-top:1px solid #e0efe4; }
+    .progress-bar-container{ width:100%; height:6px; background:#e0efe4; border-radius:3px; overflow:hidden; }
+    .progress-fill{ height:100%; background:linear-gradient(90deg,#198754,#0d5c2f); border-radius:3px; transition:width 0.3s ease; width:0%; }
+    .pdf-caption{ color:#666; font-size:12px; text-align:center; margin-top:10px; }
 
     /* GALLERY */
     .gallery-section{ background:#fff; }
@@ -283,7 +279,7 @@
     .cta-section{ background:linear-gradient(135deg,#0d5c2f,#1f8a3c); color:white; text-align:center; padding:80px 8%; }
     .cta-section h2{ font-size:clamp(28px, 5vw, 42px); margin-bottom:20px; font-weight:700; }
     .cta-section p{ font-size:16px; max-width:600px; margin:auto 30px; color:#d9ffe2; }
-    .btn{ display:inline-flex; align-items:center; justify-content:center; gap: 8px; padding:16px 40px; background:white; color:#0d5c2f; text-decoration:none; border-radius:50px; font-weight:600; font-size:16px; transition:0.3s; box-shadow:0 8px 20px rgba(0,0,0,0.2); margin-top:30px; }
+    .btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:16px 40px; background:white; color:#0d5c2f; text-decoration:none; border-radius:50px; font-weight:600; font-size:16px; transition:0.3s; box-shadow:0 8px 20px rgba(0,0,0,0.2); margin-top:30px; }
     .btn:hover{ transform:translateY(-3px); box-shadow:0 12px 28px rgba(0,0,0,0.25); background:#f0f0f0; }
 
     /* FOOTER */
@@ -293,38 +289,59 @@
     .wa{ position:fixed; bottom:20px; right:20px; width:58px; height:58px; background:#25D366; color:white; border-radius:50%; display:flex; justify-content:center; align-items:center; font-size:28px; z-index:999; text-decoration:none; box-shadow:0 8px 25px rgba(37,211,102,0.4); animation:pulse 2s infinite; }
     @keyframes pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.08); } }
 
+    body.modal-open{ overflow:hidden; }
+
     /* RESPONSIVE */
-    @media(max-width: 992px){
-      .maggot-grid{ grid-template-columns:1fr; }
+    @media(max-width:992px){
+      .maggot-grid, .ecotrack-grid, .about-grid, .vm-grid, .legal-grid, .partnership-grid{ grid-template-columns:1fr; }
       .maggot-badge{ left:20px; bottom:20px; }
-      .pdf-screen { min-height: 450px; }
+      .pdf-screen{ min-height:450px; }
+      .launch-banner-container{ flex-direction:column; text-align:center; padding:35px 30px; }
+      .launch-banner-content{ flex-direction:column; align-items:center; }
+      .launch-chips{ justify-content:center; }
+      .launch-banner-cta{ width:100%; }
     }
-    @media(max-width: 768px){
+    @media(max-width:768px){
       body{ font-size:15px; }
-      .hamburger{ display: flex; }
-      .menu{ position: fixed; top: 75px; left: 0; right: 0; background: white; flex-direction: column; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transform: translateY(-150%); transition: transform 0.4s ease; z-index: 998; gap: 5px; border-radius: 0 0 20px 20px; max-height: 80vh; overflow-y: auto; }
-      .menu.active{ transform: translateY(0); }
-      .menu > a, .menu .dropdown-toggle{ margin: 0; padding: 15px 20px; font-size: 16px; border-bottom: 1px solid #f0f0f0; display: block; text-align: center; width: 100%; justify-content: center; }
-      .menu > a:last-child{ border-bottom: none; }
-      .dropdown{ margin-left: 0; width: 100%; }
-      .dropdown-menu{ position: static; box-shadow: none; background: #f9f9f9; opacity: 1; visibility: visible; transform: none; display: none; min-width: 100%; border-radius: 0; padding: 0; }
-      .dropdown.active .dropdown-menu{ display: block; }
-      .dropdown-item{ padding: 12px 30px; text-align: center; font-size: 15px; border-bottom: 1px solid #eee; }
-      .hamburger.active span:nth-child(1){ transform: rotate(45deg) translate(5px, 6px); }
-      .hamburger.active span:nth-child(2){ opacity: 0; }
-      .hamburger.active span:nth-child(3){ transform: rotate(-45deg) translate(5px, -6px); }
+      .hamburger{ display:flex; }
+      .menu{ position:fixed; top:75px; left:0; right:0; background:white; flex-direction:column; padding:20px; box-shadow:0 10px 30px rgba(0,0,0,0.1); transform:translateY(-150%); transition:transform 0.4s ease; z-index:998; gap:5px; border-radius:0 0 20px 20px; max-height:80vh; overflow-y:auto; }
+      .menu.active{ transform:translateY(0); }
+      .menu > a, .menu .dropdown-toggle{ margin:0; padding:15px 20px; font-size:16px; border-bottom:1px solid #f0f0f0; display:block; text-align:center; width:100%; justify-content:center; }
+      .menu > a:last-child{ border-bottom:none; }
+      .dropdown{ margin-left:0; width:100%; }
+      .dropdown-menu{ position:static; box-shadow:none; background:#f9f9f9; opacity:1; visibility:visible; transform:none; display:none; min-width:100%; border-radius:0; padding:0; }
+      .dropdown.active .dropdown-menu{ display:block; }
+      .dropdown-item{ padding:12px 30px; text-align:center; font-size:15px; border-bottom:1px solid #eee; }
+      .hamburger.active span:nth-child(1){ transform:rotate(45deg) translate(5px,6px); }
+      .hamburger.active span:nth-child(2){ opacity:0; }
+      .hamburger.active span:nth-child(3){ transform:rotate(-45deg) translate(5px,-6px); }
       section{ padding:60px 6%; }
       .page-header{ padding:120px 6% 60px; }
       .gallery-grid{ grid-template-columns:1fr; }
       .maggot-badge{ left:10px; bottom:10px; padding:15px 20px; }
-      .pdf-header-bar { flex-direction: column; text-align: center; }
-      .pdf-controls { justify-content: center; }
+      .pdf-header-bar{ flex-direction:column; text-align:center; }
+      .pdf-controls{ justify-content:center; }
+      .launch-banner-section{ padding:60px 6%; }
+      .launch-banner-container{ padding:30px 22px; }
+      .btn-launch{ padding:14px 22px; font-size:14px; }
+      .launch-cta-group{ flex-direction:column; }
+      .btn-launch{ width:100%; }
+      .demo-modal-overlay{ padding:10px; }
+      .demo-modal{ height:95vh; border-radius:15px; }
+      .demo-modal-header{ padding:14px 18px; flex-wrap:wrap; }
+      .demo-modal-title h4{ font-size:14px; }
+      .demo-modal-title p{ font-size:11px; }
+      .demo-modal-title .live-badge{ font-size:9px; padding:2px 8px; }
+      .modal-action-btn.expand-btn span{ display:none; }
+      .modal-action-btn.expand-btn{ width:40px; }
+      .demo-modal-footer{ flex-direction:column; gap:8px; text-align:center; }
     }
-    @media(max-width: 480px){
+    @media(max-width:480px){
       section{ padding:50px 5%; }
       .process-steps{ grid-template-columns:1fr; }
-      .pdf-btn-download span { display: none; } /* Hide text on very small screens, keep icon */
-      .pdf-btn-download { width: 40px; padding: 0; }
+      .pdf-btn-download span{ display:none; }
+      .pdf-btn-download{ width:40px; padding:0; }
+      .demo-modal-title .modal-icon{ width:34px; height:34px; font-size:15px; }
     }
   </style>
 </head>
@@ -373,160 +390,433 @@
 
   <!-- PAGE HEADER -->
   <section class="page-header">
-    <h1>Waste Management</h1>
-    <p>Solusi pengelolaan limbah profesional dan berkelanjutan dengan sistem pemilahan modern, pengambilan terjadwal, dan pengolahan organik menggunakan teknologi Maggot BSF</p>
+    <h1>Mitra Pengelolaan Sampah Berkelanjutan</h1>
+    <p>Beroperasi sesuai UU No. 18 Tahun 2008 & Perda Kab. Tangerang No. 1 Tahun 2023. Mengelola sampah secara amanah untuk masa depan yang bersih dan berkelanjutan.</p>
   </section>
 
-  <!-- ALUR PEMILAHAN -->
-  <section class="process-section">
+  <!-- TENTANG PERUSAHAAN -->
+  <section class="about-section" id="about">
     <div class="section-title" data-aos="fade-up">
-      <h2>Alur Pemilahan Limbah</h2>
-      <p>Sistem pemilahan limbah yang terstruktur dan profesional untuk memaksimalkan daur ulang dan pengolahan</p>
+      <h2>Tentang Perusahaan</h2>
+      <p>CV Rezeki Amanah Jaya adalah perusahaan pengelolaan sampah terintegrasi dengan prinsip 3R, ekonomi sirkular, dan pemberdayaan masyarakat</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-content" data-aos="fade-right">
+        <h3>Mengelola Amanah dengan Jujur & Profesional</h3>
+        <p>Nama "Rezeki Amanah Jaya" mencerminkan komitmen kami untuk mengelola amanah masyarakat dan lingkungan secara jujur, profesional, dan menghasilkan manfaat (rezeki) yang berkelanjutan bagi semua pihak.</p>
+        <p>Kami berkomitmen menjadi mitra strategis Pemerintah maupun industri hingga domestik dalam mewujudkan pengelolaan sampah yang bertanggung jawab, compliant, dan berkelanjutan.</p>
+        <div class="about-badges">
+          <span class="about-badge"><i class="fas fa-leaf"></i> 3R (Reduce, Reuse, Recycle)</span>
+          <span class="about-badge"><i class="fas fa-recycle"></i> Ekonomi Sirkular</span>
+          <span class="about-badge"><i class="fas fa-users"></i> Pemberdayaan Masyarakat</span>
+          <span class="about-badge"><i class="fas fa-balance-scale"></i> Compliant</span>
+        </div>
+      </div>
+      <div class="about-image" data-aos="fade-left">
+        <img src="armada/fasilitas-sortir.png" alt="Fasilitas CV Rezeki Amanah Jaya">
+      </div>
+    </div>
+  </section>
+
+  <!-- VISI & MISI -->
+  <section class="vm-section">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Visi & Misi</h2>
+      <p>Arah dan komitmen kami dalam pengelolaan sampah berkelanjutan</p>
+    </div>
+    <div class="vm-grid">
+      <div class="vm-card" data-aos="fade-right">
+        <h3><i class="fas fa-eye"></i> Visi</h3>
+        <p style="color:#555; line-height:1.8; font-size:15px;">Menjadi mitra solusi terintegrasi terdepan yang menghubungkan tanggung jawab lingkungan, keberlanjutan, dan pemberdayaan masyarakat di Kabupaten Tangerang.</p>
+      </div>
+      <div class="vm-card" data-aos="fade-left">
+        <h3><i class="fas fa-bullseye"></i> Misi</h3>
+        <ul>
+          <li>Mengelola limbah dan dampak lingkungan secara bertanggung jawab, compliant, dan berkelanjutan sesuai UU No. 18/2008</li>
+          <li>Menyediakan layanan pengelolaan sampah yang aman, higienis, dan berstandar tinggi bagi rumah tangga, bisnis, dan industri</li>
+          <li>Membangun infrastruktur logistik dan fasilitas pengolahan yang efisien untuk mendukung rantai pasok klien dan sistem persampahan daerah</li>
+          <li>Menciptakan dampak sosial positif melalui program pemberdayaan masyarakat berbasis bank sampah, edukasi 3R, dan kemitraan lokal yang terukur</li>
+          <li>Mendorong ekonomi sirkular dengan mengubah sampah menjadi sumber daya bernilai ekonomi</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALUR PROSES TPS 3R -->
+  <section class="process-section" id="sop">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Alur Proses TPS 3R</h2>
+      <p>Standar Operasional Prosedur pengelolaan sampah terpadu dari hulu ke hilir, dengan standar FIFO (First In, First Out)</p>
     </div>
     <div class="process-container">
       <div class="process-steps">
         <div class="process-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="process-number">1</div><i class="fas fa-trash-alt"></i>
-          <h3>Pengumpulan Awal</h3>
-          <p>Limbah dikumpulkan dari sumbernya (rumah tangga, restoran, industri) dengan wadah terpisah sesuai kategori</p>
+          <div class="process-number">1</div><i class="fas fa-hands-helping"></i>
+          <h3>Pemilahan di Sumber</h3>
+          <p>Edukasi & fasilitasi pemilahan sampah sejak dari rumah tangga, bisnis, dan industri</p>
         </div>
         <div class="process-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="process-number">2</div><i class="fas fa-sort-amount-down"></i>
-          <h3>Sortir Manual</h3>
-          <p>Tim profesional melakukan pemilahan manual untuk memisahkan limbah organik, anorganik, dan bahan berbahaya</p>
+          <div class="process-number">2</div><i class="fas fa-truck-loading"></i>
+          <h3>Pengumpulan & Pengangkutan</h3>
+          <p>Armada terjadwal sesuai retribusi resmi dengan pencatatan volume yang akurat</p>
         </div>
         <div class="process-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="process-number">3</div><i class="fas fa-recycle"></i>
-          <h3>Kategorisasi</h3>
-          <p>Limbah dikategorikan menjadi: organik (sisa makanan), anorganik (plastik, kertas, logam), dan B3 (bahan berbahaya)</p>
+          <div class="process-number">3</div><i class="fas fa-seedling"></i>
+          <h3>Pengolahan Organik</h3>
+          <p>Pengomposan, biokonversi maggot BSF, dan biogas untuk limbah organik</p>
         </div>
         <div class="process-card" data-aos="fade-up" data-aos-delay="400">
-          <div class="process-number">4</div><i class="fas fa-compress-arrows-alt"></i>
-          <h3>Pemadatan</h3>
-          <p>Limbah yang sudah dipilah dipadatkan untuk efisiensi penyimpanan dan transportasi</p>
+          <div class="process-number">4</div><i class="fas fa-recycle"></i>
+          <h3>Daur Ulang Anorganik</h3>
+          <p>Pemilahan plastik, kertas, karton, logam, dan kaca untuk didaur ulang</p>
         </div>
         <div class="process-card" data-aos="fade-up" data-aos-delay="500">
-          <div class="process-number">5</div><i class="fas fa-dolly"></i>
-          <h3>Penyimpanan</h3>
-          <p>Limbah disimpan di fasilitas khusus dengan standar kebersihan dan keamanan yang ketat</p>
+          <div class="process-number">5</div><i class="fas fa-warehouse"></i>
+          <h3>Gudang PDU</h3>
+          <p>Pusat Daur Ulang untuk produk turunan dari anorganik maupun biokonversi maggot</p>
         </div>
         <div class="process-card" data-aos="fade-up" data-aos-delay="600">
-          <div class="process-number">6</div><i class="fas fa-truck-loading"></i>
-          <h3>Distribusi</h3>
-          <p>Limbah didistribusikan ke fasilitas pengolahan sesuai jenisnya untuk proses selanjutnya</p>
+          <div class="process-number">6</div><i class="fas fa-clipboard-check"></i>
+          <h3>Konsultasi & Audit Limbah</h3>
+          <p>Baseline audit, penyusunan SOP, dan penetapan target pengurangan sampah</p>
+        </div>
+        <div class="process-card" data-aos="fade-up" data-aos-delay="700">
+          <div class="process-number">7</div><i class="fas fa-chart-line"></i>
+          <h3>Penginputan & Monitoring Armada</h3>
+          <p>Monitoring armada serta penginputan volume sampah masuk dan terkelola</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ALUR PENGAMBILAN -->
+  <!-- DASAR HUKUM -->
+  <section class="legal-section" id="legal">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Dasar Hukum & Kepatuhan</h2>
+      <p>Seluruh kegiatan operasional berpedoman pada regulasi nasional dan daerah</p>
+    </div>
+    <div class="legal-grid">
+      <div class="legal-card" data-aos="fade-right">
+        <h4><i class="fas fa-landmark"></i> Tingkat Nasional</h4>
+        <ul>
+          <li>Undang-Undang Nomor 18 Tahun 2008 tentang Pengelolaan Sampah</li>
+          <li>Peraturan Pemerintah Nomor 81 Tahun 2012 tentang Pengelolaan Sampah Rumah Tangga dan Sejenisnya</li>
+          <li>Peraturan Pemerintah Nomor 27 Tahun 2020 tentang Pengelolaan Sampah Spesifik</li>
+          <li>Peraturan Menteri PUPR Nomor 03/PRT/M/2013 tentang Prasarana dan Sarana Persampahan</li>
+          <li>Peraturan terkait Extended Producer Responsibility (EPR)</li>
+        </ul>
+      </div>
+      <div class="legal-card" data-aos="fade-left">
+        <h4><i class="fas fa-map-marked-alt"></i> Tingkat Daerah - Kab. Tangerang</h4>
+        <ul>
+          <li>Perda Kab. Tangerang No. 1 Tahun 2023 tentang Pengelolaan Sampah (dasar hukum utama)</li>
+          <li>Perda terkait Pajak Daerah dan Retribusi Daerah (tarif retribusi persampahan)</li>
+          <li>Kebijakan dan strategi Dinas Lingkungan Hidup dan Kebersihan (DLHK) Kab. Tangerang</li>
+          <li>Arahan transformasi TPA Jatiwaringin menuju controlled landfill</li>
+        </ul>
+        <p style="margin-top:15px; font-size:13px; color:#555; line-height:1.7;">Kami mendukung implementasi <strong>Bab III</strong> (Pengelolaan Sampah), <strong>Bab VII</strong> (Peran Masyarakat), <strong>Bab VIII</strong> (Perizinan), dan <strong>Bab IX</strong> (Kerja Sama dan Kemitraan) dari Perda No. 1 Tahun 2023.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRUKTUR ORGANISASI -->
+  <section class="team-section">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Struktur Organisasi</h2>
+      <p>Tim profesional yang bertanggung jawab atas operasional perusahaan</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="gallery/sidik.png" alt="Sidik Dwi" class="team-photo">
+        <h4>Sidik Dwi</h4>
+        <p>Direktur Utama</p>
+        <span class="role">Strategic Direction & Business Development</span>
+      </div>
+      <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+        <img src="gallery/adit.png" alt="Aditia Mahardika" class="team-photo">
+        <h4>Aditia Mahardika</h4>
+        <p>Direktur</p>
+        <span class="role">Operational Excellence & Quality Control</span>
+      </div>
+      <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+        <img src="gallery/Palung.png" alt="Wahyu Kilatsih" class="team-photo">
+        <h4>Wahyu Kilatsih</h4>
+        <p>Komisaris</p>
+        <span class="role">Governance & Compliance Oversight</span>
+      </div>
+      <div class="team-card" data-aos="fade-up" data-aos-delay="400">
+        <img src="gallery/reza.png" alt="Reza Noor Shubhan" class="team-photo">
+        <h4>Reza Noor Shubhan</h4>
+        <p>General Manager</p>
+        <span class="role">Operations & Supply Chain</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ECO TRACK + DUAL CTA -->
+  <section class="ecotrack-section">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Sistem Eco Track</h2>
+      <p>Sistem informasi terintegrasi untuk monitoring armada dan pengelolaan sampah secara real-time</p>
+    </div>
+    <div class="ecotrack-grid">
+      <div class="ecotrack-content" data-aos="fade-right">
+        <h3>Digitalisasi Pengelolaan Sampah</h3>
+        <p>Eco Track adalah sistem informasi terintegrasi yang kami kembangkan untuk pengguna dan administrator dalam mengendalikan armada secara menyeluruh di setiap tahapan proses. Petugas penanganan sampah mulai dari pengangkutan hingga sampai ke landfill maupun Intermediate Treatment Facility, di mana sampah residu dikelola lebih lanjut.</p>
+        <div class="ecotrack-features">
+          <div class="ecotrack-feature">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Pelacakan Armada Real-time</h4>
+              <p>Pantau posisi dan rute armada pengangkut secara langsung</p>
+            </div>
+          </div>
+          <div class="ecotrack-feature">
+            <i class="fas fa-tachometer-alt"></i>
+            <div>
+              <h4>Dashboard Monitoring</h4>
+              <p>Data volume sampah masuk, terkelola, dan residual</p>
+            </div>
+          </div>
+          <div class="ecotrack-feature">
+            <i class="fas fa-file-alt"></i>
+            <div>
+              <h4>Pelaporan Otomatis</h4>
+              <p>Laporan akurat untuk audit dan pelaporan ke instansi</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LAUNCH AREA -->
+        <div class="ecotrack-launch" data-aos="fade-up" data-aos-delay="100">
+          <div class="live-badge"><span class="live-dot"></span> LIVE ENVIRONMENT — Production Ready</div>
+          <h4><i class="fas fa-satellite-dish" style="color:#198754; margin-right:8px;"></i>Akses Sistem Eco Track</h4>
+          <p>Pilih mode akses yang sesuai dengan kebutuhan Anda: pratinjau langsung di halaman ini atau akses penuh dashboard di tab baru.</p>
+          <div class="launch-cta-group">
+            <button class="btn-launch btn-primary-launch" onclick="openFullDashboard()">
+              <i class="fas fa-rocket rocket"></i>
+              <span>Akses Dashboard Penuh</span>
+              <i class="fas fa-external-link-alt" style="font-size:12px; opacity:0.8;"></i>
+            </button>
+            <button class="btn-launch btn-secondary-launch" onclick="openDemoPreview()">
+              <i class="fas fa-eye preview-icon"></i>
+              <span>Pratinjau Demo</span>
+            </button>
+          </div>
+          <div class="launch-footnote">
+            <i class="fas fa-shield-alt" style="color:#198754;"></i>
+            <span>Koneksi aman & terenkripsi</span>
+          </div>
+        </div>
+      </div>
+      <div class="ecotrack-image" data-aos="fade-left">
+        <img src="armada/ecotrack.png" alt="Sistem Eco Track CV Rezeki Amanah Jaya">
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER LAUNCH (FULL WIDTH) -->
+  <section class="launch-banner-section">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="launch-banner-container" data-aos="zoom-in">
+      <div class="launch-banner-content">
+        <div class="launch-banner-icon"><i class="fas fa-satellite-dish"></i></div>
+        <div>
+          <div class="live-badge"><span class="live-dot"></span> LIVE ENVIRONMENT — Sistem Beroperasi 24/7</div>
+          <h3>Eco Track System — Siap Digunakan Hari Ini</h3>
+          <p>Monitoring armada, volume sampah, dan pelaporan real-time langsung dari genggaman Anda. Terintegrasi penuh dengan sistem TPS 3R RAJ Group, dari pengangkutan hingga pemrosesan akhir.</p>
+          <div class="launch-chips">
+            <span class="launch-chip"><i class="fas fa-map-marker-alt"></i> Pelacakan Armada</span>
+            <span class="launch-chip"><i class="fas fa-tachometer-alt"></i> Dashboard Real-time</span>
+            <span class="launch-chip"><i class="fas fa-file-alt"></i> Pelaporan Otomatis</span>
+            <span class="launch-chip"><i class="fas fa-user-shield"></i> Akses Multi-Role</span>
+          </div>
+        </div>
+      </div>
+      <div class="launch-banner-cta">
+        <button class="btn-launch btn-primary-launch" onclick="openFullDashboard()">
+          <i class="fas fa-rocket rocket"></i>
+          <span>Akses Dashboard Penuh</span>
+          <i class="fas fa-external-link-alt" style="font-size:12px;"></i>
+        </button>
+        <button class="btn-launch btn-secondary-launch" onclick="openDemoPreview()">
+          <i class="fas fa-eye preview-icon"></i>
+          <span>Pratinjau Demo</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SISTEM PENGELOLAAN SESUAI PERDA -->
   <section class="process-section" style="background:#f7faf7;">
     <div class="section-title" data-aos="fade-up">
-      <h2>Alur Pengambilan Limbah</h2>
-      <p>Sistem pengambilan limbah yang terjadwal dan responsif untuk kemudahan mitra kami</p>
+      <h2>Sistem Pengelolaan Sesuai Perda</h2>
+      <p>Sesuai UU No. 18 Tahun 2008, pengelolaan sampah terbagi dalam dua pilar utama</p>
     </div>
     <div class="process-container">
       <div class="process-steps">
         <div class="process-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="process-number">1</div><i class="fas fa-phone-volume"></i>
-          <h3>Pemesanan</h3>
-          <p>Mitra dapat memesan pengambilan limbah melalui telepon, WhatsApp, atau aplikasi dengan mudah</p>
+          <div class="process-number">A</div><i class="fas fa-minus-circle"></i>
+          <h3>Pengurangan Sampah</h3>
+          <p><strong>Pembatasan timbulan</strong> - optimasi proses, pengurangan kemasan sekali pakai, edukasi<br><br><strong>Pendauran ulang</strong> - fasilitas daur ulang dan kemitraan industri<br><br><strong>Pemanfaatan kembali</strong> - reuse packaging, upcycling, produk daur ulang bernilai</p>
         </div>
         <div class="process-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="process-number">2</div><i class="fas fa-calendar-check"></i>
-          <h3>Jadwalkan</h3>
-          <p>Tim kami akan mengkonfirmasi jadwal pengambilan sesuai ketersediaan dan lokasi</p>
+          <div class="process-number">1</div><i class="fas fa-filter"></i>
+          <h3>Pemilahan</h3>
+          <p>Pemisahan berdasarkan jenis & karakteristik. Minimal 5 kategori dengan pewadahan terpisah</p>
         </div>
         <div class="process-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="process-number">3</div><i class="fas fa-truck"></i>
-          <h3>Pengambilan</h3>
-          <p>Armada profesional kami datang ke lokasi untuk mengambil limbah dengan prosedur yang aman</p>
+          <div class="process-number">2</div><i class="fas fa-hands"></i>
+          <h3>Pengumpulan</h3>
+          <p>Dari sumber ke TPS/TPS 3R/fasilitas. Jadwal rutin, armada tertutup, dengan pencatatan</p>
         </div>
         <div class="process-card" data-aos="fade-up" data-aos-delay="400">
-          <div class="process-number">4</div><i class="fas fa-clipboard-check"></i>
-          <h3>Pencatatan</h3>
-          <p>Pencatatan volume dan jenis limbah untuk dokumentasi dan pelaporan</p>
+          <div class="process-number">3</div><i class="fas fa-truck"></i>
+          <h3>Pengangkutan</h3>
+          <p>Transfer ke pengolahan atau TPA. Rute optimal, sesuai izin angkut yang berlaku</p>
         </div>
         <div class="process-card" data-aos="fade-up" data-aos-delay="500">
-          <div class="process-number">5</div><i class="fas fa-file-invoice-dollar"></i>
-          <h3>Pembayaran</h3>
-          <p>Proses pembayaran yang transparan dan cepat sesuai kesepakatan</p>
+          <div class="process-number">4</div><i class="fas fa-industry"></i>
+          <h3>Pengolahan</h3>
+          <p>Mengubah karakteristik/komposisi/jumlah. Kompos, daur ulang, recovery energi, maggot</p>
         </div>
         <div class="process-card" data-aos="fade-up" data-aos-delay="600">
-          <div class="process-number">6</div><i class="fas fa-smile"></i>
-          <h3>Evaluasi</h3>
-          <p>Evaluasi layanan untuk peningkatan kualitas berkelanjutan</p>
+          <div class="process-number">5</div><i class="fas fa-landmark"></i>
+          <h3>Pemrosesan Akhir</h3>
+          <p>Pengembalian ke media lingkungan secara aman. Hanya residual; dukung controlled landfill TPA Jatiwaringin maupun dengan teknologi RDF</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MAGGOT SECTION -->
+  <!-- KEMITRAAN & PEMBERDAYAAN -->
+  <section class="partnership-section" id="partnership">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Kemitraan & Pemberdayaan</h2>
+      <p>Kolaborasi dengan Pemerintah dan masyarakat untuk dampak berkelanjutan</p>
+    </div>
+    <div class="partnership-grid">
+      <div class="partnership-card" data-aos="fade-right">
+        <h3><i class="fas fa-handshake"></i> Kemitraan dengan Pemkab Tangerang</h3>
+        <p style="font-size:13px; color:#666; margin-bottom:15px;">Sesuai Bab IX Perda No. 1/2023 tentang Kerja Sama dan Kemitraan</p>
+        <ul>
+          <li>Dukungan operasional TPS 3R dan bank sampah di tingkat desa/kelurahan</li>
+          <li>Kontribusi data & pelaporan volume sampah untuk neraca pengelolaan daerah</li>
+          <li>Partisipasi dalam program transformasi TPA Jatiwaringin menuju controlled landfill</li>
+          <li>Kegiatan edukasi dan sosialisasi Perda kepada masyarakat dan pelaku usaha</li>
+        </ul>
+      </div>
+      <div class="partnership-card" data-aos="fade-left">
+        <h3><i class="fas fa-users"></i> Program Pemberdayaan Masyarakat</h3>
+        <p style="font-size:13px; color:#666; margin-bottom:15px;">Sejalan dengan Bab VII Perda No. 1/2023 (Peran Masyarakat)</p>
+        <ul>
+          <li>Bank Sampah Mitra - pendampingan teknis, pencatatan digital, akses pasar daur ulang</li>
+          <li>Edukasi 3R & Pemilahan - pelatihan di sekolah, RW, dan kawasan industri</li>
+          <li>UMKM Upcycling - pelatihan dan kemitraan produk dari sampah</li>
+          <li>Monitoring Dampak - indikator nasabah bank sampah, volume terkelola, pengurangan ke TPA</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAGGOT BSF (JUDUL BARU) -->
   <section class="maggot-section">
     <div class="section-title" data-aos="fade-up">
-      <h2>Pengelolaan Limbah Organik dengan Maggot BSF</h2>
-      <p>Teknologi ramah lingkungan untuk mengolah limbah organik menjadi sumber daya bernilai ekonomi</p>
+      <h2>Biokonversi Maggot BSF: Transformasi Limbah Organik Bernilai Ekonomi Tinggi</h2>
+      <p>Teknologi ramah lingkungan yang mengolah limbah organik menjadi biomassa, pakan ternak, dan pupuk organik berkualitas</p>
     </div>
     <div class="maggot-grid">
       <div class="maggot-content" data-aos="fade-right">
         <h3>Black Soldier Fly (Hermetia illucens)</h3>
         <p>Maggot BSF adalah solusi inovatif untuk mengolah limbah organik seperti sisa makanan, sampah pasar, dan limbah restoran. Larva lalat Black Soldier Fly memiliki kemampuan luar biasa dalam mengonsumsi limbah organik hingga 80% dari berat tubuhnya.</p>
         <div class="maggot-features">
-          <div class="maggot-feature"><i class="fas fa-check-circle"></i><div><h4>Efisiensi Tinggi</h4><p>Dapat mengolah 1 ton limbah organik dalam 14-21 hari</p></div></div>
-          <div class="maggot-feature"><i class="fas fa-check-circle"></i><div><h4>Zero Waste</h4><p>95% limbah terkonversi menjadi biomassa maggot dan pupuk organik</p></div></div>
-          <div class="maggot-feature"><i class="fas fa-check-circle"></i><div><h4>Produk Bernilai Ekonomi</h4><p>Maggot kering menjadi pakan ternak berkualitas tinggi (protein 40-45%)</p></div></div>
-          <div class="maggot-feature"><i class="fas fa-check-circle"></i><div><h4>Ramah Lingkungan</h4><p>Mengurangi emisi gas metana dan bau tidak sedap secara signifikan</p></div></div>
-          <div class="maggot-feature"><i class="fas fa-check-circle"></i><div><h4>Pupuk Organik</h4><p>Kasgot (bekas maggot) menjadi pupuk organik berkualitas tinggi untuk pertanian</p></div></div>
+          <div class="maggot-feature">
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <h4>Efisiensi Tinggi</h4>
+              <p>Dapat mengolah 1 ton limbah organik dalam 14-21 hari</p>
+            </div>
+          </div>
+          <div class="maggot-feature">
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <h4>Zero Waste</h4>
+              <p>95% limbah terkonversi menjadi biomassa maggot dan pupuk organik</p>
+            </div>
+          </div>
+          <div class="maggot-feature">
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <h4>Produk Bernilai Ekonomi</h4>
+              <p>Maggot kering menjadi pakan ternak berkualitas tinggi (protein 40-45%)</p>
+            </div>
+          </div>
+          <div class="maggot-feature">
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <h4>Pupuk Organik</h4>
+              <p>Kasgot (bekas maggot) menjadi pupuk organik berkualitas tinggi untuk pertanian</p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="maggot-image" data-aos="fade-left">
-        <img src="armada/budidaya-maggot.jpg" alt="Maggot BSF Cultivation CV Rezeki Amanah Jaya">
-        <div class="maggot-badge"><h4>95%</h4><p>Limbah Terkonversi</p></div>
+        <img src="armada/budidaya-maggot.jpg" alt="Biokonversi Maggot BSF CV Rezeki Amanah Jaya">
+        <div class="maggot-badge">
+          <h4>95%</h4>
+          <p>Limbah Terkonversi</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PROSES BUDIDAYA MAGGOT -->
-  <section class="process-section">
+  <!-- KOMITMEN KEPATUHAN -->
+  <section class="commitment-section">
     <div class="section-title" data-aos="fade-up">
-      <h2>Proses Budidaya Maggot</h2>
-      <p>Tahapan pengolahan limbah organik menggunakan teknologi Maggot BSF</p>
+      <h2>Komitmen Kepatuhan & Keberlanjutan</h2>
+      <p>Prinsip yang kami junjung tinggi dalam setiap operasional</p>
     </div>
-    <div class="process-container">
-      <div class="process-steps">
-        <div class="process-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="process-number">1</div><i class="fas fa-egg"></i>
-          <h3>Persiapan Telur</h3><p>Telur BSF ditetaskan dalam kondisi terkontrol untuk menghasilkan larva berkualitas</p>
-        </div>
-        <div class="process-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="process-number">2</div><i class="fas fa-blender"></i>
-          <h3>Persiapan Media</h3><p>Limbah organik dicacah dan difermentasi sebagai media pakan maggot</p>
-        </div>
-        <div class="process-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="process-number">3</div><i class="fas fa-seedling"></i>
-          <h3>Pemeliharaan</h3><p>Larva dipelihara selama 14-21 hari dengan monitoring suhu dan kelembaban</p>
-        </div>
-        <div class="process-card" data-aos="fade-up" data-aos-delay="400">
-          <div class="process-number">4</div><i class="fas fa-filter"></i>
-          <h3>Pemanenan</h3><p>Maggot dipanen dan dipisahkan dari kasgot (bekas media) secara higienis</p>
-        </div>
-        <div class="process-card" data-aos="fade-up" data-aos-delay="500">
-          <div class="process-number">5</div><i class="fas fa-sun"></i>
-          <h3>Pengeringan</h3><p>Maggot dikeringkan untuk menghasilkan tepung maggot sebagai pakan ternak</p>
-        </div>
-        <div class="process-card" data-aos="fade-up" data-aos-delay="600">
-          <div class="process-number">6</div><i class="fas fa-box-open"></i>
-          <h3>Pengemasan</h3><p>Produk dikemas dan siap didistribusikan ke peternak dan petani mitra</p>
-        </div>
+    <div class="commitment-grid">
+      <div class="commitment-item" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-gavel"></i>
+        <h4>Patuh Regulasi</h4>
+        <p>Mematuhi seluruh ketentuan Perda Kab. Tangerang No. 1/2023 beserta peraturan pelaksanaannya</p>
+      </div>
+      <div class="commitment-item" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-file-signature"></i>
+        <h4>Perizinan Lengkap</h4>
+        <p>Memiliki dan memperbarui perizinan yang dipersyaratkan secara berkala</p>
+      </div>
+      <div class="commitment-item" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-ban"></i>
+        <h4>Zero Illegal Activity</h4>
+        <p>Tidak melakukan open dumping, pembakaran liar, atau pembuangan ke sungai</p>
+      </div>
+      <div class="commitment-item" data-aos="fade-up" data-aos-delay="400">
+        <i class="fas fa-chart-bar"></i>
+        <h4>Pelaporan Akurat</h4>
+        <p>Sistem pencatatan dan pelaporan yang akurat serta siap diaudit</p>
+      </div>
+      <div class="commitment-item" data-aos="fade-up" data-aos-delay="500">
+        <i class="fas fa-arrow-down"></i>
+        <h4>Reduksi ke TPA</h4>
+        <p>Mendukung target pengurangan volume sampah yang masuk ke TPA</p>
+      </div>
+      <div class="commitment-item" data-aos="fade-up" data-aos-delay="600">
+        <i class="fas fa-handshake"></i>
+        <h4>Prinsip Kemitraan</h4>
+        <p>Menjunjung tinggi prinsip tanggung jawab, berkelanjutan, manfaat, keadilan, kesadaran, kebersamaan, keselamatan, dan nilai ekonomis</p>
       </div>
     </div>
   </section>
 
-  <!-- ================= PDF VIEWER SECTION (BARU) ================= -->
+  <!-- PDF VIEWER -->
   <section class="pdf-section" id="pdf-viewer-section">
     <div class="section-title" data-aos="fade-up">
-      <h2>Dokumentasi & Presentasi Proyek</h2>
-      <p>Lihat detail lengkap transformasi strategis dan operasional pengelolaan sampah terpadu RAJ Group</p>
+      <h2>Company Profile Lengkap</h2>
+      <p>Detail lengkap transformasi strategis dan operasional pengelolaan sampah terpadu RAJ Group</p>
     </div>
 
     <div class="pdf-wrapper" data-aos="fade-up" data-aos-delay="200">
@@ -550,7 +840,7 @@
           <p>Memuat dokumen...</p>
         </div>
         
-        <div id="pdfError" class="pdf-error" style="display: none;">
+        <div id="pdfError" class="pdf-error" style="display:none;">
           <i class="fas fa-exclamation-triangle"></i>
           <h3>Gagal Memuat PDF</h3>
           <p>Browser memblokir pemuatan file lokal karena kebijakan keamanan (CORS).</p>
@@ -574,38 +864,55 @@
       </div>
     </div>
   </section>
-  <!-- =========================================================== -->
 
   <!-- GALLERY ARMADA -->
   <section class="gallery-section" id="gallery">
     <div class="section-title" data-aos="fade-up">
       <h2>Galeri Armada & Fasilitas</h2>
-      <p>Dokumentasi armada dan fasilitas pengelolaan limbah profesional kami</p>
+      <p>Dokumentasi armada dan fasilitas pengelolaan sampah profesional kami</p>
     </div>
     <div class="gallery-grid">
       <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-        <img src="armada/truk-1.jpg" alt="Truk Pengangkut Limbah 1">
-        <div class="gallery-overlay"><h4>Truk Pengangkut Limbah</h4><p>Armada modern untuk pengambilan limbah</p></div>
+        <img src="armada/truk-1.jpg" alt="Truk Pengangkut Sampah 1">
+        <div class="gallery-overlay">
+          <h4>Truk Pengangkut Sampah</h4>
+          <p>Armada modern untuk pengangkutan terjadwal</p>
+        </div>
       </div>
       <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-        <img src="armada/truk-2.jpg" alt="Truk Pengangkut Limbah 2">
-        <div class="gallery-overlay"><h4>Truk Pengangkut Limbah</h4><p>Armada modern untuk pengambilan limbah</p></div>
+        <img src="armada/truk-2.jpg" alt="Truk Pengangkut Sampah 2">
+        <div class="gallery-overlay">
+          <h4>Truk Pengangkut Sampah</h4>
+          <p>Armada tertutup sesuai izin angkut</p>
+        </div>
       </div>
       <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
         <img src="armada/pickup.png" alt="Pickup Armada">
-        <div class="gallery-overlay"><h4>Pickup Armada</h4><p>Untuk pengambilan skala kecil & menengah</p></div>
+        <div class="gallery-overlay">
+          <h4>Pickup Armada</h4>
+          <p>Untuk pengambilan skala kecil & menengah</p>
+        </div>
       </div>
       <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
-        <img src="armada/fasilitas-sortir.png" alt="Fasilitas Sortir">
-        <div class="gallery-overlay"><h4>Fasilitas Sortir</h4><p>Tempat pemilahan limbah modern & higienis</p></div>
+        <img src="armada/fasilitas-sortir.png" alt="Fasilitas Sortir TPS 3R">
+        <div class="gallery-overlay">
+          <h4>Fasilitas TPS 3R</h4>
+          <p>Tempat pemilahan sampah modern & higienis</p>
+        </div>
       </div>
       <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
-        <img src="armada/budidaya-maggot.png" alt="Budidaya Maggot">
-        <div class="gallery-overlay"><h4>Fasilitas Budidaya Maggot</h4><p>Pengolahan limbah organik berkelanjutan</p></div>
+        <img src="armada/budidaya-maggot.png" alt="Fasilitas Budidaya Maggot">
+        <div class="gallery-overlay">
+          <h4>Fasilitas Budidaya Maggot</h4>
+          <p>Pengolahan limbah organik berkelanjutan</p>
+        </div>
       </div>
       <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
-        <img src="armada/gudang.jpg" alt="Gudang Penyimpanan">
-        <div class="gallery-overlay"><h4>Gudang Penyimpanan</h4><p>Fasilitas penyimpanan limbah yang terstandarisasi</p></div>
+        <img src="armada/gudang.jpg" alt="Gudang Pusat Daur Ulang">
+        <div class="gallery-overlay">
+          <h4>Gudang PDU</h4>
+          <p>Pusat Daur Ulang yang terstandarisasi</p>
+        </div>
       </div>
     </div>
   </section>
@@ -613,17 +920,29 @@
   <!-- STATS -->
   <section class="stats">
     <div class="stats-grid">
-      <div class="stat-box" data-aos="zoom-in"><h2>50+</h2><p>Ton Limbah/Bulan</p></div>
-      <div class="stat-box" data-aos="zoom-in"><h2>200+</h2><p>Mitra Aktif</p></div>
-      <div class="stat-box" data-aos="zoom-in"><h2>95%</h2><p>Limbah Terkelola</p></div>
-      <div class="stat-box" data-aos="zoom-in"><h2>24/7</h2><p>Layanan Pengambilan</p></div>
+      <div class="stat-box" data-aos="zoom-in">
+        <h2>5+</h2>
+        <p>Kategori Pemilahan</p>
+      </div>
+      <div class="stat-box" data-aos="zoom-in">
+        <h2>7</h2>
+        <p>Tahap Proses TPS 3R</p>
+      </div>
+      <div class="stat-box" data-aos="zoom-in">
+        <h2>95%</h2>
+        <p>Konversi Organik</p>
+      </div>
+      <div class="stat-box" data-aos="zoom-in">
+        <h2>24/7</h2>
+        <p>Monitoring Eco Track</p>
+      </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="cta-section">
-    <h2>Siap Menjadi Partner Pengelolaan Limbah Anda</h2>
-    <p>Mari bersama-sama menciptakan lingkungan yang lebih bersih dan berkelanjutan dengan sistem waste management profesional</p>
+  <section class="cta-section" id="contact">
+    <h2>Siap Menjadi Partner Pengelolaan Sampah Anda</h2>
+    <p>Mari bersama-sama menciptakan lingkungan yang lebih bersih dan berkelanjutan dengan sistem pengelolaan sampah yang compliant dan profesional</p>
     <a href="https://wa.me/6281296580968" class="btn" target="_blank">
       <i class="fab fa-whatsapp"></i> Hubungi Kami Sekarang
     </a>
@@ -634,10 +953,53 @@
     <p>© 2026 CV Rezeki Amanah Jaya Group — Waste Management Professional — All Rights Reserved</p>
   </footer>
 
+  <!-- DEMO PREVIEW MODAL -->
+  <div class="demo-modal-overlay" id="demoModal">
+    <div class="demo-modal">
+      <div class="demo-modal-header">
+        <div class="demo-modal-title">
+          <div class="modal-icon"><i class="fas fa-eye"></i></div>
+          <div>
+            <h4>Pratinjau Sistem Eco Track <span class="live-badge"><span class="live-dot"></span>LIVE</span></h4>
+            <p>Mode pratinjau interaktif — CV Rezeki Amanah Jaya</p>
+          </div>
+        </div>
+        <div class="demo-modal-actions">
+          <a href="https://hood.rezekiamanahjaya.com" target="_blank" rel="noopener noreferrer" class="modal-action-btn expand-btn" title="Buka di tab baru">
+            <i class="fas fa-external-link-alt"></i>
+            <span>Buka Penuh</span>
+          </a>
+          <button class="modal-action-btn" onclick="refreshDemo()" title="Muat ulang">
+            <i class="fas fa-sync-alt"></i>
+          </button>
+          <button class="modal-action-btn modal-close-btn" onclick="closeDemoPreview()" title="Tutup">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="demo-modal-body">
+        <div class="demo-loading" id="demoLoading">
+          <div class="spinner-lg"></div>
+          <h4>Memuat Sistem Eco Track...</h4>
+          <p>Menyambungkan ke server aman Eco Track...</p>
+        </div>
+        <iframe id="demoIframe" src="" title="Preview Eco Track"></iframe>
+      </div>
+      <div class="demo-modal-footer">
+        <div class="secure-info">
+          <i class="fas fa-lock"></i>
+          <span>Koneksi aman terenkripsi</span>
+        </div>
+        <div class="secure-info">
+          <i class="fas fa-info-circle"></i>
+          <span>Gunakan "Buka Penuh" untuk akses fitur lengkap</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- SCRIPTS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  
-  <!-- PDF.js Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   
   <script>
@@ -682,12 +1044,60 @@
       });
     });
 
+    // ================= DEMO MODAL LOGIC =================
+    const DASHBOARD_URL = 'https://hood.rezekiamanahjaya.com';
+    const demoModal = document.getElementById('demoModal');
+    const demoIframe = document.getElementById('demoIframe');
+    const demoLoading = document.getElementById('demoLoading');
+    
+    function openDemoPreview() {
+      demoModal.classList.add('active');
+      document.body.classList.add('modal-open');
+      demoLoading.style.display = 'flex';
+      demoIframe.src = DASHBOARD_URL;
+      
+      demoIframe.onload = function() {
+        demoLoading.style.display = 'none';
+      };
+      
+      setTimeout(() => {
+        if (demoLoading.style.display !== 'none') {
+          demoLoading.style.display = 'none';
+        }
+      }, 5000);
+    }
+    
+    function closeDemoPreview() {
+      demoModal.classList.remove('active');
+      document.body.classList.remove('modal-open');
+      setTimeout(() => {
+        demoIframe.src = '';
+      }, 300);
+    }
+    
+    function refreshDemo() {
+      demoLoading.style.display = 'flex';
+      demoIframe.src = DASHBOARD_URL + '?t=' + Date.now();
+    }
+    
+    function openFullDashboard() {
+      window.open(DASHBOARD_URL, '_blank', 'noopener,noreferrer');
+    }
+    
+    demoModal.addEventListener('click', (e) => {
+      if (e.target === demoModal) closeDemoPreview();
+    });
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && demoModal.classList.contains('active')) closeDemoPreview();
+    });
+
     // ================= PDF VIEWER LOGIC =================
-    const pdfUrl = 'RAJ Project.pdf'; // Pastikan nama file PERSIS SAMA (termasuk spasi)
+    const pdfUrl = 'RAJ Project.pdf';
     let pdfDoc = null;
     let currentPage = 1;
     let totalPages = 0;
-    let scale = 1.5; // Adjust scale for better readability
+    let scale = 1.5;
     
     const canvas = document.getElementById('pdfCanvas');
     const ctx = canvas.getContext('2d');
@@ -700,12 +1110,10 @@
     const pdfScreen = document.getElementById('pdfScreen');
     const swipeHint = document.getElementById('swipeHint');
 
-    // Set worker source
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
     async function loadPDF() {
       try {
-        // Check if running on file:// protocol (will cause CORS error)
         if (window.location.protocol === 'file:') {
           throw new Error('CORS_LOCAL_FILE');
         }
@@ -718,7 +1126,6 @@
         await renderPage(currentPage);
         updateControls();
         
-        // Show swipe hint briefly
         setTimeout(() => {
           swipeHint.classList.add('show');
           setTimeout(() => swipeHint.classList.remove('show'), 4000);
@@ -728,19 +1135,15 @@
         console.error('PDF Load Error:', error);
         loadingDiv.style.display = 'none';
         errorDiv.style.display = 'block';
-        // Hide canvas if error
         canvas.style.display = 'none';
       }
     }
 
     async function renderPage(num) {
       const page = await pdfDoc.getPage(num);
-      
-      // Adjust scale based on screen width for responsiveness
       const screenWidth = pdfScreen.clientWidth;
       const viewport = page.getViewport({ scale: scale });
       
-      // If viewport is wider than screen, scale it down to fit
       let renderScale = scale;
       if (viewport.width > screenWidth - 40) {
         renderScale = (screenWidth - 40) / page.getViewport({ scale: 1 }).width;
@@ -769,73 +1172,38 @@
     }
 
     function goToPrevPage() {
-      if (currentPage > 1) {
-        renderPage(currentPage - 1);
-      }
+      if (currentPage > 1) renderPage(currentPage - 1);
     }
 
     function goToNextPage() {
-      if (currentPage < totalPages) {
-        renderPage(currentPage + 1);
-      }
+      if (currentPage < totalPages) renderPage(currentPage + 1);
     }
 
-    // Touch / Swipe Handling
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    pdfScreen.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
+    let touchStartX = 0, touchEndX = 0;
+    pdfScreen.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
     pdfScreen.addEventListener('touchend', (e) => {
       touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        diff > 0 ? goToNextPage() : goToPrevPage();
+      }
     }, { passive: true });
 
-    function handleSwipe() {
-      const swipeThreshold = 50;
-      const diff = touchStartX - touchEndX;
-      
-      if (Math.abs(diff) > swipeThreshold) {
-        if (diff > 0) {
-          goToNextPage(); // Swipe Left
-        } else {
-          goToPrevPage(); // Swipe Right
-        }
-      }
-    }
-
-    // Mouse Drag Handling (Desktop)
-    let mouseStartX = 0;
-    let isDragging = false;
-
-    pdfScreen.addEventListener('mousedown', (e) => {
-      mouseStartX = e.clientX;
-      isDragging = true;
-      pdfScreen.style.cursor = 'grabbing';
-    });
-
+    let mouseStartX = 0, isDragging = false;
+    pdfScreen.addEventListener('mousedown', (e) => { mouseStartX = e.clientX; isDragging = true; pdfScreen.style.cursor = 'grabbing'; });
     pdfScreen.addEventListener('mouseup', (e) => {
       if (isDragging) {
         const diff = mouseStartX - e.clientX;
         if (Math.abs(diff) > 50) {
-          if (diff > 0) goToNextPage();
-          else goToPrevPage();
+          diff > 0 ? goToNextPage() : goToPrevPage();
         }
       }
       isDragging = false;
       pdfScreen.style.cursor = 'default';
     });
-
-    pdfScreen.addEventListener('mouseleave', () => {
-      isDragging = false;
-      pdfScreen.style.cursor = 'default';
-    });
-
-    // Keyboard Navigation
+    pdfScreen.addEventListener('mouseleave', () => { isDragging = false; pdfScreen.style.cursor = 'default'; });
+    
     document.addEventListener('keydown', (e) => {
-      // Only trigger if PDF section is somewhat in view or always active
       if (e.key === 'ArrowLeft') goToPrevPage();
       if (e.key === 'ArrowRight') goToNextPage();
     });
@@ -843,10 +1211,8 @@
     prevBtn.addEventListener('click', goToPrevPage);
     nextBtn.addEventListener('click', goToNextPage);
 
-    // Initialize PDF
     loadPDF();
     
-    // Re-render on window resize (debounced)
     let resizeTimer;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
