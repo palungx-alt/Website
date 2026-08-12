@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -346,6 +345,7 @@
       position: relative;
       box-shadow: 0 4px 15px rgba(0,0,0,0.08);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
+      background: #000;
     }
 
     .marquee-item:hover{
@@ -364,6 +364,23 @@
 
     .marquee-item:hover img{
       transform: scale(1.1);
+    }
+
+    /* === BARU: Styling untuk VIDEO di marquee === */
+    .marquee-item video{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: auto;
+    }
+
+    /* Overlay icon khusus video */
+    .marquee-item.is-video::after{
+      content: '\f04b' !important;
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      background: rgba(13, 92, 47, 0.4);
+      backdrop-filter: blur(2px);
     }
 
     /* Clean overlay with just an icon, no text */
@@ -427,6 +444,21 @@
     }
 
     .lightbox.active .lightbox-img{
+      transform:scale(1);
+    }
+
+    /* === BARU: Styling video di lightbox === */
+    .lightbox-video{
+      max-width:90vw;
+      max-height:85vh;
+      border-radius:12px;
+      box-shadow:0 20px 50px rgba(0,0,0,0.5);
+      transform:scale(0.9);
+      transition:transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      background:#000;
+    }
+
+    .lightbox.active .lightbox-video{
       transform:scale(1);
     }
 
@@ -595,6 +627,7 @@
       .lightbox-next{ right: 10px; }
       .lightbox-close{ top: 10px; right: 10px; }
       .lightbox-content{ max-width: 95vw; }
+      .lightbox-video{ max-width: 95vw; max-height: 80vh; }
     }
 
     @media(max-width: 480px){
@@ -712,16 +745,27 @@
       { src: "gallery/Palung.png" },
       { src: "gallery/sidik.png" },
       { src: "gallery/adit.png" },
+      { src: "gallery/reza.png" },
       { src: "gallery/Event.jpeg" },
       { src: "gallery/JemputMijel.jpeg" },
       { src: "gallery/Leles.jpeg" },
       { src: "gallery/Pusani.jpeg" },
       { src: "gallery/Jerigen.jpeg" },
+      { src: "gallery/Breifing.jpeg" },
+      { src: "gallery/Breifing-TPS.jpeg" },
+      { src: "gallery/Breifing-TPS2.jpeg" },
+      { src: "gallery/Pertemuan-Workshop.jpeg" },
+      { src: "gallery/Comming-soon.mp4" },
       { src: "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/1b64717a4-54b9-4e65-8c05-c5c04f7c27e2.png" },
       { src: "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/10dac2700-bff6-4df9-bce6-84e39a9026d3.png" },
       { src: "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/192e0aae7-316a-4629-a3e4-585b47b77bea.png" },
       { src: "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/182dfb02e-230d-4343-a589-d6ddb1abcf0a.png" }
     ];
+
+    // Helper: cek apakah file adalah video
+    function isVideo(src) {
+      return src.toLowerCase().endsWith('.mp4');
+    }
 
     const marqueeContainer = document.getElementById('marqueeContainer');
     let currentIndex = 0;
@@ -730,10 +774,11 @@
     function renderGallery() {
       marqueeContainer.innerHTML = '';
       
-      // Split data into 3 rows for a rich, professional look
-      const row1Data = galleryData.slice(0, 4);
-      const row2Data = galleryData.slice(4, 8);
-      const row3Data = galleryData.slice(8, 12);
+      // Auto-distribute items ke 3 rows (balanced)
+      const perRow = Math.ceil(galleryData.length / 3);
+      const row1Data = galleryData.slice(0, perRow);
+      const row2Data = galleryData.slice(perRow, perRow * 2);
+      const row3Data = galleryData.slice(perRow * 2);
       
       const rows = [
         { data: row1Data, direction: 'left' },
@@ -750,18 +795,28 @@
         const trackDiv = document.createElement('div');
         trackDiv.className = 'marquee-track';
 
-        // Function to create image items
+        // Function to create image/video items
         const createItems = (dataSet) => {
           dataSet.forEach((item, index) => {
             // Find original index in galleryData for lightbox
             const originalIndex = galleryData.indexOf(item);
             
             const itemDiv = document.createElement('div');
-            itemDiv.className = 'marquee-item';
+            itemDiv.className = 'marquee-item' + (isVideo(item.src) ? ' is-video' : '');
             itemDiv.setAttribute('data-index', originalIndex);
             itemDiv.onclick = () => openLightbox(originalIndex);
             
-            itemDiv.innerHTML = `<img src="${item.src}" alt="Gallery Image" loading="lazy" draggable="false">`;
+            if (isVideo(item.src)) {
+              // === RENDER VIDEO ===
+              itemDiv.innerHTML = `<video src="${item.src}" muted loop playsinline preload="metadata"></video>`;
+              // Auto-play saat hover (muted supaya browser izinkan)
+              const videoEl = itemDiv.querySelector('video');
+              itemDiv.addEventListener('mouseenter', () => videoEl.play().catch(()=>{}));
+              itemDiv.addEventListener('mouseleave', () => { videoEl.pause(); videoEl.currentTime = 0; });
+            } else {
+              // === RENDER IMAGE (existing) ===
+              itemDiv.innerHTML = `<img src="${item.src}" alt="Gallery Image" loading="lazy" draggable="false">`;
+            }
             trackDiv.appendChild(itemDiv);
           });
         };
@@ -780,6 +835,7 @@
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxCounter = document.getElementById('lightboxCounter');
+    const lightboxContent = lightbox.querySelector('.lightbox-content');
 
     function openLightbox(index) {
       currentIndex = index;
@@ -791,10 +847,38 @@
     function closeLightbox() {
       lightbox.classList.remove('active');
       document.body.style.overflow = '';
+      // Bersihkan video di lightbox agar berhenti
+      const existingVideo = lightboxContent.querySelector('.lightbox-video');
+      if (existingVideo) {
+        existingVideo.pause();
+        existingVideo.src = '';
+      }
     }
 
     function updateLightbox() {
-      lightboxImg.src = galleryData[currentIndex].src;
+      const item = galleryData[currentIndex];
+      
+      // Hapus video element sebelumnya (jika ada)
+      const existingVideo = lightboxContent.querySelector('.lightbox-video');
+      if (existingVideo) existingVideo.remove();
+      
+      if (isVideo(item.src)) {
+        // === LIGHTBOX VIDEO ===
+        lightboxImg.style.display = 'none';
+        const video = document.createElement('video');
+        video.className = 'lightbox-video';
+        video.src = item.src;
+        video.controls = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        // Sisipkan sebelum tombol Next
+        lightboxContent.insertBefore(video, document.getElementById('lightboxNext'));
+      } else {
+        // === LIGHTBOX IMAGE (existing) ===
+        lightboxImg.style.display = '';
+        lightboxImg.src = item.src;
+      }
+      
       lightboxCounter.textContent = `${currentIndex + 1} / ${galleryData.length}`;
     }
 
@@ -945,4 +1029,3 @@
   </script>
 </body>
 </html>
-```
