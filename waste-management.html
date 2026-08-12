@@ -26,6 +26,23 @@
   <!-- AOS ANIMATION -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+  <!-- FALLBACK FOTO REZA (dipasang di head agar siap sebelum gambar load) -->
+  <script>
+    function fallbackPhoto(img){
+      var alts = ['gallery/reza.jpeg','gallery/reza.jpg','gallery/Reza.png','gallery/reza.PNG'];
+      var idx = parseInt(img.getAttribute('data-try') || '0', 10);
+      if (idx < alts.length){
+        img.setAttribute('data-try', idx + 1);
+        img.src = alts[idx];
+      } else {
+        var div = document.createElement('div');
+        div.className = 'team-photo team-photo-fallback';
+        div.innerHTML = '<span>RNS</span>';
+        img.replaceWith(div);
+      }
+    }
+  </script>
+
   <style>
     /* RESET & GLOBAL */
     *{ margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; -webkit-tap-highlight-color: transparent; }
@@ -110,6 +127,8 @@
     .team-card{ background:white; padding:35px 25px; border-radius:20px; text-align:center; box-shadow:0 10px 25px rgba(0,0,0,0.08); transition:0.3s; }
     .team-card:hover{ transform:translateY(-8px); box-shadow:0 15px 35px rgba(13,92,47,0.15); }
     .team-photo{ width:110px; height:110px; border-radius:50%; object-fit:cover; object-position:top; margin:0 auto 20px; display:block; border:4px solid #eef7f0; box-shadow:0 8px 20px rgba(13,92,47,0.2); }
+    .team-photo-fallback{ background:linear-gradient(135deg,#198754,#0d5c2f); display:flex; align-items:center; justify-content:center; }
+    .team-photo-fallback span{ color:white; font-size:34px; font-weight:700; letter-spacing:1px; }
     .team-card h4{ font-size:18px; color:#0d5c2f; margin-bottom:5px; font-weight:700; }
     .team-card p{ color:#666; font-size:13px; font-weight:500; }
     .team-card .role{ color:#198754; font-size:12px; margin-top:8px; display:block; }
@@ -125,7 +144,25 @@
     .ecotrack-feature h4{ font-size:16px; color:#0d5c2f; margin-bottom:5px; font-weight:600; }
     .ecotrack-feature p{ font-size:14px; color:#666; margin:0; }
     .ecotrack-image{ position:relative; }
-    .ecotrack-image img{ width:100%; border-radius:20px; box-shadow:0 20px 40px rgba(0,0,0,0.15); object-fit:cover; aspect-ratio:4/3; }
+
+    /* DEMO FRAME (browser mockup) */
+    .demo-frame{ background:white; border-radius:16px; overflow:hidden; box-shadow:0 25px 60px rgba(13,92,47,0.22); border:1px solid #e0efe4; transition:box-shadow 0.4s ease; }
+    .demo-frame-bar{ background:#0d5c2f; padding:12px 16px; display:flex; align-items:center; gap:12px; }
+    .demo-dots{ display:flex; gap:6px; flex-shrink:0; }
+    .demo-dots span{ width:11px; height:11px; border-radius:50%; }
+    .demo-dots span:nth-child(1){ background:#ff5f57; }
+    .demo-dots span:nth-child(2){ background:#febc2e; }
+    .demo-dots span:nth-child(3){ background:#28c840; }
+    .demo-url{ flex:1; background:rgba(255,255,255,0.12); border-radius:8px; padding:6px 12px; font-size:12px; color:#d9ffe2; display:flex; align-items:center; gap:8px; white-space:nowrap; overflow:hidden; }
+    .demo-full{ color:white; width:32px; height:32px; display:flex; align-items:center; justify-content:center; border-radius:8px; background:rgba(255,255,255,0.12); text-decoration:none; transition:0.3s; flex-shrink:0; }
+    .demo-full:hover{ background:#198754; transform:translateY(-2px); }
+    .demo-frame-body{ position:relative; height:500px; background:#f0f4f1; }
+    .demo-frame-body iframe{ width:100%; height:100%; border:none; background:white; }
+    .demo-frame-loading{ position:absolute; inset:0; display:flex; flex-direction:column; gap:12px; align-items:center; justify-content:center; color:#0d5c2f; z-index:2; background:#f0f4f1; }
+    .demo-frame-loading .spinner{ width:40px; height:40px; border:4px solid #e0efe4; border-top-color:#198754; border-radius:50%; animation:spin 1s linear infinite; }
+    .demo-frame-loading p{ font-size:13px; font-weight:500; }
+    .demo-hint{ margin-top:14px; font-size:12px; color:#888; text-align:center; }
+    .demo-highlight .demo-frame{ box-shadow:0 0 0 5px rgba(25,135,84,0.45), 0 25px 60px rgba(13,92,47,0.35); }
 
     /* LAUNCH DEMO AREA */
     .ecotrack-launch{ margin-top:35px; padding-top:30px; border-top:2px dashed #d9efe4; }
@@ -169,33 +206,6 @@
     .launch-chip{ background:#eef7f0; color:#0d5c2f; padding:6px 14px; border-radius:15px; font-size:12px; font-weight:600; display:inline-flex; align-items:center; gap:6px; }
     .launch-banner-cta{ display:flex; flex-direction:column; gap:10px; flex-shrink:0; align-items:stretch; min-width:240px; }
     .launch-banner-cta .btn-launch{ width:100%; justify-content:center; }
-
-    /* DEMO MODAL */
-    .demo-modal-overlay{ position:fixed; inset:0; background:rgba(8,40,20,0.85); backdrop-filter:blur(8px); z-index:9999; display:none; align-items:center; justify-content:center; padding:20px; opacity:0; transition:opacity 0.3s ease; }
-    .demo-modal-overlay.active{ display:flex; opacity:1; }
-    .demo-modal{ background:white; width:100%; max-width:1400px; height:90vh; max-height:900px; border-radius:20px; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 40px 80px rgba(0,0,0,0.5); transform:scale(0.95); transition:transform 0.3s ease; }
-    .demo-modal-overlay.active .demo-modal{ transform:scale(1); }
-    .demo-modal-header{ background:linear-gradient(135deg,#0d5c2f,#198754); color:white; padding:18px 25px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-shrink:0; }
-    .demo-modal-title{ display:flex; align-items:center; gap:12px; }
-    .demo-modal-title .modal-icon{ width:40px; height:40px; background:rgba(255,255,255,0.15); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; }
-    .demo-modal-title h4{ font-size:16px; font-weight:700; margin-bottom:2px; }
-    .demo-modal-title p{ font-size:12px; opacity:0.85; margin:0; }
-    .demo-modal-title .live-badge{ margin:0; font-size:10px; padding:3px 10px; margin-left:8px; }
-    .demo-modal-actions{ display:flex; gap:10px; align-items:center; }
-    .modal-action-btn{ background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.25); color:white; width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.3s; text-decoration:none; font-size:15px; }
-    .modal-action-btn:hover{ background:rgba(255,255,255,0.25); transform:translateY(-2px); }
-    .modal-action-btn.expand-btn{ width:auto; padding:0 16px; gap:8px; font-size:13px; font-weight:600; }
-    .modal-close-btn{ background:rgba(220,53,69,0.2); border-color:rgba(220,53,69,0.4); }
-    .modal-close-btn:hover{ background:#dc3545; border-color:#dc3545; }
-    .demo-modal-body{ flex:1; position:relative; background:#f0f0f0; overflow:hidden; }
-    .demo-modal-body iframe{ width:100%; height:100%; border:none; background:white; }
-    .demo-loading{ position:absolute; inset:0; background:white; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; z-index:5; }
-    .demo-loading .spinner-lg{ width:60px; height:60px; border:5px solid #e0efe4; border-top-color:#198754; border-radius:50%; animation:spin 1s linear infinite; }
-    .demo-loading h4{ color:#0d5c2f; font-size:18px; font-weight:600; }
-    .demo-loading p{ color:#666; font-size:14px; }
-    .demo-modal-footer{ background:#f8f9fa; padding:12px 25px; border-top:1px solid #e0efe4; display:flex; justify-content:space-between; align-items:center; gap:15px; font-size:12px; color:#666; flex-shrink:0; }
-    .demo-modal-footer .secure-info{ display:flex; align-items:center; gap:8px; }
-    .demo-modal-footer .secure-info i{ color:#198754; }
 
     /* PARTNERSHIP SECTION */
     .partnership-section{ background:linear-gradient(135deg,#f7faf7,#eef7f0); }
@@ -289,8 +299,6 @@
     .wa{ position:fixed; bottom:20px; right:20px; width:58px; height:58px; background:#25D366; color:white; border-radius:50%; display:flex; justify-content:center; align-items:center; font-size:28px; z-index:999; text-decoration:none; box-shadow:0 8px 25px rgba(37,211,102,0.4); animation:pulse 2s infinite; }
     @keyframes pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.08); } }
 
-    body.modal-open{ overflow:hidden; }
-
     /* RESPONSIVE */
     @media(max-width:992px){
       .maggot-grid, .ecotrack-grid, .about-grid, .vm-grid, .legal-grid, .partnership-grid{ grid-template-columns:1fr; }
@@ -300,6 +308,7 @@
       .launch-banner-content{ flex-direction:column; align-items:center; }
       .launch-chips{ justify-content:center; }
       .launch-banner-cta{ width:100%; }
+      .demo-frame-body{ height:450px; }
     }
     @media(max-width:768px){
       body{ font-size:15px; }
@@ -326,22 +335,14 @@
       .btn-launch{ padding:14px 22px; font-size:14px; }
       .launch-cta-group{ flex-direction:column; }
       .btn-launch{ width:100%; }
-      .demo-modal-overlay{ padding:10px; }
-      .demo-modal{ height:95vh; border-radius:15px; }
-      .demo-modal-header{ padding:14px 18px; flex-wrap:wrap; }
-      .demo-modal-title h4{ font-size:14px; }
-      .demo-modal-title p{ font-size:11px; }
-      .demo-modal-title .live-badge{ font-size:9px; padding:2px 8px; }
-      .modal-action-btn.expand-btn span{ display:none; }
-      .modal-action-btn.expand-btn{ width:40px; }
-      .demo-modal-footer{ flex-direction:column; gap:8px; text-align:center; }
+      .demo-frame-body{ height:420px; }
     }
     @media(max-width:480px){
       section{ padding:50px 5%; }
       .process-steps{ grid-template-columns:1fr; }
       .pdf-btn-download span{ display:none; }
       .pdf-btn-download{ width:40px; padding:0; }
-      .demo-modal-title .modal-icon{ width:34px; height:34px; font-size:15px; }
+      .demo-frame-body{ height:380px; }
     }
   </style>
 </head>
@@ -545,7 +546,7 @@
         <span class="role">Governance & Compliance Oversight</span>
       </div>
       <div class="team-card" data-aos="fade-up" data-aos-delay="400">
-        <img src="gallery/reza.png" alt="Reza Noor Shubhan" class="team-photo">
+        <img src="gallery/reza.png" alt="Reza Noor Shubhan" class="team-photo" onerror="fallbackPhoto(this)">
         <h4>Reza Noor Shubhan</h4>
         <p>General Manager</p>
         <span class="role">Operations & Supply Chain</span>
@@ -553,7 +554,7 @@
     </div>
   </section>
 
-  <!-- ECO TRACK + DUAL CTA -->
+  <!-- ECO TRACK + DEMO LIVE DI POSISI GAMBAR -->
   <section class="ecotrack-section">
     <div class="section-title" data-aos="fade-up">
       <h2>Sistem Eco Track</h2>
@@ -591,14 +592,14 @@
         <div class="ecotrack-launch" data-aos="fade-up" data-aos-delay="100">
           <div class="live-badge"><span class="live-dot"></span> LIVE ENVIRONMENT — Production Ready</div>
           <h4><i class="fas fa-satellite-dish" style="color:#198754; margin-right:8px;"></i>Akses Sistem Eco Track</h4>
-          <p>Pilih mode akses yang sesuai dengan kebutuhan Anda: pratinjau langsung di halaman ini atau akses penuh dashboard di tab baru.</p>
+          <p>Pilih mode akses yang sesuai dengan kebutuhan Anda: lihat demo interaktif di samping atau akses penuh dashboard di tab baru.</p>
           <div class="launch-cta-group">
             <button class="btn-launch btn-primary-launch" onclick="openFullDashboard()">
               <i class="fas fa-rocket rocket"></i>
               <span>Akses Dashboard Penuh</span>
               <i class="fas fa-external-link-alt" style="font-size:12px; opacity:0.8;"></i>
             </button>
-            <button class="btn-launch btn-secondary-launch" onclick="openDemoPreview()">
+            <button class="btn-launch btn-secondary-launch" onclick="scrollToDemo()">
               <i class="fas fa-eye preview-icon"></i>
               <span>Pratinjau Demo</span>
             </button>
@@ -609,8 +610,26 @@
           </div>
         </div>
       </div>
-      <div class="ecotrack-image" data-aos="fade-left">
-        <img src="armada/ecotrack.png" alt="Sistem Eco Track CV Rezeki Amanah Jaya">
+
+      <!-- DEMO LIVE (menggantikan gambar yang rusak) -->
+      <div class="ecotrack-image" data-aos="fade-left" id="demoFrame">
+        <div class="demo-frame">
+          <div class="demo-frame-bar">
+            <div class="demo-dots"><span></span><span></span><span></span></div>
+            <div class="demo-url"><i class="fas fa-lock"></i> Eco Track — Live Dashboard</div>
+            <a href="https://hood.rezekiamanahjaya.com" target="_blank" rel="noopener noreferrer" class="demo-full" title="Buka di tab baru">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+          <div class="demo-frame-body">
+            <div class="demo-frame-loading" id="demoFrameLoading">
+              <div class="spinner"></div>
+              <p>Memuat demo Eco Track...</p>
+            </div>
+            <iframe id="ecoTrackIframe" src="https://hood.rezekiamanahjaya.com" title="Demo Eco Track" loading="lazy"></iframe>
+          </div>
+        </div>
+        <p class="demo-hint"><i class="fas fa-hand-pointer"></i> Demo interaktif — scroll di dalam frame untuk menjelajah sistem</p>
       </div>
     </div>
   </section>
@@ -641,7 +660,7 @@
           <span>Akses Dashboard Penuh</span>
           <i class="fas fa-external-link-alt" style="font-size:12px;"></i>
         </button>
-        <button class="btn-launch btn-secondary-launch" onclick="openDemoPreview()">
+        <button class="btn-launch btn-secondary-launch" onclick="scrollToDemo()">
           <i class="fas fa-eye preview-icon"></i>
           <span>Pratinjau Demo</span>
         </button>
@@ -721,7 +740,7 @@
     </div>
   </section>
 
-  <!-- MAGGOT BSF (JUDUL BARU) -->
+  <!-- MAGGOT BSF -->
   <section class="maggot-section">
     <div class="section-title" data-aos="fade-up">
       <h2>Biokonversi Maggot BSF: Transformasi Limbah Organik Bernilai Ekonomi Tinggi</h2>
@@ -953,51 +972,6 @@
     <p>© 2026 CV Rezeki Amanah Jaya Group — Waste Management Professional — All Rights Reserved</p>
   </footer>
 
-  <!-- DEMO PREVIEW MODAL -->
-  <div class="demo-modal-overlay" id="demoModal">
-    <div class="demo-modal">
-      <div class="demo-modal-header">
-        <div class="demo-modal-title">
-          <div class="modal-icon"><i class="fas fa-eye"></i></div>
-          <div>
-            <h4>Pratinjau Sistem Eco Track <span class="live-badge"><span class="live-dot"></span>LIVE</span></h4>
-            <p>Mode pratinjau interaktif — CV Rezeki Amanah Jaya</p>
-          </div>
-        </div>
-        <div class="demo-modal-actions">
-          <a href="https://hood.rezekiamanahjaya.com" target="_blank" rel="noopener noreferrer" class="modal-action-btn expand-btn" title="Buka di tab baru">
-            <i class="fas fa-external-link-alt"></i>
-            <span>Buka Penuh</span>
-          </a>
-          <button class="modal-action-btn" onclick="refreshDemo()" title="Muat ulang">
-            <i class="fas fa-sync-alt"></i>
-          </button>
-          <button class="modal-action-btn modal-close-btn" onclick="closeDemoPreview()" title="Tutup">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-      </div>
-      <div class="demo-modal-body">
-        <div class="demo-loading" id="demoLoading">
-          <div class="spinner-lg"></div>
-          <h4>Memuat Sistem Eco Track...</h4>
-          <p>Menyambungkan ke server aman Eco Track...</p>
-        </div>
-        <iframe id="demoIframe" src="" title="Preview Eco Track"></iframe>
-      </div>
-      <div class="demo-modal-footer">
-        <div class="secure-info">
-          <i class="fas fa-lock"></i>
-          <span>Koneksi aman terenkripsi</span>
-        </div>
-        <div class="secure-info">
-          <i class="fas fa-info-circle"></i>
-          <span>Gunakan "Buka Penuh" untuk akses fitur lengkap</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- SCRIPTS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
@@ -1044,53 +1018,29 @@
       });
     });
 
-    // ================= DEMO MODAL LOGIC =================
+    // ================= ECO TRACK DEMO =================
     const DASHBOARD_URL = 'https://hood.rezekiamanahjaya.com';
-    const demoModal = document.getElementById('demoModal');
-    const demoIframe = document.getElementById('demoIframe');
-    const demoLoading = document.getElementById('demoLoading');
-    
-    function openDemoPreview() {
-      demoModal.classList.add('active');
-      document.body.classList.add('modal-open');
-      demoLoading.style.display = 'flex';
-      demoIframe.src = DASHBOARD_URL;
-      
-      demoIframe.onload = function() {
-        demoLoading.style.display = 'none';
-      };
-      
-      setTimeout(() => {
-        if (demoLoading.style.display !== 'none') {
-          demoLoading.style.display = 'none';
-        }
-      }, 5000);
-    }
-    
-    function closeDemoPreview() {
-      demoModal.classList.remove('active');
-      document.body.classList.remove('modal-open');
-      setTimeout(() => {
-        demoIframe.src = '';
-      }, 300);
-    }
-    
-    function refreshDemo() {
-      demoLoading.style.display = 'flex';
-      demoIframe.src = DASHBOARD_URL + '?t=' + Date.now();
-    }
-    
+
     function openFullDashboard() {
       window.open(DASHBOARD_URL, '_blank', 'noopener,noreferrer');
     }
-    
-    demoModal.addEventListener('click', (e) => {
-      if (e.target === demoModal) closeDemoPreview();
-    });
-    
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && demoModal.classList.contains('active')) closeDemoPreview();
-    });
+
+    function scrollToDemo() {
+      const el = document.getElementById('demoFrame');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.classList.add('demo-highlight');
+        setTimeout(() => el.classList.remove('demo-highlight'), 2500);
+      }
+    }
+
+    // Loading state demo frame
+    const ecoIframe = document.getElementById('ecoTrackIframe');
+    const demoFrameLoading = document.getElementById('demoFrameLoading');
+    if (ecoIframe && demoFrameLoading) {
+      ecoIframe.addEventListener('load', () => { demoFrameLoading.style.display = 'none'; });
+      setTimeout(() => { demoFrameLoading.style.display = 'none'; }, 6000);
+    }
 
     // ================= PDF VIEWER LOGIC =================
     const pdfUrl = 'RAJ Project.pdf';
