@@ -256,7 +256,6 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.08); flex-shrink: 0; transition: transform 0.3s ease;
       pointer-events: none; user-select: none;
     }
-    /* === BARU: styling untuk item VIDEO di slider === */
     .gallery-track video{
       width: 260px; height: 190px; object-fit: cover; border-radius: 14px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.08); flex-shrink: 0; background: #000;
@@ -939,8 +938,11 @@
 
     AOS.init({ duration: 800, once: true });
 
-    /* === GALLERY: item existing TIDAK dihapus, hanya DITAMBAH file baru + video === */
-    const galleryImages = [
+    /* === INTEGRASI GOOGLE APPS SCRIPT WEB APP UNTUK GALERI FULL INDEX === */
+    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxs11SM8d8hQJD7DqSOQijyU91pyOa8WlTichP2ci_PiRdTJ9wNJJgHTNt06BliMHQ7IA/exec';
+
+    // Array cadangan (fallback) jika koneksi Web App bermasalah
+    const fallbackGallery = [
       "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/1b64717a4-54b9-4e65-8c05-c5c04f7c27e2.png",
       "gallery/Palung.png",
       "gallery/sidik.png",
@@ -955,16 +957,13 @@
       "gallery/Breifing-TPS.jpeg",
       "gallery/Breifing-TPS2.jpeg",
       "gallery/Pertemuan-Workshop.jpeg",
-      "gallery/Comming-soon.mp4",
-      "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/10dac2700-bff6-4df9-bce6-84e39a9026d3.png",
-      "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/1b157a60f-6e40-47d9-844b-cc3174ad1cc3.png",
-      "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/192e0aae7-316a-4629-a3e4-585b47b77bea.png",
-      "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/15c88ba25-3a16-4fbc-9c13-e16270f76890.png"
+      "gallery/Comming-soon.mp4"
     ];
 
     const galleryTrack = document.getElementById('galleryTrack');
 
-    function populateGallery() {
+    function renderGalleryItems(items) {
+      galleryTrack.innerHTML = ''; // Bersihkan isi awal
       const altTexts = [
         "Penjemputan minyak jelantah restoran di Tangerang",
         "Pengolahan limbah organik dan waste management terpadu",
@@ -976,41 +975,59 @@
         "Briefing tim operasional TPS 3R",
         "Pertemuan dan workshop bersama mitra"
       ];
-      
-      galleryImages.forEach((src, index) => {
-        if (src.toLowerCase().endsWith('.mp4')) {
-          // === ITEM VIDEO (bisa diputar) ===
-          const video = document.createElement('video');
-          video.src = src;
-          video.controls = true;
-          video.muted = true;
-          video.loop = true;
-          video.playsInline = true;
-          video.preload = 'metadata';
-          video.width = 260;
-          video.height = 190;
-          video.setAttribute('aria-label', 'Video kegiatan CV Rezeki Amanah Jaya');
-          // Slider otomatis berhenti saat video diputar
-          video.addEventListener('play',  () => { galleryTrack.style.animationPlayState = 'paused'; });
-          video.addEventListener('pause', () => { galleryTrack.style.animationPlayState = ''; });
-          video.addEventListener('ended', () => { galleryTrack.style.animationPlayState = ''; });
-          galleryTrack.appendChild(video);
-        } else {
-          // === ITEM FOTO (existing) ===
-          const img = document.createElement('img');
-          img.src = src;
-          img.alt = altTexts[index % altTexts.length] + " - CV Rezeki Amanah Jaya";
-          img.loading = "lazy";
-          img.draggable = false;
-          img.width = "260";
-          img.height = "190";
-          galleryTrack.appendChild(img);
-        }
-      });
+
+      // Render items 2x agar animasi infinity scroll berjalan sempurna
+      for (let cycle = 0; cycle < 2; cycle++) {
+        items.forEach((item, index) => {
+          const mimeType = item.mimeType || '';
+          const isVideo = mimeType.includes('video') || (typeof item === 'string' && item.toLowerCase().endsWith('.mp4'));
+
+          if (isVideo) {
+            const video = document.createElement('video');
+            video.src = item.videoUrl || item.url || item;
+            video.controls = true;
+            video.muted = true;
+            video.loop = true;
+            video.playsInline = true;
+            video.preload = 'metadata';
+            video.width = 260;
+            video.height = 190;
+            video.setAttribute('aria-label', 'Video kegiatan CV Rezeki Amanah Jaya');
+            video.addEventListener('play',  () => { galleryTrack.style.animationPlayState = 'paused'; });
+            video.addEventListener('pause', () => { galleryTrack.style.animationPlayState = ''; });
+            video.addEventListener('ended', () => { galleryTrack.style.animationPlayState = ''; });
+            galleryTrack.appendChild(video);
+          } else {
+            const img = document.createElement('img');
+            img.src = item.imageUrl || item.url || item;
+            img.alt = (item.name || altTexts[index % altTexts.length]) + " - CV Rezeki Amanah Jaya";
+            img.loading = "lazy";
+            img.draggable = false;
+            img.width = "260";
+            img.height = "190";
+            galleryTrack.appendChild(img);
+          }
+        });
+      }
     }
 
-    populateGallery();
-    populateGallery();
+    async function fetchGoogleDriveFiles() {
+      try {
+        const response = await fetch(WEB_APP_URL);
+        const data = await response.json();
+
+        if (data && data.length > 0) {
+          renderGalleryItems(data);
+        } else {
+          renderGalleryItems(fallbackGallery);
+        }
+      } catch (error) {
+        console.error('Gagal mengambil data dari Google Apps Script Web App, menggunakan galeri default:', error);
+        renderGalleryItems(fallbackGallery);
+      }
+    }
+
+    fetchGoogleDriveFiles();
 
     const translations = {
       id: {

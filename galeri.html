@@ -109,6 +109,7 @@
       border-radius:8px;
       display: flex;
       align-items: center;
+      cursor: pointer;
     }
 
     .menu > a:hover, .menu .dropdown-toggle:hover, .menu > a.active, .dropdown-item.active{
@@ -128,13 +129,13 @@
       background: white;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       border-radius: 8px;
-      min-width: 180px;
+      min-width: 220px;
       opacity: 0;
       visibility: hidden;
       transform: translateY(10px);
       transition: 0.3s ease;
       z-index: 1000;
-      padding: 8px 0;
+      padding: 10px 0;
     }
 
     .dropdown:hover .dropdown-menu{
@@ -143,9 +144,24 @@
       transform: translateY(0);
     }
 
+    .dropdown-header{
+      font-size: 11px;
+      font-weight: 700;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 8px 20px 4px;
+    }
+
+    .dropdown-divider{
+      height: 1px;
+      background: #f0f0f0;
+      margin: 6px 0;
+    }
+
     .dropdown-item{
       display: block;
-      padding: 10px 20px;
+      padding: 8px 20px;
       color: #222;
       text-decoration: none;
       font-size: 14px;
@@ -269,6 +285,20 @@
     .gallery-section{
       padding:40px 0 100px;
       overflow: hidden;
+      min-height: 400px;
+    }
+
+    .loading-state{
+      text-align: center;
+      padding: 50px 20px;
+      color: #198754;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .loading-state i{
+      font-size: 36px;
+      margin-bottom: 12px;
     }
 
     .marquee-container{
@@ -283,7 +313,6 @@
       overflow: hidden;
     }
 
-    /* Fade edges for smooth professional look */
     .marquee-row::before,
     .marquee-row::after{
       content: "";
@@ -311,7 +340,6 @@
       width: max-content;
     }
 
-    /* Animation Directions */
     .marquee-row.left .marquee-track{
       animation: scrollLeft 45s linear infinite;
     }
@@ -320,7 +348,6 @@
       animation: scrollRight 45s linear infinite;
     }
 
-    /* Pause on hover for better UX */
     .marquee-row:hover .marquee-track{
       animation-play-state: paused;
     }
@@ -345,7 +372,7 @@
       position: relative;
       box-shadow: 0 4px 15px rgba(0,0,0,0.08);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
-      background: #000;
+      background: #e9f0e9;
     }
 
     .marquee-item:hover{
@@ -358,7 +385,7 @@
       height: 100%;
       object-fit: cover;
       transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-      pointer-events: none; /* Prevent drag ghost image */
+      pointer-events: none;
       user-select: none;
     }
 
@@ -366,24 +393,6 @@
       transform: scale(1.1);
     }
 
-    /* === BARU: Styling untuk VIDEO di marquee === */
-    .marquee-item video{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      pointer-events: auto;
-    }
-
-    /* Overlay icon khusus video */
-    .marquee-item.is-video::after{
-      content: '\f04b' !important;
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      background: rgba(13, 92, 47, 0.4);
-      backdrop-filter: blur(2px);
-    }
-
-    /* Clean overlay with just an icon, no text */
     .marquee-item::after{
       content: '\f00e';
       font-family: "Font Awesome 6 Free";
@@ -444,21 +453,6 @@
     }
 
     .lightbox.active .lightbox-img{
-      transform:scale(1);
-    }
-
-    /* === BARU: Styling video di lightbox === */
-    .lightbox-video{
-      max-width:90vw;
-      max-height:85vh;
-      border-radius:12px;
-      box-shadow:0 20px 50px rgba(0,0,0,0.5);
-      transform:scale(0.9);
-      transition:transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-      background:#000;
-    }
-
-    .lightbox.active .lightbox-video{
       transform:scale(1);
     }
 
@@ -610,6 +604,7 @@
         padding: 0;
       }
       .dropdown.active .dropdown-menu{ display: block; }
+      .dropdown-header{ text-align: center; background: #eee; padding: 6px 0; }
       .dropdown-item{ padding: 12px 30px; text-align: center; font-size: 15px; border-bottom: 1px solid #eee; }
 
       .hamburger.active span:nth-child(1){ transform: rotate(45deg) translate(5px, 6px); }
@@ -627,7 +622,6 @@
       .lightbox-next{ right: 10px; }
       .lightbox-close{ top: 10px; right: 10px; }
       .lightbox-content{ max-width: 95vw; }
-      .lightbox-video{ max-width: 95vw; max-height: 80vh; }
     }
 
     @media(max-width: 480px){
@@ -638,8 +632,8 @@
 
 <body>
 
-  <!-- WHATSAPP FLOATING -->
-  <a href="https://wa.me/6281296580968" class="wa" target="_blank" aria-label="Chat WhatsApp">
+  <!-- WHATSAPP FLOATING (SUDAH DENGAN TEMPLATE PESAN OTOMATIS) -->
+  <a href="https://wa.me/6281296580968?text=Halo%20CV%20Rezeki%20Amanah%20Jaya,%20saya%20ingin%20bertanya%20mengenai%20layanan%20dan%20kerjasama." class="wa" target="_blank" aria-label="Chat WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
@@ -660,14 +654,27 @@
         <span></span>
       </button>
       
+      <!-- MENU NAVBAR -->
       <div class="menu" id="menu">
         <a href="index.html#about" class="menu-link" data-i18n="nav_about">Tentang</a>
         
+        <!-- DROPDOWN LAYANAN DISET SESUAI DENGAN INDEX.HTML -->
         <div class="dropdown" id="layananDropdown">
           <a href="index.html#services" class="menu-link dropdown-toggle" data-i18n="nav_services">Layanan <i class="fas fa-chevron-down" style="font-size:10px; margin-left:4px;"></i></a>
           <div class="dropdown-menu">
-            <a href="index.html#services" class="dropdown-item" data-i18n="nav_services_div">Divisi Layanan</a>
+            <div class="dropdown-header" data-i18n="hdr_main_services">LAYANAN UTAMA</div>
+            <a href="index.html#minyak-jelantah" class="dropdown-item" data-i18n="nav_mijel">Minyak Jelantah</a>
+            <a href="index.html#waste-management" class="dropdown-item" data-i18n="nav_wm">Waste Management</a>
+            <a href="index.html#food-culinary" class="dropdown-item" data-i18n="nav_fc">Food & Culinary</a>
+            <a href="index.html#logistics" class="dropdown-item" data-i18n="nav_logistics">Logistics</a>
+            <a href="index.html#social-impact" class="dropdown-item" data-i18n="nav_social">Social Impact</a>
+            
+            <div class="dropdown-divider"></div>
+            
+            <div class="dropdown-header" data-i18n="hdr_internal_systems">SISTEM INTERNAL</div>
             <a href="https://sirat.rezekiamanahjaya.com" target="_blank" class="dropdown-item" data-i18n="nav_sirat">SIRAT</a>
+            <a href="index.html#ram" class="dropdown-item" data-i18n="nav_ram">RAM</a>
+            <a href="index.html#chirat" class="dropdown-item" data-i18n="nav_chirat">ChiRAT</a>
           </div>
         </div>
         
@@ -681,6 +688,8 @@
         </div>
 
         <a href="galeri.html" class="menu-link active" data-i18n="nav_gallery">Gallery</a>
+        <a href="index.html#partners" class="menu-link" data-i18n="nav_partners">Partners</a>
+        <a href="index.html#testimoni" class="menu-link" data-i18n="nav_testimonials">Testimoni</a>
         <a href="index.html#vision" class="menu-link" data-i18n="nav_vision">Visi Misi</a>
         <a href="index.html#contact" class="menu-link" data-i18n="nav_contact">Kontak</a>
         
@@ -708,6 +717,10 @@
 
   <!-- GALLERY MARQUEE SECTION -->
   <section class="gallery-section">
+    <div class="loading-state" id="loadingState">
+      <i class="fas fa-spinner fa-spin"></i>
+      <p>Memuat foto dari Google Drive...</p>
+    </div>
     <div class="marquee-container" id="marqueeContainer">
       <!-- Rows will be injected by JavaScript -->
     </div>
@@ -720,7 +733,7 @@
       <button class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
       <img src="" alt="Gallery Full" class="lightbox-img" id="lightboxImg">
       <button class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
-      <div class="lightbox-counter" id="lightboxCounter">1 / 10</div>
+      <div class="lightbox-counter" id="lightboxCounter">1 / 12</div>
     </div>
   </div>
 
@@ -732,61 +745,51 @@
   <!-- SCRIPTS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    // Init AOS
+    // Inisialisasi AOS
     AOS.init({
       duration: 800,
       once: true
     });
 
-    // ==========================================
-    // DATA GALERI (TAMBAHKAN FOTO DI SINI)
-    // ==========================================
-    const galleryData = [
+    // GOOGLE APPS SCRIPT WEB APP URL & FOLDER ID
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxs11SM8d8hQJD7DqSOQijyU91pyOa8WlTichP2ci_PiRdTJ9wNJJgHTNt06BliMHQ7IA/exec";
+    const FOLDER_ID = "1PPO9QXwQT8wvH6C9lJPW6xwpSWbqbQid";
+
+    // Data Gambar Default
+    let galleryData = [
       { src: "gallery/Palung.png" },
       { src: "gallery/sidik.png" },
       { src: "gallery/adit.png" },
-      { src: "gallery/reza.png" },
       { src: "gallery/Event.jpeg" },
       { src: "gallery/JemputMijel.jpeg" },
       { src: "gallery/Leles.jpeg" },
       { src: "gallery/Pusani.jpeg" },
-      { src: "gallery/Jerigen.jpeg" },
-      { src: "gallery/Breifing.jpeg" },
-      { src: "gallery/Breifing-TPS.jpeg" },
-      { src: "gallery/Breifing-TPS2.jpeg" },
-      { src: "gallery/Pertemuan-Workshop.jpeg" },
-      { src: "gallery/Comming-soon.mp4" },
-      { src: "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/1b64717a4-54b9-4e65-8c05-c5c04f7c27e2.png" },
-      { src: "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/10dac2700-bff6-4df9-bce6-84e39a9026d3.png" },
-      { src: "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/192e0aae7-316a-4629-a3e4-585b47b77bea.png" },
-      { src: "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/182dfb02e-230d-4343-a589-d6ddb1abcf0a.png" }
+      { src: "gallery/Jerigen.jpeg" }
     ];
 
-    // Helper: cek apakah file adalah video
-    function isVideo(src) {
-      return src.toLowerCase().endsWith('.mp4');
-    }
-
     const marqueeContainer = document.getElementById('marqueeContainer');
+    const loadingState = document.getElementById('loadingState');
     let currentIndex = 0;
 
-    // Render Gallery in 3 Smooth Looping Rows
+    // Fungsi Render Gambar ke Tampilan Marquee
     function renderGallery() {
       marqueeContainer.innerHTML = '';
-      
-      // Auto-distribute items ke 3 rows (balanced)
-      const perRow = Math.ceil(galleryData.length / 3);
-      const row1Data = galleryData.slice(0, perRow);
-      const row2Data = galleryData.slice(perRow, perRow * 2);
-      const row3Data = galleryData.slice(perRow * 2);
-      
+      if (galleryData.length === 0) return;
+
+      const chunkSize = Math.max(1, Math.ceil(galleryData.length / 3));
+      const row1Data = galleryData.slice(0, chunkSize);
+      const row2Data = galleryData.slice(chunkSize, chunkSize * 2);
+      const row3Data = galleryData.slice(chunkSize * 2);
+
       const rows = [
         { data: row1Data, direction: 'left' },
-        { data: row2Data, direction: 'right' },
-        { data: row3Data, direction: 'left' }
+        { data: row2Data.length ? row2Data : row1Data, direction: 'right' },
+        { data: row3Data.length ? row3Data : row1Data, direction: 'left' }
       ];
 
       rows.forEach((row, rowIndex) => {
+        if (!row.data || row.data.length === 0) return;
+
         const rowDiv = document.createElement('div');
         rowDiv.className = `marquee-row ${row.direction}`;
         rowDiv.setAttribute('data-aos', 'fade-up');
@@ -795,49 +798,57 @@
         const trackDiv = document.createElement('div');
         trackDiv.className = 'marquee-track';
 
-        // Function to create image/video items
         const createItems = (dataSet) => {
-          dataSet.forEach((item, index) => {
-            // Find original index in galleryData for lightbox
+          dataSet.forEach((item) => {
             const originalIndex = galleryData.indexOf(item);
             
             const itemDiv = document.createElement('div');
-            itemDiv.className = 'marquee-item' + (isVideo(item.src) ? ' is-video' : '');
+            itemDiv.className = 'marquee-item';
             itemDiv.setAttribute('data-index', originalIndex);
             itemDiv.onclick = () => openLightbox(originalIndex);
             
-            if (isVideo(item.src)) {
-              // === RENDER VIDEO ===
-              itemDiv.innerHTML = `<video src="${item.src}" muted loop playsinline preload="metadata"></video>`;
-              // Auto-play saat hover (muted supaya browser izinkan)
-              const videoEl = itemDiv.querySelector('video');
-              itemDiv.addEventListener('mouseenter', () => videoEl.play().catch(()=>{}));
-              itemDiv.addEventListener('mouseleave', () => { videoEl.pause(); videoEl.currentTime = 0; });
-            } else {
-              // === RENDER IMAGE (existing) ===
-              itemDiv.innerHTML = `<img src="${item.src}" alt="Gallery Image" loading="lazy" draggable="false">`;
-            }
+            itemDiv.innerHTML = `<img src="${item.src}" alt="Gallery Image" loading="lazy" draggable="false" onerror="this.src='gallery/Palung.png'">`;
             trackDiv.appendChild(itemDiv);
           });
         };
 
-        // Append original set
         createItems(row.data);
-        // Duplicate set for seamless infinite loop
-        createItems(row.data);
+        createItems(row.data); // Duplikasi untuk efek infinite scroll
 
         rowDiv.appendChild(trackDiv);
         marqueeContainer.appendChild(rowDiv);
       });
     }
 
+    // Ambil Data Foto dari Google Drive via Apps Script Web App
+    async function loadDriveImages() {
+      try {
+        const fetchUrl = `${APPS_SCRIPT_URL}?folderId=${FOLDER_ID}`;
+        const response = await fetch(fetchUrl);
+        const data = await response.json();
+
+        if (data && Array.isArray(data) && data.length > 0) {
+          const driveImages = data.map(item => ({
+            src: item.url || `https://lh3.googleusercontent.com/d/${item.id}`
+          }));
+
+          galleryData = [...driveImages, ...galleryData];
+        }
+      } catch (error) {
+        console.warn("Gagal mengambil foto dari Google Drive Apps Script, menggunakan data lokal default:", error);
+      } finally {
+        if (loadingState) loadingState.style.display = 'none';
+        renderGallery();
+      }
+    }
+
     // Lightbox Logic
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxCounter = document.getElementById('lightboxCounter');
-    const lightboxContent = lightbox.querySelector('.lightbox-content');
 
     function openLightbox(index) {
+      if (index < 0 || index >= galleryData.length) index = 0;
       currentIndex = index;
       updateLightbox();
       lightbox.classList.add('active');
@@ -847,38 +858,10 @@
     function closeLightbox() {
       lightbox.classList.remove('active');
       document.body.style.overflow = '';
-      // Bersihkan video di lightbox agar berhenti
-      const existingVideo = lightboxContent.querySelector('.lightbox-video');
-      if (existingVideo) {
-        existingVideo.pause();
-        existingVideo.src = '';
-      }
     }
 
     function updateLightbox() {
-      const item = galleryData[currentIndex];
-      
-      // Hapus video element sebelumnya (jika ada)
-      const existingVideo = lightboxContent.querySelector('.lightbox-video');
-      if (existingVideo) existingVideo.remove();
-      
-      if (isVideo(item.src)) {
-        // === LIGHTBOX VIDEO ===
-        lightboxImg.style.display = 'none';
-        const video = document.createElement('video');
-        video.className = 'lightbox-video';
-        video.src = item.src;
-        video.controls = true;
-        video.autoplay = true;
-        video.playsInline = true;
-        // Sisipkan sebelum tombol Next
-        lightboxContent.insertBefore(video, document.getElementById('lightboxNext'));
-      } else {
-        // === LIGHTBOX IMAGE (existing) ===
-        lightboxImg.style.display = '';
-        lightboxImg.src = item.src;
-      }
-      
+      lightboxImg.src = galleryData[currentIndex].src;
       lightboxCounter.textContent = `${currentIndex + 1} / ${galleryData.length}`;
     }
 
@@ -907,23 +890,32 @@
       if (e.key === 'ArrowLeft') prevImage();
     });
 
-    // Initial Render
-    renderGallery();
+    document.addEventListener('DOMContentLoaded', () => {
+      loadDriveImages();
+    });
 
-    // ==========================================
     // TRANSLATION DICTIONARY
-    // ==========================================
     const translations = {
       id: {
         nav_about: "Tentang",
         nav_services: "Layanan",
-        nav_services_div: "Divisi Layanan",
+        hdr_main_services: "LAYANAN UTAMA",
+        nav_mijel: "Minyak Jelantah",
+        nav_wm: "Waste Management",
+        nav_fc: "Food & Culinary",
+        nav_logistics: "Logistics",
+        nav_social: "Social Impact",
+        hdr_internal_systems: "SISTEM INTERNAL",
         nav_sirat: "SIRAT",
+        nav_ram: "RAM",
+        nav_chirat: "ChiRAT",
         nav_articles: "Artikel",
         nav_activities: "Kegiatan",
         nav_csr: "CSR",
         nav_jelantah: "Minyak Jelantah",
         nav_gallery: "Gallery",
+        nav_partners: "Partners",
+        nav_testimonials: "Testimoni",
         nav_vision: "Visi Misi",
         nav_contact: "Kontak",
         page_title: "Galeri Dokumentasi",
@@ -935,13 +927,23 @@
       en: {
         nav_about: "About",
         nav_services: "Services",
-        nav_services_div: "Service Divisions",
+        hdr_main_services: "MAIN SERVICES",
+        nav_mijel: "Used Cooking Oil",
+        nav_wm: "Waste Management",
+        nav_fc: "Food & Culinary",
+        nav_logistics: "Logistics",
+        nav_social: "Social Impact",
+        hdr_internal_systems: "INTERNAL SYSTEMS",
         nav_sirat: "SIRAT",
+        nav_ram: "RAM",
+        nav_chirat: "ChiRAT",
         nav_articles: "Articles",
         nav_activities: "Activities",
         nav_csr: "CSR",
         nav_jelantah: "Used Cooking Oil",
         nav_gallery: "Gallery",
+        nav_partners: "Partners",
+        nav_testimonials: "Testimonials",
         nav_vision: "Vision & Mission",
         nav_contact: "Contact",
         page_title: "Documentation Gallery",
@@ -974,7 +976,7 @@
     const savedLang = localStorage.getItem('preferredLanguage') || 'id';
     setLanguage(savedLang);
 
-    // === HAMBURGER & DROPDOWN MENU LOGIC ===
+    // HAMBURGER & DROPDOWN MENU LOGIC
     const hamburger = document.getElementById('hamburger');
     const menu = document.getElementById('menu');
     const menuLinks = document.querySelectorAll('.menu-link:not(.dropdown-toggle)');
@@ -997,8 +999,19 @@
       }
     }
 
-    layananToggle.addEventListener('click', (e) => toggleMobileDropdown(layananDropdown));
-    artikelToggle.addEventListener('click', (e) => toggleMobileDropdown(artikelDropdown));
+    layananToggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        toggleMobileDropdown(layananDropdown);
+      }
+    });
+
+    artikelToggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        toggleMobileDropdown(artikelDropdown);
+      }
+    });
 
     menuLinks.forEach(link => {
       link.addEventListener('click', () => {
