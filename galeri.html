@@ -42,6 +42,18 @@
     ::-webkit-scrollbar{ width:8px; }
     ::-webkit-scrollbar-thumb{ background:#198754; border-radius:20px; }
 
+    /* PAGE TRANSITION / TAB-LIKE EFFECT */
+    #page-container {
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #page-container.page-fade-out {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
     /* NAVBAR */
     nav{
       position:fixed;
@@ -632,7 +644,7 @@
 
 <body>
 
-  <!-- WHATSAPP FLOATING (SUDAH DENGAN TEMPLATE PESAN OTOMATIS) -->
+  <!-- WHATSAPP FLOATING -->
   <a href="https://wa.me/6281296580968?text=Halo%20CV%20Rezeki%20Amanah%20Jaya,%20saya%20ingin%20bertanya%20mengenai%20layanan%20dan%20kerjasama." class="wa" target="_blank" aria-label="Chat WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
@@ -640,7 +652,7 @@
   <!-- NAVBAR -->
   <nav>
     <div class="nav-container">
-      <a href="index.html" class="logo">
+      <a href="index.html" class="logo nav-spa-link">
         <img src="RAJ-LOGO-BERSIH.png" alt="Logo CV Rezeki Amanah Jaya">
         <div>
           <h2>CV REZEKI AMANAH JAYA</h2>
@@ -656,42 +668,41 @@
       
       <!-- MENU NAVBAR -->
       <div class="menu" id="menu">
-        <a href="index.html#about" class="menu-link" data-i18n="nav_about">Tentang</a>
+        <a href="index.html#about" class="menu-link nav-spa-link" data-i18n="nav_about">Tentang</a>
         
-        <!-- DROPDOWN LAYANAN DISET SESUAI DENGAN INDEX.HTML -->
         <div class="dropdown" id="layananDropdown">
-          <a href="index.html#services" class="menu-link dropdown-toggle" data-i18n="nav_services">Layanan <i class="fas fa-chevron-down" style="font-size:10px; margin-left:4px;"></i></a>
+          <a href="index.html#services" class="menu-link dropdown-toggle nav-spa-link" data-i18n="nav_services">Layanan <i class="fas fa-chevron-down" style="font-size:10px; margin-left:4px;"></i></a>
           <div class="dropdown-menu">
             <div class="dropdown-header" data-i18n="hdr_main_services">LAYANAN UTAMA</div>
-            <a href="index.html#minyak-jelantah" class="dropdown-item" data-i18n="nav_mijel">Minyak Jelantah</a>
-            <a href="index.html#waste-management" class="dropdown-item" data-i18n="nav_wm">Waste Management</a>
-            <a href="index.html#food-culinary" class="dropdown-item" data-i18n="nav_fc">Food & Culinary</a>
-            <a href="index.html#logistics" class="dropdown-item" data-i18n="nav_logistics">Logistics</a>
-            <a href="index.html#social-impact" class="dropdown-item" data-i18n="nav_social">Social Impact</a>
+            <a href="index.html#minyak-jelantah" class="dropdown-item nav-spa-link" data-i18n="nav_mijel">Minyak Jelantah</a>
+            <a href="index.html#waste-management" class="dropdown-item nav-spa-link" data-i18n="nav_wm">Waste Management</a>
+            <a href="index.html#food-culinary" class="dropdown-item nav-spa-link" data-i18n="nav_fc">Food & Culinary</a>
+            <a href="index.html#logistics" class="dropdown-item nav-spa-link" data-i18n="nav_logistics">Logistics</a>
+            <a href="index.html#social-impact" class="dropdown-item nav-spa-link" data-i18n="nav_social">Social Impact</a>
             
             <div class="dropdown-divider"></div>
             
             <div class="dropdown-header" data-i18n="hdr_internal_systems">SISTEM INTERNAL</div>
             <a href="https://sirat.rezekiamanahjaya.com" target="_blank" class="dropdown-item" data-i18n="nav_sirat">SIRAT</a>
-            <a href="index.html#ram" class="dropdown-item" data-i18n="nav_ram">RAM</a>
-            <a href="index.html#chirat" class="dropdown-item" data-i18n="nav_chirat">ChiRAT</a>
+            <a href="index.html#ram" class="dropdown-item nav-spa-link" data-i18n="nav_ram">RAM</a>
+            <a href="index.html#chirat" class="dropdown-item nav-spa-link" data-i18n="nav_chirat">ChiRAT</a>
           </div>
         </div>
         
         <div class="dropdown" id="artikelDropdown">
-          <a href="artikel.html" class="menu-link dropdown-toggle" data-i18n="nav_articles">Artikel <i class="fas fa-chevron-down" style="font-size:10px; margin-left:4px;"></i></a>
+          <a href="artikel.html" class="menu-link dropdown-toggle nav-spa-link" data-i18n="nav_articles">Artikel <i class="fas fa-chevron-down" style="font-size:10px; margin-left:4px;"></i></a>
           <div class="dropdown-menu">
-            <a href="kegiatan.html" class="dropdown-item" data-i18n="nav_activities">Kegiatan</a>
-            <a href="csr.html" class="dropdown-item" data-i18n="nav_csr">CSR</a>
-            <a href="jelantah.html" class="dropdown-item" data-i18n="nav_jelantah">Minyak Jelantah</a>
+            <a href="kegiatan.html" class="dropdown-item nav-spa-link" data-i18n="nav_activities">Kegiatan</a>
+            <a href="csr.html" class="dropdown-item nav-spa-link" data-i18n="nav_csr">CSR</a>
+            <a href="jelantah.html" class="dropdown-item nav-spa-link" data-i18n="nav_jelantah">Minyak Jelantah</a>
           </div>
         </div>
 
-        <a href="galeri.html" class="menu-link active" data-i18n="nav_gallery">Gallery</a>
-        <a href="index.html#partners" class="menu-link" data-i18n="nav_partners">Partners</a>
-        <a href="index.html#testimoni" class="menu-link" data-i18n="nav_testimonials">Testimoni</a>
-        <a href="index.html#vision" class="menu-link" data-i18n="nav_vision">Visi Misi</a>
-        <a href="index.html#contact" class="menu-link" data-i18n="nav_contact">Kontak</a>
+        <a href="galeri.html" class="menu-link active nav-spa-link" data-i18n="nav_gallery">Gallery</a>
+        <a href="index.html#partners" class="menu-link nav-spa-link" data-i18n="nav_partners">Partners</a>
+        <a href="index.html#testimoni" class="menu-link nav-spa-link" data-i18n="nav_testimonials">Testimoni</a>
+        <a href="index.html#vision" class="menu-link nav-spa-link" data-i18n="nav_vision">Visi Misi</a>
+        <a href="index.html#contact" class="menu-link nav-spa-link" data-i18n="nav_contact">Kontak</a>
         
         <div class="lang-toggle">
           <button onclick="setLanguage('id')" class="lang-btn active" id="btn-id">ID</button>
@@ -702,29 +713,32 @@
     </div>
   </nav>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="page-hero-content" data-aos="fade-up">
-      <h1 data-i18n="page_title">Galeri Dokumentasi</h1>
-      <p data-i18n="page_subtitle">Momen berharga, kegiatan lapangan, dan komitmen kami dalam pengelolaan lingkungan yang berkelanjutan.</p>
-    </div>
-  </section>
+  <!-- CONTAINER UTAMA (KONTEN DINAMIS) -->
+  <div id="page-container">
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="page-hero-content" data-aos="fade-up">
+        <h1 data-i18n="page_title">Galeri Dokumentasi</h1>
+        <p data-i18n="page_subtitle">Momen berharga, kegiatan lapangan, dan komitmen kami dalam pengelolaan lingkungan yang berkelanjutan.</p>
+      </div>
+    </section>
 
-  <!-- BREADCRUMB -->
-  <div class="breadcrumb" data-aos="fade-right">
-    <a href="index.html" data-i18n="bc_home">Beranda</a> / <span data-i18n="bc_current">Galeri</span>
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb" data-aos="fade-right">
+      <a href="index.html" class="nav-spa-link" data-i18n="bc_home">Beranda</a> / <span data-i18n="bc_current">Galeri</span>
+    </div>
+
+    <!-- GALLERY MARQUEE SECTION -->
+    <section class="gallery-section">
+      <div class="loading-state" id="loadingState">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>Memuat foto dari Google Drive...</p>
+      </div>
+      <div class="marquee-container" id="marqueeContainer">
+        <!-- Rows will be injected by JavaScript -->
+      </div>
+    </section>
   </div>
-
-  <!-- GALLERY MARQUEE SECTION -->
-  <section class="gallery-section">
-    <div class="loading-state" id="loadingState">
-      <i class="fas fa-spinner fa-spin"></i>
-      <p>Memuat foto dari Google Drive...</p>
-    </div>
-    <div class="marquee-container" id="marqueeContainer">
-      <!-- Rows will be injected by JavaScript -->
-    </div>
-  </section>
 
   <!-- LIGHTBOX MODAL -->
   <div class="lightbox" id="lightbox">
@@ -767,12 +781,13 @@
       { src: "gallery/Jerigen.jpeg" }
     ];
 
-    const marqueeContainer = document.getElementById('marqueeContainer');
-    const loadingState = document.getElementById('loadingState');
     let currentIndex = 0;
 
     // Fungsi Render Gambar ke Tampilan Marquee
     function renderGallery() {
+      const marqueeContainer = document.getElementById('marqueeContainer');
+      if (!marqueeContainer) return;
+      
       marqueeContainer.innerHTML = '';
       if (galleryData.length === 0) return;
 
@@ -822,6 +837,7 @@
 
     // Ambil Data Foto dari Google Drive via Apps Script Web App
     async function loadDriveImages() {
+      const loadingState = document.getElementById('loadingState');
       try {
         const fetchUrl = `${APPS_SCRIPT_URL}?folderId=${FOLDER_ID}`;
         const response = await fetch(fetchUrl);
@@ -861,8 +877,8 @@
     }
 
     function updateLightbox() {
-      lightboxImg.src = galleryData[currentIndex].src;
-      lightboxCounter.textContent = `${currentIndex + 1} / ${galleryData.length}`;
+      if (lightboxImg) lightboxImg.src = galleryData[currentIndex].src;
+      if (lightboxCounter) lightboxCounter.textContent = `${currentIndex + 1} / ${galleryData.length}`;
     }
 
     function nextImage() {
@@ -888,10 +904,6 @@
       if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowRight') nextImage();
       if (e.key === 'ArrowLeft') prevImage();
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-      loadDriveImages();
     });
 
     // TRANSLATION DICTIONARY
@@ -958,12 +970,14 @@
       localStorage.setItem('preferredLanguage', lang);
       document.documentElement.lang = lang;
       
-      document.getElementById('btn-id').classList.toggle('active', lang === 'id');
-      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      const btnId = document.getElementById('btn-id');
+      const btnEn = document.getElementById('btn-en');
+      if (btnId) btnId.classList.toggle('active', lang === 'id');
+      if (btnEn) btnEn.classList.toggle('active', lang === 'en');
       
       document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
-        if (translations[lang][key]) {
+        if (translations[lang] && translations[lang][key]) {
           if (key === 'page_title') {
              element.innerHTML = translations[lang][key];
           } else {
@@ -972,9 +986,6 @@
         }
       });
     }
-
-    const savedLang = localStorage.getItem('preferredLanguage') || 'id';
-    setLanguage(savedLang);
 
     // HAMBURGER & DROPDOWN MENU LOGIC
     const hamburger = document.getElementById('hamburger');
@@ -1013,31 +1024,147 @@
       }
     });
 
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        menu.classList.remove('active');
-        layananDropdown.classList.remove('active');
-        artikelDropdown.classList.remove('active');
-      });
-    });
+    function closeMobileMenu() {
+      hamburger.classList.remove('active');
+      menu.classList.remove('active');
+      layananDropdown.classList.remove('active');
+      artikelDropdown.classList.remove('active');
+    }
 
-    dropdownItems.forEach(item => {
-      item.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        menu.classList.remove('active');
-        layananDropdown.classList.remove('active');
-        artikelDropdown.classList.remove('active');
-      });
-    });
+    menuLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+    dropdownItems.forEach(item => item.addEventListener('click', closeMobileMenu));
 
     document.addEventListener('click', (e) => {
       if (!menu.contains(e.target) && !hamburger.contains(e.target) && menu.classList.contains('active')) {
-        hamburger.classList.remove('active');
-        menu.classList.remove('active');
-        layananDropdown.classList.remove('active');
-        artikelDropdown.classList.remove('active');
+        closeMobileMenu();
       }
+    });
+
+    /* =========================================================
+       SEAMLESS TAB SWITCHING (SPA NAVIGATION SYSTEM)
+    ========================================================= */
+    function updateActiveNavbar(pathname) {
+      const pageName = pathname.split('/').pop().split('#')[0] || 'index.html';
+      document.querySelectorAll('.menu a, .dropdown-item').forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        const linkPage = href.split('/').pop().split('#')[0];
+        
+        if (linkPage === pageName) {
+          link.classList.add('active');
+        } else if (pageName !== '' && linkPage !== pageName) {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    async function navigateTo(url, pushState = true) {
+      const targetUrl = new URL(url, window.location.origin);
+      const currentUrl = new URL(window.location.href);
+
+      // Jika berpindah ke hash/section pada halaman yang sama
+      if (targetUrl.pathname === currentUrl.pathname && targetUrl.hash) {
+        if (pushState) history.pushState({}, '', url);
+        const targetEl = document.querySelector(targetUrl.hash);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }
+        updateActiveNavbar(targetUrl.pathname);
+        closeMobileMenu();
+        return;
+      }
+
+      // Jika berpindah ke file HTML yang berbeda
+      const pageContainer = document.getElementById('page-container');
+      pageContainer.classList.add('page-fade-out');
+
+      try {
+        const response = await fetch(targetUrl.href);
+        if (!response.ok) throw new Error('Network response was not ok');
+        const html = await response.text();
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+
+        const newContent = doc.getElementById('page-container');
+        const newTitle = doc.title;
+
+        setTimeout(() => {
+          if (newContent) {
+            pageContainer.innerHTML = newContent.innerHTML;
+          } else {
+            // Fallback jika page-container tidak ditemukan
+            const newBody = doc.body;
+            const containerInNew = newBody.querySelector('#page-container') || newBody;
+            pageContainer.innerHTML = containerInNew.innerHTML;
+          }
+
+          document.title = newTitle;
+          if (pushState) history.pushState({}, newTitle, url);
+
+          // Scroll ke anchor atau top
+          if (targetUrl.hash) {
+            const targetEl = document.querySelector(targetUrl.hash);
+            if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+
+          // Refresh state & AOS
+          updateActiveNavbar(targetUrl.pathname);
+          const currentLang = localStorage.getItem('preferredLanguage') || 'id';
+          setLanguage(currentLang);
+          
+          if (typeof AOS !== 'undefined') {
+            AOS.refreshHard();
+          }
+
+          // Re-init galeri jika kembali ke Halaman Galeri
+          if (targetUrl.pathname.endsWith('galeri.html')) {
+            if (galleryData.length <= 8) {
+              loadDriveImages();
+            } else {
+              renderGallery();
+            }
+          }
+
+          pageContainer.classList.remove('page-fade-out');
+          closeMobileMenu();
+        }, 250);
+
+      } catch (err) {
+        console.error("Gagal memuat halaman dinamis, mengalihkan secara normal:", err);
+        window.location.href = url;
+      }
+    }
+
+    // Event Listener Delegasi untuk Navigasi SPA
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (!link) return;
+
+      const href = link.getAttribute('href');
+      
+      // Abaikan link eksternal atau WA/Target Blank
+      if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:') || link.target === '_blank') {
+        return;
+      }
+
+      e.preventDefault();
+      navigateTo(href);
+    });
+
+    // Menangani tombol Back / Forward browser
+    window.addEventListener('popstate', () => {
+      navigateTo(window.location.href, false);
+    });
+
+    // INITIALIZATION ON DOM READY
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('preferredLanguage') || 'id';
+      setLanguage(savedLang);
+      loadDriveImages();
+      updateActiveNavbar(window.location.pathname);
     });
   </script>
 </body>

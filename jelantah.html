@@ -395,7 +395,7 @@
 
     .card{
       background:white;
-      padding:35px 28px;
+      padding:45px 28px 35px;
       border-radius:22px;
       box-shadow:0 5px 20px rgba(0,0,0,0.08);
       transition:0.3s;
@@ -425,10 +425,6 @@
       border: 3px solid #f7faf7;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       z-index: 2;
-    }
-
-    .card{
-      padding-top: 45px;
     }
 
     .icon{
@@ -836,8 +832,8 @@
     <div class="section-title" data-aos="fade-up">
       <h2 data-i18n="cta_title">Siap Menangani Limbah Minyak Jelantah Anda?</h2>
       <p data-i18n="cta_subtitle">CV REZEKI AMANAH JAYA siap menjadi mitra pengumpulan minyak jelantah dari rumah tangga, UMKM, restoran, hotel, maupun industri.</p>
-      <a href="https://wa.me/6281296580968?text=Halo%20CV%20Rezeki%20Amanah%20Jaya,%20saya%20ingin%20bertanya%20tentang%20jasa%20pengepul%20minyak%20jelantah" class="cta-btn" target="_blank" rel="noopener noreferrer" data-i18n="cta_btn">
-        <i class="fab fa-whatsapp"></i> Hubungi Kami Sekarang
+      <a href="https://wa.me/6281296580968?text=Halo%20CV%20Rezeki%20Amanah%20Jaya,%20saya%20ingin%20bertanya%20tentang%20jasa%20pengepul%20minyak%20jelantah" class="cta-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i> <span data-i18n="cta_btn">Hubungi Kami Sekarang</span>
       </a>
     </div>
   </section>
@@ -978,12 +974,8 @@
       
       document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
-        if (translations[lang][key]) {
-          if (key === 'page_title' || key === 'nav_articles' || key === 'cta_btn') {
-            element.innerHTML = translations[lang][key];
-          } else {
-            element.textContent = translations[lang][key];
-          }
+        if (translations[lang] && translations[lang][key]) {
+          element.textContent = translations[lang][key];
         }
       });
     }
@@ -991,7 +983,7 @@
     const savedLang = localStorage.getItem('preferredLanguage') || 'id';
     setLanguage(savedLang);
 
-    // === HAMBURGER & DROPDOWN MENU LOGIC ===
+    // Mobile Hamburger & Dropdown Toggle
     const hamburger = document.getElementById('hamburger');
     const menu = document.getElementById('menu');
     
@@ -1012,8 +1004,15 @@
       }
     }
 
-    layananToggle.addEventListener('click', (e) => toggleMobileDropdown(layananDropdown));
-    artikelToggle.addEventListener('click', (e) => toggleMobileDropdown(artikelDropdown));
+    layananToggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) e.preventDefault();
+      toggleMobileDropdown(layananDropdown);
+    });
+    
+    artikelToggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) e.preventDefault();
+      toggleMobileDropdown(artikelDropdown);
+    });
 
     document.querySelectorAll('.menu-link:not(.dropdown-toggle), .dropdown-item').forEach(link => {
       link.addEventListener('click', () => {
