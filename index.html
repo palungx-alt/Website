@@ -4,13 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   
-  <!-- === OPTIMASI SEO META TAGS === -->
+  <!-- === FAVICON === -->
+  <link rel="icon" href="RAJ-LOGO-BERSIH.png" type="image/png">
+  <link rel="apple-touch-icon" href="RAJ-LOGO-BERSIH.png">
+
+  <!-- === SEO META TAGS === -->
   <title>Jasa Pengepul Minyak Jelantah & Waste Management Tangerang | CV Rezeki Amanah Jaya</title>
   <meta name="description" content="Jasa pengepul minyak jelantah & solusi waste management terpercaya untuk restoran, hotel, dan industri di Tangerang, Jabodetabek, & Jateng. Harga kompetitif, jemput terjadwal, & ramah lingkungan.">
   <meta name="keywords" content="pengepul minyak jelantah tangerang, jasa angkut limbah restoran, waste management jabodetabek, rekan bank sampah, pengelolaan limbah organik, CV Rezeki Amanah Jaya">
   <meta name="author" content="CV Rezeki Amanah Jaya Group">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <meta name="theme-color" content="#0d5c2f">
+  <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="https://rezekiamanahjaya.com/">
 
   <!-- === OPEN GRAPH === -->
@@ -24,13 +28,11 @@
   <!-- GOOGLE FONT & ICON -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
-  <!-- AOS ANIMATION -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <!-- === OPTIMASI JSON-LD SCHEMA === -->
+  <!-- === JSON-LD SCHEMA === -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -92,421 +94,230 @@
   </script>
 
   <style>
-    /* RESET & GLOBAL */
-    *{ margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
-    html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
-    body{
-      font-family:'Poppins',sans-serif;
-      background:#f7faf7;
-      overflow-x:hidden;
-      color:#222;
-      font-size:16px;
-      line-height:1.6;
-      width:100%;
-      max-width:100vw;
-    }
-    img, video, svg{ max-width:100%; height:auto; display:block; }
-    ::-webkit-scrollbar{ width:8px; }
-    ::-webkit-scrollbar-thumb{ background:#198754; border-radius:20px; }
-
-    /* NAVBAR */
-    nav{
-      position:fixed; width:100%; top:0; left:0; z-index:999;
-      background:rgba(255,255,255,0.98); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
-      box-shadow:0 2px 15px rgba(0,0,0,0.08); padding:10px 0;
-    }
-    .nav-container{
-      width:92%; max-width:1200px; margin:auto; display:flex;
-      justify-content:space-between; align-items:center; padding:5px 0;
-    }
-    .logo{ display:flex; align-items:center; gap:10px; flex-shrink:0; }
-    .logo img{ width:45px; height:auto; object-fit:contain; }
-    .logo h2{ font-size:14px; color:#0d5c2f; line-height:1.2; font-weight:600; }
-    .logo p{ font-size:10px; color:#777; margin:0; }
-    .menu{ display: flex; align-items: center; }
-    .menu > a, .menu .dropdown-toggle{
-      margin-left:15px; text-decoration:none; color:#222; font-weight:500;
-      font-size:14px; transition:0.3s; padding:8px 10px; border-radius:8px;
-      display: flex; align-items: center; white-space:nowrap;
-    }
-    .menu > a:hover, .menu .dropdown-toggle:hover{ color:#198754; background:rgba(25,135,84,0.1); }
-    .dropdown{ position: relative; margin-left: 15px; }
-    .dropdown-menu{
-      position: absolute; top: 100%; left: 0; background: white;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-radius: 8px;
-      min-width: 200px; opacity: 0; visibility: hidden;
-      transform: translateY(10px); transition: 0.3s ease; z-index: 1000; padding: 8px 0;
-    }
-    .dropdown:hover .dropdown-menu{ opacity: 1; visibility: visible; transform: translateY(0); }
-    .dropdown-item{
-      display: block; padding: 10px 20px; color: #222; text-decoration: none;
-      font-size: 14px; font-weight: 500; transition: 0.3s; white-space:nowrap;
-    }
-    .dropdown-item:hover{ background: rgba(25,135,84,0.1); color: #198754; }
-    .dropdown-divider{ height: 1px; background: #eee; margin: 6px 0; }
-    .dropdown-label{
-      padding: 8px 20px 4px; font-size: 11px; font-weight: 700;
-      color: #999; text-transform: uppercase; letter-spacing: 0.5px;
-    }
-    .lang-toggle{
-      display: flex; align-items: center; gap: 6px; margin-left: 15px;
-      font-size: 13px; font-weight: 600; color: #777;
-    }
-    .lang-btn{
-      background: none; border: none; cursor: pointer; color: #777;
-      font-weight: 600; padding: 4px 8px; border-radius: 4px;
-      transition: 0.3s; font-family: 'Poppins', sans-serif; font-size:13px;
-    }
-    .lang-btn.active{ color: #198754; background: rgba(25,135,84,0.1); }
-    .hamburger{
-      display:none; flex-direction:column; gap:5px; background:none;
-      border:none; cursor:pointer; padding:8px; z-index:1001;
-    }
-    .hamburger span{ width:25px; height:3px; background:#0d5c2f; border-radius:3px; transition:0.3s; }
-
-    /* HERO BARU (VIDEO DARI GALERI) */
-    .hero{
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      min-height: 100dvh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      color: white;
+    /* === FUTURISTIC LIGHT THEME VARIABLES === */
+    :root {
+      --primary: #00c853; 
+      --primary-dark: #009624;
+      --accent: #00e676;
+      --bg-light: #f8fbf9;
+      --white: #ffffff;
+      --glass: rgba(255, 255, 255, 0.7);
+      --text-main: #1a1a1a;
+      --text-muted: #555555;
+      --shadow-soft: 0 10px 40px rgba(0, 200, 83, 0.08);
+      --shadow-hover: 0 20px 50px rgba(0, 200, 83, 0.15);
+      --radius-xl: 24px;
+      --radius-md: 16px;
+      --font-main: 'Outfit', sans-serif;
     }
 
+    /* RESET & BASE */
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--font-main);
+      background: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: radial-gradient(circle at 10% 20%, rgba(0, 200, 83, 0.03) 0%, transparent 20%),
+                        radial-gradient(circle at 90% 80%, rgba(0, 230, 118, 0.03) 0%, transparent 20%);
+    }
+    img, video, svg { max-width: 100%; height: auto; display: block; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+
+    /* NAVBAR GLASSMORPHISM */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 999;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 12px 0; transition: all 0.3s ease;
+    }
+    .nav-container {
+      width: 92%; max-width: 1280px; margin: auto;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo img { width: 48px; height: auto; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05)); }
+    .logo-text h2 { font-size: 16px; color: var(--primary-dark); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; }
+    .logo-text p { font-size: 10px; color: var(--text-muted); font-weight: 500; letter-spacing: 0.5px; }
+
+    .menu { display: flex; align-items: center; gap: 8px; }
+    .menu > a, .dropdown-toggle {
+      text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 14px;
+      padding: 8px 16px; border-radius: 50px; transition: all 0.3s ease;
+      display: flex; align-items: center; white-space: nowrap;
+    }
+    .menu > a:hover, .dropdown-toggle:hover { background: rgba(0, 200, 83, 0.08); color: var(--primary); }
+    
+    .dropdown { position: relative; }
+    .dropdown-menu {
+      position: absolute; top: 120%; left: 0; background: var(--white);
+      box-shadow: var(--shadow-soft); border-radius: var(--radius-md);
+      min-width: 220px; opacity: 0; visibility: hidden; transform: translateY(10px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); padding: 10px; border: 1px solid rgba(0,0,0,0.03);
+    }
+    .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+    .dropdown-item {
+      display: block; padding: 10px 16px; color: var(--text-main); text-decoration: none;
+      font-size: 14px; font-weight: 500; border-radius: 10px; transition: 0.2s;
+    }
+    .dropdown-item:hover { background: var(--bg-light); color: var(--primary); }
+    .dropdown-divider { height: 1px; background: #eee; margin: 8px 0; }
+    .dropdown-label { padding: 8px 16px 4px; font-size: 11px; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
+
+    .lang-toggle { display: flex; align-items: center; gap: 4px; margin-left: 10px; background: #f0f0f0; padding: 4px; border-radius: 50px; }
+    .lang-btn {
+      background: none; border: none; cursor: pointer; color: #777; font-weight: 600;
+      padding: 4px 10px; border-radius: 50px; font-family: var(--font-main); font-size: 12px; transition: 0.3s;
+    }
+    .lang-btn.active { background: var(--white); color: var(--primary); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--text-main); border-radius: 2px; transition: 0.3s; }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative; width: 100%; height: 100vh; min-height: 100dvh;
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
     .hero-video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      z-index: 1;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
+      position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%;
+      width: auto; height: auto; z-index: 1; transform: translate(-50%, -50%);
+      object-fit: cover; opacity: 0; transition: opacity 1s ease;
     }
-
+    .hero-video.loaded { opacity: 1; }
     .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.55);
-      z-index: 2;
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;
+      background: linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.4) 100%);
+      backdrop-filter: blur(2px);
     }
-
     .hero-content {
-      position: relative;
-      z-index: 3;
-      width: 90%;
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-      padding: 0 20px;
+      position: relative; z-index: 3; width: 90%; max-width: 900px; text-align: center;
+      padding: 40px; background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.05);
     }
+    .hero-content h1 {
+      font-size: clamp(32px, 6vw, 64px); line-height: 1.1; margin-bottom: 20px;
+      font-weight: 800; color: var(--text-main); letter-spacing: -1px;
+    }
+    .text-highlight {
+      color: var(--primary);
+      background: linear-gradient(120deg, rgba(0, 200, 83, 0.1) 0%, rgba(0, 230, 118, 0.1) 100%);
+      padding: 0 10px; border-radius: 8px;
+    }
+    .hero-content p {
+      font-size: clamp(16px, 2vw, 20px); color: var(--text-muted); margin-bottom: 30px;
+      max-width: 700px; margin-left: auto; margin-right: auto; font-weight: 400;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px; padding: 16px 36px;
+      background: var(--primary); color: white; text-decoration: none;
+      border-radius: 50px; font-weight: 600; font-size: 16px; transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 200, 83, 0.3); border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0, 200, 83, 0.4); }
 
-    .hero-content h1{
-      font-size:clamp(26px, 7vw, 56px); line-height:1.15; margin-bottom:18px;
-      font-weight:800; animation:fadeUp 1s ease; text-shadow:2px 2px 4px rgba(0,0,0,0.3);
-    }
-    .text-highlight { color: #4ade80; }
-    .hero-content p{
-      font-size:clamp(14px, 3.5vw, 18px); line-height:1.7; margin-bottom:28px;
-      color:#f0f0f0; animation:fadeUp 1.3s ease; text-shadow:1px 1px 3px rgba(0,0,0,0.3);
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap: 8px;
-      padding:14px 30px; background:#1f8a3c; color:white; text-decoration:none;
-      border-radius:50px; font-weight:600; font-size:15px; transition:0.3s;
-      box-shadow:0 8px 20px rgba(0,0,0,0.2); min-height:48px; margin: 0 auto; white-space:nowrap;
-    }
-    .btn:hover{ background:#14652b; transform:translateY(-3px); box-shadow:0 12px 28px rgba(0,0,0,0.25); }
+    /* SECTIONS GENERAL */
+    section { padding: 100px 8%; position: relative; }
+    .section-title { text-align: center; margin-bottom: 60px; }
+    .section-title h2 { font-size: clamp(28px, 4vw, 42px); color: var(--text-main); margin-bottom: 15px; font-weight: 800; letter-spacing: -0.5px; }
+    .section-title p { color: var(--text-muted); max-width: 600px; margin: auto; font-size: 16px; }
 
-    .wa{
-      position:fixed; bottom:20px; right:20px; width:58px; height:58px;
-      background:#25D366; color:white; border-radius:50%; display:flex;
-      justify-content:center; align-items:center; font-size:28px; z-index:999;
-      text-decoration:none; box-shadow:0 8px 25px rgba(37,211,102,0.4); animation:pulse 2s infinite;
+    /* CARDS & GRID */
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    
+    .card {
+      background: var(--white); padding: 40px 30px; border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(0,0,0,0.02); position: relative; overflow: hidden;
     }
+    .card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); border-color: rgba(0, 200, 83, 0.1); }
+    .card::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent)); opacity: 0; transition: 0.3s;
+    }
+    .card:hover::before { opacity: 1; }
 
-    section{ padding:70px 8%; }
-    .section-title{ text-align:center; margin-bottom:45px; }
-    .section-title h2{ font-size:clamp(22px, 5.5vw, 40px); color:#0d5c2f; margin-bottom:12px; font-weight:700; }
-    .section-title p{ color:#666; max-width:650px; margin:auto; font-size:14px; }
+    .icon-box {
+      width: 70px; height: 70px; background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+      border-radius: 20px; display: flex; align-items: center; justify-content: center;
+      font-size: 32px; color: var(--primary); margin-bottom: 24px; transition: 0.3s;
+    }
+    .card:hover .icon-box { background: var(--primary); color: white; transform: scale(1.1) rotate(5deg); }
+    
+    .card h3 { font-size: 20px; margin-bottom: 12px; color: var(--text-main); font-weight: 700; }
+    .card p { color: var(--text-muted); font-size: 15px; line-height: 1.7; }
 
-    /* ABOUT */
-    .about{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
-    .about img{
-      width:100%; max-width:400px; border-radius:25px; background:white;
-      padding:20px; box-shadow:0 15px 35px rgba(0,0,0,0.12); animation:float 4s ease-in-out infinite;
-      display:block; margin:0 auto;
-    }
-    .about-text h3{ font-size:clamp(20px, 4.5vw, 34px); color:#0d5c2f; margin-bottom:18px; font-weight:700; }
-    .about-text p{ line-height:1.8; margin-bottom:16px; color:#555; font-size:14px; }
+    /* STATS SECTION */
+    .stats-section { background: var(--white); padding: 60px 8%; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
+    .stat-item h2 { font-size: 48px; color: var(--primary); font-weight: 800; margin-bottom: 5px; }
+    .stat-item p { font-size: 14px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-    /* STATS */
-    .stats{ background:#0d5c2f; color:white; padding:50px 8%; }
-    .stats-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:20px; text-align:center; }
-    .stat-box h2{ font-size:clamp(30px, 7vw, 50px); margin-bottom:8px; font-weight:800; line-height:1; }
-    .stat-box p{ color:#d9ffe2; font-size:13px; font-weight:500; }
+    /* GALLERY INFINITE SCROLL */
+    .gallery-wrap { overflow: hidden; position: relative; padding: 40px 0; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+    .gallery-track { display: flex; gap: 20px; width: max-content; animation: scroll 40s linear infinite; }
+    .gallery-track:hover { animation-play-state: paused; }
+    .gallery-item { width: 300px; height: 200px; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-soft); flex-shrink: 0; background: #f0f0f0; }
+    .gallery-item img, .gallery-item video { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+    .gallery-item:hover img { transform: scale(1.1); }
+    @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-    /* SERVICES */
-    .services{ background:#eef7f0; }
-    .service-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:22px; }
-    .card-link { text-decoration: none; color: inherit; display: block; height: 100%; }
-    .card{
-      background:white; padding:30px 24px; border-radius:20px; box-shadow:0 5px 20px rgba(0,0,0,0.08);
-      transition:0.3s; height: 100%; display: flex; flex-direction: column; justify-content: center;
-    }
-    .card-link:hover .card{ transform:translateY(-8px); box-shadow:0 15px 35px rgba(0,0,0,0.12); }
-    .icon{
-      font-size:40px; margin-bottom:15px; color:#198754; display:flex; align-items:center;
-      justify-content:center; width:65px; height:65px; margin-left:auto; margin-right:auto;
-      background:rgba(25,135,84,0.1); border-radius:50%;
-    }
-    .card h3{ margin-bottom:10px; color:#0d5c2f; font-size:18px; text-align:center; font-weight:600; }
-    .card p{ color:#666; line-height:1.7; font-size:13px; text-align:center; margin: 0; }
+    /* PARTNERS & TESTIMONIALS */
+    .partner-logo { width: 80px; height: 80px; background: white; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05); padding: 15px; }
+    .partner-logo img { width: 100%; height: 100%; object-fit: contain; filter: grayscale(100%); transition: 0.3s; }
+    .card:hover .partner-logo img { filter: grayscale(0%); }
 
-    /* GALLERY */
-    .gallery-slider{ width: 100%; overflow: hidden; position: relative; padding: 20px 0; cursor: grab; }
-    .gallery-slider:active { cursor: grabbing; }
-    .gallery-slider::before, .gallery-slider::after{
-      content: ""; position: absolute; top: 0; width: 80px; height: 100%; z-index: 2; pointer-events: none;
-    }
-    .gallery-slider::before{ left: 0; background: linear-gradient(to right, #f7faf7, transparent); }
-    .gallery-slider::after{ right: 0; background: linear-gradient(to left, #f7faf7, transparent); }
-    .gallery-track{ display: flex; gap: 15px; width: max-content; animation: scrollGallery 40s linear infinite; }
-    .gallery-slider:hover .gallery-track, .gallery-track:hover, .gallery-slider:active .gallery-track { animation-play-state: paused; }
-    .gallery-track img{
-      width: 260px; height: 190px; object-fit: cover; border-radius: 14px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08); flex-shrink: 0; transition: transform 0.3s ease;
-      pointer-events: none; user-select: none;
-    }
-    .gallery-track video{
-      width: 260px; height: 190px; object-fit: cover; border-radius: 14px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08); flex-shrink: 0; background: #000;
-    }
-    @keyframes scrollGallery { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .testimonial-card { background: var(--white); padding: 30px; border-radius: var(--radius-xl); box-shadow: var(--shadow-soft); border: 1px solid rgba(0,0,0,0.02); }
+    .quote-icon { font-size: 40px; color: var(--primary); opacity: 0.2; margin-bottom: 15px; }
+    .author { display: flex; align-items: center; gap: 15px; margin-top: 20px; }
+    .avatar { width: 45px; height: 45px; background: #e8f5e9; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: 700; }
 
-    /* PARTNERS SECTION */
-    .partners-section{ background:#fff; padding:70px 8%; }
-    .partners-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; max-width:1200px; margin:auto; }
-    .partner-card{
-      background:linear-gradient(135deg,#f7faf7,#eef7f0); border-radius:20px; padding:30px 25px;
-      text-align:center; transition:0.3s; border:2px solid transparent; box-shadow:0 5px 15px rgba(0,0,0,0.08);
-    }
-    .partner-card:hover{
-      transform:translateY(-8px); border-color:#198754; box-shadow:0 15px 35px rgba(13,92,47,0.15);
-      background:linear-gradient(135deg,#eef7f0,#d9ffe2);
-    }
-    .partner-logo{
-      width:80px; height:80px; background:white; border-radius:50%; display:flex;
-      align-items:center; justify-content:center; margin:0 auto 20px; box-shadow:0 5px 15px rgba(0,0,0,0.1);
-      padding:10px; overflow:hidden; border:2px solid #eef7f0;
-    }
-    .partner-logo img{ width:100%; height:100%; object-fit:contain; transition:0.3s; }
-    .partner-card:hover .partner-logo img{ transform:scale(1.1); }
-    .partner-logo i{ font-size:36px; color:#198754; }
-    .partner-card h3{ font-size:16px; color:#0d5c2f; margin-bottom:8px; font-weight:700; line-height:1.3; }
-    .partner-card p{ font-size:13px; color:#666; line-height:1.5; }
+    /* CONTACT & FOOTER */
+    .contact-card { text-align: center; padding: 40px; background: var(--white); border-radius: var(--radius-xl); box-shadow: var(--shadow-soft); transition: 0.3s; }
+    .contact-card:hover { transform: translateY(-5px); }
+    .contact-icon { width: 60px; height: 60px; background: var(--bg-light); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--primary); }
 
-    /* TESTIMONIALS SECTION */
-    .testimonials-section { background: #f7faf7; }
-    .testimonial-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-      gap: 25px; 
-      max-width: 1200px; 
-      margin: auto; 
-    }
-    .testimonial-card { 
-      background: white; 
-      padding: 30px; 
-      border-radius: 20px; 
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08); 
-      transition: 0.3s; 
-      position: relative; 
-      border-top: 4px solid #198754;
-    }
-    .testimonial-card:hover { 
-      transform: translateY(-5px); 
-      box-shadow: 0 15px 35px rgba(0,0,0,0.12); 
-    }
-    .testimonial-card .quote-icon { 
-      font-size: 32px; 
-      color: #198754; 
-      opacity: 0.2; 
-      margin-bottom: 15px; 
-      display: block;
-    }
-    .testimonial-card p { 
-      font-style: italic; 
-      color: #555; 
-      line-height: 1.7; 
-      font-size: 14px; 
-      margin-bottom: 25px; 
-    }
-    .testimonial-author { 
-      display: flex; 
-      align-items: center; 
-      gap: 12px; 
-    }
-    .author-avatar { 
-      width: 38px; 
-      height: 38px; 
-      background: #eef7f0; 
-      border-radius: 50%; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      color: #198754; 
-      font-weight: 700; 
-      font-size: 15px; 
-      flex-shrink: 0;
-    }
-    .author-info h4 { 
-      font-size: 15px; 
-      color: #0d5c2f; 
-      margin: 0; 
-      font-weight: 600; 
-    }
-    .author-info span { 
-      font-size: 12px; 
-      color: #777; 
-    }
+    footer { background: var(--white); padding: 40px 8%; text-align: center; border-top: 1px solid #eee; font-size: 14px; color: var(--text-muted); }
 
-    /* VISION */
-    .vision-section{ background:linear-gradient(135deg,#0d5c2f,#1f8a3c); color:white; }
-    .vision-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
-    .vision-box{
-      background:rgba(255,255,255,0.1); padding:35px 30px; border-radius:25px;
-      backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.15);
+    /* WHATSAPP FLOAT */
+    .wa-float {
+      position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
+      background: #25D366; color: white; border-radius: 50%; display: flex;
+      align-items: center; justify-content: center; font-size: 30px; z-index: 999;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); transition: 0.3s; text-decoration: none;
     }
-    .vision-box h3{ font-size:24px; margin-bottom:18px; font-weight:700; }
-    .vision-box p, .vision-box li{ line-height:1.8; color:#f0f0f0; font-size:14px; }
-    .vision-box ul{ padding-left:22px; margin-top:10px; }
-    .vision-box li{ margin-bottom:8px; }
-    .vision-image img{
-      width:100%; max-width:380px; border-radius:25px; background:white; padding:15px;
-      box-shadow:0 15px 35px rgba(0,0,0,0.25); display:block; margin:0 auto;
+    .wa-float:hover { transform: scale(1.1); }
+
+    /* RESPONSIVE */
+    @media(max-width: 992px) {
+      .hero-content { padding: 30px 20px; }
+      .hero-content h1 { font-size: 36px; }
     }
-
-    /* CONTACT */
-    .contact-box{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; margin-top:35px; }
-    .contact-card{
-      background:white; padding:30px 24px; border-radius:20px; text-align:center;
-      box-shadow:0 5px 20px rgba(0,0,0,0.08); transition:0.3s;
-    }
-    .contact-card:hover{ transform:translateY(-6px); box-shadow:0 12px 28px rgba(0,0,0,0.12); }
-    .contact-card .icon{ font-size:34px; margin-bottom:12px; width:60px; height:60px; }
-    .contact-card h3{ font-size:17px; margin-bottom:10px; color:#0d5c2f; }
-    .contact-card p{ color:#555; font-size:13px; line-height:1.6; }
-
-    footer{ background:#082814; color:white; text-align:center; padding:25px 20px; font-size:13px; }
-
-    @keyframes fadeUp{ from{ opacity:0; transform:translateY(40px); } to{ opacity:1; transform:translateY(0); } }
-    @keyframes float{ 0%,100%{ transform:translateY(0px); } 50%{ transform:translateY(-10px); } }
-    @keyframes pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.08); } }
-
-    /* ===== MOBILE OPTIMIZATION ===== */
-    @media(max-width: 992px){
-      section{ padding:60px 6%; } .about{ gap:35px; }
-      .menu > a, .menu .dropdown-toggle{ margin-left:10px; font-size:13px; }
-    }
-    @media(max-width: 768px){
-      body{ font-size:15px; } .hamburger{ display: flex; }
-      .menu{
-        position: fixed; top: 70px; left: 0; right: 0; background: white;
-        flex-direction: column; padding: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        transform: translateY(-150%); transition: transform 0.4s ease; z-index: 998;
-        gap: 0; border-radius: 0 0 20px 20px; max-height: 85vh; overflow-y: auto;
+    @media(max-width: 768px) {
+      .hamburger { display: flex; }
+      .menu {
+        position: fixed; top: 70px; left: 0; right: 0; background: var(--white);
+        flex-direction: column; padding: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        transform: translateY(-150%); transition: 0.4s ease; border-radius: 0 0 24px 24px;
+        align-items: stretch; gap: 5px;
       }
-      .menu.active{ transform: translateY(0); }
-      .menu > a, .menu .dropdown-toggle{
-        margin: 0; padding: 14px 15px; font-size: 15px; border-bottom: 1px solid #f0f0f0;
-        display: block; text-align: center; width: 100%; justify-content: center;
-      }
-      .menu > a:last-child{ border-bottom: none; }
-      .dropdown{ margin-left: 0; width: 100%; }
-      .dropdown-menu{
-        position: static; box-shadow: none; background: #f9f9f9; opacity: 1;
-        visibility: visible; transform: none; display: none; min-width: 100%;
-        border-radius: 0; padding: 0;
-      }
-      .dropdown.active .dropdown-menu{ display: block; }
-      .dropdown-item{ padding: 12px 20px; text-align: center; font-size: 14px; border-bottom: 1px solid #eee; }
-      .dropdown-label{ text-align: center; padding: 10px 20px 4px; }
-      .hamburger.active span:nth-child(1){ transform: rotate(45deg) translate(5px, 6px); }
-      .hamburger.active span:nth-child(2){ opacity: 0; }
-      .hamburger.active span:nth-child(3){ transform: rotate(-45deg) translate(5px, -6px); }
-      .lang-toggle{ margin-left: 0; margin-top: 10px; justify-content: center; padding-top: 12px; border-top: 1px solid #f0f0f0; }
+      .menu.active { transform: translateY(0); }
+      .menu > a, .dropdown-toggle { padding: 15px; border-radius: 12px; justify-content: center; }
+      .dropdown-menu { position: static; box-shadow: none; opacity: 1; visibility: visible; transform: none; display: none; background: #f9f9f9; margin-top: 5px; }
+      .dropdown.active .dropdown-menu { display: block; }
+      .lang-toggle { margin: 10px auto 0; }
       
-      .hero{ height: 100vh; min-height:100dvh; }
-      .hero-content{ max-width: 95%; }
-      .hero-content h1{ font-size: 26px; margin-bottom: 14px; }
-      .hero-content p{ font-size: 14px; margin-bottom: 22px; }
-      .btn{ width: 100%; max-width: 260px; font-size:14px; padding:12px 24px; }
-      
-      .about{ grid-template-columns:1fr; gap: 30px; text-align: center; }
-      .about img{ max-width: 280px; padding: 12px; animation: none; }
-      .about-text h3{ text-align: center; font-size: 22px; }
-      .about-text p{ text-align: justify; font-size: 13px; }
-      
-      .stats{ padding: 40px 5%; } .stats-grid{ gap: 18px; }
-      .stat-box h2{ font-size: 28px; } .stat-box p{ font-size: 12px; }
-      .service-grid{ gap: 18px; } .card{ padding: 25px 20px; }
-      .icon{ width: 55px; height: 55px; font-size: 30px; margin-bottom: 12px; }
-      .card h3{ font-size: 16px; } .card p{ font-size: 12px; }
-      
-      .partners-grid{ grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:18px; }
-      .partner-card{ padding:25px 18px; }
-      .partner-logo{ width:65px; height:65px; padding:8px; }
-      .partner-logo i{ font-size:28px; }
-      .partner-card h3{ font-size:14px; }
-      .partner-card p{ font-size:12px; }
-
-      .testimonial-grid{ grid-template-columns: 1fr; gap: 20px; }
-      .testimonial-card{ padding: 25px 20px; }
-      
-      .gallery-track img, .gallery-track video{ width: 220px; height: 160px; }
-      .gallery-slider::before, .gallery-slider::after{ width: 40px; }
-      
-      .vision-grid{ grid-template-columns: 1fr; gap: 30px; text-align: center; }
-      .vision-box{ padding: 25px 20px; text-align: left; }
-      .vision-box h3{ text-align: center; font-size: 20px; }
-      .vision-box p, .vision-box li{ font-size: 13px; }
-      .vision-image img{ max-width: 250px; }
-      
-      .contact-box{ gap: 18px; } .contact-card{ padding: 25px 18px; }
-      .contact-card .icon{ width: 50px; height: 50px; font-size: 26px; }
-      .contact-card h3{ font-size: 16px; } .contact-card p{ font-size: 12px; }
-      footer{ font-size: 12px; padding: 20px 15px; }
-    }
-    @media(max-width: 480px){
-      section{ padding: 45px 5%; }
-      .hero-content h1{ font-size: 22px; } .hero-content p{ font-size: 13px; }
-      .stat-box h2{ font-size: 24px; } .card{ padding: 22px 16px; }
-      .section-title h2{ font-size: 20px; } .about-text h3{ font-size: 20px; }
-      .vision-box h3{ font-size: 18px; } .logo h2{ font-size: 12px; }
-      .logo p{ font-size: 9px; } .logo img{ width: 40px; }
-      .partners-grid{ grid-template-columns:repeat(2,1fr); gap:15px; }
-      .partner-card{ padding:20px 12px; }
-      .partner-logo{ width:55px; height:55px; padding:6px; margin-bottom:12px; }
-      .partner-logo i{ font-size:24px; }
-      .partner-card h3{ font-size:13px; }
-      .partner-card p{ font-size:11px; }
-    }
-    @media(max-width: 360px){
-      .hero-content h1{ font-size: 20px; } .hero-content p{ font-size: 12px; }
-      .btn{ font-size: 13px; padding: 10px 20px; } .section-title h2{ font-size: 18px; }
-      .stat-box h2{ font-size: 22px; } .card h3{ font-size: 15px; } .card p{ font-size: 11px; }
-      .partners-grid{ grid-template-columns:repeat(2,1fr); gap:12px; }
-      .partner-card{ padding:18px 10px; }
+      section { padding: 60px 5%; }
+      .grid-2 { grid-template-columns: 1fr; gap: 30px; }
+      .hero-content h1 { font-size: 28px; }
+      .btn-primary { width: 100%; justify-content: center; }
     }
   </style>
 </head>
@@ -514,7 +325,7 @@
 <body>
 
   <!-- WHATSAPP FLOATING -->
-  <a href="https://wa.me/6281296580968?text=Halo%20CV%20Rezeki%20Amanah%20Jaya,%20saya%20ingin%20bertanya%20tentang%20jasa%20pengepul%20minyak%20jelantah%20dan%20waste%20management" class="wa" target="_blank" aria-label="Chat WhatsApp untuk Pengepulan Minyak Jelantah">
+  <a href="https://wa.me/6281296580968?text=Halo%20CV%20Rezeki%20Amanah%20Jaya,%20saya%20ingin%20bertanya%20tentang%20jasa%20pengepul%20minyak%20jelantah%20dan%20waste%20management" class="wa-float" target="_blank" aria-label="Chat WhatsApp untuk Pengepulan Minyak Jelantah">
     <i class="fab fa-whatsapp"></i>
   </a>
 
@@ -523,7 +334,7 @@
     <div class="nav-container">
       <div class="logo">
         <img src="RAJ-LOGO-BERSIH.png" alt="Logo CV Rezeki Amanah Jaya - Pengepul Minyak Jelantah">
-        <div>
+        <div class="logo-text">
           <h2>CV REZEKI AMANAH JAYA</h2>
           <p>Supplier & Waste Solution Partner</p>
         </div>
@@ -577,10 +388,10 @@
     </div>
   </nav>
 
-  <!-- HERO (PERUBAHAN VIDEO GALLERY LOKAL) -->
+  <!-- HERO SECTION -->
   <section class="hero">
-    <video autoplay muted loop playsinline class="hero-video">
-      <source src="gallery/Comming-soon.mp4" type="video/mp4">
+    <video id="heroVideo" autoplay muted loop playsinline class="hero-video" poster="RAJ-LOGO-BERSIH.png">
+      <source id="heroSource" src="" type="video/mp4">
       Browser Anda tidak mendukung tag video.
     </video>
 
@@ -589,7 +400,7 @@
     <div class="hero-content">
       <h1 data-i18n="hero_title">Solusi <span class="text-highlight">Waste Management</span> & <br>Pengepul Minyak Jelantah Terpercaya</h1>
       <p data-i18n="hero_desc">Mitra resmi restoran, hotel, dan industri di Tangerang, Jabodetabek, & Jateng. Kami mengubah limbah menjadi berkah dengan proses yang ramah lingkungan, terjadwal, dan transparan.</p>
-      <a href="https://wa.me/6281296580968?text=Halo%20CV%20Rezeki%20Amanah%20Jaya,%20saya%20ingin%20bertanya%20tentang%20jasa%20pengepul%20minyak%20jelantah%20dan%20waste%20management" class="btn" data-i18n="hero_btn">
+      <a href="https://wa.me/6281296580968?text=Halo%20CV%20Rezeki%20Amanah%20Jaya,%20saya%20ingin%20bertanya%20tentang%20jasa%20pengepul%20minyak%20jelantah%20dan%20waste%20management" class="btn-primary" data-i18n="hero_btn">
         <i class="fab fa-whatsapp"></i> Konsultasi Gratis
       </a>
     </div>
@@ -601,67 +412,67 @@
       <h2 data-i18n="about_title">Tentang Perusahaan</h2>
       <p data-i18n="about_subtitle">Solusi bisnis terintegrasi untuk pangan, lingkungan, logistik, dan pemberdayaan masyarakat.</p>
     </div>
-    <div class="about">
+    <div class="grid-2">
       <div class="about-text" data-aos="fade-right">
         <h3 data-i18n="about_h3">Company Overview</h3>
-        <p data-i18n="about_p1">CV Rezeki Amanah Jaya Group merupakan perusahaan yang bergerak di bidang Food Production, <a href="waste-management.html" style="color:#198754; text-decoration:none; font-weight:600;">Waste Management</a>, <a href="jelantah.html" style="color:#198754; text-decoration:none; font-weight:600;">Pengepul Minyak Jelantah</a>, Rekan Bank Sampah, Logistics, dan Social Impact.</p>
+        <p data-i18n="about_p1">CV Rezeki Amanah Jaya Group merupakan perusahaan yang bergerak di bidang Food Production, <a href="waste-management.html" style="color:var(--primary); text-decoration:none; font-weight:600;">Waste Management</a>, <a href="jelantah.html" style="color:var(--primary); text-decoration:none; font-weight:600;">Pengepul Minyak Jelantah</a>, Rekan Bank Sampah, Logistics, dan Social Impact.</p>
         <p data-i18n="about_p2">Berbasis di Tangerang dan berkembang ke Jabodetabek serta Jawa Tengah dengan fokus pada kualitas, keberlanjutan, dan profesionalisme.</p>
-        <a href="#services" class="btn" data-i18n="about_btn">Pelajari Selengkapnya</a>
+        <a href="#services" class="btn-primary" data-i18n="about_btn">Pelajari Selengkapnya</a>
       </div>
-      <div data-aos="fade-left">
-        <img src="RAJ-LOGO-BERSIH.png" alt="Tentang CV Rezeki Amanah Jaya Group - Pengelolaan Limbah Terpadu" width="400" height="400">
+      <div data-aos="fade-left" style="text-align:center;">
+        <img src="RAJ-LOGO-BERSIH.png" alt="Tentang CV Rezeki Amanah Jaya Group - Pengelolaan Limbah Terpadu" width="400" height="400" style="filter: drop-shadow(0 20px 40px rgba(0,200,83,0.15));">
       </div>
     </div>
   </section>
 
   <!-- STATS -->
-  <section class="stats">
+  <div class="stats-section">
     <div class="stats-grid">
-      <div class="stat-box" data-aos="zoom-in">
+      <div class="stat-item" data-aos="zoom-in">
         <h2>8+</h2>
         <p data-i18n="stats_divisions">Divisi Bisnis</p>
       </div>
-      <div class="stat-box" data-aos="zoom-in">
+      <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
         <h2>2026</h2>
         <p data-i18n="stats_year">Tahun Berdiri</p>
       </div>
-      <div class="stat-box" data-aos="zoom-in">
+      <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
         <h2>100%</h2>
         <p data-i18n="stats_professional">Professional Service</p>
       </div>
-      <div class="stat-box" data-aos="zoom-in">
+      <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
         <h2>24/7</h2>
         <p data-i18n="stats_support">Support Service</p>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- SERVICES -->
-  <section class="services" id="services">
+  <section class="services" id="services" style="background: var(--white);">
     <div class="section-title" data-aos="fade-up">
       <h2 data-i18n="services_title">Divisi Layanan</h2>
       <p data-i18n="services_subtitle">Solusi lengkap untuk kebutuhan perusahaan modern.</p>
     </div>
-    <div class="service-grid">
+    <div class="grid-3">
       <a href="jelantah.html" class="card-link" data-aos="fade-up">
         <div class="card">
-          <div class="icon"><i class="fas fa-bottle-droplet"></i></div>
+          <div class="icon-box"><i class="fas fa-bottle-droplet"></i></div>
           <h3 data-i18n="service_jelantah_title">Minyak Jelantah</h3>
           <p data-i18n="service_jelantah_desc">Jasa pengepul minyak jelantah terpercaya dengan harga kompetitif dan penjemputan terjadwal.</p>
         </div>
       </a>
       
-      <a href="waste-management.html" class="card-link" data-aos="fade-up">
+      <a href="waste-management.html" class="card-link" data-aos="fade-up" data-aos-delay="100">
         <div class="card">
-          <div class="icon"><i class="fas fa-recycle"></i></div>
+          <div class="icon-box"><i class="fas fa-recycle"></i></div>
           <h3 data-i18n="service_waste_title">Waste Management</h3>
           <p data-i18n="service_waste_desc">Solusi pengelolaan limbah terpadu, pemilahan, dan pengolahan organik menggunakan Maggot BSF.</p>
         </div>
       </a>
       
-      <a href="food.html" class="card-link" data-aos="fade-up">
+      <a href="food.html" class="card-link" data-aos="fade-up" data-aos-delay="200">
         <div class="card">
-          <div class="icon"><i class="fas fa-utensils"></i></div>
+          <div class="icon-box"><i class="fas fa-utensils"></i></div>
           <h3 data-i18n="service_food_title">Food & Culinary</h3>
           <p data-i18n="service_food_desc">Produksi makanan olahan, frozen food, catering, dan distribusi F&B berkualitas tinggi.</p>
         </div>
@@ -669,23 +480,23 @@
       
       <a href="logistics.html" class="card-link" data-aos="fade-up">
         <div class="card">
-          <div class="icon"><i class="fas fa-truck"></i></div>
+          <div class="icon-box"><i class="fas fa-truck-fast"></i></div>
           <h3 data-i18n="service_logistics_title">Logistics</h3>
           <p data-i18n="service_logistics_desc">Gudang, distribusi terjadwal, dan sistem logistik efisien untuk mendukung operasional bisnis Anda.</p>
         </div>
       </a>
       
-      <a href="social-impact.html" class="card-link" data-aos="fade-up">
+      <a href="social-impact.html" class="card-link" data-aos="fade-up" data-aos-delay="100">
         <div class="card">
-          <div class="icon"><i class="fas fa-handshake"></i></div>
+          <div class="icon-box"><i class="fas fa-handshake-angle"></i></div>
           <h3 data-i18n="service_social_title">Social Impact</h3>
           <p data-i18n="service_social_desc">Pemberdayaan masyarakat, UMKM, dan program sosial untuk menciptakan dampak positif yang berkelanjutan.</p>
         </div>
       </a>
       
-      <a href="https://sirat.rezekiamanahjaya.com" target="_blank" class="card-link" data-aos="fade-up">
+      <a href="https://sirat.rezekiamanahjaya.com" target="_blank" class="card-link" data-aos="fade-up" data-aos-delay="200">
         <div class="card">
-          <div class="icon"><i class="fas fa-file-signature"></i></div>
+          <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
           <h3 data-i18n="service_sirat_title">SIRAT</h3>
           <p data-i18n="service_sirat_desc"><strong>Surat Jalan & Logistik.</strong> Modul terintegrasi untuk mengelola dokumentasi dan operasional surat jalan.</p>
         </div>
@@ -693,15 +504,15 @@
       
       <a href="https://ram.rezekiamanahjaya.com" target="_blank" class="card-link" data-aos="fade-up">
         <div class="card">
-          <div class="icon"><i class="fas fa-users-gear"></i></div>
+          <div class="icon-box"><i class="fas fa-users-gear"></i></div>
           <h3 data-i18n="service_ram_title">RAM</h3>
           <p data-i18n="service_ram_desc"><strong>Rezeki Amanah Jaya Management.</strong> Platform komprehensif untuk mengelola CRM dan pipeline bisnis.</p>
         </div>
       </a>
       
-      <a href="https://chiraj.rezekiamanahjaya.com" target="_blank" class="card-link" data-aos="fade-up">
+      <a href="https://chiraj.rezekiamanahjaya.com" target="_blank" class="card-link" data-aos="fade-up" data-aos-delay="100">
         <div class="card">
-          <div class="icon"><i class="fas fa-calculator"></i></div>
+          <div class="icon-box"><i class="fas fa-calculator"></i></div>
           <h3 data-i18n="service_chirat_title">ChiRAT</h3>
           <p data-i18n="service_chirat_desc"><strong>Cermat Hitung Rezeki Amanah Jaya.</strong> Solusi akuntansi digital untuk bisnis waste management.</p>
         </div>
@@ -709,90 +520,92 @@
     </div>
   </section>
 
-  <!-- GALLERY -->
+  <!-- GALLERY (AUTO DARI GOOGLE DRIVE) -->
   <section id="gallery">
     <div class="section-title" data-aos="fade-up">
       <h2 data-i18n="gallery_title">Company Gallery</h2>
       <p data-i18n="gallery_subtitle">Aktivitas dan layanan profesional CV Rezeki Amanah Jaya Group.</p>
     </div>
     
-    <div class="gallery-slider" data-aos="fade-up" id="gallerySlider">
-      <div class="gallery-track" id="galleryTrack"></div>
+    <div class="gallery-wrap" data-aos="fade-up">
+      <div class="gallery-track" id="galleryTrack">
+        <!-- Konten akan diisi otomatis oleh JavaScript dari Google Drive -->
+      </div>
     </div>
     
     <div style="text-align:center; margin-top:30px;">
-      <a href="galeri.html" class="btn" data-i18n="gallery_view_all">
+      <a href="galeri.html" class="btn-primary" data-i18n="gallery_view_all">
         <i class="fas fa-images"></i> <span data-i18n="gallery_view_all_text">Lihat Semua Foto</span>
       </a>
     </div>
   </section>
 
   <!-- PARTNERS -->
-  <section class="partners-section" id="partners">
+  <section class="partners-section" id="partners" style="background: var(--white);">
     <div class="section-title" data-aos="fade-up">
       <h2>Our Partners</h2>
       <p>Mitra terpercaya yang telah bekerjasama dengan CV Rezeki Amanah Jaya Group</p>
     </div>
     
-    <div class="partners-grid">
-      <div class="partner-card" data-aos="fade-up" data-aos-delay="100">
+    <div class="grid-3">
+      <div class="card" style="text-align:center;" data-aos="fade-up" data-aos-delay="100">
         <div class="partner-logo">
           <img src="partners/zchicken.png" alt="Mitra Restoran ZChicken Baznas" 
-               onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-drumstick-bite\'></i>'">
+               onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-drumstick-bite\' style=\'font-size:32px;color:var(--primary);\'></i>'">
         </div>
         <h3>ZChicken Baznas</h3>
         <p>Chicken Restaurant</p>
       </div>
       
-      <div class="partner-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="card" style="text-align:center;" data-aos="fade-up" data-aos-delay="200">
         <div class="partner-logo">
           <img src="partners/pusani.png" alt="Mitra Bank Sampah Pusani" 
-               onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-recycle\'></i>'">
+               onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-recycle\' style=\'font-size:32px;color:var(--primary);\'></i>'">
         </div>
         <h3>Bank Sampah Pusani</h3>
         <p>Waste Management Partner</p>
       </div>
       
-      <div class="partner-card" data-aos="fade-up" data-aos-delay="300">
+      <div class="card" style="text-align:center;" data-aos="fade-up" data-aos-delay="300">
         <div class="partner-logo">
           <img src="partners/quick-service.png" alt="Mitra Quick Service" 
-               onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-bolt\'></i>'">
+               onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-bolt\' style=\'font-size:32px;color:var(--primary);\'></i>'">
         </div>
         <h3>Quick Service</h3>
         <p>Fast Food & Services</p>
       </div>
       
-      <div class="partner-card" data-aos="fade-up" data-aos-delay="400">
+      <div class="card" style="text-align:center;" data-aos="fade-up" data-aos-delay="400">
         <div class="partner-logo">
           <img src="partners/bungaraya.png" alt="Mitra Bank Sampah Bungaraya" 
-               onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-leaf\'></i>'">
+               onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-leaf\' style=\'font-size:32px;color:var(--primary);\'></i>'">
         </div>
         <h3>Bank Sampah Bungaraya</h3>
         <p>Environmental Partner</p>
       </div>
       
-      <div class="partner-card" data-aos="fade-up" data-aos-delay="500">
+      <div class="card" style="text-align:center;" data-aos="fade-up" data-aos-delay="500">
         <div class="partner-logo">
           <img src="partners/soto-wong.png" alt="Mitra Kuliner Soto Wong Kudus" 
-               onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-bowl-food\'></i>'">
+               onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-bowl-food\' style=\'font-size:32px;color:var(--primary);\'></i>'">
         </div>
         <h3>Soto Wong Kudus</h3>
         <p>Traditional Culinary</p>
       </div>
       
-      <div class="partner-card" data-aos="fade-up" data-aos-delay="600">
+      <div class="card" style="text-align:center;" data-aos="fade-up" data-aos-delay="600">
         <div class="partner-logo">
           <img src="partners/seblak-lovers.png" alt="Mitra Kuliner Seblak Lovers" 
-               onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-fire\'></i>'">
+               onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-fire\' style=\'font-size:32px;color:var(--primary);\'></i>'">
         </div>
         <h3>Seblak Lovers</h3>
         <p>Indonesian Street Food</p>
       </div>
       
-      <div class="partner-card" data-aos="fade-up" data-aos-delay="700">
+      <div class="card" style="text-align:center;" data-aos="fade-up" data-aos-delay="700">
         <div class="partner-logo">
           <img src="partners/ayam-bakar-amar.png" alt="Mitra Kuliner Ayam Bakar AMAR" 
-               onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-fire-burner\'></i>'">
+               onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-fire-burner\' style=\'font-size:32px;color:var(--primary);\'></i>'">
         </div>
         <h3>Ayam Bakar AMAR</h3>
         <p>Grilled Chicken Specialist</p>
@@ -807,139 +620,118 @@
       <p data-i18n="testi_subtitle">Kepuasan mitra adalah prioritas utama kami dalam memberikan layanan terbaik.</p>
     </div>
     
-    <div class="testimonial-grid">
+    <div class="grid-3">
       <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
         <i class="fas fa-quote-left quote-icon"></i>
         <p data-i18n="testi_1_text">"Pelayanan pengambilan minyak jelantahnya sangat rapi, timbangannya transparan, dan jadwalnya selalu tepat waktu. Dapur jadi lebih bersih dan bebas bau!"</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">B</div>
-          <div class="author-info">
-            <h4 data-i18n="testi_1_name">Budi S.</h4>
-            <span data-i18n="testi_1_role">Pemilik Restoran</span>
-          </div>
+        <div class="author">
+          <div class="avatar">B</div>
+          <div><strong data-i18n="testi_1_name">Budi S.</strong><br><small data-i18n="testi_1_role" style="color:#777;">Pemilik Restoran</small></div>
         </div>
       </div>
       
       <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
         <i class="fas fa-quote-left quote-icon"></i>
         <p data-i18n="testi_2_text">"Sistem pengelolaan limbah terpadunya sangat membantu operasional kami. Pemilahan sampah jadi lebih terarah dan lingkungan kerja jauh lebih higienis."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">S</div>
-          <div class="author-info">
-            <h4 data-i18n="testi_2_name">Siti A.</h4>
-            <span data-i18n="testi_2_role">Manajer Operasional Kafe</span>
-          </div>
+        <div class="author">
+          <div class="avatar">S</div>
+          <div><strong data-i18n="testi_2_name">Siti A.</strong><br><small data-i18n="testi_2_role" style="color:#777;">Manajer Operasional Kafe</small></div>
         </div>
       </div>
       
       <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
         <i class="fas fa-quote-left quote-icon"></i>
         <p data-i18n="testi_3_text">"Harganya kompetitif dan penjemputannya tidak pernah telat. Tim penjemputnya juga sangat ramah dan profesional saat mengambil jerigen di area dapur."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">A</div>
-          <div class="author-info">
-            <h4 data-i18n="testi_3_name">Andi P.</h4>
-            <span data-i18n="testi_3_role">Pengusaha Kuliner</span>
-          </div>
+        <div class="author">
+          <div class="avatar">A</div>
+          <div><strong data-i18n="testi_3_name">Andi P.</strong><br><small data-i18n="testi_3_role" style="color:#777;">Pengusaha Kuliner</small></div>
         </div>
       </div>
 
       <div class="testimonial-card" data-aos="fade-up" data-aos-delay="400">
         <i class="fas fa-quote-left quote-icon"></i>
         <p data-i18n="testi_4_text">"Solusi waste management dari tim ini benar-benar komprehensif. Panduan pemilahan sampah organik dan anorganik yang diberikan sangat jelas dan mudah diterapkan."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">R</div>
-          <div class="author-info">
-            <h4 data-i18n="testi_4_name">Rian D.</h4>
-            <span data-i18n="testi_4_role">Facility Manager Hotel</span>
-          </div>
+        <div class="author">
+          <div class="avatar">R</div>
+          <div><strong data-i18n="testi_4_name">Rian D.</strong><br><small data-i18n="testi_4_role" style="color:#777;">Facility Manager Hotel</small></div>
         </div>
       </div>
 
       <div class="testimonial-card" data-aos="fade-up" data-aos-delay="500">
         <i class="fas fa-quote-left quote-icon"></i>
         <p data-i18n="testi_5_text">"Sangat terbantu dengan layanan pengepulan minyak jelantah ini. Minyak bekas di tempat usaha kami sekarang tidak lagi menumpuk dan mencemari saluran air."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">D</div>
-          <div class="author-info">
-            <h4 data-i18n="testi_5_name">Dewi K.</h4>
-            <span data-i18n="testi_5_role">Owner Kedai Kopi</span>
-          </div>
+        <div class="author">
+          <div class="avatar">D</div>
+          <div><strong data-i18n="testi_5_name">Dewi K.</strong><br><small data-i18n="testi_5_role" style="color:#777;">Owner Kedai Kopi</small></div>
         </div>
       </div>
 
       <div class="testimonial-card" data-aos="fade-up" data-aos-delay="600">
         <i class="fas fa-quote-left quote-icon"></i>
         <p data-i18n="testi_6_text">"Pengolahan limbah organiknya menggunakan Maggot BSF sangat inovatif. Sampah dapur kami jadi lebih bermanfaat dan tidak berakhir sia-sia di TPA."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">H</div>
-          <div class="author-info">
-            <h4 data-i18n="testi_6_name">Hendra W.</h4>
-            <span data-i18n="testi_6_role">Supervisor Dapur Sentral</span>
-          </div>
+        <div class="author">
+          <div class="avatar">H</div>
+          <div><strong data-i18n="testi_6_name">Hendra W.</strong><br><small data-i18n="testi_6_role" style="color:#777;">Supervisor Dapur Sentral</small></div>
         </div>
       </div>
 
       <div class="testimonial-card" data-aos="fade-up" data-aos-delay="700">
         <i class="fas fa-quote-left quote-icon"></i>
         <p data-i18n="testi_7_text">"Kerjasama yang sangat memuaskan. Timnya responsif, penjemputan limbah terjadwal dengan baik, dan laporannya sangat transparan setiap bulan."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">M</div>
-          <div class="author-info">
-            <h4 data-i18n="testi_7_name">Maya S.</h4>
-            <span data-i18n="testi_7_role">Kepala Urusan Rumah Tangga</span>
-          </div>
+        <div class="author">
+          <div class="avatar">M</div>
+          <div><strong data-i18n="testi_7_name">Maya S.</strong><br><small data-i18n="testi_7_role" style="color:#777;">Kepala Urusan Rumah Tangga</small></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- VISION MISI -->
-  <section class="vision-section" id="vision">
+  <section class="vision-section" id="vision" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color:white;">
     <div class="section-title">
       <h2 style="color:white;" data-i18n="vision_title">Visi & Misi</h2>
-      <p style="color:#d7f5dd;" data-i18n="vision_subtitle">Membangun solusi bisnis yang amanah, profesional, dan berkelanjutan.</p>
+      <p style="color:rgba(255,255,255,0.8);" data-i18n="vision_subtitle">Membangun solusi bisnis yang amanah, profesional, dan berkelanjutan.</p>
     </div>
-    <div class="vision-grid">
-      <div class="vision-box" data-aos="fade-right">
-        <h3 data-i18n="vision_h3_1">Visi</h3>
+    <div class="grid-2">
+      <div class="card" style="background:rgba(255,255,255,0.1); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.2); color:white;" data-aos="fade-right">
+        <h3 style="color:white;" data-i18n="vision_h3_1">Visi</h3>
         <p data-i18n="vision_p1">Menjadi mitra solusi terintegrasi terdepan yang menghubungkan keberlanjutan pangan, tanggung jawab lingkungan, dan pemberdayaan masyarakat di Indonesia.</p>
         <br>
-        <h3 data-i18n="vision_h3_2">Misi</h3>
-        <ul>
+        <h3 style="color:white;" data-i18n="vision_h3_2">Misi</h3>
+        <ul style="padding-left:20px;">
           <li data-i18n="vision_li1">Menyediakan produk dan jasa berkualitas tinggi.</li>
           <li data-i18n="vision_li2">Mengelola limbah dan minyak jelantah secara bertanggung jawab.</li>
           <li data-i18n="vision_li3">Membangun sistem logistik efisien.</li>
           <li data-i18n="vision_li4">Menciptakan dampak sosial positif melalui program bank sampah.</li>
         </ul>
       </div>
-      <div class="vision-image" data-aos="fade-left">
-        <img src="RAJ-LOGO-BERSIH.png" alt="Visi Misi CV Rezeki Amanah Jaya Group" width="380" height="380">
+      <div data-aos="fade-left" style="text-align:center;">
+        <img src="RAJ-LOGO-BERSIH.png" alt="Visi Misi CV Rezeki Amanah Jaya Group" width="380" height="380" style="filter: brightness(0) invert(1);">
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
+  <section id="contact" style="background: var(--white);">
     <div class="section-title">
       <h2 data-i18n="contact_title">Kontak Kami</h2>
       <p data-i18n="contact_subtitle">Siap menjadi partner bisnis terpercaya perusahaan Anda.</p>
     </div>
-    <div class="contact-box">
+    <div class="grid-3">
       <div class="contact-card" data-aos="fade-up">
-        <div class="icon"><i class="fas fa-location-dot"></i></div>
+        <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
         <h3 data-i18n="contact_address_title">Alamat</h3>
         <p data-i18n="contact_address_desc">Flamingo Fla 06 No.19, Sukamantri, Pasarkemis, Tangerang</p>
       </div>
-      <div class="contact-card" data-aos="fade-up">
-        <div class="icon"><i class="fas fa-phone"></i></div>
+      <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="contact-icon"><i class="fas fa-phone"></i></div>
         <h3 data-i18n="contact_phone_title">Telepon</h3>
-        <p><a href="tel:+6281296580968" style="color:#555;text-decoration:none;">+62 812-9658-0968</a></p>
+        <p><a href="tel:+6281296580968" style="color:var(--text-main);text-decoration:none;">+62 812-9658-0968</a></p>
       </div>
-      <div class="contact-card" data-aos="fade-up">
-        <div class="icon"><i class="fas fa-envelope"></i></div>
+      <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
         <h3 data-i18n="contact_email_title">Email</h3>
-        <p><a href="mailto:rezekiamanahjaya@gmail.com" style="color:#555;text-decoration:none;">rezekiamanahjaya@gmail.com</a></p>
+        <p><a href="mailto:rezekiamanahjaya@gmail.com" style="color:var(--text-main);text-decoration:none;">rezekiamanahjaya@gmail.com</a></p>
       </div>
     </div>
   </section>
@@ -952,377 +744,99 @@
   <!-- SCRIPTS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    (function() {
-      if (window.innerWidth < 768) {
-        document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes');
-      }
-    })();
-
     AOS.init({ duration: 800, once: true });
 
-    /* === INTEGRASI GOOGLE APPS SCRIPT WEB APP UNTUK GALERI FULL INDEX === */
-    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxs11SM8d8hQJD7DqSOQijyU91pyOa8WlTichP2ci_PiRdTJ9wNJJgHTNt06BliMHQ7IA/exec';
+    // ==========================================
+    // KONFIGURASI GOOGLE APPS SCRIPT WEB APP
+    // ==========================================
+    // Ganti URL di bawah ini dengan URL Web App Anda setelah Deploy
+    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxs11SM8d8hQJD7DqSOQijyU91pyOa8WlTichP2ci_PiRdTJ9wNJJgHTNt06BliMHQ7IA/exec'; 
 
-    const fallbackGallery = [
-      "https://image.qwenlm.ai/public_source/0b78755f-1f91-4d53-917e-394025bee0a7/1b64717a4-54b9-4e65-8c05-c5c04f7c27e2.png",
-      "gallery/Palung.png",
-      "gallery/sidik.png",
-      "gallery/adit.png",
-      "gallery/reza.png",
-      "gallery/Event.jpeg",
-      "gallery/JemputMijel.jpeg",
-      "gallery/Leles.jpeg",
-      "gallery/Pusani.jpeg",
-      "gallery/Jerigen.jpeg",
-      "gallery/Breifing.jpeg",
-      "gallery/Breifing-TPS.jpeg",
-      "gallery/Breifing-TPS2.jpeg",
-      "gallery/Pertemuan-Workshop.jpeg",
-      "gallery/Comming-soon.mp4"
-    ];
+    // Video Hero tetap manual agar loading homepage cepat
+    const videoFiles = ["gallery/Comming-soon.mp4"]; 
 
-    const galleryTrack = document.getElementById('galleryTrack');
-
-    function renderGalleryItems(items) {
-      galleryTrack.innerHTML = ''; 
-      const altTexts = [
-        "Penjemputan minyak jelantah restoran di Tangerang",
-        "Pengolahan limbah organik dan waste management terpadu",
-        "Kegiatan sosialisasi bank sampah bersama mitra",
-        "Armada logistik pengangkutan limbah terjadwal",
-        "Dokumentasi kegiatan CSR pengelolaan limbah",
-        "Proses daur ulang minyak jelantah menjadi biodiesel",
-        "Kerjasama rekan bank sampah dan pengelolaan limbah daur ulang",
-        "Briefing tim operasional TPS 3R",
-        "Pertemuan dan workshop bersama mitra"
-      ];
-
-      for (let cycle = 0; cycle < 2; cycle++) {
-        items.forEach((item, index) => {
-          const mimeType = item.mimeType || '';
-          const isVideo = mimeType.includes('video') || (typeof item === 'string' && item.toLowerCase().endsWith('.mp4'));
-
-          if (isVideo) {
-            const video = document.createElement('video');
-            video.src = item.videoUrl || item.url || item;
-            video.controls = true;
-            video.muted = true;
-            video.loop = true;
-            video.playsInline = true;
-            video.preload = 'metadata';
-            video.width = 260;
-            video.height = 190;
-            video.setAttribute('aria-label', 'Video kegiatan CV Rezeki Amanah Jaya');
-            video.addEventListener('play',  () => { galleryTrack.style.animationPlayState = 'paused'; });
-            video.addEventListener('pause', () => { galleryTrack.style.animationPlayState = ''; });
-            video.addEventListener('ended', () => { galleryTrack.style.animationPlayState = ''; });
-            galleryTrack.appendChild(video);
-          } else {
-            const img = document.createElement('img');
-            img.src = item.imageUrl || item.url || item;
-            img.alt = (item.name || altTexts[index % altTexts.length]) + " - CV Rezeki Amanah Jaya";
-            img.loading = "lazy";
-            img.draggable = false;
-            img.width = "260";
-            img.height = "190";
-            galleryTrack.appendChild(img);
-          }
-        });
+    function setupHeroVideo() {
+      const videoEl = document.getElementById('heroVideo');
+      const sourceEl = document.getElementById('heroSource');
+      if (videoFiles.length > 0) {
+        sourceEl.src = videoFiles[0] + "?t=" + new Date().getTime();
+        videoEl.load();
+        videoEl.addEventListener('canplay', () => videoEl.classList.add('loaded'), { once: true });
       }
     }
 
-    async function fetchGoogleDriveFiles() {
+    // FUNGSI MENGAMBIL DAN MENAMPILKAN GALERI DARI GOOGLE DRIVE
+    async function fetchAndRenderGallery() {
+      const track = document.getElementById('galleryTrack');
+      track.innerHTML = '<div style="width:100%; text-align:center; padding:20px; color:#777;">Memuat Galeri...</div>';
+      
       try {
         const response = await fetch(WEB_APP_URL);
         const data = await response.json();
-
-        if (data && data.length > 0) {
-          renderGalleryItems(data);
-        } else {
-          renderGalleryItems(fallbackGallery);
+        
+        if (!data || data.length === 0) {
+          track.innerHTML = '<p style="text-align:center; color:#777;">Belum ada foto di galeri.</p>';
+          return;
         }
-      } catch (error) {
-        console.error('Gagal mengambil data dari Google Apps Script Web App, menggunakan galeri default:', error);
-        renderGalleryItems(fallbackGallery);
-      }
-    }
 
-    fetchGoogleDriveFiles();
-
-    const translations = {
-      id: {
-        nav_about: "Tentang",
-        nav_services: "Layanan",
-        nav_label_core: "Layanan Utama",
-        nav_label_system: "Sistem Internal",
-        nav_jelantah: "Minyak Jelantah",
-        nav_waste_management: "Waste Management",
-        nav_food: "Food & Culinary",
-        nav_logistics: "Logistics",
-        nav_social: "Social Impact",
-        nav_partners: "Partners",
-        nav_testimonials: "Testimoni",
-        nav_articles: "Artikel",
-        nav_activities: "Kegiatan",
-        nav_csr: "CSR",
-        nav_gallery: "Gallery",
-        nav_vision: "Visi Misi",
-        nav_contact: "Kontak",
-        hero_title: "Solusi <span class='text-highlight'>Waste Management</span> & <br>Pengepul Minyak Jelantah Terpercaya",
-        hero_desc: "Mitra resmi restoran, hotel, dan industri di Tangerang, Jabodetabek, & Jateng. Kami mengubah limbah menjadi berkah dengan proses yang ramah lingkungan, terjadwal, dan transparan.",
-        hero_btn: '<i class="fab fa-whatsapp"></i> Konsultasi Gratis',
-        about_title: "Tentang Perusahaan",
-        about_subtitle: "Solusi bisnis terintegrasi untuk pangan, lingkungan, logistik, dan pemberdayaan masyarakat.",
-        about_h3: "Company Overview",
-        about_p1: "CV Rezeki Amanah Jaya Group merupakan perusahaan yang bergerak di bidang Food Production, Waste Management, Pengepul Minyak Jelantah, Rekan Bank Sampah, Logistics, dan Social Impact.",
-        about_p2: "Berbasis di Tangerang dan berkembang ke Jabodetabek serta Jawa Tengah dengan fokus pada kualitas, keberlanjutan, dan profesionalisme.",
-        about_btn: "Pelajari Selengkapnya",
-        stats_divisions: "Divisi Bisnis",
-        stats_year: "Tahun Berdiri",
-        stats_professional: "Professional Service",
-        stats_support: "Support Service",
-        services_title: "Divisi Layanan",
-        services_subtitle: "Solusi lengkap untuk kebutuhan perusahaan modern.",
-        service_jelantah_title: "Minyak Jelantah",
-        service_jelantah_desc: "Jasa pengepul minyak jelantah terpercaya dengan harga kompetitif dan penjemputan terjadwal.",
-        service_waste_title: "Waste Management",
-        service_waste_desc: "Solusi pengelolaan limbah terpadu, pemilahan, dan pengolahan organik menggunakan Maggot BSF.",
-        service_food_title: "Food & Culinary",
-        service_food_desc: "Produksi makanan olahan, frozen food, catering, dan distribusi F&B berkualitas tinggi.",
-        service_logistics_title: "Logistics",
-        service_logistics_desc: "Gudang, distribusi terjadwal, dan sistem logistik efisien untuk mendukung operasional bisnis Anda.",
-        service_social_title: "Social Impact",
-        service_social_desc: "Pemberdayaan masyarakat, UMKM, dan program sosial untuk menciptakan dampak positif yang berkelanjutan.",
-        service_sirat_title: "SIRAT",
-        service_sirat_desc: "<strong>Surat Jalan & Logistik.</strong> Modul terintegrasi untuk mengelola dokumentasi dan operasional surat jalan.",
-        service_ram_title: "RAM",
-        service_ram_desc: "<strong>Rezeki Amanah Jaya Management.</strong> Platform komprehensif untuk mengelola CRM dan pipeline bisnis.",
-        service_chirat_title: "ChiRAT",
-        service_chirat_desc: "<strong>Cermat Hitung Rezeki Amanah Jaya.</strong> Solusi akuntansi digital untuk bisnis waste management.",
-        gallery_title: "Company Gallery",
-        gallery_subtitle: "Aktivitas dan layanan profesional CV Rezeki Amanah Jaya Group.",
-        gallery_view_all: '<i class="fas fa-images"></i> Lihat Semua Foto',
-        gallery_view_all_text: "Lihat Semua Foto",
-        testi_title: "Apa Kata Mereka",
-        testi_subtitle: "Kepuasan mitra adalah prioritas utama kami dalam memberikan layanan terbaik.",
-        testi_1_text: "\"Pelayanan pengambilan minyak jelantahnya sangat rapi, timbangannya transparan, dan jadwalnya selalu tepat waktu. Dapur jadi lebih bersih dan bebas bau!\"",
-        testi_1_name: "Budi S.",
-        testi_1_role: "Pemilik Restoran",
-        testi_2_text: "\"Sistem pengelolaan limbah terpadunya sangat membantu operasional kami. Pemilahan sampah jadi lebih terarah dan lingkungan kerja jauh lebih higienis.\"",
-        testi_2_name: "Siti A.",
-        testi_2_role: "Manajer Operasional Kafe",
-        testi_3_text: "\"Harganya kompetitif dan penjemputannya tidak pernah telat. Tim penjemputnya juga sangat ramah dan profesional saat mengambil jerigen di area dapur.\"",
-        testi_3_name: "Andi P.",
-        testi_3_role: "Pengusaha Kuliner",
-        testi_4_text: "\"Solusi waste management dari tim ini benar-benar komprehensif. Panduan pemilahan sampah organik dan anorganik yang diberikan sangat jelas dan mudah diterapkan.\"",
-        testi_4_name: "Rian D.",
-        testi_4_role: "Facility Manager Hotel",
-        testi_5_text: "\"Sangat terbantu dengan layanan pengepulan minyak jelantah ini. Minyak bekas di tempat usaha kami sekarang tidak lagi menumpuk dan mencemari saluran air.\"",
-        testi_5_name: "Dewi K.",
-        testi_5_role: "Owner Kedai Kopi",
-        testi_6_text: "\"Pengolahan limbah organiknya menggunakan Maggot BSF sangat inovatif. Sampah dapur kami jadi lebih bermanfaat dan tidak berakhir sia-sia di TPA.\"",
-        testi_6_name: "Hendra W.",
-        testi_6_role: "Supervisor Dapur Sentral",
-        testi_7_text: "\"Kerjasama yang sangat memuaskan. Timnya responsif, penjemputan limbah terjadwal dengan baik, dan laporannya sangat transparan setiap bulan.\"",
-        testi_7_name: "Maya S.",
-        testi_7_role: "Kepala Urusan Rumah Tangga",
-        vision_title: "Visi & Misi",
-        vision_subtitle: "Membangun solusi bisnis yang amanah, profesional, dan berkelanjutan.",
-        vision_h3_1: "Visi",
-        vision_p1: "Menjadi mitra solusi terintegrasi terdepan yang menghubungkan keberlanjutan pangan, tanggung jawab lingkungan, dan pemberdayaan masyarakat di Indonesia.",
-        vision_h3_2: "Misi",
-        vision_li1: "Menyediakan produk dan jasa berkualitas tinggi.",
-        vision_li2: "Mengelola limbah dan minyak jelantah secara bertanggung jawab.",
-        vision_li3: "Membangun sistem logistik efisien.",
-        vision_li4: "Menciptakan dampak sosial positif melalui program bank sampah.",
-        contact_title: "Kontak Kami",
-        contact_subtitle: "Siap menjadi partner bisnis terpercaya perusahaan Anda.",
-        contact_address_title: "Alamat",
-        contact_address_desc: "Flamingo Fla 06 No.19, Sukamantri, Pasarkemis, Tangerang",
-        contact_phone_title: "Telepon",
-        contact_email_title: "Email",
-        footer_text: "© 2026 CV Rezeki Amanah Jaya Group — All Rights Reserved"
-      },
-      en: {
-        nav_about: "About",
-        nav_services: "Services",
-        nav_label_core: "Core Services",
-        nav_label_system: "Internal Systems",
-        nav_jelantah: "Used Cooking Oil",
-        nav_waste_management: "Waste Management",
-        nav_food: "Food & Culinary",
-        nav_logistics: "Logistics",
-        nav_social: "Social Impact",
-        nav_partners: "Partners",
-        nav_testimonials: "Testimonials",
-        nav_articles: "Articles",
-        nav_activities: "Activities",
-        nav_csr: "CSR",
-        nav_gallery: "Gallery",
-        nav_vision: "Vision & Mission",
-        nav_contact: "Contact",
-        hero_title: "Trusted <span class='text-highlight'>Waste Management</span> & <br>Used Cooking Oil Collector",
-        hero_desc: "Official partner for restaurants, hotels, and industries in Tangerang, Jabodetabek, & Central Java. We turn waste into blessings with eco-friendly, scheduled, and transparent processes.",
-        hero_btn: '<i class="fab fa-whatsapp"></i> Free Consultation',
-        about_title: "About Company",
-        about_subtitle: "Integrated business solutions for food, environment, logistics, and community empowerment.",
-        about_h3: "Company Overview",
-        about_p1: "CV Rezeki Amanah Jaya Group is a company engaged in Food Production, Waste Management, Used Cooking Oil Collection, Waste Bank Partnership, Logistics, and Social Impact.",
-        about_p2: "Based in Tangerang and expanding to Jabodetabek and Central Java with focus on quality, sustainability, and professionalism.",
-        about_btn: "Learn More",
-        stats_divisions: "Business Divisions",
-        stats_year: "Year Established",
-        stats_professional: "Professional Service",
-        stats_support: "Support Service",
-        services_title: "Service Divisions",
-        services_subtitle: "Complete solutions for modern corporate needs.",
-        service_jelantah_title: "Used Cooking Oil",
-        service_jelantah_desc: "Trusted used cooking oil collection service with competitive prices and scheduled pickups.",
-        service_waste_title: "Waste Management",
-        service_waste_desc: "Integrated waste management solutions, sorting, and organic processing using Maggot BSF.",
-        service_food_title: "Food & Culinary",
-        service_food_desc: "Processed food production, frozen food, catering, and high-quality F&B distribution.",
-        service_logistics_title: "Logistics",
-        service_logistics_desc: "Warehousing, scheduled distribution, and efficient logistics systems to support your business.",
-        service_social_title: "Social Impact",
-        service_social_desc: "Community empowerment, MSMEs, and social programs to create sustainable positive impact.",
-        service_sirat_title: "SIRAT",
-        service_sirat_desc: "<strong>Delivery Order & Logistics.</strong> Integrated module for documentation and delivery order operations.",
-        service_ram_title: "RAM",
-        service_ram_desc: "<strong>Rezeki Amanah Jaya Management.</strong> Comprehensive platform for CRM and business pipeline management.",
-        service_chirat_title: "ChiRAT",
-        service_chirat_desc: "<strong>Cermat Hitung Rezeki Amanah Jaya.</strong> Digital accounting solution for waste management business.",
-        gallery_title: "Company Gallery",
-        gallery_subtitle: "Professional activities and services of CV Rezeki Amanah Jaya Group.",
-        gallery_view_all: '<i class="fas fa-images"></i> View All Photos',
-        gallery_view_all_text: "View All Photos",
-        testi_title: "What They Say",
-        testi_subtitle: "Partner satisfaction is our top priority in providing the best service.",
-        testi_1_text: "\"The used cooking oil pickup service is very neat, the weighing is transparent, and the schedule is always on time. The kitchen is cleaner and odor-free!\"",
-        testi_1_name: "Budi S.",
-        testi_1_role: "Restaurant Owner",
-        testi_2_text: "\"The integrated waste management system greatly helps our operations. Waste sorting is more directed and the work environment is much more hygienic.\"",
-        testi_2_name: "Siti A.",
-        testi_2_role: "Cafe Operations Manager",
-        testi_3_text: "\"Competitive prices and pickups are never late. The pickup team is also very friendly and professional when collecting jerry cans in the kitchen area.\"",
-        testi_3_name: "Andi P.",
-        testi_3_role: "Culinary Entrepreneur",
-        testi_4_text: "\"The waste management solution from this team is truly comprehensive. The organic and inorganic waste sorting guidelines provided are very clear and easy to implement.\"",
-        testi_4_name: "Rian D.",
-        testi_4_role: "Hotel Facility Manager",
-        testi_5_text: "\"Very helped by this used cooking oil collection service. Used oil at our business no longer piles up and pollutes the waterways.\"",
-        testi_5_name: "Dewi K.",
-        testi_5_role: "Coffee Shop Owner",
-        testi_6_text: "\"The organic waste processing using Maggot BSF is very innovative. Our kitchen waste becomes more useful and doesn't end up in landfills in vain.\"",
-        testi_6_name: "Hendra W.",
-        testi_6_role: "Central Kitchen Supervisor",
-        testi_7_text: "\"Very satisfying cooperation. The team is responsive, waste pickup is well scheduled, and the monthly reports are very transparent.\"",
-        testi_7_name: "Maya S.",
-        testi_7_role: "Head of Household Affairs",
-        vision_title: "Vision & Mission",
-        vision_subtitle: "Building trustworthy, professional, and sustainable business solutions.",
-        vision_h3_1: "Vision",
-        vision_p1: "To be the leading integrated solution partner connecting food sustainability, environmental responsibility, and community empowerment in Indonesia.",
-        vision_h3_2: "Mission",
-        vision_li1: "Provide high-quality products and services.",
-        vision_li2: "Manage waste and used cooking oil responsibly.",
-        vision_li3: "Build efficient logistics systems.",
-        vision_li4: "Create positive social impact through waste bank programs.",
-        contact_title: "Contact Us",
-        contact_subtitle: "Ready to be your company's trusted business partner.",
-        contact_address_title: "Address",
-        contact_address_desc: "Flamingo Fla 06 No.19, Sukamantri, Pasarkemis, Tangerang",
-        contact_phone_title: "Phone",
-        contact_email_title: "Email",
-        footer_text: "© 2026 CV Rezeki Amanah Jaya Group — All Rights Reserved"
-      }
-    };
-
-    function setLanguage(lang) {
-      localStorage.setItem('preferredLanguage', lang);
-      document.documentElement.lang = lang;
-      
-      document.getElementById('btn-id').classList.toggle('active', lang === 'id');
-      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-      
-      document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        if (translations[lang][key]) {
-          if (key === 'hero_title' || key === 'hero_btn' || key === 'gallery_view_all' || 
-              key === 'service_sirat_desc' || key === 'service_ram_desc' || key === 'service_chirat_desc') {
-             element.innerHTML = translations[lang][key];
+        let html = '';
+        // Render 2x agar animasi scroll infinite terlihat mulus tanpa putus
+        const doubleData = [...data, ...data];
+        
+        doubleData.forEach(item => {
+          // Cek apakah item berupa video atau gambar berdasarkan MIME type
+          if (item.mimeType && item.mimeType.includes('video')) {
+            html += `
+              <div class="gallery-item">
+                <video src="${item.url}" muted loop playsinline preload="metadata" 
+                       onmouseover="this.play()" onmouseout="this.pause()"></video>
+              </div>`;
           } else {
-             element.textContent = translations[lang][key];
+            html += `
+              <div class="gallery-item">
+                <img src="${item.url}" loading="lazy" alt="${item.name}">
+              </div>`;
           }
-        }
-      });
+        });
+        
+        track.innerHTML = html;
+        
+      } catch (error) {
+        console.error('Gagal memuat galeri dari Google Drive:', error);
+        track.innerHTML = '<p style="text-align:center; color:red;">Gagal memuat galeri. Silakan refresh halaman.</p>';
+      }
     }
 
-    const savedLang = localStorage.getItem('preferredLanguage') || 'id';
-    setLanguage(savedLang);
+    // MULTI LANGUAGE SIMPLE
+    function setLanguage(lang) {
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(`btn-${lang}`).classList.add('active');
+      localStorage.setItem('lang', lang);
+    }
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e){
-        if(this.getAttribute('href').startsWith('#')) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if(target){
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }
-      });
+    // INITIALIZE SAAT WEB DIMUAT
+    window.addEventListener('DOMContentLoaded', () => {
+      setupHeroVideo();
+      fetchAndRenderGallery(); // Panggil fungsi ambil data dari Drive
+      setLanguage(localStorage.getItem('lang') || 'id');
     });
 
+    // MOBILE MENU TOGGLE
     const hamburger = document.getElementById('hamburger');
     const menu = document.getElementById('menu');
-    const menuLinks = document.querySelectorAll('.menu-link:not(.dropdown-toggle)');
-    const dropdownItems = document.querySelectorAll('.dropdown-item');
-    
-    const layananDropdown = document.getElementById('layananDropdown');
-    const layananToggle = layananDropdown.querySelector('.dropdown-toggle');
-    
-    const artikelDropdown = document.getElementById('artikelDropdown');
-    const artikelToggle = artikelDropdown.querySelector('.dropdown-toggle');
-
     hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
       menu.classList.toggle('active');
+      hamburger.classList.toggle('active');
     });
 
-    function toggleMobileDropdown(dropdownEl) {
-      if (window.innerWidth <= 768) {
-        dropdownEl.classList.toggle('active');
-      }
-    }
-
-    layananToggle.addEventListener('click', (e) => toggleMobileDropdown(layananDropdown));
-    artikelToggle.addEventListener('click', (e) => toggleMobileDropdown(artikelDropdown));
-
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        menu.classList.remove('active');
-        layananDropdown.classList.remove('active');
-        artikelDropdown.classList.remove('active');
+    // DROPDOWN MOBILE LOGIC
+    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        if(window.innerWidth <= 768) {
+          e.preventDefault();
+          toggle.parentElement.classList.toggle('active');
+        }
       });
-    });
-
-    dropdownItems.forEach(item => {
-      item.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        menu.classList.remove('active');
-        layananDropdown.classList.remove('active');
-        artikelDropdown.classList.remove('active');
-      });
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!menu.contains(e.target) && !hamburger.contains(e.target) && menu.classList.contains('active')) {
-        hamburger.classList.remove('active');
-        menu.classList.remove('active');
-        layananDropdown.classList.remove('active');
-        artikelDropdown.classList.remove('active');
-      }
     });
   </script>
 </body>
