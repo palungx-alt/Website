@@ -145,16 +145,17 @@
     }
 
     .menu > a, .menu .dropdown-toggle{
-      margin-left:20px;
+      margin-left:15px;
       text-decoration:none;
       color:#222;
       font-weight:500;
       font-size:14px;
       transition:0.3s;
-      padding:8px 12px;
+      padding:8px 10px;
       border-radius:8px;
       display: flex;
       align-items: center;
+      white-space:nowrap;
     }
 
     .menu > a:hover, .menu .dropdown-toggle:hover, .menu > a.active, .dropdown-item.active{
@@ -165,7 +166,7 @@
     /* DROPDOWN */
     .dropdown{
       position: relative;
-      margin-left: 20px;
+      margin-left: 15px;
     }
 
     .dropdown-menu{
@@ -175,7 +176,7 @@
       background: white;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       border-radius: 8px;
-      min-width: 180px;
+      min-width: 200px;
       opacity: 0;
       visibility: hidden;
       transform: translateY(10px);
@@ -198,11 +199,22 @@
       font-size: 14px;
       font-weight: 500;
       transition: 0.3s;
+      white-space:nowrap;
     }
 
     .dropdown-item:hover{
       background: rgba(25,135,84,0.1);
       color: #198754;
+    }
+    
+    .dropdown-divider{ height: 1px; background: #eee; margin: 6px 0; }
+    .dropdown-label{
+      padding: 8px 20px 4px; font-size: 11px; font-weight: 700;
+      color: #999; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .dropdown-item.highlight-link {
+      color: #198754;
+      font-weight: 600;
     }
 
     /* LANGUAGE TOGGLE */
@@ -210,8 +222,8 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      margin-left: 20px;
-      font-size: 14px;
+      margin-left: 15px;
+      font-size: 13px;
       font-weight: 600;
       color: #777;
     }
@@ -226,6 +238,7 @@
       border-radius: 4px;
       transition: 0.3s;
       font-family: 'Poppins', sans-serif;
+      font-size:13px;
     }
 
     .lang-btn.active{
@@ -535,6 +548,7 @@
     @media(max-width: 992px){
       section{ padding:70px 6%; }
       .about{ gap:40px; }
+      .menu > a, .menu .dropdown-toggle{ margin-left:10px; font-size:13px; }
     }
 
     @media(max-width: 768px){
@@ -549,14 +563,14 @@
         right: 0;
         background: white;
         flex-direction: column;
-        padding: 20px;
+        padding: 15px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         transform: translateY(-150%);
         transition: transform 0.4s ease;
         z-index: 998;
-        gap: 5px;
+        gap: 0;
         border-radius: 0 0 20px 20px;
-        max-height: 80vh;
+        max-height: 85vh;
         overflow-y: auto;
       }
       
@@ -566,14 +580,16 @@
       
       .menu > a, .menu .dropdown-toggle{
         margin: 0;
-        padding: 15px 20px;
-        font-size: 16px;
+        padding: 14px 15px;
+        font-size: 15px;
         border-bottom: 1px solid #f0f0f0;
         display: block;
         text-align: center;
         width: 100%;
         justify-content: center;
       }
+
+      .menu > a:last-child{ border-bottom: none; }
 
       .dropdown{
         margin-left: 0;
@@ -598,11 +614,13 @@
       }
 
       .dropdown-item{
-        padding: 12px 30px;
+        padding: 12px 20px;
         text-align: center;
-        font-size: 15px;
+        font-size: 14px;
         border-bottom: 1px solid #eee;
       }
+      
+      .dropdown-label{ text-align: center; padding: 10px 20px 4px; }
 
       .hamburger.active span:nth-child(1){ transform: rotate(45deg) translate(5px, 6px); }
       .hamburger.active span:nth-child(2){ opacity: 0; }
@@ -610,9 +628,9 @@
 
       .lang-toggle{
         margin-left: 0;
-        margin-top: 15px;
+        margin-top: 10px;
         justify-content: center;
-        padding-top: 15px;
+        padding-top: 12px;
         border-top: 1px solid #f0f0f0;
       }
 
@@ -649,7 +667,7 @@
 <body>
 
   <!-- WHATSAPP FLOATING -->
-  <a href="https://wa.me/6281296580968" class="wa" target="_blank" aria-label="Chat WhatsApp">
+  <a href="https://wa.me/6281296580968?text=Halo%20CV%20Rezeki%20Amanah%20Jaya,%20saya%20ingin%20bertanya%20tentang%20jasa%20pengepul%20minyak%20jelantah" class="wa" target="_blank" aria-label="Chat WhatsApp untuk Pengepulan Minyak Jelantah">
     <i class="fab fa-whatsapp"></i>
   </a>
 
@@ -674,18 +692,36 @@
       
       <div class="menu" id="menu">
         <a href="index.html#about" class="menu-link" data-i18n="nav_about">Tentang</a>
-        <a href="index.html#services" class="menu-link" data-i18n="nav_services">Layanan</a>
+        
+        <div class="dropdown" id="layananDropdown">
+          <a href="index.html#services" class="menu-link dropdown-toggle" data-i18n="nav_services">Layanan <i class="fas fa-chevron-down" style="font-size:10px; margin-left:4px;"></i></a>
+          <div class="dropdown-menu">
+            <div class="dropdown-label" data-i18n="nav_label_core">Layanan Utama</div>
+            <a href="jelantah.html" class="dropdown-item active" data-i18n="nav_jelantah">Minyak Jelantah</a>
+            <a href="waste-management.html" class="dropdown-item" data-i18n="nav_waste_management">Waste Management</a>
+            <a href="food.html" class="dropdown-item" data-i18n="nav_food">Food & Culinary</a>
+            <a href="logistics.html" class="dropdown-item" data-i18n="nav_logistics">Logistics</a>
+            <a href="social-impact.html" class="dropdown-item" data-i18n="nav_social">Social Impact</a>
+            
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-label" data-i18n="nav_label_system">Sistem Internal</div>
+            <a href="https://sirat.rezekiamanahjaya.com" target="_blank" class="dropdown-item highlight-link">SIRAT</a>
+            <a href="https://ram.rezekiamanahjaya.com" target="_blank" class="dropdown-item highlight-link">RAM</a>
+            <a href="https://chiraj.rezekiamanahjaya.com" target="_blank" class="dropdown-item highlight-link">ChiRAT</a>
+          </div>
+        </div>
         
         <div class="dropdown" id="artikelDropdown">
-          <a href="artikel.html" class="menu-link dropdown-toggle active" data-i18n="nav_articles">Artikel <i class="fas fa-chevron-down" style="font-size:10px; margin-left:4px;"></i></a>
+          <a href="artikel.html" class="menu-link dropdown-toggle" data-i18n="nav_articles">Artikel <i class="fas fa-chevron-down" style="font-size:10px; margin-left:4px;"></i></a>
           <div class="dropdown-menu">
             <a href="kegiatan.html" class="dropdown-item" data-i18n="nav_activities">Kegiatan</a>
             <a href="csr.html" class="dropdown-item" data-i18n="nav_csr">CSR</a>
-            <a href="jelantah.html" class="dropdown-item active" data-i18n="nav_jelantah">Minyak Jelantah</a>
           </div>
         </div>
 
         <a href="index.html#gallery" class="menu-link" data-i18n="nav_gallery">Gallery</a>
+        <a href="index.html#partners" class="menu-link" data-i18n="nav_partners">Partners</a>
+        <a href="index.html#testimonials" class="menu-link" data-i18n="nav_testimonials">Testimoni</a>
         <a href="index.html#vision" class="menu-link" data-i18n="nav_vision">Visi Misi</a>
         <a href="index.html#contact" class="menu-link" data-i18n="nav_contact">Kontak</a>
         
@@ -800,7 +836,7 @@
     <div class="section-title" data-aos="fade-up">
       <h2 data-i18n="cta_title">Siap Menangani Limbah Minyak Jelantah Anda?</h2>
       <p data-i18n="cta_subtitle">CV REZEKI AMANAH JAYA siap menjadi mitra pengumpulan minyak jelantah dari rumah tangga, UMKM, restoran, hotel, maupun industri.</p>
-      <a href="https://wa.me/6281296580968" class="cta-btn" target="_blank" rel="noopener noreferrer" data-i18n="cta_btn">
+      <a href="https://wa.me/6281296580968?text=Halo%20CV%20Rezeki%20Amanah%20Jaya,%20saya%20ingin%20bertanya%20tentang%20jasa%20pengepul%20minyak%20jelantah" class="cta-btn" target="_blank" rel="noopener noreferrer" data-i18n="cta_btn">
         <i class="fab fa-whatsapp"></i> Hubungi Kami Sekarang
       </a>
     </div>
@@ -825,10 +861,18 @@
       id: {
         nav_about: "Tentang",
         nav_services: "Layanan",
+        nav_label_core: "Layanan Utama",
+        nav_label_system: "Sistem Internal",
+        nav_jelantah: "Minyak Jelantah",
+        nav_waste_management: "Waste Management",
+        nav_food: "Food & Culinary",
+        nav_logistics: "Logistics",
+        nav_social: "Social Impact",
+        nav_partners: "Partners",
+        nav_testimonials: "Testimoni",
         nav_articles: "Artikel",
         nav_activities: "Kegiatan",
         nav_csr: "CSR",
-        nav_jelantah: "Minyak Jelantah",
         nav_gallery: "Gallery",
         nav_vision: "Visi Misi",
         nav_contact: "Kontak",
@@ -871,10 +915,18 @@
       en: {
         nav_about: "About",
         nav_services: "Services",
+        nav_label_core: "Core Services",
+        nav_label_system: "Internal Systems",
+        nav_jelantah: "Used Cooking Oil",
+        nav_waste_management: "Waste Management",
+        nav_food: "Food & Culinary",
+        nav_logistics: "Logistics",
+        nav_social: "Social Impact",
+        nav_partners: "Partners",
+        nav_testimonials: "Testimonials",
         nav_articles: "Articles",
         nav_activities: "Activities",
         nav_csr: "CSR",
-        nav_jelantah: "Used Cooking Oil",
         nav_gallery: "Gallery",
         nav_vision: "Vision & Mission",
         nav_contact: "Contact",
@@ -942,25 +994,32 @@
     // === HAMBURGER & DROPDOWN MENU LOGIC ===
     const hamburger = document.getElementById('hamburger');
     const menu = document.getElementById('menu');
+    
+    const layananDropdown = document.getElementById('layananDropdown');
+    const layananToggle = layananDropdown.querySelector('.dropdown-toggle');
+    
     const artikelDropdown = document.getElementById('artikelDropdown');
-    const dropdownToggle = artikelDropdown.querySelector('.dropdown-toggle');
+    const artikelToggle = artikelDropdown.querySelector('.dropdown-toggle');
 
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       menu.classList.toggle('active');
     });
 
-    dropdownToggle.addEventListener('click', (e) => {
+    function toggleMobileDropdown(dropdownEl) {
       if (window.innerWidth <= 768) {
-        e.preventDefault();
-        artikelDropdown.classList.toggle('active');
+        dropdownEl.classList.toggle('active');
       }
-    });
+    }
+
+    layananToggle.addEventListener('click', (e) => toggleMobileDropdown(layananDropdown));
+    artikelToggle.addEventListener('click', (e) => toggleMobileDropdown(artikelDropdown));
 
     document.querySelectorAll('.menu-link:not(.dropdown-toggle), .dropdown-item').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         menu.classList.remove('active');
+        layananDropdown.classList.remove('active');
         artikelDropdown.classList.remove('active');
       });
     });
@@ -969,10 +1028,10 @@
       if (!menu.contains(e.target) && !hamburger.contains(e.target) && menu.classList.contains('active')) {
         hamburger.classList.remove('active');
         menu.classList.remove('active');
+        layananDropdown.classList.remove('active');
         artikelDropdown.classList.remove('active');
       }
     });
   </script>
 </body>
 </html>
-
